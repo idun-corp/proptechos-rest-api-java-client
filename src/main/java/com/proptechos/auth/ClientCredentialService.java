@@ -4,7 +4,7 @@ import com.microsoft.aad.msal4j.ClientCredentialParameters;
 import com.microsoft.aad.msal4j.ConfidentialClientApplication;
 import com.microsoft.aad.msal4j.IAuthenticationResult;
 import com.proptechos.exception.ServiceAccessDeniedException;
-import com.proptechos.model.AuthRetryConfig;
+import com.proptechos.model.auth.AuthRetryConfig;
 import io.reactivex.rxjava3.core.Observable;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;

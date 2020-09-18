@@ -1,4 +1,4 @@
-package com.proptechos.model;
+package com.proptechos.model.auth;
 
 public class AuthenticationConfig {
 
@@ -57,11 +57,6 @@ public class AuthenticationConfig {
       this.clientId = clientId;
       this.clientSecret = clientSecret;
       this.authority = authority;
-    }
-
-    public ConfigBuilder applicationScope(String scope) {
-      this.applicationScope = scope;
-      return this;
     }
 
     public AuthenticationConfig build() {

@@ -1,4 +1,4 @@
-package com.proptechos.model;
+package com.proptechos.model.auth;
 
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
