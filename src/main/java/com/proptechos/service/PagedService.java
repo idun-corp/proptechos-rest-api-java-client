@@ -18,17 +18,34 @@ public class PagedService<T> {
     this.apiPath = apiPath;
   }
 
-  public Paged<T> getFirstPage(long size) {
-    if (size < 0) {
-      throw new ServiceInvalidUsageException("Page size can't have negative value");
-    }
-    return httpClient.getPaged(apiPath, new PageSizeFilter(size), new PageNumberFilter(0));
+  public Paged<T> getFirstPage(long pageSize) {
+    validatePageMetadata(0, pageSize);
+    return httpClient.getPaged(apiPath, new PageSizeFilter(pageSize), new PageNumberFilter(0));
   }
 
-  public Paged<T> getFirstPage(PageMetadata pageMetadata) {
-    validatePageMetadata(pageMetadata);
+
+  public Paged<T> getPage(long pageNumber, long pageSize) {
+    validatePageMetadata(pageNumber, pageSize);
     return httpClient.getPaged(
-        apiPath, new PageSizeFilter(pageMetadata.getSize()), new PageNumberFilter(0));
+        apiPath, new PageSizeFilter(pageSize), new PageNumberFilter(pageNumber));
+  }
+
+  public Paged<T> getPageFiltered(long pageNumber, long pageSize, IQueryFilter...filters) {
+    validatePageMetadata(pageNumber, pageSize);
+    IQueryFilter[] queryFilters = new IQueryFilter[filters.length + 2];
+    queryFilters[0] = new PageSizeFilter(pageSize);
+    queryFilters[1] = new PageNumberFilter(pageNumber);
+    System.arraycopy(
+        filters, 0, queryFilters, 2, queryFilters.length - 2);
+    return httpClient.getPaged(apiPath, queryFilters);
+  }
+
+  public Paged<T> getLastPage(long pageSize) {
+    validatePageMetadata(0, pageSize);
+    Paged<T> firstPage = getFirstPage(pageSize);
+    return httpClient.getPaged(apiPath,
+        new PageSizeFilter(firstPage.getPageMetadata().getSize()),
+        new PageNumberFilter(firstPage.getPageMetadata().getTotalPages() - 1));
   }
 
   public Paged<T> getNextPage(PageMetadata currentPageMetadata) {
@@ -38,28 +55,13 @@ public class PagedService<T> {
         new PageNumberFilter(currentPageMetadata.getPage() + 1));
   }
 
-  public Paged<T> getLastPage(PageMetadata currentPageMetadata) {
-    validatePageMetadata(currentPageMetadata);
-    return httpClient.getPaged(apiPath,
-        new PageSizeFilter(currentPageMetadata.getSize()),
-        new PageNumberFilter(currentPageMetadata.getTotalPages() - 1));
-  }
-
-  public Paged<T> getPage(PageMetadata pageMetadata) {
-    validatePageMetadata(pageMetadata);
-    return httpClient.getPaged(apiPath,
-        new PageSizeFilter(pageMetadata.getSize()),
-        new PageNumberFilter(pageMetadata.getPage()));
-  }
-
-  public Paged<T> getPageFiltered(PageMetadata pageMetadata, IQueryFilter...filters) {
-    validatePageMetadata(pageMetadata);
-    IQueryFilter[] queryFilters = new IQueryFilter[filters.length + 2];
-    queryFilters[0] = new PageSizeFilter(pageMetadata.getSize());
-    queryFilters[1] = new PageNumberFilter(pageMetadata.getPage());
-    System.arraycopy(
-        filters, 0, queryFilters, 2, queryFilters.length - 2);
-    return httpClient.getPaged(apiPath, queryFilters);
+  public void validatePageMetadata(long pageNumber, long pageSize) {
+    if (pageNumber < 0) {
+      throw new ServiceInvalidUsageException("Page number can't have negative value");
+    }
+    if (pageSize < 0) {
+      throw new ServiceInvalidUsageException("Page size can't have negative value");
+    }
   }
 
   public void validatePageMetadata(PageMetadata pageMetadata) {

@@ -6,13 +6,15 @@ public class PageMetadata {
 
   private final long size;
 
-  private long totalPages;
+  private final long totalPages;
 
-  private long totalElements;
+  private final long totalElements;
 
   public PageMetadata(long page, long size) {
     this.page = page;
     this.size = size;
+    this.totalPages = 0;
+    this.totalElements = 0;
   }
 
   public PageMetadata(long page, long size, long totalPages, long totalElements) {
