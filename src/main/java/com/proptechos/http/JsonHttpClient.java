@@ -8,6 +8,10 @@ import com.proptechos.http.header.AcceptJsonHeader;
 import com.proptechos.http.header.ContentJsonHeader;
 import com.proptechos.http.header.HeaderManager;
 import com.proptechos.http.header.OAuth2TokenHeader;
+import com.proptechos.http.query.IQueryFilter;
+import com.proptechos.http.query.QueryBuilder;
+import com.proptechos.model.common.PageMetadata;
+import com.proptechos.model.common.Paged;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.UUID;
@@ -37,6 +41,16 @@ public class JsonHttpClient<T> implements IHttpClient<T> {
     try {
       CloseableHttpResponse response = client.execute(httpGet(endpoint + "/" + uuid));
       return responseHandler.handleResponse(clazz, response);
+    } catch (IOException e) {
+      throw new ServiceInvalidUsageException(e.getMessage(), e);
+    }
+  }
+
+  public Paged<T> getPaged(String endpoint, IQueryFilter...queryFilters) throws ProptechOsServiceException {
+    try {
+      CloseableHttpResponse response =
+          client.execute(httpGet(endpoint + buildQueryParams(queryFilters)));
+      return responseHandler.handleResponse(Paged.class, response);
     } catch (IOException e) {
       throw new ServiceInvalidUsageException(e.getMessage(), e);
     }
@@ -94,6 +108,14 @@ public class JsonHttpClient<T> implements IHttpClient<T> {
     } catch (JsonProcessingException | UnsupportedEncodingException e) {
       throw new ServiceInvalidUsageException("Unable serialize entity as json");
     }
+  }
+
+  private String buildQueryParams(IQueryFilter...queryFilters) {
+    QueryBuilder builder = QueryBuilder.builder();
+    for (IQueryFilter filter : queryFilters) {
+      builder.append(filter.queryParam());
+    }
+    return builder.build();
   }
 
 }
