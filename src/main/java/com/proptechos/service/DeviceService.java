@@ -3,28 +3,29 @@ package com.proptechos.service;
 import static com.proptechos.http.constants.ApiEndpoints.DEVICE_JSON;
 
 import com.proptechos.exception.ProptechOsServiceException;
-import com.proptechos.http.JsonHttpClient;
-import com.proptechos.model.Device;
+import com.proptechos.model.common.IDevice;
 import java.util.UUID;
 
-public class DeviceService {
+public class DeviceService extends PagedService<IDevice>{
 
-  private final JsonHttpClient<Device> httpClient;
-
-  public DeviceService(String baseAppUrl) {
-    this.httpClient = new JsonHttpClient<>(baseAppUrl);
+  DeviceService(String baseAppUrl) {
+    super(baseAppUrl, DEVICE_JSON);
   }
 
-  public Device getById(UUID id) throws ProptechOsServiceException {
-    return httpClient.getById(Device.class, DEVICE_JSON, id);
+  public IDevice getById(UUID id) throws ProptechOsServiceException {
+    return httpClient.getById(IDevice.class, DEVICE_JSON, id);
   }
 
-  public Device createDevice(Device device) throws ProptechOsServiceException {
-    return httpClient.createObject(Device.class, DEVICE_JSON, device);
+  public IDevice createDevice(IDevice device) throws ProptechOsServiceException {
+    return httpClient.createObject(IDevice.class, DEVICE_JSON, device);
   }
 
-  public Device updateDevice(Device device) throws ProptechOsServiceException {
-    return httpClient.updateObject(Device.class, DEVICE_JSON, device);
+  public IDevice updateDevice(IDevice device) throws ProptechOsServiceException {
+    return httpClient.updateObject(IDevice.class, DEVICE_JSON, device);
+  }
+
+  public void deleteDevice(UUID id) throws ProptechOsServiceException {
+    httpClient.deleteObject(DEVICE_JSON, id);
   }
 
 }

@@ -9,14 +9,15 @@ import org.slf4j.LoggerFactory;
 public final class AccessTokenCache {
 
   private static volatile AccessTokenCache INSTANCE;
+  private static final Object lock = new Object();
+
   private volatile IAuthenticationResult authResult;
   private Disposable authSubscription;
 
   private final Logger log = LoggerFactory.getLogger(AccessTokenCache.class);
 
-  private AccessTokenCache() { }
 
-  private static final Object lock = new Object();
+  private AccessTokenCache() { }
 
   public static AccessTokenCache getInstance() {
     if(INSTANCE == null) {

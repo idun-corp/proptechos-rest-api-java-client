@@ -19,6 +19,7 @@ import com.proptechos.exception.ServiceInvalidUsageException;
 import com.proptechos.exception.ServiceUnavailableException;
 import com.proptechos.exception.TypeConvertException;
 import java.io.IOException;
+import java.util.Objects;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.util.EntityUtils;
@@ -34,7 +35,9 @@ public class ResponseHandler {
   public <T> T handleResponse(Class<T> clazz, CloseableHttpResponse httpResponse)
       throws ProptechOsServiceException {
     int status = httpResponse.getStatusLine().getStatusCode();
-    String stringEntity = getStringEntity(httpResponse);
+    String stringEntity =
+        Objects.nonNull(httpResponse.getFirstHeader("content-type")) ?
+            getStringEntity(httpResponse) : "{}";
     if (status == OK) {
       return parseSingleEntity(clazz, stringEntity);
     }
