@@ -11,19 +11,7 @@ public class ServiceFactory {
   private final String baseAppUrl;
   private final Map<String, Object> services;
 
-  public static ServiceFactory getInstance(String baseAppUrl) {
-    if(INSTANCE == null) {
-      synchronized(lock) {
-        if(INSTANCE == null) {
-          INSTANCE = new ServiceFactory(baseAppUrl);
-        }
-      }
-    }
-
-    return INSTANCE;
-  }
-
-  private ServiceFactory(String baseAppUrl) {
+  public ServiceFactory(String baseAppUrl) {
     this.baseAppUrl = baseAppUrl;
     this.services = new ConcurrentHashMap<>();
   }
