@@ -10,12 +10,12 @@ import com.proptechos.http.header.HeaderManager;
 import com.proptechos.http.header.OAuth2TokenHeader;
 import com.proptechos.http.query.IQueryFilter;
 import com.proptechos.http.query.QueryBuilder;
-import com.proptechos.model.common.PageMetadata;
 import com.proptechos.model.common.Paged;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.UUID;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
@@ -23,21 +23,36 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 
-public class JsonHttpClient<T> implements IHttpClient<T> {
+public class JsonHttpClient {
+
+  private static volatile JsonHttpClient INSTANCE;
+  private static final Object lock = new Object();
 
   private final CloseableHttpClient client;
   private final String baseApiUrl;
   private final ResponseHandler responseHandler;
   private final ObjectMapper mapper;
 
-  public JsonHttpClient(String baseApiUrl) {
+  private JsonHttpClient(String baseApiUrl) {
     this.client = HttpClientBuilder.create().build();
     this.baseApiUrl = baseApiUrl;
     this.responseHandler = new ResponseHandler();
     this.mapper = new ObjectMapper();
   }
 
-  public T getById(Class<T> clazz, String endpoint, UUID uuid) throws ProptechOsServiceException {
+  public static JsonHttpClient getInstance(String baseApiUrl) {
+    if(INSTANCE == null) {
+      synchronized(lock) {
+        if(INSTANCE == null) {
+          INSTANCE = new JsonHttpClient(baseApiUrl);
+        }
+      }
+    }
+
+    return INSTANCE;
+  }
+
+  public <T> T getById(Class<T> clazz, String endpoint, UUID uuid) throws ProptechOsServiceException {
     try {
       CloseableHttpResponse response = client.execute(httpGet(endpoint + "/" + uuid));
       return responseHandler.handleResponse(clazz, response);
@@ -46,7 +61,7 @@ public class JsonHttpClient<T> implements IHttpClient<T> {
     }
   }
 
-  public Paged<T> getPaged(String endpoint, IQueryFilter...queryFilters) throws ProptechOsServiceException {
+  public <T> Paged<T> getPaged(String endpoint, IQueryFilter...queryFilters) throws ProptechOsServiceException {
     try {
       CloseableHttpResponse response =
           client.execute(httpGet(endpoint + buildQueryParams(queryFilters)));
@@ -56,7 +71,7 @@ public class JsonHttpClient<T> implements IHttpClient<T> {
     }
   }
 
-  public T createObject(Class<T> clazz, String endpoint, T object) throws ProptechOsServiceException {
+  public <T> T createObject(Class<T> clazz, String endpoint, T object) throws ProptechOsServiceException {
     try {
       CloseableHttpResponse response = client.execute(httpPost(endpoint, object));
       return responseHandler.handleResponse(clazz, response);
@@ -65,10 +80,19 @@ public class JsonHttpClient<T> implements IHttpClient<T> {
     }
   }
 
-  public T updateObject(Class<T> clazz, String endpoint, T object) throws ProptechOsServiceException {
+  public <T> T updateObject(Class<T> clazz, String endpoint, T object) throws ProptechOsServiceException {
     try {
       CloseableHttpResponse response = client.execute(httpPut(endpoint, object));
       return responseHandler.handleResponse(clazz, response);
+    } catch (IOException e) {
+      throw new ServiceInvalidUsageException(e.getMessage(), e);
+    }
+  }
+
+  public void deleteObject(String endpoint, UUID uuid) throws ProptechOsServiceException {
+    try {
+      CloseableHttpResponse response = client.execute(httpDelete(endpoint + "/" + uuid));
+      responseHandler.handleResponse(Object.class, response);
     } catch (IOException e) {
       throw new ServiceInvalidUsageException(e.getMessage(), e);
     }
@@ -82,7 +106,7 @@ public class JsonHttpClient<T> implements IHttpClient<T> {
     return httpGet;
   }
 
-  private HttpPost httpPost(String url, T body) throws ProptechOsServiceException {
+  private <T> HttpPost httpPost(String url, T body) throws ProptechOsServiceException {
     try {
       HeaderManager headerManager = HeaderManager.getInstance(
           new AcceptJsonHeader(), new ContentJsonHeader(), new OAuth2TokenHeader());
@@ -96,7 +120,7 @@ public class JsonHttpClient<T> implements IHttpClient<T> {
     }
   }
 
-  private HttpPut httpPut(String url, T body) throws ProptechOsServiceException {
+  private <T> HttpPut httpPut(String url, T body) throws ProptechOsServiceException {
     try {
       HeaderManager headerManager = HeaderManager.getInstance(
           new AcceptJsonHeader(), new ContentJsonHeader(), new OAuth2TokenHeader());
@@ -108,6 +132,14 @@ public class JsonHttpClient<T> implements IHttpClient<T> {
     } catch (JsonProcessingException | UnsupportedEncodingException e) {
       throw new ServiceInvalidUsageException("Unable serialize entity as json");
     }
+  }
+
+  private HttpDelete httpDelete(String url) {
+    HeaderManager headerManager = HeaderManager.getInstance(
+        new AcceptJsonHeader(), new OAuth2TokenHeader());
+    HttpDelete httpDelete = new HttpDelete(baseApiUrl + url);
+    headerManager.addHeaders(httpDelete);
+    return httpDelete;
   }
 
   private String buildQueryParams(IQueryFilter...queryFilters) {

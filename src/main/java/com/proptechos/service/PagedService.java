@@ -8,13 +8,13 @@ import com.proptechos.model.common.Paged;
 import com.proptechos.service.filters.PageNumberFilter;
 import com.proptechos.service.filters.PageSizeFilter;
 
-public class PagedService<T> {
+class PagedService<T> {
 
-  protected final JsonHttpClient<T> httpClient;
+  protected final JsonHttpClient httpClient;
   private final String apiPath;
 
-  public PagedService(String baseAppUrl, String apiPath) {
-    this.httpClient = new JsonHttpClient<>(baseAppUrl);
+  PagedService(String baseAppUrl, String apiPath) {
+    this.httpClient = JsonHttpClient.getInstance(baseAppUrl);
     this.apiPath = apiPath;
   }
 

@@ -22,10 +22,26 @@ import org.slf4j.LoggerFactory;
 public class ProptechOsClient {
 
   private final Logger log = LoggerFactory.getLogger(ProptechOsClient.class);
+
+  private static volatile ProptechOsClient INSTANCE;
+  private static final Object lock = new Object();
+
   private final String baseAppUrl;
 
   public ServiceFactory serviceFactory() {
-    return new ServiceFactory(baseAppUrl);
+    return ServiceFactory.getInstance(baseAppUrl);
+  }
+
+  private static ProptechOsClient getInstance(ApplicationClientBuilder applicationClientBuilder) {
+    if(INSTANCE == null) {
+      synchronized(lock) {
+        if(INSTANCE == null) {
+          INSTANCE = new ProptechOsClient(applicationClientBuilder);
+        }
+      }
+    }
+
+    return INSTANCE;
   }
 
   private ProptechOsClient(ApplicationClientBuilder applicationClientBuilder) {
@@ -84,7 +100,7 @@ public class ProptechOsClient {
       if (Objects.isNull(this.authRetryConfig)) {
         this.authRetryConfig = AuthRetryConfig.builder().build();
       }
-      return new ProptechOsClient(this);
+      return ProptechOsClient.getInstance(this);
     }
 
   }

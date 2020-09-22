@@ -8,7 +8,7 @@ import java.util.UUID;
 
 public class DeviceService extends PagedService<IDevice>{
 
-  public DeviceService(String baseAppUrl) {
+  DeviceService(String baseAppUrl) {
     super(baseAppUrl, DEVICE_JSON);
   }
 
@@ -22,6 +22,10 @@ public class DeviceService extends PagedService<IDevice>{
 
   public IDevice updateDevice(IDevice device) throws ProptechOsServiceException {
     return httpClient.updateObject(IDevice.class, DEVICE_JSON, device);
+  }
+
+  public void deleteDevice(UUID id) throws ProptechOsServiceException {
+    httpClient.deleteObject(DEVICE_JSON, id);
   }
 
 }
