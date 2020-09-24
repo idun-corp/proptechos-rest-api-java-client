@@ -29,7 +29,7 @@ public class StreamingApiService {
 
   private Observable<ConsumerRecord<String, Observation>> pollObservations() {
     return Observable.interval(0,
-        retryConfig.getRetryInterval() , retryConfig.getTimeUnit())
+        retryConfig.getInterval() , retryConfig.getTimeUnit())
         .flatMapIterable(i -> consumer.poll(Duration.ofSeconds(i)))
         .retryWhen(errors -> {
           AtomicInteger count = new AtomicInteger();

@@ -3,22 +3,26 @@ package com.proptechos.model.auth;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * AuthRetryConfig represents configuration data used to set up Azure AD login frequency and retry options in case of login failure.
+ *
+ */
 public class AuthRetryConfig {
 
-  private final int retryInterval;
+  private final int interval;
 
   private final int retryNumber;
 
   private final TimeUnit timeUnit;
 
   private AuthRetryConfig(ConfigBuilder builder) {
-    this.retryInterval = builder.retryInterval;
+    this.interval = builder.interval;
     this.retryNumber = builder.retryNumber;
     this.timeUnit = builder.timeUnit;
   }
 
-  public int getRetryInterval() {
-    return retryInterval;
+  public int getInterval() {
+    return interval;
   }
 
   public int getRetryNumber() {
@@ -29,13 +33,20 @@ public class AuthRetryConfig {
     return timeUnit;
   }
 
+  /**
+   * @return builder for construction AuthRetryConfig instance
+   */
   public static ConfigBuilder builder() {
     return new ConfigBuilder();
   }
 
   public static class ConfigBuilder {
 
-    private int retryInterval;
+    protected static final int DEFAULT_INTERVAL = 55;
+    protected static final TimeUnit DEFAULT_INTERVAL_UNIT = TimeUnit.MINUTES;
+    protected static final int DEFAULT_AUTH_RETRY_NUMBER = 5;
+
+    private int interval;
 
     private int retryNumber;
 
@@ -43,30 +54,53 @@ public class AuthRetryConfig {
 
     private ConfigBuilder() { }
 
-    public ConfigBuilder retryInterval(int retryInterval) {
-      this.retryInterval = retryInterval;
+    /**
+     * @param interval how frequent login should be executed
+     * @return AuthRetryConfig builder.
+     *
+     * @apiNote This value should be greater than 0. By default is set to  {@value ConfigBuilder#DEFAULT_INTERVAL}.
+     */
+    public ConfigBuilder interval(int interval) {
+      this.interval = interval;
       return this;
     }
 
-    public ConfigBuilder retryNumber(int retryNumber) {
-      this.retryNumber = retryNumber;
-      return this;
-    }
-
+    /**
+     * @param timeUnit what time units will be used to evaluate login interval
+     * @return AuthRetryConfig builder.
+     *
+     * @apiNote This value should be greater than 0. By default is set to  {@value ConfigBuilder#DEFAULT_INTERVAL_UNIT}.
+     *
+     * @see java.util.concurrent.TimeUnit
+     */
     public ConfigBuilder timeUnit(TimeUnit timeUnit) {
       this.timeUnit = timeUnit;
       return this;
     }
 
+    /**
+     * @param retryNumber how many times auth will be retried in case of any error
+     * @return AuthRetryConfig builder.
+     *
+     * @apiNote This value should be greater than 0. By default is set to  {@value ConfigBuilder#DEFAULT_AUTH_RETRY_NUMBER}.
+     */
+    public ConfigBuilder retryNumber(int retryNumber) {
+      this.retryNumber = retryNumber;
+      return this;
+    }
+
+    /**
+     * @return AuthRetryConfig instance
+     */
     public AuthRetryConfig build() {
-      if (this.retryInterval <= 0) {
-        this.retryInterval = 55;
+      if (this.interval <= 0) {
+        this.interval = DEFAULT_INTERVAL;
       }
       if (this.retryNumber <= 0) {
-        this.retryNumber = 5;
+        this.retryNumber = DEFAULT_AUTH_RETRY_NUMBER;
       }
       if (Objects.isNull(this.timeUnit)) {
-        this.timeUnit = TimeUnit.MINUTES;
+        this.timeUnit = DEFAULT_INTERVAL_UNIT;
       }
       return new AuthRetryConfig(this);
     }

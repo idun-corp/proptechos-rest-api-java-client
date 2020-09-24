@@ -6,14 +6,11 @@ ProptechOS Rest API client to be used for calling ProptechOS API main CRUD opera
 To start using SDK library instance of _**ProptechOsClient**_ should be initialized:
 
 ``` java
-ProptechOsClient.applicationClientBuilder(
-         "<BASE_API_URL>",
-         AuthenticationConfig.builder(
-             "<APP_CLIENT_ID>",
-             "<APP_CLIENT_SECRET>",
-             "<AZURE_LOGIN_URL>"
-         ).build()
-     ).build();
+ProptechOsClient.applicationClientBuilder(""<BASE_API_URL>")
+    .authConfig(AuthenticationConfig.builder()
+            .clientId("<APP_CLIENT_ID>")
+            .clientSecret("<APP_CLIENT_SECRET>")
+            .authority("<AZURE_LOGIN_URL>").build()).build();
 ```
 
 Properties definitions:
@@ -63,4 +60,47 @@ Paged<T> getLastPage(long pageSize)
 
 Paged<T> getNextPage(PageMetadata currentPageMetadata)
 
+```
+
+#### Example of obtaining paged filtered Data:
+``` java
+Paged<IDevice> pagedDevices 
+    = deviceService.getPageFiltered(0, 100, new ClassFilter("Device"));
+```
+
+#### Example of query filter implementation:
+``` java
+public class ClassFilter implements IQueryFilter {
+
+  private String recClass;
+
+  public ClassFilter(String recClass) {
+    this.recClass = recClass;
+  }
+
+  @Override
+  public QueryParam queryParam() {
+    return new QueryParam("class", recClass);
+  }
+}
+```
+
+### Access to StreamingApiService:
+In order to obtain access to StreamingApiService, KafkaConfig data should be provided
+
+``` java
+StreamingApiService streamingApiService = 
+    client.serviceFactory().streamingApiService(KafkaConfig.builder()
+            .topic("<EVENTHUB_NAME>")
+            .bootstrapServer("<BOOSTRAP_SERVER>")
+            .connectionString("<EVENTHUB_CONNECTION_STRING>")
+            .build());
+```
+
+Properties definitions:
+
+``` properties
+EVENTHUB_NAME - Azure kafka enebled eventhub name;
+BOOSTRAP_SERVER - Bootstrap server to connect to 'test.servicebus.windows.net:9093';
+EVENTHUB_CONNECTION_STRING - Azure eventhub connection string;
 ```

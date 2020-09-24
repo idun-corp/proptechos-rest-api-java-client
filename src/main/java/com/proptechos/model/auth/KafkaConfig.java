@@ -8,6 +8,9 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.config.SaslConfigs;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
+/**
+ * KafkaConfig represents configuration data used to coonect kafka enabled Azure eventhub
+ */
 public class KafkaConfig {
 
   private final ConfigBuilder builder;
@@ -37,20 +40,25 @@ public class KafkaConfig {
     return props;
   }
 
-  public static ConfigBuilder builder(
-      String topic,
-      String bootstrapServer,
-      String connectionString) {
-    return new ConfigBuilder(topic, bootstrapServer, connectionString);
+  /**
+   * @return KafkaConfig builder
+   */
+  public static ConfigBuilder builder() {
+    return new ConfigBuilder();
   }
 
   public static class ConfigBuilder {
 
-    private final String topic;
+    protected static final String DEFAULT_GROUP_ID = "$Default";
+    protected static final String DEFAULT_SECURITY_PROTOCOL = "SASL_SSL";
+    protected static final String DEFAULT_SASL_MECHANISM = "PLAIN";
+    protected static final long DEFAULT_REQUEST_TIMEOUT = 60_000;
 
-    private final String bootstrapServer;
+    private String topic;
 
-    private final String saslJaasConfig;
+    private String bootstrapServer;
+
+    private String saslJaasConfig;
 
     private String groupId;
 
@@ -62,54 +70,105 @@ public class KafkaConfig {
 
     private KafkaRetryConfig retryConfig;
 
-    private ConfigBuilder(
-        String topic,
-        String bootstrapServer,
-        String connectionString) {
+    private ConfigBuilder() {}
+
+    /**
+     * @param topic eventhub name to connect to
+     * @return builder
+     */
+    public ConfigBuilder topic(String topic) {
       this.topic = topic;
+      return this;
+    }
+
+    /**
+     * @param bootstrapServer eventhub bootstrap server '<eventhub_namespace>.servicebus.windows.net:9093'
+     * @return builder
+     */
+    public ConfigBuilder bootstrapServer(String bootstrapServer) {
       this.bootstrapServer = bootstrapServer;
+      return this;
+    }
+
+    /**
+     * @param connectionString eventhub connection string
+     * @return builder
+     */
+    public ConfigBuilder connectionString(String connectionString) {
       this.saslJaasConfig = String.format(
           "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"$ConnectionString\" password=\"%s\";",
           connectionString);
+      return this;
     }
 
+    /**
+     * @param groupId listen group id
+     * @return builder
+     *
+     * By default is set to  {@value ConfigBuilder#DEFAULT_GROUP_ID}.
+     */
     public ConfigBuilder groupId(String groupId) {
       this.groupId = groupId;
       return this;
     }
 
+    /**
+     * @param timeout request timeout
+     * @return builder
+     *
+     *  By default is set to  {@value ConfigBuilder#DEFAULT_REQUEST_TIMEOUT}.
+     */
     public ConfigBuilder requestTimeout(long timeout) {
       this.requestTimeout = timeout;
       return this;
     }
 
+    /**
+     * @param securityProtocol security protocol for connecting to eventhub
+     * @return builder
+     *
+     * By default is set to  {@value ConfigBuilder#DEFAULT_SECURITY_PROTOCOL}.
+     */
     public ConfigBuilder securityProtocol(String securityProtocol) {
       this.securityProtocol = securityProtocol;
       return this;
     }
 
+    /**
+     * @param saslMechanism sasl mechanism
+     * @return builder
+     *
+     * y default is set to  {@value ConfigBuilder#DEFAULT_SASL_MECHANISM}.
+     */
     public ConfigBuilder saslMechanism(String saslMechanism) {
       this.saslMechanism = saslMechanism;
       return this;
     }
 
+    /**
+     * @param retryConfig configuration retry data
+     * @return builder
+     */
     public ConfigBuilder retryConfig(KafkaRetryConfig retryConfig) {
       this.retryConfig = retryConfig;
       return this;
     }
 
+    /**
+     * @return KafkaConfig instance
+     */
     public KafkaConfig build() {
       if (Objects.isNull(groupId)) {
-        groupId = "$Default";
+        groupId = DEFAULT_GROUP_ID;
       }
       if (Objects.isNull(securityProtocol)) {
-        securityProtocol = "SASL_SSL";
+        securityProtocol = DEFAULT_SECURITY_PROTOCOL;
       }
       if (Objects.isNull(saslMechanism)) {
-        saslMechanism = "PLAIN";
+        saslMechanism = DEFAULT_SASL_MECHANISM;
       }
       if (requestTimeout <= 0) {
-        requestTimeout = 60_000;
+        requestTimeout = DEFAULT_REQUEST_TIMEOUT;
       }
       if (Objects.isNull(retryConfig)) {
         retryConfig = KafkaRetryConfig.builder().build();
