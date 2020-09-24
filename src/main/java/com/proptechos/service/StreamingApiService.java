@@ -4,6 +4,7 @@ import com.proptechos.model.Observation;
 import com.proptechos.model.auth.KafkaConfig;
 import com.proptechos.model.auth.KafkaRetryConfig;
 import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.functions.Consumer;
 import java.time.Duration;
 import java.util.Collections;
@@ -14,12 +15,18 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * StreamingApiService main entry class to connect to Azure eventhub to listen to Streaming API
+ *
+ * @apiNote Subscription could be done once, otherwise subscribers will compete for the single topic
+ */
 public class StreamingApiService {
 
   private final Logger log = LoggerFactory.getLogger(StreamingApiService.class);
 
   private final KafkaConsumer<String, Observation> consumer;
   private final KafkaRetryConfig retryConfig;
+  private Disposable subscription;
 
   StreamingApiService(KafkaConfig kafkaConfig) {
     this.consumer = new KafkaConsumer<>(kafkaConfig.getConfigMap());
@@ -51,11 +58,15 @@ public class StreamingApiService {
   }
 
   public void subscribe(Consumer<Observation> onNext, Consumer<? super Throwable> onError) {
-    pollObservations().map(ConsumerRecord::value).blockingSubscribe(onNext, onError);
+    subscription = pollObservations().map(ConsumerRecord::value).subscribe(onNext, onError);
   }
 
   public void blockingSubscribe(Consumer<Observation> onNext, Consumer<? super Throwable> onError) {
     pollObservations().map(ConsumerRecord::value).blockingSubscribe(onNext, onError);
+  }
+
+  public void unsubscribe() {
+    subscription.dispose();
   }
 
 }
