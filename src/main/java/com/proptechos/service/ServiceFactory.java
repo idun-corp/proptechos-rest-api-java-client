@@ -1,12 +1,13 @@
 package com.proptechos.service;
 
+import com.proptechos.model.auth.KafkaConfig;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * ServiceFactory class for obtaining all services to work with ProptechOS API
+ */
 public class ServiceFactory {
-
-  private static volatile ServiceFactory INSTANCE;
-  private static final Object lock = new Object();
 
   private final String baseAppUrl;
   private final Map<String, Object> services;
@@ -16,8 +17,25 @@ public class ServiceFactory {
     this.services = new ConcurrentHashMap<>();
   }
 
+  /**
+   * @return DeviceService instance
+   *
+   * @see com.proptechos.service.DeviceService
+   */
   public DeviceService deviceService() {
-    return (DeviceService)this.services.computeIfAbsent(
+    return (DeviceService) this.services.computeIfAbsent(
         DeviceService.class.getSimpleName(), k -> new DeviceService(baseAppUrl));
+  }
+
+  /**
+   * @param kafkaConfig configuration data to connect to kafka stream
+   * @return StreamingApiService instance
+   *
+   * @see com.proptechos.service.StreamingApiService
+   * @see com.proptechos.model.auth.KafkaConfig
+   */
+  public StreamingApiService streamingApiService(KafkaConfig kafkaConfig) {
+    return (StreamingApiService) this.services.computeIfAbsent(
+        StreamingApiService.class.getSimpleName(), k -> new StreamingApiService(kafkaConfig));
   }
 }

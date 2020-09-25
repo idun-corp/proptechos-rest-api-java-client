@@ -30,7 +30,7 @@ public class ClientCredentialService {
 
   public Observable<IAuthenticationResult> getAuthResult() {
     return Observable.merge(login(), Observable.interval(5,
-        authRetryConfig.getRetryInterval(), authRetryConfig.getTimeUnit())
+        authRetryConfig.getInterval(), authRetryConfig.getTimeUnit())
         .flatMap(i -> login())
         .retryWhen(errors -> {
           AtomicInteger count = new AtomicInteger();

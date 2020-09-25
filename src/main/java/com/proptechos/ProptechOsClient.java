@@ -19,6 +19,9 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Main entry singleton class to integrate with ProptechOS API
+ */
 public class ProptechOsClient {
 
   private final Logger log = LoggerFactory.getLogger(ProptechOsClient.class);
@@ -74,28 +77,50 @@ public class ProptechOsClient {
     }
   }
 
-  public static ApplicationClientBuilder applicationClientBuilder(
-      String baseAppUrl, AuthenticationConfig config) {
-    return new ApplicationClientBuilder(baseAppUrl, config);
+  /**
+   * @param baseAppUrl base ProptechOS API url
+   * @return ApplicationClientBuilder - builder for constructing ProptechOsClient class instance
+   *
+   */
+  public static ApplicationClientBuilder applicationClientBuilder(String baseAppUrl) {
+    return new ApplicationClientBuilder(baseAppUrl);
   }
 
   public static class ApplicationClientBuilder {
 
     private final String baseAppUrl;
-    private final AuthenticationConfig config;
+    private AuthenticationConfig config;
     private AuthRetryConfig authRetryConfig;
 
-    private ApplicationClientBuilder(
-        String baseAppUrl, AuthenticationConfig config) {
+    private ApplicationClientBuilder(String baseAppUrl) {
       this.baseAppUrl = normalizeUrl(baseAppUrl);
-      this.config = config;
     }
 
+    /**
+     * @param authConfig configuration data needed to auth Azure AD
+     * @return ApplicationClientBuilder
+     *
+     * @see com.proptechos.model.auth.AuthenticationConfig
+     */
+    public ApplicationClientBuilder authConfig(AuthenticationConfig authConfig) {
+      this.config = authConfig;
+      return this;
+    }
+
+    /**
+     * @param authRetryConfig optional configuration data to set up retry auth options
+     * @return ApplicationClientBuilder
+     *
+     * @see com.proptechos.model.auth.AuthRetryConfig
+     */
     public ApplicationClientBuilder authRetryConfig(AuthRetryConfig authRetryConfig) {
       this.authRetryConfig = authRetryConfig;
       return this;
     }
 
+    /**
+     * @return ProptechOsClient class instance
+     */
     public ProptechOsClient build() {
       if (Objects.isNull(this.authRetryConfig)) {
         this.authRetryConfig = AuthRetryConfig.builder().build();

@@ -18,18 +18,39 @@ class PagedService<T> {
     this.apiPath = apiPath;
   }
 
+  /**
+   * @param pageSize number of elements requested per page
+   * @return first page of paged data
+   *
+   * @see com.proptechos.model.common.Paged
+   */
   public Paged<T> getFirstPage(long pageSize) {
     validatePageMetadata(0, pageSize);
     return httpClient.getPaged(apiPath, new PageSizeFilter(pageSize), new PageNumberFilter(0));
   }
 
-
+  /**
+   * @param pageNumber number of requested page
+   * @param pageSize number of elements requested per page
+   * @return requested page of paged data
+   *
+   * @see com.proptechos.model.common.Paged
+   */
   public Paged<T> getPage(long pageNumber, long pageSize) {
     validatePageMetadata(pageNumber, pageSize);
     return httpClient.getPaged(
         apiPath, new PageSizeFilter(pageSize), new PageNumberFilter(pageNumber));
   }
 
+  /**
+   * @param pageNumber number of requested page
+   * @param pageSize number of elements requested per page
+   * @param filters additional optional query filters
+   * @return requested page of paged data
+   *
+   * @see com.proptechos.model.common.Paged
+   * @see com.proptechos.http.query.IQueryFilter
+   */
   public Paged<T> getPageFiltered(long pageNumber, long pageSize, IQueryFilter...filters) {
     validatePageMetadata(pageNumber, pageSize);
     IQueryFilter[] queryFilters = new IQueryFilter[filters.length + 2];
@@ -40,6 +61,10 @@ class PagedService<T> {
     return httpClient.getPaged(apiPath, queryFilters);
   }
 
+  /**
+   * @param pageSize number of elements requested per page
+   * @return last page of paged data
+   */
   public Paged<T> getLastPage(long pageSize) {
     validatePageMetadata(0, pageSize);
     Paged<T> firstPage = getFirstPage(pageSize);
@@ -48,6 +73,12 @@ class PagedService<T> {
         new PageNumberFilter(firstPage.getPageMetadata().getTotalPages() - 1));
   }
 
+  /**
+   * @param currentPageMetadata metadata of current page in order to get next one
+   * @return requested page of paged data
+   *
+   * @see com.proptechos.model.common.PageMetadata
+   */
   public Paged<T> getNextPage(PageMetadata currentPageMetadata) {
     validatePageMetadata(currentPageMetadata);
     return httpClient.getPaged(apiPath,
@@ -55,7 +86,7 @@ class PagedService<T> {
         new PageNumberFilter(currentPageMetadata.getPage() + 1));
   }
 
-  public void validatePageMetadata(long pageNumber, long pageSize) {
+  private void validatePageMetadata(long pageNumber, long pageSize) {
     if (pageNumber < 0) {
       throw new ServiceInvalidUsageException("Page number can't have negative value");
     }
@@ -64,7 +95,7 @@ class PagedService<T> {
     }
   }
 
-  public void validatePageMetadata(PageMetadata pageMetadata) {
+  private void validatePageMetadata(PageMetadata pageMetadata) {
     if (pageMetadata.getPage() < 0 ||
     pageMetadata.getSize() < 0 ||
     pageMetadata.getTotalPages() < 0 ||
