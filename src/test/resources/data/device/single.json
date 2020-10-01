@@ -1,0 +1,40 @@
+{
+  "id": "5cd99e11-aa99-43b6-b5f5-01a0033aa940",
+  "class": "Sensor",
+  "createdTime": "2020-07-29T13:09:14.727Z",
+  "updatedTime": "2020-09-06T12:46:52.590Z",
+  "hasAlias": [
+    {
+      "id": "https://ns.proptechos.com/test/sensor/AS02/GW32/Z325/R1x/SV4",
+      "isMemberOfAliasNamespace": "ed2b979e-fe36-4563-9375-7623929036c7"
+    }
+  ],
+  "comment": {},
+  "littera": "/AS02/GW32/Z325/R1x/SV4",
+  "popularName": null,
+  "source": {
+    "include": "1",
+    "updatedByAgent": "testuser@idunrealestate.com",
+    "dataPointType": "Booleanvalue",
+    "pointName": "SV4",
+    "serialNumberFunctionDescription": "Secondary cooling flow",
+    "powerSource": "CommunicationBus",
+    "createdByApp": "RecAPI",
+    "sendOnUpdate": "false",
+    "serialNumberFunction": "35",
+    "createdByAgent": "testuser@idunrealestate.com",
+    "updatedByApp": "RecAPI",
+    "function": "1",
+    "functionDescription": "Temperature",
+    "updateFrequency": "600"
+  },
+  "hasDeviceFunctionType": null,
+  "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4956b9dd33f9",
+  "servesBuildingComponent": null,
+  "servesBuilding": null,
+  "hasSuperDevice": "7f109236-7b02-405b-abad-b3e5562d17b3",
+  "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+  "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+  "devicePlacementContext": "https://w3id.org/rec/device/SecondaryCoolingFlow",
+  "observesActuator": null
+}
