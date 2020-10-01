@@ -12,12 +12,9 @@ public class AuthenticationConfig {
 
   private final String clientSecret;
 
-  private final String authority;
-
   private AuthenticationConfig(ConfigBuilder builder) {
     this.clientId = builder.clientId;
     this.clientSecret = builder.clientSecret;
-    this.authority = builder.authority;
   }
 
   /**
@@ -35,13 +32,6 @@ public class AuthenticationConfig {
   }
 
   /**
-   * @return Azure login url
-   */
-  public String getAuthority() {
-    return authority;
-  }
-
-  /**
    * @return AuthenticationConfig builder
    *
    */
@@ -54,8 +44,6 @@ public class AuthenticationConfig {
     private String clientId;
 
     private String clientSecret;
-
-    private String authority;
 
     private ConfigBuilder() {}
 
@@ -74,15 +62,6 @@ public class AuthenticationConfig {
      */
     public ConfigBuilder clientSecret(String clientSecret) {
       this.clientSecret = clientSecret;
-      return this;
-    }
-
-    /**
-     * @param authority Azure login url
-     * @return builder
-     */
-    public ConfigBuilder authority(String authority) {
-      this.authority = authority;
       return this;
     }
 
