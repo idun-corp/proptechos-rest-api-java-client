@@ -56,6 +56,10 @@ public class KafkaConfig {
 
     private String topic;
 
+    private String eventHubNamespace;
+
+    private String sharedAccessKey;
+
     private String bootstrapServer;
 
     private String saslJaasConfig;
@@ -76,28 +80,26 @@ public class KafkaConfig {
      * @param topic eventhub name to connect to
      * @return builder
      */
-    public ConfigBuilder topic(String topic) {
+    public ConfigBuilder eventHub(String topic) {
       this.topic = topic;
       return this;
     }
 
     /**
-     * @param bootstrapServer eventhub bootstrap server '<eventhub_namespace>.servicebus.windows.net:9093'
+     * @param eventHubNamespace eventhub namespace
      * @return builder
      */
-    public ConfigBuilder bootstrapServer(String bootstrapServer) {
-      this.bootstrapServer = bootstrapServer;
+    public ConfigBuilder eventHubNamespace(String eventHubNamespace) {
+      this.eventHubNamespace = eventHubNamespace;
       return this;
     }
 
     /**
-     * @param connectionString eventhub connection string
+     * @param sharedAccessKey shared eventhub namespace access key
      * @return builder
      */
-    public ConfigBuilder connectionString(String connectionString) {
-      this.saslJaasConfig = String.format(
-          "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"$ConnectionString\" password=\"%s\";",
-          connectionString);
+    public ConfigBuilder sharedAccessKey(String sharedAccessKey) {
+      this.sharedAccessKey = sharedAccessKey;
       return this;
     }
 
@@ -173,6 +175,13 @@ public class KafkaConfig {
       if (Objects.isNull(retryConfig)) {
         retryConfig = KafkaRetryConfig.builder().build();
       }
+      this.bootstrapServer = String.format("%s.servicebus.windows.net:9093", eventHubNamespace);
+      String connectionString = String.format(
+          "Endpoint=sb://%s.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=%s",
+          eventHubNamespace, sharedAccessKey);
+      this.saslJaasConfig = String.format(
+          "org.apache.kafka.common.security.plain.PlainLoginModule required username=\"$ConnectionString\" password=\"%s\";",
+          connectionString);
       return new KafkaConfig(this);
     }
   }

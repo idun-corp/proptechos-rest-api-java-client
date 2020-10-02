@@ -59,7 +59,7 @@ public class ProptechOsClient {
           .builder(
               config.getClientId(),
               ClientCredentialFactory.createFromSecret(config.getClientSecret()))
-          .authority(config.getAuthority())
+          .authority("https://login.microsoftonline.com/d4218456-670f-42ad-9f6a-885ae15b6645/")
           .build();
 
       Set<String> scopes = new HashSet<>(
