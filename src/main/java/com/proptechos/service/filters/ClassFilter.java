@@ -5,7 +5,7 @@ import com.proptechos.http.query.QueryParam;
 
 public class ClassFilter implements IQueryFilter {
 
-  private String recClass;
+  private final String recClass;
 
   public ClassFilter(String recClass) {
     this.recClass = recClass;

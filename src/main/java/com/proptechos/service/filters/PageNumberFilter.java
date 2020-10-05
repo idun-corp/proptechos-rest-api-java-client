@@ -5,7 +5,7 @@ import com.proptechos.http.query.QueryParam;
 
 public class PageNumberFilter implements IQueryFilter {
 
-  private long pageNumber;
+  private final long pageNumber;
 
   public PageNumberFilter(long pageNumber) {
     this.pageNumber = pageNumber;
