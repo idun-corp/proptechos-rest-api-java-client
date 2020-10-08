@@ -13,6 +13,7 @@ import com.proptechos.http.query.QueryBuilder;
 import com.proptechos.model.common.Paged;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 import java.util.UUID;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpDelete;
@@ -66,6 +67,16 @@ public class JsonHttpClient {
       CloseableHttpResponse response =
           client.execute(httpGet(endpoint + buildQueryParams(queryFilters)));
       return responseHandler.handleResponse(Paged.class, response);
+    } catch (IOException e) {
+      throw new ServiceInvalidUsageException(e.getMessage(), e);
+    }
+  }
+
+  public <T> List<T> getList(Class<T> clazz, String endpoint) throws ProptechOsServiceException {
+    try {
+      CloseableHttpResponse response =
+          client.execute(httpGet(endpoint));
+      return responseHandler.handleListResponse(clazz, response);
     } catch (IOException e) {
       throw new ServiceInvalidUsageException(e.getMessage(), e);
     }

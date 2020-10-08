@@ -1,0 +1,14 @@
+[
+  {
+    "iri": "https://w3id.org/rec/building/Floor",
+    "label": "Floor"
+  },
+  {
+    "iri": "https://w3id.org/rec/building/RoofInner",
+    "label": "RoofInner"
+  },
+  {
+    "iri": "https://w3id.org/rec/building/RoofOuter",
+    "label": "RoofOuter"
+  }
+]

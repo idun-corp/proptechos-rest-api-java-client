@@ -1,12 +1,15 @@
 package com.proptechos.service;
 
 import static com.proptechos.http.constants.ApiEndpoints.DEVICE_JSON;
+import static com.proptechos.http.constants.HttpStatus.OK;
 import static com.proptechos.utils.TestDataHelper.buildDevice;
 import static com.proptechos.utils.TestDataHelper.objectToJson;
+import static com.proptechos.utils.ValidationUtils.verifyDeleteRequest;
 import static com.proptechos.utils.ValidationUtils.verifyGetRequest;
 import static com.proptechos.utils.ValidationUtils.verifyPostRequest;
 import static com.proptechos.utils.ValidationUtils.verifyPutRequest;
 import static org.mockserver.model.HttpRequest.request;
+import static org.mockserver.model.HttpResponse.response;
 
 import com.proptechos.model.common.IDevice;
 import com.proptechos.model.common.Paged;
@@ -130,6 +133,16 @@ public class DeviceServiceTest extends BaseServiceTest {
     deviceService.updateDevice(TEST_DEVICE);
 
     verifyPutRequest(client, DEVICE_JSON, objectToJson(TEST_DEVICE));
+  }
+
+  @Test
+  void testDelete() {
+    client.when(deleteRequest(DEVICE_JSON + "/" + TEST_DEVICE_ID))
+        .respond(response().withStatusCode(OK));
+
+    deviceService.deleteDevice(UUID.fromString(TEST_DEVICE_ID));
+
+    verifyDeleteRequest(client, DEVICE_JSON + "/" + TEST_DEVICE_ID);
   }
 
 }

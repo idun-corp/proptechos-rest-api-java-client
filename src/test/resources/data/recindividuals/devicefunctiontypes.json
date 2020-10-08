@@ -1,0 +1,14 @@
+[
+  {
+    "iri": "https://w3id.org/rec/device/AirHandlingUnit",
+    "label": "AirHandlingUnit"
+  },
+  {
+    "iri": "https://w3id.org/rec/device/Boiler",
+    "label": "Boiler"
+  },
+  {
+    "iri": "https://w3id.org/rec/device/Chiller",
+    "label": "Chiller"
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "id": "397abf21-0e94-4bee-9bc9-0464a7ddd44a",
+  "class": "Room",
+  "createdTime": "2020-10-01T10:20:29.943Z",
+  "updatedTime": null,
+  "hasAlias": [],
+  "comment": {},
+  "littera": "-",
+  "popularName": "SCHAKT",
+  "source": {
+    "createdByAgent": "testuser1@idunrealestate.com",
+    "createdByApp": "RecAPI"
+  },
+  "isPartOfBuilding": "cbe9abf1-23de-4eb2-a12e-06d69ff00e02",
+  "hasSuperBuildingComponent": null,
+  "hasSubBuildingComponent": null,
+  "isLocatedAtLocalCoordinates": "0;0;32.71",
+  "isPartOfStorey": "e7c9ebfb-7909-42a0-ac25-59ed6ea94c74",
+  "roomType": "https://w3id.org/rec/building/ServiceShaft"
+}

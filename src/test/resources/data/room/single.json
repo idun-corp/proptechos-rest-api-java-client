@@ -1,0 +1,20 @@
+{
+  "id": "4297626f-af51-471d-9503-5576a0544440",
+  "class": "Room",
+  "createdTime": "2020-09-04T13:09:15.427Z",
+  "updatedTime": null,
+  "hasAlias": [],
+  "comment": {},
+  "littera": "02.01:1105",
+  "popularName": "GBG ENERGI HÖGSPÄNNING TRANSFORMATORRUM",
+  "source": {
+    "createdByAgent": "testuser3@idunrealestate.com",
+    "createdByApp": "RecAPI"
+  },
+  "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+  "hasSuperBuildingComponent": null,
+  "hasSubBuildingComponent": null,
+  "isLocatedAtLocalCoordinates": "19.17;56.97;0.00",
+  "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+  "roomType": "https://w3id.org/rec/building/ElectricityRoom"
+}

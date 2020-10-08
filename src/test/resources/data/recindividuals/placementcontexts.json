@@ -1,0 +1,14 @@
+[
+  {
+    "iri": "https://w3id.org/rec/device/DistrictHeatingReturn",
+    "label": "DistrictHeatingReturn"
+  },
+  {
+    "iri": "https://w3id.org/rec/device/ElectricalGridIntake",
+    "label": "ElectricalGridIntake"
+  },
+  {
+    "iri": "https://w3id.org/rec/device/ElectricalGridInternal",
+    "label": "ElectricalGridInternal"
+  }
+]

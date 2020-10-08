@@ -1,0 +1,84 @@
+{
+  "content": [
+    {
+      "id": "7c0b9945-0642-45d7-b61e-0afe33aab58a",
+      "class": "AliasNamespace",
+      "createdTime": "2019-09-16T19:27:38.317Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "comment": {},
+      "popularName": "Vasakronan Test Management System",
+      "source": {},
+      "retrievable": false,
+      "baseURL": "https://testns.idunrealestate.com/"
+    },
+    {
+      "id": "87937412-0add-4084-84cd-7573b95d500e",
+      "class": "AliasNamespace",
+      "createdTime": "2019-10-21T09:19:23.060Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "comment": {},
+      "popularName": "Rita ID in VK System",
+      "source": {},
+      "retrievable": false,
+      "baseURL": "https://ns.proptechos.com/vk-rita/"
+    },
+    {
+      "id": "2afba45c-b50d-4e9b-b230-475b5464eceb",
+      "class": "AliasNamespace",
+      "createdTime": "2019-09-28T04:51:20.733Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "comment": {},
+      "popularName": "Vasakronan New Test Management System",
+      "source": {},
+      "retrievable": false,
+      "baseURL": "https://testns.new.idunrealestate.com/"
+    },
+    {
+      "id": "dc623945-049b-4b5b-b89a-cfdede5c6af7",
+      "class": "AliasNamespace",
+      "createdTime": "2019-10-01T13:52:42.643Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "comment": {},
+      "popularName": "ProptechOS Test Management System",
+      "source": {},
+      "retrievable": false,
+      "baseURL": "https://testns.proptech.com/"
+    },
+    {
+      "id": "14b0c548-403f-4b4b-a2a2-3c9a90d3da47",
+      "class": "AliasNamespace",
+      "createdTime": "2019-09-28T14:53:21.993Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "comment": {},
+      "popularName": "Telefoneplan Test",
+      "source": {},
+      "retrievable": false,
+      "baseURL": "https://telefoneplantest.com"
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 5,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalElements": 17,
+  "totalPages": 4,
+  "last": false,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "size": 5,
+  "number": 0,
+  "numberOfElements": 5,
+  "first": true,
+  "empty": false
+}

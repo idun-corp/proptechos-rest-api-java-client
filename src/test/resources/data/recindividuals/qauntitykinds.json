@@ -1,0 +1,14 @@
+[
+  {
+    "iri": "https://w3id.org/rec/core/Humidity",
+    "label": "Humidity"
+  },
+  {
+    "iri": "https://w3id.org/rec/core/Illuminance",
+    "label": "Illuminance"
+  },
+  {
+    "iri": "https://w3id.org/rec/core/Lenght",
+    "label": "Lenght"
+  }
+]

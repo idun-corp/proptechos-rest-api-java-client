@@ -1,0 +1,14 @@
+[
+  {
+    "iri": "https://w3id.org/rec/core/Ampere",
+    "label": "Ampere"
+  },
+  {
+    "iri": "https://w3id.org/rec/core/Celsius",
+    "label": "Celsius"
+  },
+  {
+    "iri": "https://w3id.org/rec/core/CosPhi",
+    "label": "CosPhi"
+  }
+]

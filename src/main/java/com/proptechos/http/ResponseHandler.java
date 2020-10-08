@@ -19,6 +19,8 @@ import com.proptechos.exception.ServiceInvalidUsageException;
 import com.proptechos.exception.ServiceUnavailableException;
 import com.proptechos.exception.TypeConvertException;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -41,6 +43,24 @@ public class ResponseHandler {
     if (status == OK) {
       return parseSingleEntity(clazz, stringEntity);
     }
+    handleNonSuccessResponse(status, stringEntity);
+    throw new ServiceUnavailableException("Service unavailable. Please try later.");
+  }
+
+  public <T> List<T> handleListResponse(Class<T> clazz, CloseableHttpResponse httpResponse)
+      throws ProptechOsServiceException {
+    int status = httpResponse.getStatusLine().getStatusCode();
+    String stringEntity =
+        Objects.nonNull(httpResponse.getFirstHeader("content-type")) ?
+            getStringEntity(httpResponse) : "[]";
+    if (status == OK) {
+      return (List<T>) parseEntityCollection(List.class, clazz, stringEntity);
+    }
+    handleNonSuccessResponse(status, stringEntity);
+    throw new ServiceUnavailableException("Service unavailable. Please try later.");
+  }
+
+  private void handleNonSuccessResponse(int status, String stringEntity) {
     String errorMsg = getErrorMsg(stringEntity);
     switch (status) {
       case FORBIDDEN:
@@ -57,7 +77,6 @@ public class ResponseHandler {
       case GATEWAY_TIMEOUT:
         throw new ServiceUnavailableException("Service unavailable." + errorMsg);
     }
-    throw new ServiceUnavailableException("Service unavailable. Please try later.");
   }
 
   private String getStringEntity(CloseableHttpResponse httpResponse)
@@ -77,6 +96,17 @@ public class ResponseHandler {
     } catch (IOException e) {
       throw new TypeConvertException(
           "Failed to convert ProptechOS service response to datatype " + clazz.getName(), e);
+    }
+  }
+
+  private <T> Collection<T> parseEntityCollection(
+      Class<? extends Collection> collectionClazz, Class<T> clazz, String entities) {
+    try {
+      return mapper.readValue(entities,
+          mapper.getTypeFactory().constructCollectionType(collectionClazz, clazz));
+    } catch (IOException e) {
+      throw new TypeConvertException(
+          "Failed to convert ProptechOS service collection response to datatype " + clazz.getName(), e);
     }
   }
 

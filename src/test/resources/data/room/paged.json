@@ -1,0 +1,1049 @@
+{
+  "content": [
+    {
+      "id": "39021de2-c329-4f2b-91f6-c9e6f5a91be7",
+      "class": "Room",
+      "createdTime": "2020-05-05T06:24:55.597Z",
+      "updatedTime": "2020-07-07T14:45:49.143Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "Test-201",
+      "popularName": "Test1",
+      "source": {
+        "additionalInfo": "TestRoom",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
+      "isPartOfStorey": "6197502a-cb00-4b64-9325-06343e06dd77",
+      "roomType": "https://w3id.org/rec/building/OfficeRoom"
+    },
+    {
+      "id": "73013e2e-2333-425a-9f35-c7b9d6fcd94f",
+      "class": "Room",
+      "createdTime": "2020-05-05T06:24:55.797Z",
+      "updatedTime": "2020-07-07T14:45:49.303Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "Test-202",
+      "popularName": "Test2",
+      "source": {
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
+      "isPartOfStorey": "7deb7019-d9ab-4e75-99aa-3a62f779a7da",
+      "roomType": "https://w3id.org/rec/building/Pentry"
+    },
+    {
+      "id": "4dc220bb-129f-497f-ab91-69d5f45fe469",
+      "class": "Room",
+      "createdTime": "2020-05-05T11:09:33.727Z",
+      "updatedTime": "2020-10-05T10:07:26.930Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "Test-101",
+      "popularName": null,
+      "source": {
+        "updatedByAgent": "testuser3@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
+      "isPartOfStorey": "973ed762-a1ac-4a99-99de-694e92297074",
+      "roomType": "https://w3id.org/rec/building/OfficeRoom"
+    },
+    {
+      "id": "c24a9330-7232-42c2-a0b3-93595097f3c3",
+      "class": "Room",
+      "createdTime": "2020-05-05T11:09:33.957Z",
+      "updatedTime": "2020-10-05T09:26:22.610Z",
+      "hasAlias": [
+        {
+          "id": "https://proptechos.com/Test2",
+          "isMemberOfAliasNamespace": "22931095-3167-4d9a-9c61-f5d4e9c96931"
+        }
+      ],
+      "comment": {},
+      "littera": "Test-102",
+      "popularName": null,
+      "source": {
+        "updatedByAgent": "testuser3@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
+      "isPartOfStorey": "6266fb3a-c114-49b5-b373-2c094191cb69",
+      "roomType": "https://w3id.org/rec/building/SmallStudyRoom"
+    },
+    {
+      "id": "ef1dba9e-4ebb-4690-9930-d7b94954d1dc",
+      "class": "Room",
+      "createdTime": "2020-05-15T10:15:51.167Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "Test Room",
+      "popularName": null,
+      "source": {
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
+      "isPartOfStorey": "6e9eb263-7a63-4f69-97ca-99225c3aef0d",
+      "roomType": "https://w3id.org/rec/building/OfficeRoom"
+    },
+    {
+      "id": "a991de7a-cd4b-4c09-a159-37b9776fcbb9",
+      "class": "Room",
+      "createdTime": "2020-05-15T10:15:51.657Z",
+      "updatedTime": "2020-06-11T12:04:20.337Z",
+      "hasAlias": [],
+      "comment": {
+        "test": "testComment"
+      },
+      "littera": "Test Room",
+      "popularName": null,
+      "source": {
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
+      "isPartOfStorey": "2411952e-dca4-4c26-bfa6-7ab2931f0610",
+      "roomType": "https://w3id.org/rec/building/DataServerRoom"
+    },
+    {
+      "id": "e602e2c4-73f2-49e2-9500-6b3e19d699ff",
+      "class": "Room",
+      "createdTime": "2020-05-15T11:52:39.410Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "Test Room",
+      "popularName": null,
+      "source": {
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
+      "isPartOfStorey": "b29c32a3-60f7-479d-9947-17697b7af9d4",
+      "roomType": "https://w3id.org/rec/building/OfficeRoom"
+    },
+    {
+      "id": "4f03144d-34ad-40ca-952e-53a549a939c1",
+      "class": "Room",
+      "createdTime": "2020-05-15T11:52:39.733Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "Test Room",
+      "popularName": null,
+      "source": {
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
+      "isPartOfStorey": "5afebc06-20c7-4fb7-bfa9-c20cf4bbf596",
+      "roomType": "https://w3id.org/rec/building/DataServerRoom"
+    },
+    {
+      "id": "d60c67c9-39c2-4fd1-b294-45406d51ee6f",
+      "class": "Room",
+      "createdTime": "2020-05-27T11:27:30.093Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "TestMSRoom",
+      "popularName": "TestMSRoom",
+      "source": {
+        "createdByAgent": "testuser4@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "34736694-d52e-4fc9-b906-90ea69c1569e",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0.0;0.0;0",
+      "isPartOfStorey": "e375c920-fa1d-4ce4-ad9a-5f9a3d975e01",
+      "roomType": "https://w3id.org/rec/building/DataServerRoom"
+    },
+    {
+      "id": "a19bda51-babe-450c-91ae-922e45549d21",
+      "class": "Room",
+      "createdTime": "2020-06-04T13:31:37.590Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "test",
+      "popularName": null,
+      "source": {
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "bb21c959-4b73-4a73-93ca-ec2a94b09f94",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0.0;0.0;0.0",
+      "isPartOfStorey": "9f249534-c69c-4a2c-bc3b-ea35f4ce3ead",
+      "roomType": null
+    },
+    {
+      "id": "0f6ff21a-c99d-4242-9f95-eda4c49eaf69",
+      "class": "Room",
+      "createdTime": "2020-06-04T14:19:57.177Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "test",
+      "popularName": null,
+      "source": {
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "bb21c959-4b73-4a73-93ca-ec2a94b09f94",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0.0;0.0;0.0",
+      "isPartOfStorey": "9f249534-c69c-4a2c-bc3b-ea35f4ce3ead",
+      "roomType": null
+    },
+    {
+      "id": "dacb4592-f199-469f-b996-259f6da09000",
+      "class": "Room",
+      "createdTime": "2020-07-06T13:55:39.797Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "Test001",
+      "popularName": "Tre Kronor",
+      "source": {
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0;0;22.22",
+      "isPartOfStorey": "b29c32a3-60f7-479d-9947-17697b7af9d4",
+      "roomType": null
+    },
+    {
+      "id": "5a44699b-71b9-47e2-970f-2d199e3cb33f",
+      "class": "Room",
+      "createdTime": "2020-07-06T13:55:39.997Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "Test002",
+      "popularName": "Trean",
+      "source": {
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0;0;22.22",
+      "isPartOfStorey": "b29c32a3-60f7-479d-9947-17697b7af9d4",
+      "roomType": null
+    },
+    {
+      "id": "7f950a51-cbcf-474f-a7e9-3979377c97a3",
+      "class": "Room",
+      "createdTime": "2020-07-06T13:55:39.970Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "Test003",
+      "popularName": "Trefasen",
+      "source": {
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0;0;22.22",
+      "isPartOfStorey": "b29c32a3-60f7-479d-9947-17697b7af9d4",
+      "roomType": null
+    },
+    {
+      "id": "9f2a11c5-b0a2-4241-ae09-4956b9dd33f9",
+      "class": "Room",
+      "createdTime": "2020-07-27T13:45:50.770Z",
+      "updatedTime": "2020-07-27T14:27:46.920Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "room1",
+      "popularName": "room1",
+      "source": {
+        "updatedByAgent": "testuser3@idunrealestate.com",
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "e6cc296b-f5c3-412a-9963-395d25f20de0",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0.0;0.0;0",
+      "isPartOfStorey": "c4cb99a3-d569-4966-9571-1a4d9c255959",
+      "roomType": "https://w3id.org/rec/building/OfficeRoom"
+    },
+    {
+      "id": "f9f532be-1969-49f1-ae64-a46d0964452a",
+      "class": "Room",
+      "createdTime": "2020-07-29T09:53:03.343Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "room2",
+      "popularName": "room2",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "e6cc296b-f5c3-412a-9963-395d25f20de0",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "0.0;0.0;0",
+      "isPartOfStorey": "c4cb99a3-d569-4966-9571-1a4d9c255959",
+      "roomType": null
+    },
+    {
+      "id": "ea745919-ff01-407c-9990-76b1940457a4",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:13.097Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1101",
+      "popularName": "SPRINKLERRUM",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-27.02;52.97;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/UtilitiesRoom"
+    },
+    {
+      "id": "92b529bb-d6ff-4ddd-a3d9-493e9f0100c9",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:13.167Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1102",
+      "popularName": "VVS-TEKNISK UTRUSTNING",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-26.69;43.90;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/UtilitiesRoom"
+    },
+    {
+      "id": "4930d3d0-f71f-412d-9571-6575401e334b",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:13.240Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1199",
+      "popularName": "TRAPPA C",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-26.19;49.69;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Stairwell"
+    },
+    {
+      "id": "5ea0c92c-dfc3-4c79-b405-a165b2d7c1e4",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:13.310Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1103",
+      "popularName": "HMR",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-22.93;40.69;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/ElevatorRoom"
+    },
+    {
+      "id": "29ceac25-3fcc-437b-b51d-db9c5c379611",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:13.393Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1412",
+      "popularName": "HMR",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-22.73;39.76;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/ElevatorRoom"
+    },
+    {
+      "id": "7b0ce096-e63d-4b7b-939b-ead1b9d5e634",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:13.457Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "01.01:1302",
+      "popularName": "BR LEKSAKER LAGER/PERSONALYTOR",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "94.20;25.07;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    },
+    {
+      "id": "4a3c9edb-7279-4036-9610-2c1451d3a2b9",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:13.523Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:2105",
+      "popularName": "FÖRRÅD VAKANT",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-21.11;6.99;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    },
+    {
+      "id": "d04f349d-0391-40c3-9fad-a20915b390e6",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:13.593Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:2199",
+      "popularName": "TRAPPA D",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-20.29;10.99;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Stairwell"
+    },
+    {
+      "id": "1177d33a-435a-4537-ac21-92495249fd36",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:13.667Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1409",
+      "popularName": "WC",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-20.09;31.97;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Toilet"
+    },
+    {
+      "id": "e066e9bf-5bca-49bd-a7dc-9f2140672d10",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:13.737Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "01.01:1303",
+      "popularName": "PAUSRUM D",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "91.03;29.27;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/RestingRoom"
+    },
+    {
+      "id": "b33994ce-1421-4095-9137-61ddb35d13ed",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:13.910Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1413",
+      "popularName": "KORRIDOR",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-19.94;29.02;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Hallway"
+    },
+    {
+      "id": "4f719199-9a4b-4995-9a74-54a2aadccf95",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:13.990Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1407",
+      "popularName": "STÄD",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-19.07;30.31;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/CleaningRoom"
+    },
+    {
+      "id": "91ec634a-5009-4fb6-ba71-303ce2d6a572",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:13.950Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1406",
+      "popularName": "FÖRRÅD/LAGER",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-19.90;27.62;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    },
+    {
+      "id": "ce9c1a23-adef-44d7-aa25-5a4dda9751a3",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:14.027Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1405",
+      "popularName": "FÖRRÅD/LAGER",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-16.77;25.75;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    },
+    {
+      "id": "d9905491-b03a-4560-a950-793e4adc4fbd",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:14.097Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "01.01:2206",
+      "popularName": "EL-GIGANTEN LAGER",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "93.60;20.21;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    },
+    {
+      "id": "56de6bd2-3b1e-49d3-b02a-9d7e9ae95d1b",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:14.167Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1411",
+      "popularName": "STÄLLVERKS-RUM",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-19.69;39.76;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/ElectricityRoom"
+    },
+    {
+      "id": "99929527-9196-439b-b59c-3305c41b9e00",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:14.240Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "HISS NR 5",
+      "popularName": "HISS",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-19.69;42.51;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/ElevatorShaft"
+    },
+    {
+      "id": "daef2d1a-f029-4af9-935a-d9acc523cc59",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:14.310Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1409",
+      "popularName": "KPR",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-19.22;31.60;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/CloakRoom"
+    },
+    {
+      "id": "b44b9143-5b29-4620-90e0-14deea2a4d1e",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:14.397Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1415",
+      "popularName": "FÖRRÅD JENSENS",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-16.74;21.77;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    },
+    {
+      "id": "2af7925f-c2fc-40ad-a1dd-ef4ec96fa42e",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:14.457Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:2103",
+      "popularName": "JENSENS",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-16.72;15.10;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/RetailRoom"
+    },
+    {
+      "id": "5e696b1f-bbf4-45c2-b57f-97f32a0bb114",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:14.707Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "HISS NR 4",
+      "popularName": "HISS",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-16.27;41.54;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/ElevatorShaft"
+    },
+    {
+      "id": "62a029dc-52b9-4d1a-b1bd-c342ca336ecf",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:14.777Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:2106",
+      "popularName": "FÖRRÅD VAKANT",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-16.04;6.94;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    },
+    {
+      "id": "49ee206a-0350-43d6-a9fd-239dfa42d7f6",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:14.953Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:2101",
+      "popularName": "TELIA VÄXELSTATION",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-15.54;19.00;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/TelecommunicationRoom"
+    },
+    {
+      "id": "4fadbaa1-5b61-412b-975f-fbc99d4e1fa2",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:14.923Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1403",
+      "popularName": "SLUSS",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-15.51;39.36;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Hallway"
+    },
+    {
+      "id": "db999e40-233c-4369-999c-9c409ba3394b",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:14.993Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:2107",
+      "popularName": "FÖRRÅD VAKANT",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-14.49;12.29;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    },
+    {
+      "id": "9e9999a9-0777-493a-93a3-93439ac1102f",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:15.067Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1402",
+      "popularName": "CUBUS LAGER",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-14.49;39.03;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    },
+    {
+      "id": "9fd91991-d129-4f51-b696-9c619976a605",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:15.137Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1404",
+      "popularName": "CUBUS",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-13.92;31.66;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/RetailRoom"
+    },
+    {
+      "id": "9e21fd45-15a9-404c-9bd6-3ec273dfdfd7",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:15.207Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1199",
+      "popularName": "TRAPPA E",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-13.61;42.74;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Stairwell"
+    },
+    {
+      "id": "949a90fa-d33e-475e-aba1-47619f4dee25",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:15.297Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:2109",
+      "popularName": "FÖRRÅD VAKANT",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-12.02;6.92;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    },
+    {
+      "id": "77179e9f-ef4e-47b4-bd99-23279ef0d95e",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:15.357Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1104",
+      "popularName": "LASTGATA",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-11.97;56.49;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/ServiceShaft"
+    },
+    {
+      "id": "4297626f-af51-471d-9503-5576a0544440",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:15.427Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "02.01:1105",
+      "popularName": "GBG ENERGI HÖGSPÄNNING TRANSFORMATORRUM",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "19.17;56.97;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/ElectricityRoom"
+    },
+    {
+      "id": "4f2209d1-6ba6-4c99-9a09-3cb6aa95bdbb",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:15.500Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1401",
+      "popularName": "PASSAGE",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-9.55;39.59;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Hallway"
+    },
+    {
+      "id": "4965cc25-7afb-4074-9dc1-ba2f20cd74a5",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:15.573Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:2209",
+      "popularName": "FÖRRÅD KPMG",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-9.24;16.77;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    },
+    {
+      "id": "4ce03a33-01d5-4902-9b05-cd2adbffc954",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:15.643Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1106",
+      "popularName": "VALV",
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI"
+      },
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": "-9.57;41.97;0.00",
+      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 50,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalElements": 2393,
+  "totalPages": 49,
+  "last": false,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "size": 50,
+  "number": 0,
+  "numberOfElements": 50,
+  "first": true,
+  "empty": false
+}
