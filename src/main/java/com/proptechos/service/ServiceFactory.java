@@ -10,10 +10,12 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ServiceFactory {
 
   private final String baseAppUrl;
+  private final String clientId;
   private final Map<String, Object> services;
 
-  public ServiceFactory(String baseAppUrl) {
+  public ServiceFactory(String baseAppUrl, String clientId) {
     this.baseAppUrl = baseAppUrl;
+    this.clientId = clientId;
     this.services = new ConcurrentHashMap<>();
   }
 
@@ -84,7 +86,7 @@ public class ServiceFactory {
    */
   public ActuatorService actuatorService() {
     return (ActuatorService) this.services.computeIfAbsent(
-        ActuatorService.class.getSimpleName(), k -> new ActuatorService(baseAppUrl));
+        ActuatorService.class.getSimpleName(), k -> new ActuatorService(baseAppUrl, clientId));
   }
 
   /**

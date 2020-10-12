@@ -99,7 +99,7 @@ public class JsonHttpClient {
     }
   }
 
-  public <T> T createObject(Class<T> clazz, String endpoint, T object) throws ProptechOsServiceException {
+  public <T> T createObject(Class<T> clazz, String endpoint, Object object) throws ProptechOsServiceException {
     try {
       CloseableHttpResponse response = client.execute(httpPost(endpoint, object));
       return responseHandler.handleResponse(clazz, response);
@@ -108,7 +108,7 @@ public class JsonHttpClient {
     }
   }
 
-  public <T> T updateObject(Class<T> clazz, String endpoint, T object) throws ProptechOsServiceException {
+  public <T> T updateObject(Class<T> clazz, String endpoint, Object object) throws ProptechOsServiceException {
     try {
       CloseableHttpResponse response = client.execute(httpPut(endpoint, object));
       return responseHandler.handleResponse(clazz, response);

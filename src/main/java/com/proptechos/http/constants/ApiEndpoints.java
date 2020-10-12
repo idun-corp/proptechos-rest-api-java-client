@@ -9,6 +9,7 @@ public interface ApiEndpoints {
   String ROOM_JSON = "/json/room";
   String DEVICE_JSON = "/json/device";
   String ACTUATOR_JSON = "/json/actuator";
+  String ACTUATION_JSON = "/json/actuator/%s/actuation";
   String SENSOR_JSON = "/json/sensor";
   String OBSERVATION_JSON = "/sensor/%s/observation";
   String LATEST_OBSERVATION_JSON = "/sensor/%s/observation/latest";

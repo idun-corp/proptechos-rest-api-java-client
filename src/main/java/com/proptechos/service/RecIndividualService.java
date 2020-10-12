@@ -1,6 +1,7 @@
 package com.proptechos.service;
 
 import static com.proptechos.http.constants.ApiEndpoints.BUILDING_COMPONENT_CLASS_JSON;
+import static com.proptechos.http.constants.ApiEndpoints.DEVICE_FUNCTION_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.MEASUREMENT_UNIT_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.PLACEMENT_CONTEXT_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.QUANTITY_KIND_JSON;
@@ -8,6 +9,7 @@ import static com.proptechos.http.constants.ApiEndpoints.ROOM_TYPE_JSON;
 
 import com.proptechos.http.JsonHttpClient;
 import com.proptechos.model.definitions.BuildingComponentClass;
+import com.proptechos.model.definitions.DeviceFunctionType;
 import com.proptechos.model.definitions.MeasurementUnit;
 import com.proptechos.model.definitions.PlacementContext;
 import com.proptechos.model.definitions.QuantityKind;
@@ -20,6 +22,10 @@ public class RecIndividualService {
 
   RecIndividualService(String baseAppUrl) {
     this.httpClient = JsonHttpClient.getInstance(baseAppUrl);
+  }
+
+  public List<DeviceFunctionType> getDeviceFunctionTypes() {
+    return httpClient.getList(DeviceFunctionType.class, DEVICE_FUNCTION_JSON);
   }
 
   public List<MeasurementUnit> getMeasurementUnits() {

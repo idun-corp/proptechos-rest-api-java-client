@@ -48,7 +48,9 @@ public class ProptechOsClient {
   }
 
   private ProptechOsClient(ApplicationClientBuilder applicationClientBuilder) {
-    this.serviceFactory = new ServiceFactory(applicationClientBuilder.baseAppUrl);
+    this.serviceFactory = new ServiceFactory(
+        applicationClientBuilder.baseAppUrl,
+        applicationClientBuilder.config.getClientId());
     initCloudLogin(applicationClientBuilder.baseAppUrl, applicationClientBuilder);
   }
 
