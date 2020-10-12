@@ -10,6 +10,7 @@ import static com.proptechos.http.constants.HttpStatus.NOT_FOUND;
 import static com.proptechos.http.constants.HttpStatus.OK;
 import static com.proptechos.http.constants.HttpStatus.SERVICE_UNAVAILABLE;
 
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proptechos.exception.EntityNotFoundException;
@@ -19,8 +20,8 @@ import com.proptechos.exception.ServiceInvalidUsageException;
 import com.proptechos.exception.ServiceUnavailableException;
 import com.proptechos.exception.TypeConvertException;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -54,7 +55,20 @@ public class ResponseHandler {
         Objects.nonNull(httpResponse.getFirstHeader("content-type")) ?
             getStringEntity(httpResponse) : "[]";
     if (status == OK) {
-      return (List<T>) parseEntityCollection(List.class, clazz, stringEntity);
+      return parseEntityList(clazz, stringEntity);
+    }
+    handleNonSuccessResponse(status, stringEntity);
+    throw new ServiceUnavailableException("Service unavailable. Please try later.");
+  }
+
+  public <K,V> Map<K,V> handleMapResponse(Class<K> keyClass, Class<V> valueClass,
+      CloseableHttpResponse httpResponse) throws ProptechOsServiceException {
+    int status = httpResponse.getStatusLine().getStatusCode();
+    String stringEntity =
+        Objects.nonNull(httpResponse.getFirstHeader("content-type")) ?
+            getStringEntity(httpResponse) : "{}";
+    if (status == OK) {
+      return parseEntityMap(keyClass, valueClass, stringEntity);
     }
     handleNonSuccessResponse(status, stringEntity);
     throw new ServiceUnavailableException("Service unavailable. Please try later.");
@@ -99,14 +113,26 @@ public class ResponseHandler {
     }
   }
 
-  private <T> Collection<T> parseEntityCollection(
-      Class<? extends Collection> collectionClazz, Class<T> clazz, String entities) {
+  private <T> List<T> parseEntityList(Class<T> clazz, String entities) {
     try {
+      JavaType entityType = mapper.constructType(clazz);
       return mapper.readValue(entities,
-          mapper.getTypeFactory().constructCollectionType(collectionClazz, clazz));
+          mapper.getTypeFactory().constructCollectionType(List.class, entityType));
     } catch (IOException e) {
       throw new TypeConvertException(
           "Failed to convert ProptechOS service collection response to datatype " + clazz.getName(), e);
+    }
+  }
+
+  private <K,V> Map<K,V> parseEntityMap(Class<K> keyClass, Class<V> valueClass, String entities) {
+    try {
+      JavaType keyType = mapper.constructType(keyClass);
+      JavaType valueType = mapper.constructType(valueClass);
+      return mapper.readValue(entities,
+          mapper.getTypeFactory().constructMapType(Map.class, keyType, valueType));
+    } catch (IOException e) {
+      throw new TypeConvertException(
+          "Failed to convert ProptechOS service map response to datatype " + valueClass.getName(), e);
     }
   }
 

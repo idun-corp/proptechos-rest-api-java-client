@@ -10,6 +10,9 @@ public interface ApiEndpoints {
   String DEVICE_JSON = "/json/device";
   String ACTUATOR_JSON = "/json/actuator";
   String SENSOR_JSON = "/json/sensor";
+  String OBSERVATION_JSON = "/sensor/%s/observation";
+  String LATEST_OBSERVATION_JSON = "/sensor/%s/observation/latest";
+  String LATEST_OBSERVATIONS_JSON = "/sensor/observations/latest";
   String ACTUATION_INTERFACE_JSON = "/json/actuationinterface";
   String ALIAS_NAMESPACE_JSON = "/json/aliasnamespace";
 
