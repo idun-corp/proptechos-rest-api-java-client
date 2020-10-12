@@ -72,10 +72,11 @@ public class JsonHttpClient {
     }
   }
 
-  public <T> List<T> getList(Class<T> clazz, String endpoint) throws ProptechOsServiceException {
+  public <T> List<T> getList(Class<T> clazz, String endpoint, IQueryFilter...queryFilters)
+      throws ProptechOsServiceException {
     try {
       CloseableHttpResponse response =
-          client.execute(httpGet(endpoint));
+          client.execute(httpGet(endpoint + buildQueryParams(queryFilters)));
       return responseHandler.handleListResponse(clazz, response);
     } catch (IOException e) {
       throw new ServiceInvalidUsageException(e.getMessage(), e);

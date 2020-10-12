@@ -3,6 +3,12 @@ package com.proptechos.service.filters;
 import com.proptechos.http.query.IQueryFilter;
 import com.proptechos.http.query.QueryParam;
 
+/**
+ * PageNumberFilter class for filtering by page number
+ *
+ * @apiNote Example: '10' - Applicable only to PagedService
+ *
+ */
 public class PageNumberFilter implements IQueryFilter {
 
   private final long pageNumber;

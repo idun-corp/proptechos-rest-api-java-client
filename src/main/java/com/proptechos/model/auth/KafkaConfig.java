@@ -6,7 +6,9 @@ import java.util.Properties;
 import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.config.SaslConfigs;
+import org.apache.kafka.common.serialization.Serdes;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.apache.kafka.streams.StreamsConfig;
 
 /**
  * KafkaConfig represents configuration data used to coonect kafka enabled Azure eventhub
@@ -37,6 +39,20 @@ public class KafkaConfig {
     props.setProperty(SaslConfigs.SASL_JAAS_CONFIG, builder.saslJaasConfig);
     props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
     props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, ObservationDeserializer.class.getName());
+    return props;
+  }
+
+  public Properties getStreamConfigMap() {
+    Properties props = new Properties();
+    props.setProperty(StreamsConfig.APPLICATION_ID_CONFIG, "Some app id");
+    props.setProperty(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, builder.bootstrapServer);
+    props.setProperty(ConsumerConfig.GROUP_ID_CONFIG, builder.groupId);
+    props.setProperty(StreamsConfig.REQUEST_TIMEOUT_MS_CONFIG, String.valueOf(builder.requestTimeout));
+    props.setProperty(StreamsConfig.SECURITY_PROTOCOL_CONFIG, builder.securityProtocol);
+    props.setProperty(SaslConfigs.SASL_MECHANISM, builder.saslMechanism);
+    props.setProperty(SaslConfigs.SASL_JAAS_CONFIG, builder.saslJaasConfig);
+    props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
+    props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
     return props;
   }
 

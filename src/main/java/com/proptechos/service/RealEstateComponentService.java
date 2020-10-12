@@ -4,6 +4,11 @@ import static com.proptechos.http.constants.ApiEndpoints.REAL_ESTATE_COMPONENT_J
 
 import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.Building;
+import com.proptechos.model.Point;
+import com.proptechos.service.filters.DistanceFilter;
+import com.proptechos.service.filters.LatitudeFilter;
+import com.proptechos.service.filters.LongitudeFilter;
+import java.util.List;
 import java.util.UUID;
 
 public class RealEstateComponentService extends PagedService<Building> {
@@ -14,6 +19,13 @@ public class RealEstateComponentService extends PagedService<Building> {
 
   public Building getById(UUID id) throws ProptechOsServiceException {
     return httpClient.getById(Building.class, REAL_ESTATE_COMPONENT_JSON, id);
+  }
+
+  public List<Building> getBuildingsInRange(Point point) {
+    return httpClient.getList(Building.class, REAL_ESTATE_COMPONENT_JSON + "/inrange",
+        new LatitudeFilter(point.getLatitude()),
+        new LongitudeFilter(point.getLongitude()),
+        new DistanceFilter(point.getDistance()));
   }
 
   public Building createBuilding(Building building) throws ProptechOsServiceException {
