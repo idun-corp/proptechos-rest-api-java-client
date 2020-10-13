@@ -85,8 +85,16 @@
       <version>${jupiter-mock-server.version}</version>
       <scope>test</scope>
     </dependency>
-
   </dependencies>
+
+  <!-- FIXME -->
+  <!--<repositories>
+    <repository>
+      <id>github</id>
+      <name>GitHub IDUN Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/idun-corp/proptechos-rec-java-model</url>
+    </repository>
+  </repositories>-->
 
   <build>
     <resources>
