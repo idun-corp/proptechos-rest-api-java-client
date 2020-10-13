@@ -11,6 +11,7 @@ import static com.proptechos.utils.ValidationUtils.verifyPutRequest;
 import static org.mockserver.model.HttpRequest.request;
 import static org.mockserver.model.HttpResponse.response;
 
+import com.proptechos.model.Point;
 import com.proptechos.model.RealEstate;
 import com.proptechos.model.common.Paged;
 import com.proptechos.utils.DataLoader;
@@ -29,6 +30,7 @@ import org.mockserver.model.Parameter;
 public class RealEstateServiceTest extends BaseServiceTest {
 
   private static final String PAGED_DATA = DataLoader.loadPagedRealEstates();
+  private static final String LIST_DATA = DataLoader.loadRealEstateList();
   private static final String TEST_RE_ID = "1b5d06c9-9f43-46b0-93f4-e9e5d9e3c972";
   private static final RealEstate TEST_RE = buildRealEstate();
 
@@ -48,6 +50,8 @@ public class RealEstateServiceTest extends BaseServiceTest {
   void clearMockServer() {
     client.clear(
         request().withPath(APP_CONTEXT + REAL_ESTATE_JSON));
+    client.clear(
+        request().withPath(APP_CONTEXT + REAL_ESTATE_JSON + "/inrange"));
     client.clear(
         request().withPath(APP_CONTEXT + REAL_ESTATE_JSON + "/" + TEST_RE_ID));
   }
@@ -103,6 +107,18 @@ public class RealEstateServiceTest extends BaseServiceTest {
     verifyGetRequest(client, REAL_ESTATE_JSON,
         Parameter.param("page", "1"),
         Parameter.param("size", "15"));
+  }
+
+  @Test
+  void testGetInRange() {
+    client.when(getRequest(REAL_ESTATE_JSON + "/inrange")).respond(okResponse(LIST_DATA));
+
+    realEstateService.getRealEstatesInRange(new Point(59, 18, 100));
+
+    verifyGetRequest(client, REAL_ESTATE_JSON + "/inrange",
+        Parameter.param("lat", "59.0"),
+        Parameter.param("lon", "18.0"),
+        Parameter.param("dist", "100.0"));
   }
 
   @Test

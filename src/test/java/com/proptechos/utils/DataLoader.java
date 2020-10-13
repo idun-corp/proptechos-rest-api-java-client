@@ -12,12 +12,20 @@ public class DataLoader {
     return loadData("data/realestate/paged.json");
   }
 
+  public static String loadRealEstateList() {
+    return loadData("data/realestate/list.json");
+  }
+
   public static String loadSingleRealEstate() {
     return loadData("data/realestate/single.json");
   }
 
   public static String loadPagedBuildings() {
     return loadData("data/building/paged.json");
+  }
+
+  public static String loadBuildingList() {
+    return loadData("data/building/list.json");
   }
 
   public static String loadSingleBuilding() {
@@ -86,6 +94,30 @@ public class DataLoader {
 
   public static String loadSingleAliasNamespace() {
     return loadData("data/aliasnamespace/single.json");
+  }
+
+  public static String loadDeviceFunctions() {
+    return loadData("data/recindividuals/devicefunctiontypes.json");
+  }
+
+  public static String loadPlacementContexts() {
+    return loadData("data/recindividuals/placementcontexts.json");
+  }
+
+  public static String loadMeasurementUnits() {
+    return loadData("data/recindividuals/measurementunits.json");
+  }
+
+  public static String loadQuantityKinds() {
+    return loadData("data/recindividuals/qauntitykinds.json");
+  }
+
+  public static String loadBuildingComponentClasses() {
+    return loadData("data/recindividuals/buildingcomponentclasses.json");
+  }
+
+  public static String loadRoomTypes() {
+    return loadData("data/recindividuals/roomtypes.json");
   }
 
   private static String loadData(String dataFile) {

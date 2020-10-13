@@ -1,0 +1,144 @@
+[
+  {
+    "id": "cbe9abf1-23de-4eb2-a12e-06d69ff00e02",
+    "class": "Building",
+    "createdTime": "2019-05-24T13:27:19.000Z",
+    "updatedTime": "2020-09-07T10:56:21.773Z",
+    "hasAlias": [
+      {
+        "id": "https://ns.proptechos.com/test-1/593-001",
+        "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+      }
+    ],
+    "comment": {},
+    "littera": "593 001-Gamen 12 (Skrapan)",
+    "popularName": "Byggnad 001",
+    "source": {
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "updatedByApp": "RecAPI"
+    },
+    "isPartOfRealEstate": "9fc5b695-dd19-40c6-9225-93ecf92ecd7f",
+    "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+  },
+  {
+    "id": "9c615b9b-6b31-4ad2-919c-97661077b001",
+    "class": "Building",
+    "createdTime": "2019-05-24T13:27:19.000Z",
+    "updatedTime": "2020-09-07T10:56:21.903Z",
+    "hasAlias": [
+      {
+        "id": "https://ns.proptechos.com/test-1/14030-001",
+        "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+      }
+    ],
+    "comment": {},
+    "littera": "14030 001-Uggleborg 12 (Klara C)",
+    "popularName": "Byggnad 001",
+    "source": {
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "updatedByApp": "RecAPI"
+    },
+    "isPartOfRealEstate": "59abaa99-6304-4600-ab7f-251de3f6c602",
+    "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+  },
+  {
+    "id": "e449de55-1df0-46e7-bcb9-9df7e4a7a374",
+    "class": "Building",
+    "createdTime": "2019-05-24T13:27:19.000Z",
+    "updatedTime": "2020-09-07T10:56:21.990Z",
+    "hasAlias": [
+      {
+        "id": "https://ns.proptechos.com/test-1/14045-001",
+        "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+      }
+    ],
+    "comment": {},
+    "littera": "14045-001",
+    "popularName": "Byggnad 001",
+    "source": {
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "updatedByApp": "RecAPI"
+    },
+    "isPartOfRealEstate": "71a359dd-60f3-45aa-b5af-9d95dfa4a49f",
+    "hasGeoReferenceOrigo": "0.0;0.0;10.0"
+  },
+  {
+    "id": "90a21909-9c19-4f06-9b5e-7c77293e3593",
+    "class": "Building",
+    "createdTime": "2019-05-24T13:27:19.000Z",
+    "updatedTime": "2020-09-10T17:57:36.147Z",
+    "hasAlias": [
+      {
+        "id": "https://ns.proptechos.com/test-1/595-001",
+        "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+      }
+    ],
+    "comment": {},
+    "littera": "595-001",
+    "popularName": "Byggnad 001",
+    "source": {
+      "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
+      "updatedByApp": "RecAPI"
+    },
+    "isPartOfRealEstate": "ef21c32d-52e6-4c6d-b2c6-3b9ca34e325f",
+    "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+  },
+  {
+    "id": "5da99f7f-b240-475d-90de-96d905627d76",
+    "class": "Building",
+    "createdTime": "2019-05-24T13:27:19.000Z",
+    "updatedTime": "2020-09-10T17:59:04.137Z",
+    "hasAlias": [
+      {
+        "id": "https://ns.proptechos.com/test-1/14232-001",
+        "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+      }
+    ],
+    "comment": {},
+    "littera": "14232-001",
+    "popularName": "Byggnad 001",
+    "source": {
+      "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
+      "updatedByApp": "RecAPI"
+    },
+    "isPartOfRealEstate": "e7219cd0-a7f1-4923-9e63-74d71da3e20b",
+    "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+  },
+  {
+    "id": "9149a429-461b-4aca-9c5e-f07a44badad3",
+    "class": "Building",
+    "createdTime": "2019-05-24T13:27:19.000Z",
+    "updatedTime": "2020-09-10T17:59:09.943Z",
+    "hasAlias": [],
+    "comment": {},
+    "littera": "14532-001",
+    "popularName": "Byggnad 001",
+    "source": {
+      "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
+      "updatedByApp": "RecAPI"
+    },
+    "isPartOfRealEstate": "5637fc61-f6aa-4239-93a0-fa23faa969e6",
+    "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+  },
+  {
+    "id": "dbc543c9-c0f3-49ac-9cd3-69f75dd6e1d1",
+    "class": "Building",
+    "createdTime": "2019-05-24T13:27:19.000Z",
+    "updatedTime": "2020-09-07T10:56:23.453Z",
+    "hasAlias": [
+      {
+        "id": "https://ns.proptechos.com/test-1/14549-001",
+        "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+      }
+    ],
+    "comment": {},
+    "littera": "14549-001",
+    "popularName": "Byggnad 001",
+    "source": {
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "updatedByApp": "RecAPI"
+    },
+    "isPartOfRealEstate": "9717924d-4ac3-4b92-ae77-97e34ebfd1f7",
+    "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+  }
+]
