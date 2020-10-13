@@ -9,8 +9,7 @@ To start using SDK library instance of _**ProptechOsClient**_ should be initiali
 ProptechOsClient.applicationClientBuilder(""<BASE_API_URL>")
     .authConfig(AuthenticationConfig.builder()
             .clientId("<APP_CLIENT_ID>")
-            .clientSecret("<APP_CLIENT_SECRET>")
-            .authority("<AZURE_LOGIN_URL>").build()).build();
+            .clientSecret("<APP_CLIENT_SECRET>").build()).build();
 ```
 
 Properties definitions:
@@ -85,15 +84,29 @@ public class ClassFilter implements IQueryFilter {
 }
 ```
 
+#### Obtaining sensor observations
+``` java
+sensorService.getLatestObservationBySensorId(UUID.fromString("<SENSOR_ID>"));
+
+sensorService.getObservationsBySensorIdForPeriod(
+        UUID.fromString("<SENSOR_ID>"),
+        Instant.now().minus(10, ChronoUnit.DAYS), Instant.now())
+```
+#### Sending actuation request
+``` java
+actuatorService.sendActuationRequest(
+        UUID.fromString("<ACTUATOR_ID>"), "<PAYLOAD_VALUE>");
+```
+
 ### Access to StreamingApiService:
 In order to obtain access to StreamingApiService, KafkaConfig data should be provided
 
 ``` java
 StreamingApiService streamingApiService = 
     client.serviceFactory().streamingApiService(KafkaConfig.builder()
-            .topic("<EVENTHUB_NAME>")
-            .bootstrapServer("<BOOSTRAP_SERVER>")
-            .connectionString("<EVENTHUB_CONNECTION_STRING>")
+            .eventHub("<EVENTHUB_NAME>")
+            .eventHubNamespace("<EVENTHUB_NAMESPACE>")
+            .sharedAccessKey("<SHARED_ACCESS_KEY>")
             .build());
 ```
 
@@ -101,6 +114,6 @@ Properties definitions:
 
 ``` properties
 EVENTHUB_NAME - Azure kafka enebled eventhub name;
-BOOSTRAP_SERVER - Bootstrap server to connect to 'test.servicebus.windows.net:9093';
-EVENTHUB_CONNECTION_STRING - Azure eventhub connection string;
+EVENTHUB_NAMESPACE - Azure eventhub namespace;
+EVENTHUB_CONNECTION_STRING - Azure eventhub namespace shared access key to connect to;
 ```
