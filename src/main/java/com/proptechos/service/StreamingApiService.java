@@ -22,8 +22,8 @@ public class StreamingApiService {
     this.builder = new StreamsBuilder();
   }
 
-  public KafkaStreams subscribe(Consumer<String> onNext) {
-    KStream<String, String> telemetry = builder.stream(kafkaConfig.getTopic());
+  public KafkaStreams subscribe(Consumer<Observation> onNext) {
+    KStream<String, Observation> telemetry = builder.stream(kafkaConfig.getTopic());
     telemetry.foreach((key, observation) -> onNext.accept(observation));
     KafkaStreams streams = new KafkaStreams(builder.build(), kafkaConfig.getConfigMap());
     streams.start();

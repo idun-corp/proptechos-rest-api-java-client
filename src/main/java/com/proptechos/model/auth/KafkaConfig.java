@@ -1,12 +1,11 @@
 package com.proptechos.model.auth;
 
-import com.proptechos.utils.ObservationDeserializer;
+import com.proptechos.utils.ObservationSerde;
 import java.util.Objects;
 import java.util.Properties;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.config.SaslConfigs;
 import org.apache.kafka.common.serialization.Serdes;
-import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.streams.StreamsConfig;
 
 /**
@@ -35,7 +34,7 @@ public class KafkaConfig {
     props.setProperty(SaslConfigs.SASL_MECHANISM, builder.saslMechanism);
     props.setProperty(SaslConfigs.SASL_JAAS_CONFIG, builder.saslJaasConfig);
     props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
-    props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
+    props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, ObservationSerde.class);
     return props;
   }
 
