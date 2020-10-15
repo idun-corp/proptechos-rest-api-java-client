@@ -3,6 +3,26 @@
 ProptechOS Rest API client to be used for calling ProptechOS API main CRUD operations.
 
 ## How to start:
+In order to include library as a dependency into pom.xml
+* ProptechOS maven repository:
+````xml
+<repositories>
+    <repository>
+      <id>ProptechOS-SDK</id>
+      <name>sdk-snapshot</name>
+      <url>https://idunrealestate.jfrog.io/artifactory/sdk-snapshot</url>
+    </repository>
+</repositories>
+````
+* Library dependency:
+````xml
+<dependency>
+    <groupId>com.proptechos</groupId>
+    <artifactId>proptechos-rest-api-java-client</artifactId>
+    <version>2.1.3-SNAPSHOT</version>
+</dependency>
+````
+## Start using ProptechOsClient:
 To start using SDK library instance of _**ProptechOsClient**_ should be initialized:
 
 ``` java
