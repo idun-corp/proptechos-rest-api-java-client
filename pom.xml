@@ -89,17 +89,17 @@
 
   <repositories>
     <repository>
-      <id>Jfrog</id>
-      <name>libs-snapshot</name>
-      <url>https://idunrealestate.jfrog.io/artifactory/libs-snapshot</url>
+      <id>ProptechOS-SDK</id>
+      <name>sdk-snapshot</name>
+      <url>https://idunrealestate.jfrog.io/artifactory/sdk-snapshot</url>
     </repository>
   </repositories>
 
   <distributionManagement>
     <repository>
-      <id>snapshots</id>
-      <name>libs-snapshot</name>
-      <url>https://idunrealestate.jfrog.io/artifactory/libs-snapshot</url>
+      <id>sdk-snapshots</id>
+      <name>sdk-snapshot</name>
+      <url>https://idunrealestate.jfrog.io/artifactory/sdk-snapshot</url>
     </repository>
   </distributionManagement>
 
