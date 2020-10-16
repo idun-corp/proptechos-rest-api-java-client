@@ -129,6 +129,15 @@ StreamingApiService streamingApiService =
             .sharedAccessKey("<SHARED_ACCESS_KEY>")
             .build());
 ```
+#### Subscribe to sensor telemetry stream
+````java
+KafkaStreams kStreams = 
+    streamingApiService.subscribe(Consumer<Observation> consumer);
+```` 
+Close stream
+````java
+kStreams.close();
+````
 
 Properties definitions:
 
