@@ -34,12 +34,10 @@ ProptechOsClient.applicationClientBuilder(""<BASE_API_URL>")
 
 Properties definitions:
 
-``` properties
-BASE_API_URL - base ProptechOS api url "https://test.proptechos.com";
-APP_CLIENT_ID - your application id registere in Azure Active Directory;
-APP_CLIENT_SECRET - your application secret generated in Azure Active Directory;
-AZURE_LOGIN_URL - Azure loging url "https://login.microsoftonline.com/tentant_id/"
-```
+* `BASE_API_URL` - base ProptechOS api url "https://test.proptechos.com"
+* `APP_CLIENT_ID` - your application id in ProptechOS (also the application ID registered in Azure Active Directory)
+* `APP_CLIENT_SECRET` - your application secret in ProptechOS (also the secret generated for your Azure Active Directory application)
+
 
 ## Working with ProptechOS Services
 
@@ -129,6 +127,14 @@ StreamingApiService streamingApiService =
             .sharedAccessKey("<SHARED_ACCESS_KEY>")
             .build());
 ```
+
+Properties definitions:
+* `EVENTHUB_NAME` - Azure kafka enebled eventhub name
+* `EVENTHUB_NAMESPACE` - Azure eventhub namespace
+* `EVENTHUB_CONNECTION_STRING` - Azure eventhub namespace shared access key to connect to
+
+You will get the necessary parameters from Idun.
+
 #### Subscribe to sensor telemetry stream
 ````java
 KafkaStreams kStreams = 
@@ -139,10 +145,4 @@ Close stream
 kStreams.close();
 ````
 
-Properties definitions:
 
-``` properties
-EVENTHUB_NAME - Azure kafka enebled eventhub name;
-EVENTHUB_NAMESPACE - Azure eventhub namespace;
-EVENTHUB_CONNECTION_STRING - Azure eventhub namespace shared access key to connect to;
-```
