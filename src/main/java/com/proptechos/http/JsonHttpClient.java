@@ -13,6 +13,8 @@ import com.proptechos.http.query.QueryBuilder;
 import com.proptechos.model.common.Paged;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpDelete;
@@ -53,8 +55,12 @@ public class JsonHttpClient {
   }
 
   public <T> T getById(Class<T> clazz, String endpoint, UUID uuid) throws ProptechOsServiceException {
+    return getSingle(clazz, endpoint + "/" + uuid);
+  }
+
+  public <T> T getSingle(Class<T> clazz, String endpoint) throws ProptechOsServiceException {
     try {
-      CloseableHttpResponse response = client.execute(httpGet(endpoint + "/" + uuid));
+      CloseableHttpResponse response = client.execute(httpGet(endpoint));
       return responseHandler.handleResponse(clazz, response);
     } catch (IOException e) {
       throw new ServiceInvalidUsageException(e.getMessage(), e);
@@ -71,7 +77,29 @@ public class JsonHttpClient {
     }
   }
 
-  public <T> T createObject(Class<T> clazz, String endpoint, T object) throws ProptechOsServiceException {
+  public <T> List<T> getList(Class<T> clazz, String endpoint, IQueryFilter...queryFilters)
+      throws ProptechOsServiceException {
+    try {
+      CloseableHttpResponse response =
+          client.execute(httpGet(endpoint + buildQueryParams(queryFilters)));
+      return responseHandler.handleListResponse(clazz, response);
+    } catch (IOException e) {
+      throw new ServiceInvalidUsageException(e.getMessage(), e);
+    }
+  }
+
+  public <K,V> Map<K,V> postRequestObject(Class<K> keyClass, Class<V> valueClass,
+      String endpoint, Object object) throws ProptechOsServiceException {
+    try {
+      CloseableHttpResponse response =
+          client.execute(httpPost(endpoint, object));
+      return responseHandler.handleMapResponse(keyClass, valueClass, response);
+    } catch (IOException e) {
+      throw new ServiceInvalidUsageException(e.getMessage(), e);
+    }
+  }
+
+  public <T> T createObject(Class<T> clazz, String endpoint, Object object) throws ProptechOsServiceException {
     try {
       CloseableHttpResponse response = client.execute(httpPost(endpoint, object));
       return responseHandler.handleResponse(clazz, response);
@@ -80,7 +108,7 @@ public class JsonHttpClient {
     }
   }
 
-  public <T> T updateObject(Class<T> clazz, String endpoint, T object) throws ProptechOsServiceException {
+  public <T> T updateObject(Class<T> clazz, String endpoint, Object object) throws ProptechOsServiceException {
     try {
       CloseableHttpResponse response = client.execute(httpPut(endpoint, object));
       return responseHandler.handleResponse(clazz, response);

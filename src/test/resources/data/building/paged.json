@@ -1,0 +1,327 @@
+{
+  "content": [
+    {
+      "id": "cbe9abf1-23de-4eb2-a12e-06d69ff00e02",
+      "class": "Building",
+      "createdTime": "2019-05-24T13:27:19.000Z",
+      "updatedTime": "2020-09-07T10:56:21.773Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/593-001",
+          "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+        }
+      ],
+      "comment": {},
+      "littera": "593 001-Gamen 12 (Skrapan)",
+      "popularName": "Byggnad 001",
+      "source": {
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "9fc5b695-dd19-40c6-9225-93ecf92ecd7f",
+      "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+    },
+    {
+      "id": "9c615b9b-6b31-4ad2-919c-97661077b001",
+      "class": "Building",
+      "createdTime": "2019-05-24T13:27:19.000Z",
+      "updatedTime": "2020-09-07T10:56:21.903Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/14030-001",
+          "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+        }
+      ],
+      "comment": {},
+      "littera": "14030 001-Uggleborg 12 (Klara C)",
+      "popularName": "Byggnad 001",
+      "source": {
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "59abaa99-6304-4600-ab7f-251de3f6c602",
+      "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+    },
+    {
+      "id": "e449de55-1df0-46e7-bcb9-9df7e4a7a374",
+      "class": "Building",
+      "createdTime": "2019-05-24T13:27:19.000Z",
+      "updatedTime": "2020-09-07T10:56:21.990Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/14045-001",
+          "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+        }
+      ],
+      "comment": {},
+      "littera": "14045-001",
+      "popularName": "Byggnad 001",
+      "source": {
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "71a359dd-60f3-45aa-b5af-9d95dfa4a49f",
+      "hasGeoReferenceOrigo": "0.0;0.0;10.0"
+    },
+    {
+      "id": "90a21909-9c19-4f06-9b5e-7c77293e3593",
+      "class": "Building",
+      "createdTime": "2019-05-24T13:27:19.000Z",
+      "updatedTime": "2020-09-10T17:57:36.147Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/595-001",
+          "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+        }
+      ],
+      "comment": {},
+      "littera": "595-001",
+      "popularName": "Byggnad 001",
+      "source": {
+        "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "ef21c32d-52e6-4c6d-b2c6-3b9ca34e325f",
+      "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+    },
+    {
+      "id": "5da99f7f-b240-475d-90de-96d905627d76",
+      "class": "Building",
+      "createdTime": "2019-05-24T13:27:19.000Z",
+      "updatedTime": "2020-09-10T17:59:04.137Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/14232-001",
+          "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+        }
+      ],
+      "comment": {},
+      "littera": "14232-001",
+      "popularName": "Byggnad 001",
+      "source": {
+        "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "e7219cd0-a7f1-4923-9e63-74d71da3e20b",
+      "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+    },
+    {
+      "id": "9149a429-461b-4aca-9c5e-f07a44badad3",
+      "class": "Building",
+      "createdTime": "2019-05-24T13:27:19.000Z",
+      "updatedTime": "2020-09-10T17:59:09.943Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "14532-001",
+      "popularName": "Byggnad 001",
+      "source": {
+        "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "5637fc61-f6aa-4239-93a0-fa23faa969e6",
+      "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+    },
+    {
+      "id": "dbc543c9-c0f3-49ac-9cd3-69f75dd6e1d1",
+      "class": "Building",
+      "createdTime": "2019-05-24T13:27:19.000Z",
+      "updatedTime": "2020-09-07T10:56:23.453Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/14549-001",
+          "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+        }
+      ],
+      "comment": {},
+      "littera": "14549-001",
+      "popularName": "Byggnad 001",
+      "source": {
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "9717924d-4ac3-4b92-ae77-97e34ebfd1f7",
+      "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+    },
+    {
+      "id": "e6cc296b-f5c3-412a-9963-395d25f20de0",
+      "class": "Building",
+      "createdTime": "2020-07-27T13:40:59.950Z",
+      "updatedTime": "2020-09-10T17:59:30.940Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "test",
+      "popularName": null,
+      "source": {
+        "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
+        "createdByAgent": "oksana@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "ef0f149f-c7de-47c3-a75c-b24d1027e795",
+      "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+    },
+    {
+      "id": "70f35ab6-63bb-4e97-9091-349909124437",
+      "class": "Building",
+      "createdTime": "2020-09-03T12:41:32.933Z",
+      "updatedTime": "2020-09-07T10:56:25.460Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "2003-001",
+      "popularName": "Telefonplan Hus 03",
+      "source": {
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "073bb657-2044-41cd-a331-cdf172b999b4",
+      "hasGeoReferenceOrigo": "59.299763;17.995005;0.0"
+    },
+    {
+      "id": "d64d96d6-fb60-4905-b729-339eefb9d0f6",
+      "class": "Building",
+      "createdTime": "2020-09-03T12:41:33.053Z",
+      "updatedTime": "2020-09-07T10:56:25.707Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "2004-001",
+      "popularName": "Telefonplan Hus 04",
+      "source": {
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "073bb657-2044-41cd-a331-cdf172b999b4",
+      "hasGeoReferenceOrigo": "59.299062;17.9914;0.0"
+    },
+    {
+      "id": "669dd3a4-3691-4fa9-911a-1e5f599a56a7",
+      "class": "Building",
+      "createdTime": "2019-05-24T13:27:19.000Z",
+      "updatedTime": "2020-09-07T10:56:22.513Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/14551-001",
+          "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+        }
+      ],
+      "comment": {},
+      "littera": "14551 001-Hilton 7",
+      "popularName": "Byggnad 001",
+      "source": {
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "39514414-6aa6-4119-bb6e-655956610737",
+      "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+    },
+    {
+      "id": "79b213c9-57d9-4969-9963-70efd069c0d3",
+      "class": "Building",
+      "createdTime": "2019-05-24T13:27:19.000Z",
+      "updatedTime": "2020-09-10T17:57:59.337Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/629-001",
+          "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+        }
+      ],
+      "comment": {},
+      "littera": "629-001",
+      "popularName": "Byggnad 001",
+      "source": {
+        "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "c9112e5e-9f64-41d4-a692-d04cb7c12f5d",
+      "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+    },
+    {
+      "id": "ca505e3f-994c-4dcd-9631-b95b5777755b",
+      "class": "Building",
+      "createdTime": "2019-05-24T13:27:19.000Z",
+      "updatedTime": "2020-09-07T10:56:22.343Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/596-001",
+          "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+        }
+      ],
+      "comment": {},
+      "littera": "596-001",
+      "popularName": "Byggnad 001",
+      "source": {
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "ee65744e-b941-439f-a053-4c5dc65fcded",
+      "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+    },
+    {
+      "id": "6431c77f-1e07-427f-9bdb-71f624cf6922",
+      "class": "Building",
+      "createdTime": "2019-05-24T13:27:19.000Z",
+      "updatedTime": "2020-09-10T17:57:53.397Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/575-001",
+          "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+        }
+      ],
+      "comment": {},
+      "littera": "575-001",
+      "popularName": "Byggnad 001",
+      "source": {
+        "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "c03b0925-02cc-4c7f-ad7b-db5c90a903d5",
+      "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+    },
+    {
+      "id": "4009f065-2759-4695-ba9c-36739b4049f2",
+      "class": "Building",
+      "createdTime": "2020-09-03T12:41:33.567Z",
+      "updatedTime": "2020-09-07T10:56:26.307Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "2009-001",
+      "popularName": "Telefonplan Hus 09",
+      "source": {
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "isPartOfRealEstate": "073bb657-2044-41cd-a331-cdf172b999b4",
+      "hasGeoReferenceOrigo": "59.299456;17.999211;0.0"
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 15,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalElements": 54,
+  "totalPages": 4,
+  "last": false,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "size": 15,
+  "number": 0,
+  "numberOfElements": 15,
+  "first": true,
+  "empty": false
+}

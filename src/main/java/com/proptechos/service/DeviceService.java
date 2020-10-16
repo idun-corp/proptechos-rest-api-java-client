@@ -6,7 +6,7 @@ import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.common.IDevice;
 import java.util.UUID;
 
-public class DeviceService extends PagedService<IDevice>{
+public class DeviceService extends PagedService<IDevice> {
 
   DeviceService(String baseAppUrl) {
     super(baseAppUrl, DEVICE_JSON);

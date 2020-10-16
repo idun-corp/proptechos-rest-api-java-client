@@ -1,0 +1,21 @@
+{
+  "id": "79b213c9-57d9-4969-9963-70efd069c0d3",
+  "class": "Building",
+  "createdTime": "2019-05-24T13:27:19.000Z",
+  "updatedTime": "2020-09-10T17:57:59.337Z",
+  "hasAlias": [
+    {
+      "id": "https://ns.proptechos.com/test-1/629-001",
+      "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+    }
+  ],
+  "comment": {},
+  "littera": "629-001",
+  "popularName": "Byggnad 001",
+  "source": {
+    "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
+    "updatedByApp": "RecAPI"
+  },
+  "isPartOfRealEstate": "c9112e5e-9f64-41d4-a692-d04cb7c12f5d",
+  "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+}

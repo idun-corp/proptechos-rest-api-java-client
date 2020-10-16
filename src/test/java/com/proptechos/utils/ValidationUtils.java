@@ -25,6 +25,7 @@ public class ValidationUtils {
   public static void verifyPostRequest(MockServerClient client, String path, String jsonBody) {
     client.verify(request()
             .withMethod(HttpMethod.POST.name())
+            .withPath(BaseServiceTest.APP_CONTEXT + path)
             .withHeader("Authorization")
             .withContentType(MediaType.APPLICATION_JSON)
             .withBody(new JsonBody(jsonBody)),
@@ -34,9 +35,18 @@ public class ValidationUtils {
   public static void verifyPutRequest(MockServerClient client, String path, String jsonBody) {
     client.verify(request()
             .withMethod(HttpMethod.PUT.name())
+            .withPath(BaseServiceTest.APP_CONTEXT + path)
             .withHeader("Authorization")
             .withContentType(MediaType.APPLICATION_JSON)
             .withBody(new JsonBody(jsonBody)),
+        VerificationTimes.once());
+  }
+
+  public static void verifyDeleteRequest(MockServerClient client, String path) {
+    client.verify(request()
+            .withMethod(HttpMethod.DELETE.name())
+            .withHeader("Authorization")
+            .withPath(BaseServiceTest.APP_CONTEXT + path),
         VerificationTimes.once());
   }
 

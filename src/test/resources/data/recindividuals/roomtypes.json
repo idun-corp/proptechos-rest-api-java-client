@@ -1,0 +1,14 @@
+[
+  {
+    "iri": "https://w3id.org/rec/building/Auditorium",
+    "label": "Auditorium"
+  },
+  {
+    "iri": "https://w3id.org/rec/building/BackOffice",
+    "label": "BackOffice"
+  },
+  {
+    "iri": "https://w3id.org/rec/building/BarRoom",
+    "label": "BarRoom"
+  }
+]

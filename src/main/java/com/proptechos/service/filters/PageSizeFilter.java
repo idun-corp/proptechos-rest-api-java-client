@@ -3,9 +3,15 @@ package com.proptechos.service.filters;
 import com.proptechos.http.query.IQueryFilter;
 import com.proptechos.http.query.QueryParam;
 
+/**
+ * PageSizeFilter class for filtering by page size
+ *
+ * @apiNote Example: '50' - Applicable only to PagedService
+ *
+ */
 public class PageSizeFilter implements IQueryFilter {
 
-  private long pageSize;
+  private final long pageSize;
 
   public PageSizeFilter(long pageSize) {
     this.pageSize = pageSize;

@@ -51,6 +51,12 @@ public class BaseServiceTest {
         .withPath(APP_CONTEXT + path);
   }
 
+  HttpRequest deleteRequest(String path) {
+    return request()
+        .withMethod(HttpMethod.DELETE.name())
+        .withPath(APP_CONTEXT + path);
+  }
+
   HttpResponse okResponse(String body) {
     return response()
         .withStatusCode(HttpStatus.OK)
@@ -73,7 +79,7 @@ public class BaseServiceTest {
   }
 
   public enum HttpMethod {
-    GET, POST, PUT
+    GET, POST, PUT, DELETE
   }
 
 }

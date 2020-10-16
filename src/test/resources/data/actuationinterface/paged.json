@@ -1,0 +1,141 @@
+{
+  "content": [
+    {
+      "id": "a60c5a10-83ac-40b8-8f53-2e4b2f6df801",
+      "class": "ActuationInterface",
+      "createdTime": "2018-03-05T12:11:05.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "comment": {},
+      "littera": "float_range_ai",
+      "popularName": "My Float Range ActuationInterface",
+      "source": {},
+      "payloadKeyValueDefinition": {
+        "keyMandatory": null,
+        "valueDatatype": "Float",
+        "valueRestriction": {
+          "valueRestrictionValues": [
+            "1",
+            "100"
+          ],
+          "valueRestrictionResolution": 0,
+          "valueRestrictionType": "Range"
+        },
+        "keyString": null
+      }
+    },
+    {
+      "id": "a61c5a10-83ac-40b8-8f53-2e4b2f6df801",
+      "class": "ActuationInterface",
+      "createdTime": "2020-01-01T00:00:00.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "comment": {},
+      "littera": "noncallable",
+      "popularName": "Non Callable",
+      "source": {},
+      "payloadKeyValueDefinition": {
+        "keyMandatory": null,
+        "valueDatatype": "Boolean",
+        "valueRestriction": {
+          "valueRestrictionValues": [],
+          "valueRestrictionResolution": 0,
+          "valueRestrictionType": null
+        },
+        "keyString": null
+      }
+    },
+    {
+      "id": "b61c5a10-83ac-40b8-8f53-2e4b2f6df801",
+      "class": "ActuationInterface",
+      "createdTime": "2020-01-01T00:00:00.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "comment": {},
+      "littera": "noncallable",
+      "popularName": "Non Callable",
+      "source": {},
+      "payloadKeyValueDefinition": {
+        "keyMandatory": null,
+        "valueDatatype": "Float",
+        "valueRestriction": {
+          "valueRestrictionValues": [
+            "1",
+            "100"
+          ],
+          "valueRestrictionResolution": 0,
+          "valueRestrictionType": "Range"
+        },
+        "keyString": null
+      }
+    },
+    {
+      "id": "c61c5a10-83ac-40b8-8f53-2e4b2f6df801",
+      "class": "ActuationInterface",
+      "createdTime": "2020-01-01T00:00:00.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "comment": {},
+      "littera": "noncallable",
+      "popularName": "Non Callable",
+      "source": {},
+      "payloadKeyValueDefinition": {
+        "keyMandatory": null,
+        "valueDatatype": "Integer",
+        "valueRestriction": {
+          "valueRestrictionValues": [
+            "15",
+            "25"
+          ],
+          "valueRestrictionResolution": 0,
+          "valueRestrictionType": "Range"
+        },
+        "keyString": null
+      }
+    },
+    {
+      "id": "d61c5a10-83ac-40b8-8f53-2e4b2f6df801",
+      "class": "ActuationInterface",
+      "createdTime": "2020-01-01T00:00:00.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "comment": {},
+      "littera": "noncallable",
+      "popularName": "Non Callable",
+      "source": {},
+      "payloadKeyValueDefinition": {
+        "keyMandatory": null,
+        "valueDatatype": "Float",
+        "valueRestriction": {
+          "valueRestrictionValues": [
+            "1",
+            "100"
+          ],
+          "valueRestrictionResolution": 0,
+          "valueRestrictionType": "Range"
+        },
+        "keyString": null
+      }
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 5,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalElements": 12,
+  "totalPages": 3,
+  "last": false,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "size": 5,
+  "number": 0,
+  "numberOfElements": 5,
+  "first": true,
+  "empty": false
+}

@@ -1,0 +1,1807 @@
+{
+  "content": [
+    {
+      "id": "d8f577a0-6c78-4ed1-bda2-00034dea272a",
+      "class": "Sensor",
+      "createdTime": "2020-06-22T12:36:35.010Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "/ENTRA-SD03/Entra/Jurfak/MQTT/Buffered values/563.SQ6116-2.Absolute flow",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "double",
+        "pointName": "563.SQ6116-2.Absolute flow",
+        "writeable": "0",
+        "createdByApp": "RecAPI",
+        "forceable": "0",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8d8252b8-161a-43a3-b888-4a3486055d36",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "be0400f1-b68c-434f-b330-8bbce704dbbe",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/LiterPerSecond",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Flow",
+      "devicePlacementContext": "https://w3id.org/rec/device/ExhaustAir",
+      "observesActuator": null
+    },
+    {
+      "id": "bdae086c-1e38-4e6b-8eb0-002b87c28be7",
+      "class": "Sensor",
+      "createdTime": "2018-07-08T07:45:17.000Z",
+      "updatedTime": "2020-06-25T12:58:17.757Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": null,
+      "popularName": null,
+      "source": {
+        "updatedByAgent": "testuser4@idunrealestate.com",
+        "groupeName": "Fjärrvärme",
+        "updatedByApp": "RecAPI",
+        "namn": "Undermätare Fjv MWh",
+        "scaleFactor": "1",
+        "metryMetric": "flow"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "218e42ed-6ef1-4fb0-ab88-8d5b72224157",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "72423255-c8a2-4e57-8c8b-b26c5ee67dd4",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/CubicMeter",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Volume",
+      "devicePlacementContext": "https://w3id.org/rec/device/DistrictHeatingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "14f883c7-eda5-40a1-8280-002ffb237400",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:08:20.747Z",
+      "updatedTime": "2020-08-06T12:46:48.613Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS02/GW33/3133/R1x/SV4",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/AS02/GW33/3133/R1x/SV4",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Booleanvalue",
+        "pointName": "SV4",
+        "serialNumberFunctionDescription": "Secondary cooling flow",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "FALSE",
+        "serialNumberFunction": "35",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "1",
+        "functionDescription": "Temperature",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "56f31600-5271-4488-8c74-2daea23beed0",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryCoolingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "4ee807b5-25fc-4c28-a308-003220a7afc1",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T08:25:20.337Z",
+      "updatedTime": "2020-08-06T13:17:16.887Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-2/A81758FFFE03F783/Illuminance",
+          "isMemberOfAliasNamespace": "86166e8c-aa4d-4a82-8c7c-1c0021e453c0"
+        }
+      ],
+      "comment": {},
+      "littera": null,
+      "popularName": null,
+      "source": {
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "f8f532be-1868-48f1-ae64-a46d0864452a",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "0a884d0e-535c-4264-b54e-f6d467aeeb3d",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Lux",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Illuminance",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "46844d7c-bc82-458d-8767-0037a6e6f5ae",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:10:28.700Z",
+      "updatedTime": "2020-08-06T12:46:48.710Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV03/GW41/4720/R3x/GQ",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV03/GW41/4720/R3x/GQ",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analogvalue",
+        "pointName": "GQ",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "true",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "8",
+        "functionDescription": "Concentration",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "0058f8cb-f1d5-485f-bfe8-8383d786ee38",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/PartsPerMillion",
+      "deviceQuantityKind": "https://w3id.org/rec/core/CO2",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "868db0c6-6441-4d6a-ba23-003ad4cd104c",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:10:45.110Z",
+      "updatedTime": "2020-08-06T12:46:48.787Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV03/GW42:1/Z426/R3x/GQ",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV03/GW42:1/Z426/R3x/GQ",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analogvalue",
+        "pointName": "GQ",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "true",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "8",
+        "functionDescription": "Concentration",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "e8c1f057-8368-4fde-aff8-14013bed6bfc",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/PartsPerMillion",
+      "deviceQuantityKind": "https://w3id.org/rec/core/CO2",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "5b888fdc-2e3e-458a-8a30-0048800ce885",
+      "class": "Sensor",
+      "createdTime": "2020-06-22T12:31:32.277Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "/ENTRA-SD03/Entra/Jurfak/MQTT/Buffered values/563.SQ3222-1.Spjeld posisjon",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "double",
+        "pointName": "563.SQ3222-1.Spjeld posisjon",
+        "writeable": "0",
+        "createdByApp": "RecAPI",
+        "forceable": "0",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8d8252b8-161a-43a3-b888-4a3486055d36",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "be0400f1-b68c-434f-b330-8bbce704dbbe",
+      "deviceMeasurementUnit": "http://proptechos.com/ontology/extension/Percentage",
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "https://w3id.org/rec/device/SupplyAir",
+      "observesActuator": null
+    },
+    {
+      "id": "8340fe64-6866-48c8-a4fb-005684212126",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:28:28.337Z",
+      "updatedTime": "2020-08-06T12:46:48.880Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV10/!Cloud/KB21/Variabler/Limits/KB21-GT11_B_MIN",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV10/!Cloud/KB21/Variabler/Limits/KB21-GT11_B_MIN",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "FALSE",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "KB21-GT11_B_MIN",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "357b3a6d-eba4-43a4-86a0-5013bc248bcb",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryCoolingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "a3bb0140-0f0d-4daf-88f2-0056e5288738",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T08:24:58.347Z",
+      "updatedTime": "2020-08-06T13:16:50.680Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-2/A81758FFFE03F6AC/Temperature",
+          "isMemberOfAliasNamespace": "86166e8c-aa4d-4a82-8c7c-1c0021e453c0"
+        }
+      ],
+      "comment": {},
+      "littera": null,
+      "popularName": null,
+      "source": {
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "f8f532be-1868-48f1-ae64-a46d0864452a",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "6c0d8df2-5b70-4652-bf31-48cee2f0e477",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "fc748e8a-e1e5-4f06-b684-005c7351368d",
+      "class": "Sensor",
+      "createdTime": "2020-06-22T12:42:52.523Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "/ENTRA-SD03/Entra/Jurfak/MQTT/Buffered values/563.SQ7122-2.Relative position",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "double",
+        "pointName": "563.SQ7122-2.Relative position",
+        "description": "Spjeldposisjon",
+        "writeable": "0",
+        "createdByApp": "RecAPI",
+        "forceable": "0",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8d8252b8-161a-43a3-b888-4a3486055d36",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "be0400f1-b68c-434f-b330-8bbce704dbbe",
+      "deviceMeasurementUnit": "http://proptechos.com/ontology/extension/Percentage",
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "https://w3id.org/rec/device/ExhaustAir",
+      "observesActuator": null
+    },
+    {
+      "id": "fbcdb1b5-c1d2-4e58-8c1f-005d280bbfa1",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:08:03.680Z",
+      "updatedTime": "2020-08-06T12:46:48.870Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV01/GW25/2337/R3x/GQ",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV01/GW25/2337/R3x/GQ",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analogvalue",
+        "pointName": "GQ",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "true",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "8",
+        "functionDescription": "Concentration",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "d6c04c72-fd47-4206-8547-dae32ebc4a78",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/PartsPerMillion",
+      "deviceQuantityKind": "https://w3id.org/rec/core/CO2",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "5b21830d-4bf0-4ca3-8ff8-00616da6e815",
+      "class": "Sensor",
+      "createdTime": "2020-08-03T14:52:42.730Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": null,
+      "popularName": null,
+      "source": {
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "powerSource": "Battery"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "82253ccf-7fdb-4ee6-85a7-d417f61e8052",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "42f8ca4d-2ad5-4eef-afd0-e1e5de8cb241",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "fcebbf0f-6802-4d87-bc57-007e0b5285c7",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:12:02.833Z",
+      "updatedTime": "2020-08-06T12:46:50.060Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV04/GW12/1741/R3x/GT11",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV04/GW12/1741/R3x/GT11",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analogvalue",
+        "pointName": "GT11",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "true",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "1",
+        "functionDescription": "Temperature",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "82d5bb80-acec-47ee-a684-8223f2442f1f",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "bb42f5fd-0810-468a-ba04-0086c6a88668",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:11:12.053Z",
+      "updatedTime": "2020-08-06T12:46:50.257Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS03/GW45/4266/R1x/SV2",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/AS03/GW45/4266/R1x/SV2",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Booleanvalue",
+        "pointName": "SV2",
+        "serialNumberFunctionDescription": "Secondary heating flow",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "FALSE",
+        "serialNumberFunction": "25",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "1",
+        "functionDescription": "Temperature",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "3222ae80-a17b-4a48-8f4d-6eea71278ff8",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "15cb78a7-8640-4723-8868-008bf2ad6f18",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:11:44.233Z",
+      "updatedTime": "2020-08-06T12:46:50.537Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS03/GW47/4835/R1x/TL11",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {
+        "deviceType": "Pushbutton"
+      },
+      "littera": "/AS03/GW47/4835/R1x/TL11",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Booleanvalue",
+        "pointName": "TL11",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "FALSE",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "23",
+        "functionDescription": "Mode",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "888b6b04-e11e-48b7-8c4d-d601c45f7cba",
+      "deviceMeasurementUnit": null,
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "",
+      "observesActuator": null
+    },
+    {
+      "id": "818f8cf5-aa48-4b02-8aae-008eeea0a620",
+      "class": "Sensor",
+      "createdTime": "2020-06-22T12:47:08.127Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "/ENTRA-SD03/Entra/Jurfak/MQTT/Buffered values/563.SQ7233-1.Absolute flow",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "double",
+        "pointName": "563.SQ7233-1.Absolute flow",
+        "writeable": "0",
+        "createdByApp": "RecAPI",
+        "forceable": "0",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8d8252b8-161a-43a3-b888-4a3486055d36",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "be0400f1-b68c-434f-b330-8bbce704dbbe",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/LiterPerSecond",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Flow",
+      "devicePlacementContext": "https://w3id.org/rec/device/SupplyAir",
+      "observesActuator": null
+    },
+    {
+      "id": "fc8b161c-f38a-4ee8-85c4-00c88ef6b282",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:07:40.703Z",
+      "updatedTime": "2020-08-06T12:46:50.627Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS01/GW23/2026/R1x/SV4",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/AS01/GW23/2026/R1x/SV4",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Booleanvalue",
+        "pointName": "SV4",
+        "serialNumberFunctionDescription": "Secondary cooling flow",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "FALSE",
+        "serialNumberFunction": "35",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "1",
+        "functionDescription": "Temperature",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "3617c5f5-2328-47a3-8bc0-2301f8e20423",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryCoolingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "4880fd25-e885-45d8-8800-00e5638d82b3",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:10:30.007Z",
+      "updatedTime": "2020-08-06T12:46:50.800Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS03/GW41/4723/R1x/TL11",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {
+        "deviceType": "Pushbutton"
+      },
+      "littera": "/AS03/GW41/4723/R1x/TL11",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Booleanvalue",
+        "pointName": "TL11",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "false",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "23",
+        "functionDescription": "Mode",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "38bbbd8c-bb02-4d04-8eda-4b3ba3032214",
+      "deviceMeasurementUnit": null,
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "",
+      "observesActuator": null
+    },
+    {
+      "id": "a81a48b5-d088-4cfd-a74d-00e8405f6277",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:10:27.233Z",
+      "updatedTime": "2020-08-06T12:46:50.887Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV03/GW41/4718/R3x/GQ",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV03/GW41/4718/R3x/GQ",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analogvalue",
+        "pointName": "GQ",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "true",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "8",
+        "functionDescription": "Concentration",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "568cdc87-bd88-4c83-8277-b1c67a1858a2",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/PartsPerMillion",
+      "deviceQuantityKind": "https://w3id.org/rec/core/CO2",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "4a1e1174-b3b1-405f-bdaa-00fd3038728b",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:07:41.783Z",
+      "updatedTime": "2020-08-06T12:46:51.080Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV01/GW23/2027/R3x/GQ",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV01/GW23/2027/R3x/GQ",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analogvalue",
+        "pointName": "GQ",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "true",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "8",
+        "functionDescription": "Concentration",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "fd388e36-fd53-4ef2-bc0c-e53220bf1307",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/PartsPerMillion",
+      "deviceQuantityKind": "https://w3id.org/rec/core/CO2",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "80fcde86-8bbf-41a0-b611-0101c7ed151a",
+      "class": "Sensor",
+      "createdTime": "2020-06-22T12:36:25.447Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "/ENTRA-SD03/Entra/Jurfak/MQTT/Buffered values/563.SQ6115-2.Spjeld posisjon",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "double",
+        "pointName": "563.SQ6115-2.Spjeld posisjon",
+        "writeable": "0",
+        "createdByApp": "RecAPI",
+        "forceable": "0",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8d8252b8-161a-43a3-b888-4a3486055d36",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "be0400f1-b68c-434f-b330-8bbce704dbbe",
+      "deviceMeasurementUnit": "http://proptechos.com/ontology/extension/Percentage",
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "https://w3id.org/rec/device/ExhaustAir",
+      "observesActuator": null
+    },
+    {
+      "id": "8b840f6f-2c68-44d4-bd6f-010afd227a2e",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:12:31.680Z",
+      "updatedTime": "2020-08-06T12:46:51.163Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS04/GW17/1133/R1x/SV2",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/AS04/GW17/1133/R1x/SV2",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Booleanvalue",
+        "pointName": "SV2",
+        "serialNumberFunctionDescription": "Secondary heating flow",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "false",
+        "serialNumberFunction": "25",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "1",
+        "functionDescription": "Temperature",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "f3ff4f47-bf07-4d67-bd82-63077b667bf1",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "183186d8-4e4e-46b2-84bc-01230088ff11",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:08:48.260Z",
+      "updatedTime": "2020-08-06T12:46:51.353Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS01/GW27/Z272/R4x/FLK1",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {
+        "deviceType": "Fan"
+      },
+      "littera": "/AS01/GW27/Z272/R4x/FLK1",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analogvalue",
+        "pointName": "FLK1",
+        "updatedByApp": "RecAPI",
+        "function": "8",
+        "powerSource": "CommunicationBus",
+        "functionDescription": "Speed",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "20ba33ba-aacc-442e-ad7d-62af50345458",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/RevolutionsPerMinute",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Speed",
+      "devicePlacementContext": "",
+      "observesActuator": null
+    },
+    {
+      "id": "6771fe80-fa85-405e-bd36-012c0e1141fa",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:11:56.360Z",
+      "updatedTime": "2020-08-06T12:46:51.537Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV04/GW12/1644/R3x/GT11",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV04/GW12/1644/R3x/GT11",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analogvalue",
+        "pointName": "GT11",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "true",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "1",
+        "functionDescription": "Temperature",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "8d48f2df-e36b-4a7b-8644-77f1bdf5f8f1",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "85b8d26a-5ce7-4300-ac7b-012c5b412788",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:07:22.280Z",
+      "updatedTime": "2020-08-06T12:46:51.627Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV01/GW21/Z213/R3x/GQ",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV01/GW21/Z213/R3x/GQ",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analogvalue",
+        "pointName": "GQ",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "true",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "8",
+        "functionDescription": "Concentration",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "8c306e47-e03c-4830-afb2-133235b54c2e",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/PartsPerMillion",
+      "deviceQuantityKind": "https://w3id.org/rec/core/CO2",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "d23036b8-7024-4cb6-8534-01410648580e",
+      "class": "Sensor",
+      "createdTime": "2020-06-22T12:43:45.837Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "/ENTRA-SD03/Entra/Jurfak/MQTT/Buffered values/563.SQ7222-1.Absolute flow",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "double",
+        "pointName": "563.SQ7222-1.Absolute flow",
+        "writeable": "0",
+        "createdByApp": "RecAPI",
+        "forceable": "0",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8d8252b8-161a-43a3-b888-4a3486055d36",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "be0400f1-b68c-434f-b330-8bbce704dbbe",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/LiterPerSecond",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Flow",
+      "devicePlacementContext": "https://w3id.org/rec/device/SupplyAir",
+      "observesActuator": null
+    },
+    {
+      "id": "1624616a-a3bb-4db1-a86d-0163cc5b8a46",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:10:44.380Z",
+      "updatedTime": "2020-08-06T12:46:51.870Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV03/GW42:1/Z425/R3x/GQ",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV03/GW42:1/Z425/R3x/GQ",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analogvalue",
+        "pointName": "GQ",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "true",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "8",
+        "functionDescription": "Concentration",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "7061b420-d6a5-4045-8686-f56da744ed1f",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/PartsPerMillion",
+      "deviceQuantityKind": "https://w3id.org/rec/core/CO2",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "885a4877-f881-4e5e-8488-0168842ac0cf",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:08:42.757Z",
+      "updatedTime": "2020-08-06T12:46:52.057Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS02/GW35/3371/R1x/TL11",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {
+        "deviceType": "Pushbutton"
+      },
+      "littera": "/AS02/GW35/3371/R1x/TL11",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Booleanvalue",
+        "pointName": "TL11",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "false",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "23",
+        "functionDescription": "Mode",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "11c858e1-14dd-46e8-84cd-ae685775b104",
+      "deviceMeasurementUnit": null,
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "",
+      "observesActuator": null
+    },
+    {
+      "id": "2a527ab5-4add-4a7c-b608-016e058588fa",
+      "class": "Sensor",
+      "createdTime": "2020-03-18T11:43:38.027Z",
+      "updatedTime": "2020-07-13T12:54:54.707Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "Metry-68500148-supply_temperature",
+      "popularName": null,
+      "source": {
+        "powerSource": "CommunicationBus",
+        "updatedByAgent": "testuser3@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "metryMetric": "supply_temperature",
+        "updatedByApp": "RecAPI",
+        "scaleFactor": "1"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "c38a8454-dfe8-4820-a165-0288267e1a11",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "b02808ae-4bf3-4a28-b6fd-fdf866ebe315",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/DistrictHeatingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "01db7be2-2454-46a8-a812-017f125e5812",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:10:05.803Z",
+      "updatedTime": "2020-08-06T12:46:52.140Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS02/GW36/Z366/R1x/TL11",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {
+        "deviceType": "Pushbutton"
+      },
+      "littera": "/AS02/GW36/Z366/R1x/TL11",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Booleanvalue",
+        "pointName": "TL11",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "false",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "23",
+        "functionDescription": "Mode",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "83a3272e-14e1-44bb-8ebb-ab26a1315f12",
+      "deviceMeasurementUnit": null,
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "",
+      "observesActuator": null
+    },
+    {
+      "id": "e857a21c-8c0a-4db4-8876-018a4da83e07",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:12:27.607Z",
+      "updatedTime": "2020-08-06T12:46:52.227Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV04/GW17/1126/R3x/GQ",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV04/GW17/1126/R3x/GQ",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analogvalue",
+        "pointName": "GQ",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "true",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "8",
+        "functionDescription": "Concentration",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "15c8b842-2445-40d8-8306-0f171430054f",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/PartsPerMillion",
+      "deviceQuantityKind": "https://w3id.org/rec/core/CO2",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "bfbe7771-8275-464f-b38a-018ea03d0dae",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:08:18.663Z",
+      "updatedTime": "2020-08-06T12:46:52.313Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS01/GW26/2448/R1x/SV2",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/AS01/GW26/2448/R1x/SV2",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Booleanvalue",
+        "pointName": "SV2",
+        "serialNumberFunctionDescription": "Secondary heating flow",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "false",
+        "serialNumberFunction": "25",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "1",
+        "functionDescription": "Temperature",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "c2b2a50c-e762-46bf-b3f0-2836cb4d7646",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "8ad50ac8-0e5a-48c0-a553-018e81857bb2",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:28:03.837Z",
+      "updatedTime": "2020-08-06T12:46:52.403Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV11/!Cloud/VS0108/Variabler/Write/VS0108-GT11_Y1_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV11/!Cloud/VS0108/Variabler/Write/VS0108-GT11_Y1_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "VS0108-GT11_Y1_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "a4e04d2e-43bd-482c-b4a5-5bbe05e2883a",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "d7085083-f025-4705-8b88-018eb643f8a2",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:27:46.767Z",
+      "updatedTime": "2020-08-06T12:46:52.487Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV12/!Cloud/LB04/Variabler/Read/LB04-GP11",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV12/!Cloud/LB04/Variabler/Read/LB04-GP11",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "LB04-GP11",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "8adbd3aa-3778-4dfc-8d0b-d5d61c8ceb51",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Pascal",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Pressure",
+      "devicePlacementContext": "https://w3id.org/rec/device/SupplyAir",
+      "observesActuator": null
+    },
+    {
+      "id": "5cd88e11-aa88-43b6-b5f5-01a0033aa840",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:08:14.727Z",
+      "updatedTime": "2020-08-06T12:46:52.580Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS02/GW32/Z325/R1x/SV4",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/AS02/GW32/Z325/R1x/SV4",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Booleanvalue",
+        "pointName": "SV4",
+        "serialNumberFunctionDescription": "Secondary cooling flow",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "false",
+        "serialNumberFunction": "35",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "1",
+        "functionDescription": "Temperature",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "7f108236-7b02-405b-abad-b3e5562d17b3",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryCoolingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "12b412ca-8f14-4e31-a8fb-01ae1672f172",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T08:25:00.087Z",
+      "updatedTime": "2020-08-06T13:16:46.517Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-2/A81758FFFE03F6AD/Presence",
+          "isMemberOfAliasNamespace": "86166e8c-aa4d-4a82-8c7c-1c0021e453c0"
+        }
+      ],
+      "comment": {},
+      "littera": null,
+      "popularName": null,
+      "source": {
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "f8f532be-1868-48f1-ae64-a46d0864452a",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "13e68ed4-3770-4b2a-8bd5-37b34025d066",
+      "deviceMeasurementUnit": "http://proptechos.com/ontology/extension/Index",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Presence",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "0f7def2c-c352-4a76-8bf8-01b883b68788",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:07:17.600Z",
+      "updatedTime": "2020-08-06T12:46:52.680Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS01/GW21/2718/R1x/TL11",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {
+        "deviceType": "Pushbutton"
+      },
+      "littera": "/AS01/GW21/2718/R1x/TL11",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Booleanvalue",
+        "pointName": "TL11",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "false",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "23",
+        "functionDescription": "Mode",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "5d810db3-adb6-4723-81b6-c288d45ae85f",
+      "deviceMeasurementUnit": null,
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "",
+      "observesActuator": null
+    },
+    {
+      "id": "71db7eea-a445-4f2a-8737-01bcbe4f003f",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:11:08.287Z",
+      "updatedTime": "2020-08-06T12:46:52.767Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV03/GW45/4242/R3x/GT11",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV03/GW45/4242/R3x/GT11",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analogvalue",
+        "pointName": "GT11",
+        "serialNumberFunctionDescription": "Indoor sensor",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "true",
+        "serialNumberFunction": "11",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "1",
+        "functionDescription": "Temperature",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "1a78ea82-c18f-4b87-a27a-cb46fee88d8e",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "5beb77c1-fe17-4307-8c03-01c0b5fb4c88",
+      "class": "Sensor",
+      "createdTime": "2020-06-22T12:31:40.703Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "/ENTRA-SD03/Entra/Jurfak/MQTT/Buffered values/563.SQ3215-2.Spjeld posisjon",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "double",
+        "pointName": "563.SQ3215-2.Spjeld posisjon",
+        "writeable": "0",
+        "createdByApp": "RecAPI",
+        "forceable": "0",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8d8252b8-161a-43a3-b888-4a3486055d36",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "be0400f1-b68c-434f-b330-8bbce704dbbe",
+      "deviceMeasurementUnit": "http://proptechos.com/ontology/extension/Percentage",
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "https://w3id.org/rec/device/ExhaustAir",
+      "observesActuator": null
+    },
+    {
+      "id": "18ed135e-c215-4c6e-8685-01c0f74c0ad1",
+      "class": "Sensor",
+      "createdTime": "2020-08-05T13:33:20.137Z",
+      "updatedTime": "2020-08-05T14:57:11.467Z",
+      "hasAlias": [
+        {
+          "id": "https://api.usgbc.org/arc/data/dev/assets/LEED:8000117827/meter/ID:5206888/",
+          "isMemberOfAliasNamespace": "4a55a56f-bc27-4270-beb0-7c06126ab0ec"
+        }
+      ],
+      "comment": {},
+      "littera": "test-import_from_vitecDB-2.Totalt_tillf?rd_EL-LEED/ARC",
+      "popularName": null,
+      "source": {
+        "updatedByAgent": "testuser3@idunrealestate.com",
+        "createdByAgent": "testuser3@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "scaleFactor": "0.001",
+        "vitecPrognosis": "0",
+        "createdByApp": "RecAPI",
+        "vitecReport": "2. Totalt tillf?rd EL -LEED/ARC",
+        "vitecUniqueReportNumber": "21048"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "e7c1521b-33e3-486c-8e8b-db81de2fa744",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "783e1a8c-85fd-436c-aa36-3d0424dfac8a",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/WattHour",
+      "deviceQuantityKind": "https://w3id.org/rec/core/ActiveEnergyTotal",
+      "devicePlacementContext": "https://w3id.org/rec/device/ElectricalGridIntake",
+      "observesActuator": null
+    },
+    {
+      "id": "80b74be6-de44-443d-806a-01c82c1d8c0e",
+      "class": "Sensor",
+      "createdTime": "2020-08-14T11:34:36.753Z",
+      "updatedTime": "2020-08-14T15:00:36.880Z",
+      "hasAlias": [
+        {
+          "id": "https://api.usgbc.org/arc/data/dev/assets/LEED:8000117878/meter/ID:5213310/",
+          "isMemberOfAliasNamespace": "4a55a56f-bc27-4270-beb0-7c06126ab0ec"
+        }
+      ],
+      "comment": {},
+      "littera": null,
+      "popularName": null,
+      "source": {
+        "powerSource": "Battery",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "createdByApp": "RecAPI",
+        "updatedByApp": "RecAPI"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "de0861ff-a8c8-4c18-8ea6-48638628c558",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "c430e1eb-6242-4c54-a676-8e88cc231487",
+      "deviceMeasurementUnit": "http://proptechos.com/ontology/extension/PartsPerBillion",
+      "deviceQuantityKind": "https://w3id.org/rec/core/TVOC",
+      "devicePlacementContext": "https://w3id.org/rec/device/IndoorAir",
+      "observesActuator": null
+    },
+    {
+      "id": "b8cf682a-8be5-47f2-bda8-01cbb822753f",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:07:21.787Z",
+      "updatedTime": "2020-08-06T12:46:52.853Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS01/GW21/Z211/R4x/FLK1",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {
+        "deviceType": "Fan"
+      },
+      "littera": "/AS01/GW21/Z211/R4x/FLK1",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analogvalue",
+        "pointName": "FLK1",
+        "updatedByApp": "RecAPI",
+        "function": "8",
+        "powerSource": "CommunicationBus",
+        "functionDescription": "Speed",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "848c2611-c2db-487c-8730-5183dde83e1f",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/RevolutionsPerMinute",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Speed",
+      "devicePlacementContext": "",
+      "observesActuator": null
+    },
+    {
+      "id": "b3ef6823-b787-475d-ac3a-01eae12b0762",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:10:16.583Z",
+      "updatedTime": "2020-08-06T12:46:53.027Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS02/GW37/3834/R1x/SV2",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/AS02/GW37/3834/R1x/SV2",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Booleanvalue",
+        "pointName": "SV2",
+        "serialNumberFunctionDescription": "Secondary heating flow",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "false",
+        "serialNumberFunction": "25",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "1",
+        "functionDescription": "Temperature",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "abe2ff4c-c8bb-4bd7-848f-a5823c78636a",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "ce66bea7-5dc8-4270-aade-01f131b51487",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:27:50.347Z",
+      "updatedTime": "2020-08-06T12:46:53.113Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV12/!Cloud/LB13/Variabler/Read/LB13-SV34_AUT",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV12/!Cloud/LB13/Variabler/Read/LB13-SV34_AUT",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "LB13-SV34_AUT",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "4c757f4b-68cd-4fb5-a1b0-bc3ec84888b6",
+      "deviceMeasurementUnit": null,
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryCoolingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "a3f8e83e-fde7-47b8-83c5-0201802803bb",
+      "class": "Sensor",
+      "createdTime": "2020-06-22T12:38:02.247Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "/ENTRA-SD03/Entra/Jurfak/MQTT/Buffered values/563.SQ6102-1.Spjeld posisjon",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "double",
+        "pointName": "563.SQ6102-1.Spjeld posisjon",
+        "writeable": "0",
+        "createdByApp": "RecAPI",
+        "forceable": "0",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8d8252b8-161a-43a3-b888-4a3486055d36",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "be0400f1-b68c-434f-b330-8bbce704dbbe",
+      "deviceMeasurementUnit": "http://proptechos.com/ontology/extension/Percentage",
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "https://w3id.org/rec/device/SupplyAir",
+      "observesActuator": null
+    },
+    {
+      "id": "28288875-32bf-48e6-8e31-0206a233c5aa",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:27:48.517Z",
+      "updatedTime": "2020-08-06T12:46:53.210Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/2003_SRV12/!Cloud/LB10/Variabler/Read/LB10-SV34_AUT",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV12/!Cloud/LB10/Variabler/Read/LB10-SV34_AUT",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "LB10-SV34_AUT",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "d328a81d-2bd2-427a-8818-010d4f58263f",
+      "deviceMeasurementUnit": null,
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryCoolingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "2eba2f65-4a82-4f2a-abca-020f45348c5e",
+      "class": "Sensor",
+      "createdTime": "2020-06-22T12:31:38.477Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "/ENTRA-SD03/Entra/Jurfak/MQTT/Buffered values/563.SQ3214-2.Spjeld posisjon",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "double",
+        "pointName": "563.SQ3214-2.Spjeld posisjon",
+        "writeable": "0",
+        "createdByApp": "RecAPI",
+        "forceable": "0",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8d8252b8-161a-43a3-b888-4a3486055d36",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "be0400f1-b68c-434f-b330-8bbce704dbbe",
+      "deviceMeasurementUnit": "http://proptechos.com/ontology/extension/Percentage",
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "https://w3id.org/rec/device/ExhaustAir",
+      "observesActuator": null
+    },
+    {
+      "id": "dce841be-1d52-47cb-bd1c-02185db8548a",
+      "class": "Sensor",
+      "createdTime": "2020-06-22T12:50:23.503Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "/ENTRA-SD03/Entra/Jurfak/MQTT/Buffered values/563.SQ7117-1.Absolute flow",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "double",
+        "pointName": "563.SQ7117-1.Absolute flow",
+        "writeable": "0",
+        "createdByApp": "RecAPI",
+        "forceable": "0",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8d8252b8-161a-43a3-b888-4a3486055d36",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "be0400f1-b68c-434f-b330-8bbce704dbbe",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/LiterPerSecond",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Flow",
+      "devicePlacementContext": "https://w3id.org/rec/device/SupplyAir",
+      "observesActuator": null
+    },
+    {
+      "id": "0bf05187-8157-458d-830b-022b545c8f8a",
+      "class": "Sensor",
+      "createdTime": "2020-07-28T13:10:36.557Z",
+      "updatedTime": "2020-08-06T12:46:53.463Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/sensor/AS03/GW42:1/4751/R1x/SV2",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-8375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/AS03/GW42:1/4751/R1x/SV2",
+      "popularName": null,
+      "source": {
+        "include": "1",
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "dataPointType": "Booleanvalue",
+        "pointName": "SV2",
+        "serialNumberFunctionDescription": "Secondary heating flow",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "sendOnUpdate": "false",
+        "serialNumberFunction": "25",
+        "createdByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI",
+        "function": "1",
+        "functionDescription": "Temperature",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8f2a11c5-b0a2-4241-ae08-4856b8dd33f8",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "fefd3bd7-3c10-4e08-814e-8feddb864d8e",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "observesActuator": null
+    },
+    {
+      "id": "8c0e802a-a8db-42ba-b80d-023d0378b6af",
+      "class": "Sensor",
+      "createdTime": "2020-06-22T12:33:25.647Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "/ENTRA-SD03/Entra/Jurfak/MQTT/Buffered values/563.SQ4214-2.Spjeld posisjon",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "double",
+        "pointName": "563.SQ4214-2.Spjeld posisjon",
+        "writeable": "0",
+        "createdByApp": "RecAPI",
+        "forceable": "0",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "8d8252b8-161a-43a3-b888-4a3486055d36",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "be0400f1-b68c-434f-b330-8bbce704dbbe",
+      "deviceMeasurementUnit": "http://proptechos.com/ontology/extension/Percentage",
+      "deviceQuantityKind": "http://proptechos.com/ontology/extension/State",
+      "devicePlacementContext": "https://w3id.org/rec/device/ExhaustAir",
+      "observesActuator": null
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 50,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalElements": 5085,
+  "totalPages": 102,
+  "last": false,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "size": 50,
+  "number": 0,
+  "numberOfElements": 50,
+  "first": true,
+  "empty": false
+}

@@ -1,0 +1,23 @@
+{
+  "id": "c61c5a10-83ac-40b8-8f53-2e4b2f6df801",
+  "class": "ActuationInterface",
+  "createdTime": "2020-01-01T00:00:00.000Z",
+  "updatedTime": "2020-04-27T13:46:32.477Z",
+  "comment": {},
+  "littera": "noncallable",
+  "popularName": "Non Callable",
+  "source": {},
+  "payloadKeyValueDefinition": {
+    "keyMandatory": null,
+    "valueDatatype": "Integer",
+    "valueRestriction": {
+      "valueRestrictionValues": [
+        "15",
+        "25"
+      ],
+      "valueRestrictionResolution": 0,
+      "valueRestrictionType": "Range"
+    },
+    "keyString": null
+  }
+}

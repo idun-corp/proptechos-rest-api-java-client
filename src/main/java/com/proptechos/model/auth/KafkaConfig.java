@@ -1,12 +1,12 @@
 package com.proptechos.model.auth;
 
-import com.proptechos.utils.ObservationDeserializer;
+import com.proptechos.utils.ObservationSerde;
 import java.util.Objects;
 import java.util.Properties;
-import org.apache.kafka.clients.CommonClientConfigs;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.config.SaslConfigs;
-import org.apache.kafka.common.serialization.StringDeserializer;
+import org.apache.kafka.common.serialization.Serdes;
+import org.apache.kafka.streams.StreamsConfig;
 
 /**
  * KafkaConfig represents configuration data used to coonect kafka enabled Azure eventhub
@@ -14,6 +14,7 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 public class KafkaConfig {
 
   private final ConfigBuilder builder;
+  private String clientId;
 
   private KafkaConfig(ConfigBuilder builder) {
     this.builder = builder;
@@ -23,21 +24,22 @@ public class KafkaConfig {
     return builder.topic;
   }
 
-  public KafkaRetryConfig retryConfig() {
-    return builder.retryConfig;
-  }
-
   public Properties getConfigMap() {
     Properties props = new Properties();
-    props.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, builder.bootstrapServer);
+    props.setProperty(StreamsConfig.APPLICATION_ID_CONFIG, clientId);
+    props.setProperty(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, builder.bootstrapServer);
     props.setProperty(ConsumerConfig.GROUP_ID_CONFIG, builder.groupId);
-    props.setProperty(ConsumerConfig.REQUEST_TIMEOUT_MS_CONFIG, String.valueOf(builder.requestTimeout));
-    props.setProperty(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, builder.securityProtocol);
+    props.setProperty(StreamsConfig.REQUEST_TIMEOUT_MS_CONFIG, String.valueOf(builder.requestTimeout));
+    props.setProperty(StreamsConfig.SECURITY_PROTOCOL_CONFIG, builder.securityProtocol);
     props.setProperty(SaslConfigs.SASL_MECHANISM, builder.saslMechanism);
     props.setProperty(SaslConfigs.SASL_JAAS_CONFIG, builder.saslJaasConfig);
-    props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
-    props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, ObservationDeserializer.class.getName());
+    props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
+    props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, ObservationSerde.class);
     return props;
+  }
+
+  public void setClientId(String clientId) {
+    this.clientId = clientId;
   }
 
   /**
@@ -71,8 +73,6 @@ public class KafkaConfig {
     private String securityProtocol;
 
     private String saslMechanism;
-
-    private KafkaRetryConfig retryConfig;
 
     private ConfigBuilder() {}
 
@@ -148,15 +148,6 @@ public class KafkaConfig {
     }
 
     /**
-     * @param retryConfig configuration retry data
-     * @return builder
-     */
-    public ConfigBuilder retryConfig(KafkaRetryConfig retryConfig) {
-      this.retryConfig = retryConfig;
-      return this;
-    }
-
-    /**
      * @return KafkaConfig instance
      */
     public KafkaConfig build() {
@@ -171,9 +162,6 @@ public class KafkaConfig {
       }
       if (requestTimeout <= 0) {
         requestTimeout = DEFAULT_REQUEST_TIMEOUT;
-      }
-      if (Objects.isNull(retryConfig)) {
-        retryConfig = KafkaRetryConfig.builder().build();
       }
       this.bootstrapServer = String.format("%s.servicebus.windows.net:9093", eventHubNamespace);
       String connectionString = String.format(

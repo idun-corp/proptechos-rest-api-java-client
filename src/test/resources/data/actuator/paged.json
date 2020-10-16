@@ -1,0 +1,614 @@
+{
+  "content": [
+    {
+      "id": "6273c056-947d-4d9b-b5ce-007e4342e1b5",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:28:00.703Z",
+      "updatedTime": "2020-08-06T12:46:50.150Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV10/!Cloud/VS31/Variabler/Write/VS31-GT11_Y3_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV10/!Cloud/VS31/Variabler/Write/VS31-GT11_Y3_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "FALSE",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "VS31-GT11_Y3_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "d8619107-96fa-41e4-ac0d-c6301b33bee9",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "990939f2-968d-4d94-bb0e-009574a62cab",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:27:56.103Z",
+      "updatedTime": "2020-08-06T12:46:50.353Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV08/!Cloud/VS33/Variabler/Write/VS33-GT11_Y1_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV08/!Cloud/VS33/Variabler/Write/VS33-GT11_Y1_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "FALSE",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "VS33-GT11_Y1_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "f5152b93-2219-4ce3-9c8b-b3ebb4f600e0",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "9c2fca2c-81c7-4986-bb83-0881456d21f9",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:28:19.273Z",
+      "updatedTime": "2020-08-06T12:47:01.730Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV12/!Cloud/VS301/Variabler/Write/VS301-GT11_Y6_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV12/!Cloud/VS301/Variabler/Write/VS301-GT11_Y6_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "VS301-GT11_Y6_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "3793bba0-7ec0-4286-9f3b-1ff7c5ce0b46",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "eeb972b3-57ed-4476-8eeb-08a345e96a88",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:28:23.310Z",
+      "updatedTime": "2020-08-06T12:47:02.090Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV12/!Cloud/VS338/Variabler/Write/VS338-GT11_Y1_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV12/!Cloud/VS338/Variabler/Write/VS338-GT11_Y1_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "VS338-GT11_Y1_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "14921d09-1785-46ae-8d52-0e0570659711",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "c7c22ba2-89c4-4f8e-a14f-0a3ae9da02da",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:27:54.997Z",
+      "updatedTime": "2020-08-06T12:47:04.893Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV06/!Cloud/LB0515/Variabler/Write/LB0515-GT11_B_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV06/!Cloud/LB0515/Variabler/Write/LB0515-GT11_B_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "LB0515-GT11_B_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "8b640fc1-74db-4a4f-9b1e-79100f8e91d3",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SupplyAir",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "846f0b95-5c26-4cda-a236-0b35f1d362e3",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:28:09.563Z",
+      "updatedTime": "2020-08-06T12:47:07.400Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV12/!Cloud/LB04/Variabler/Write/LB04-GP12_B_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV12/!Cloud/LB04/Variabler/Write/LB04-GP12_B_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "LB04-GP12_B_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "d9e336bb-1409-48d3-be9a-f24f1db63398",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Pascal",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Pressure",
+      "devicePlacementContext": "https://w3id.org/rec/device/ExtractAir",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "0608bcef-ce0d-495b-a4d2-0d3e31270ce3",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:28:16.757Z",
+      "updatedTime": "2020-08-06T12:47:10.397Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV12/!Cloud/VS40/Variabler/Write/VS40-GT11_Y1_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV12/!Cloud/VS40/Variabler/Write/VS40-GT11_Y1_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "VS40-GT11_Y1_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "67b7db9a-f80d-461a-835b-9fba48458540",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "00901324-252e-440e-9a66-0de09c5c960e",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:28:02.837Z",
+      "updatedTime": "2020-08-06T12:47:11.187Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV10/!Cloud/VS35/Variabler/Write/VS35-GT11_Y1_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV10/!Cloud/VS35/Variabler/Write/VS35-GT11_Y1_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "VS35-GT11_Y1_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "ad82b054-3e4f-4404-b6ca-2ec13c14e4d9",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "1e2509de-b4a9-43d4-98f2-0f44d7f1040d",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:28:03.187Z",
+      "updatedTime": "2020-08-06T12:47:14.330Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV10/!Cloud/VS35/Variabler/Write/VS35-GT11_Y3_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV10/!Cloud/VS35/Variabler/Write/VS35-GT11_Y3_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "VS35-GT11_Y3_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "ad82b054-3e4f-4404-b6ca-2ec13c14e4d9",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "3af2ce8a-e262-4854-84f9-100590257cb7",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:28:05.180Z",
+      "updatedTime": "2020-08-06T12:47:15.810Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV12/!Cloud/KB1/Variabler/Write/KB1-GT12_B_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV12/!Cloud/KB1/Variabler/Write/KB1-GT12_B_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "KB1-GT12_B_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "5cba1fef-feb7-475a-b01f-0429828691e7",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryCoolingFlow",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "f7b74786-311a-4d27-a5e2-10763f153c99",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:28:13.147Z",
+      "updatedTime": "2020-08-06T12:47:16.307Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV12/!Cloud/LB13/Variabler/Write/LB13-GP1_BV_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV12/!Cloud/LB13/Variabler/Write/LB13-GP1_BV_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "LB13-GP1_BV_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "6a9d9124-39e9-4cd0-9b83-6f38da1520f4",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Pascal",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Pressure",
+      "devicePlacementContext": "https://w3id.org/rec/device/SupplyAir",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "7f55f9b2-9030-4c23-a19e-108da26eb00e",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:28:20.843Z",
+      "updatedTime": "2020-08-06T12:47:16.697Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV12/!Cloud/VS332B/Variabler/Write/VS332B-GT11_Y5_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV12/!Cloud/VS332B/Variabler/Write/VS332B-GT11_Y5_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "VS332B-GT11_Y5_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "d7e232b3-e605-4edd-a006-fe6c64a20cbb",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "9d0c3b66-97c0-4004-b1d2-124ecf02cf73",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:28:18.353Z",
+      "updatedTime": "2020-08-06T12:47:19.497Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV12/!Cloud/VS301/Variabler/Write/VS301-GT11_Y1_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV12/!Cloud/VS301/Variabler/Write/VS301-GT11_Y1_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "VS301-GT11_Y1_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "3793bba0-7ec0-4286-9f3b-1ff7c5ce0b46",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "dbd370e6-fe93-41d5-85c9-150425689064",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:28:17.120Z",
+      "updatedTime": "2020-08-06T12:47:23.230Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV12/!Cloud/VS40/Variabler/Write/VS40-GT11_Y3_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV12/!Cloud/VS40/Variabler/Write/VS40-GT11_Y3_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "VS40-GT11_Y3_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "67b7db9a-f80d-461a-835b-9fba48458540",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    },
+    {
+      "id": "eac1ad5f-dd9a-4a6a-b101-15ef8bd2cda4",
+      "class": "Actuator",
+      "createdTime": "2020-07-28T13:28:04.747Z",
+      "updatedTime": "2020-08-06T12:47:24.740Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/test/actuator/2003_SRV11/!Cloud/VS0108/Variabler/Write/VS0108-GT11_Y5_CLOUD",
+          "isMemberOfAliasNamespace": "ed2b878e-fe36-4563-9375-7623828036c7"
+        }
+      ],
+      "comment": {},
+      "littera": "/2003_SRV11/!Cloud/VS0108/Variabler/Write/VS0108-GT11_Y5_CLOUD",
+      "popularName": null,
+      "source": {
+        "sendOnUpdate": "false",
+        "updatedByAgent": "testuser1@idunrealestate.com",
+        "createdByAgent": "testuser1@idunrealestate.com",
+        "dataPointType": "Analog Value",
+        "pointName": "VS0108-GT11_Y5_CLOUD",
+        "updatedByApp": "RecAPI",
+        "powerSource": "CommunicationBus",
+        "createdByApp": "RecAPI",
+        "updateFrequency": "600"
+      },
+      "hasDeviceFunctionType": null,
+      "isMountedInBuildingComponent": "9f2a11c5-b0a2-4241-ae09-4856b8dd33f9",
+      "servesBuildingComponent": null,
+      "servesBuilding": null,
+      "hasSuperDevice": "a4e04d2e-43bd-492c-b4a5-5bbe05e2993a",
+      "deviceMeasurementUnit": "https://w3id.org/rec/core/Celsius",
+      "deviceQuantityKind": "https://w3id.org/rec/core/Temperature",
+      "devicePlacementContext": "https://w3id.org/rec/device/SecondaryHeatingFlow",
+      "hasDefaultActuationInterface": "a60c5a10-93ac-40b9-9f53-2e4b2f6df901",
+      "hasActuationInterface": [
+        "a60c5a10-93ac-40b9-9f53-2e4b2f6df901"
+      ],
+      "observedBy": null
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 15,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalElements": 157,
+  "totalPages": 11,
+  "last": false,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "size": 15,
+  "number": 0,
+  "numberOfElements": 15,
+  "first": true,
+  "empty": false
+}

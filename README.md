@@ -3,14 +3,33 @@
 ProptechOS Rest API client to be used for calling ProptechOS API main CRUD operations.
 
 ## How to start:
+In order to include library as a dependency into pom.xml
+* ProptechOS maven repository:
+````xml
+<repositories>
+    <repository>
+      <id>ProptechOS-SDK</id>
+      <name>sdk-snapshot</name>
+      <url>https://idunrealestate.jfrog.io/artifactory/sdk-snapshot</url>
+    </repository>
+</repositories>
+````
+* Library dependency:
+````xml
+<dependency>
+    <groupId>com.proptechos</groupId>
+    <artifactId>proptechos-rest-api-java-client</artifactId>
+    <version>2.1.3-SNAPSHOT</version>
+</dependency>
+````
+## Start using ProptechOsClient:
 To start using SDK library instance of _**ProptechOsClient**_ should be initialized:
 
 ``` java
 ProptechOsClient.applicationClientBuilder(""<BASE_API_URL>")
     .authConfig(AuthenticationConfig.builder()
             .clientId("<APP_CLIENT_ID>")
-            .clientSecret("<APP_CLIENT_SECRET>")
-            .authority("<AZURE_LOGIN_URL>").build()).build();
+            .clientSecret("<APP_CLIENT_SECRET>").build()).build();
 ```
 
 Properties definitions:
@@ -85,22 +104,45 @@ public class ClassFilter implements IQueryFilter {
 }
 ```
 
+#### Obtaining sensor observations
+``` java
+sensorService.getLatestObservationBySensorId(UUID.fromString("<SENSOR_ID>"));
+
+sensorService.getObservationsBySensorIdForPeriod(
+        UUID.fromString("<SENSOR_ID>"),
+        Instant.now().minus(10, ChronoUnit.DAYS), Instant.now())
+```
+#### Sending actuation request
+``` java
+actuatorService.sendActuationRequest(
+        UUID.fromString("<ACTUATOR_ID>"), "<PAYLOAD_VALUE>");
+```
+
 ### Access to StreamingApiService:
 In order to obtain access to StreamingApiService, KafkaConfig data should be provided
 
 ``` java
 StreamingApiService streamingApiService = 
     client.serviceFactory().streamingApiService(KafkaConfig.builder()
-            .topic("<EVENTHUB_NAME>")
-            .bootstrapServer("<BOOSTRAP_SERVER>")
-            .connectionString("<EVENTHUB_CONNECTION_STRING>")
+            .eventHub("<EVENTHUB_NAME>")
+            .eventHubNamespace("<EVENTHUB_NAMESPACE>")
+            .sharedAccessKey("<SHARED_ACCESS_KEY>")
             .build());
 ```
+#### Subscribe to sensor telemetry stream
+````java
+KafkaStreams kStreams = 
+    streamingApiService.subscribe(Consumer<Observation> consumer);
+```` 
+Close stream
+````java
+kStreams.close();
+````
 
 Properties definitions:
 
 ``` properties
 EVENTHUB_NAME - Azure kafka enebled eventhub name;
-BOOSTRAP_SERVER - Bootstrap server to connect to 'test.servicebus.windows.net:9093';
-EVENTHUB_CONNECTION_STRING - Azure eventhub connection string;
+EVENTHUB_NAMESPACE - Azure eventhub namespace;
+EVENTHUB_CONNECTION_STRING - Azure eventhub namespace shared access key to connect to;
 ```

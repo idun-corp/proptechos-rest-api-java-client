@@ -1,0 +1,15 @@
+{
+  "id": "d92a2a9f-6a4c-4cf0-9ddc-43f5666ebe37",
+  "class": "Storey",
+  "createdTime": "2020-06-02T13:25:30.493Z",
+  "updatedTime": "2020-06-02T13:25:30.493Z",
+  "hasAlias": [],
+  "comment": {},
+  "littera": "1",
+  "popularName": "1",
+  "source": {},
+  "isPartOfBuilding": "90a21909-9c19-4f06-9b5e-7c77293e3593",
+  "hasSuperBuildingComponent": null,
+  "hasSubBuildingComponent": null,
+  "isLocatedAtLocalCoordinates": null
+}
