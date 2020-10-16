@@ -124,14 +124,14 @@ StreamingApiService streamingApiService =
     client.serviceFactory().streamingApiService(KafkaConfig.builder()
             .eventHub("<EVENTHUB_NAME>")
             .eventHubNamespace("<EVENTHUB_NAMESPACE>")
-            .sharedAccessKey("<SHARED_ACCESS_KEY>")
+            .sharedAccessKey("<EVENTHUB_SHARED_ACCESS_KEY>")
             .build());
 ```
 
 Properties definitions:
 * `EVENTHUB_NAME` - Azure kafka enebled eventhub name
 * `EVENTHUB_NAMESPACE` - Azure eventhub namespace
-* `EVENTHUB_CONNECTION_STRING` - Azure eventhub namespace shared access key to connect to
+* `EVENTHUB_SHARED_ACCESS_KEY` - Azure eventhub namespace shared access key to connect to
 
 You will get the necessary parameters from Idun.
 
