@@ -9,19 +9,19 @@ import java.util.UUID;
 public class RoomService extends PagedService<Room> {
   
   RoomService(String baseAppUrl) {
-    super(baseAppUrl, ROOM_JSON);
+    super(baseAppUrl, ROOM_JSON, Room.class);
   }
 
   public Room getById(UUID id) throws ProptechOsServiceException {
-    return httpClient.getById(Room.class, ROOM_JSON, id);
+    return httpClient.getById(typeClazz, ROOM_JSON, id);
   }
 
   public Room createRoom(Room room) throws ProptechOsServiceException {
-    return httpClient.createObject(Room.class, ROOM_JSON, room);
+    return httpClient.createObject(typeClazz, ROOM_JSON, room);
   }
 
   public Room updateRoom(Room room) throws ProptechOsServiceException {
-    return httpClient.updateObject(Room.class, ROOM_JSON, room);
+    return httpClient.updateObject(typeClazz, ROOM_JSON, room);
   }
 
   public void deleteRoom(UUID id) throws ProptechOsServiceException {

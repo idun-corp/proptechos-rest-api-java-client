@@ -14,20 +14,20 @@ public class ActuatorService extends PagedService<Actuator> {
   private final String clientId;
   
   ActuatorService(String baseAppUrl, String clientId) {
-    super(baseAppUrl, ACTUATOR_JSON);
+    super(baseAppUrl, ACTUATOR_JSON, Actuator.class);
     this.clientId = clientId;
   }
 
   public Actuator getById(UUID id) throws ProptechOsServiceException {
-    return httpClient.getById(Actuator.class, ACTUATOR_JSON, id);
+    return httpClient.getById(typeClazz, ACTUATOR_JSON, id);
   }
 
   public Actuator createActuator(Actuator actuator) throws ProptechOsServiceException {
-    return httpClient.createObject(Actuator.class, ACTUATOR_JSON, actuator);
+    return httpClient.createObject(typeClazz, ACTUATOR_JSON, actuator);
   }
 
   public Actuator updateActuator(Actuator actuator) throws ProptechOsServiceException {
-    return httpClient.updateObject(Actuator.class, ACTUATOR_JSON, actuator);
+    return httpClient.updateObject(typeClazz, ACTUATOR_JSON, actuator);
   }
 
   public void deleteActuator(UUID id) throws ProptechOsServiceException {

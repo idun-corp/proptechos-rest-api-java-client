@@ -1,8 +1,15 @@
 package com.proptechos.service;
 
 import static com.proptechos.http.constants.ApiEndpoints.ACTUATION_INTERFACE_JSON;
+import static com.proptechos.http.constants.HttpStatus.OK;
+import static com.proptechos.utils.TestDataHelper.buildActuationInterface;
+import static com.proptechos.utils.TestDataHelper.objectToJson;
+import static com.proptechos.utils.ValidationUtils.verifyDeleteRequest;
 import static com.proptechos.utils.ValidationUtils.verifyGetRequest;
+import static com.proptechos.utils.ValidationUtils.verifyPostRequest;
+import static com.proptechos.utils.ValidationUtils.verifyPutRequest;
 import static org.mockserver.model.HttpRequest.request;
+import static org.mockserver.model.HttpResponse.response;
 
 import com.proptechos.model.actuation.ActuationInterface;
 import com.proptechos.model.common.Paged;
@@ -18,11 +25,12 @@ import org.mockserver.junit.jupiter.MockServerSettings;
 import org.mockserver.model.Parameter;
 
 @ExtendWith(MockServerExtension.class)
-@MockServerSettings(ports = {8080})
+@MockServerSettings(ports = {9090})
 public class ActuationInterfaceServiceTest extends BaseServiceTest {
 
   private static final String PAGED_DATA = DataLoader.loadPagedActuationInterfaces();
   private static final String TEST_AI_ID = "c61c5a10-83ac-40b8-8f53-2e4b2f6df801";
+  private static final ActuationInterface TEST_ACTUATION_INTERFACE = buildActuationInterface();
 
   private static ActuationInterfaceService actuationInterfaceService;
   private final MockServerClient client;
@@ -105,5 +113,41 @@ public class ActuationInterfaceServiceTest extends BaseServiceTest {
     actuationInterfaceService.getById(UUID.fromString(TEST_AI_ID));
 
     verifyGetRequest(client, ACTUATION_INTERFACE_JSON + "/" + TEST_AI_ID);
+  }
+
+
+  @Test
+  void testCreate() {
+    client.when(postRequest(ACTUATION_INTERFACE_JSON))
+        .respond(okResponse(objectToJson(TEST_ACTUATION_INTERFACE)));
+
+    actuationInterfaceService
+        .createActuationInterface(TEST_ACTUATION_INTERFACE);
+
+    verifyPostRequest(
+        client, ACTUATION_INTERFACE_JSON, objectToJson(TEST_ACTUATION_INTERFACE));
+  }
+
+  @Test
+  void testUpdate() {
+    client.when(putRequest(ACTUATION_INTERFACE_JSON))
+        .respond(okResponse(objectToJson(TEST_ACTUATION_INTERFACE)));
+
+    actuationInterfaceService
+        .updateActuationInterface(TEST_ACTUATION_INTERFACE);
+
+    verifyPutRequest(
+        client, ACTUATION_INTERFACE_JSON, objectToJson(TEST_ACTUATION_INTERFACE));
+  }
+
+  @Test
+  void testDelete() {
+    client.when(deleteRequest(ACTUATION_INTERFACE_JSON + "/" + TEST_AI_ID))
+        .respond(response().withStatusCode(OK));
+
+    actuationInterfaceService
+        .deleteActuationInterface(UUID.fromString(TEST_AI_ID));
+
+    verifyDeleteRequest(client, ACTUATION_INTERFACE_JSON + "/" + TEST_AI_ID);
   }
 }

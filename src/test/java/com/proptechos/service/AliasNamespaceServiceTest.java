@@ -25,7 +25,7 @@ import org.mockserver.junit.jupiter.MockServerSettings;
 import org.mockserver.model.Parameter;
 
 @ExtendWith(MockServerExtension.class)
-@MockServerSettings(ports = {8080})
+@MockServerSettings(ports = {9090})
 public class AliasNamespaceServiceTest extends BaseServiceTest {
 
   private static final String PAGED_DATA = DataLoader.loadPagedAliasNamespaces();

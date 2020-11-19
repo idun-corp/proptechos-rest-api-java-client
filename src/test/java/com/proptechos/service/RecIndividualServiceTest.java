@@ -17,7 +17,7 @@ import org.mockserver.junit.jupiter.MockServerExtension;
 import org.mockserver.junit.jupiter.MockServerSettings;
 
 @ExtendWith(MockServerExtension.class)
-@MockServerSettings(ports = {8080})
+@MockServerSettings(ports = {9090})
 public class RecIndividualServiceTest extends BaseServiceTest {
 
   private static RecIndividualService recIndividualService;

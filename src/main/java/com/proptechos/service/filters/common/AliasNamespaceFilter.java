@@ -1,4 +1,4 @@
-package com.proptechos.service.filters;
+package com.proptechos.service.filters.common;
 
 import com.proptechos.http.query.IQueryFilter;
 import com.proptechos.http.query.QueryParam;

@@ -12,9 +12,8 @@
     "createdByApp": "RecAPI"
   },
   "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-  "hasSuperBuildingComponent": null,
-  "hasSubBuildingComponent": null,
+  "hasSubBuildingComponent": [],
   "isLocatedAtLocalCoordinates": "19.17;56.97;0.00",
-  "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+  "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
   "roomType": "https://w3id.org/rec/building/ElectricityRoom"
 }

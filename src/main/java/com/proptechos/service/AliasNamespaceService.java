@@ -9,19 +9,19 @@ import java.util.UUID;
 public class AliasNamespaceService extends PagedService<AliasNamespace> {
 
   AliasNamespaceService(String baseAppUrl) {
-    super(baseAppUrl, ALIAS_NAMESPACE_JSON);
+    super(baseAppUrl, ALIAS_NAMESPACE_JSON, AliasNamespace.class);
   }
 
   public AliasNamespace getById(UUID id) throws ProptechOsServiceException {
-    return httpClient.getById(AliasNamespace.class, ALIAS_NAMESPACE_JSON, id);
+    return httpClient.getById(typeClazz, ALIAS_NAMESPACE_JSON, id);
   }
 
   public AliasNamespace createAliasNamespace(AliasNamespace aliasNamespace) throws ProptechOsServiceException {
-    return httpClient.createObject(AliasNamespace.class, ALIAS_NAMESPACE_JSON, aliasNamespace);
+    return httpClient.createObject(typeClazz, ALIAS_NAMESPACE_JSON, aliasNamespace);
   }
 
   public AliasNamespace updateAliasNamespace(AliasNamespace aliasNamespace) throws ProptechOsServiceException {
-    return httpClient.updateObject(AliasNamespace.class, ALIAS_NAMESPACE_JSON, aliasNamespace);
+    return httpClient.updateObject(typeClazz, ALIAS_NAMESPACE_JSON, aliasNamespace);
   }
 
   public void deleteAliasNamespace(UUID id) throws ProptechOsServiceException {

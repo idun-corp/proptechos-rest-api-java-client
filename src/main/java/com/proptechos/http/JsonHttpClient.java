@@ -67,11 +67,11 @@ public class JsonHttpClient {
     }
   }
 
-  public <T> Paged<T> getPaged(String endpoint, IQueryFilter...queryFilters) throws ProptechOsServiceException {
+  public <T> Paged<T> getPaged(Class<T> clazz, String endpoint, IQueryFilter...queryFilters) throws ProptechOsServiceException {
     try {
       CloseableHttpResponse response =
           client.execute(httpGet(endpoint + buildQueryParams(queryFilters)));
-      return responseHandler.handleResponse(Paged.class, response);
+      return responseHandler.handlePagedResponse(clazz, response);
     } catch (IOException e) {
       throw new ServiceInvalidUsageException(e.getMessage(), e);
     }

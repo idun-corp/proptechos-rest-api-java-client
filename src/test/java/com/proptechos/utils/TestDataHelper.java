@@ -11,6 +11,10 @@ import com.proptechos.model.Room;
 import com.proptechos.model.Sensor;
 import com.proptechos.model.Storey;
 import com.proptechos.model.VirtualBuildingComponent;
+import com.proptechos.model.actuation.ActuationInterface;
+import com.proptechos.model.actuation.DataType;
+import com.proptechos.model.actuation.KeyValueDefinition;
+import com.proptechos.model.actuation.RestrictionType;
 import com.proptechos.model.common.IBuildingComponent;
 import com.proptechos.model.common.IDevice;
 import java.util.UUID;
@@ -94,6 +98,17 @@ public class TestDataHelper {
     ns.setRetrievable(true);
     ns.setPopularName(TEST_NAME);
     return ns;
+  }
+
+  public static ActuationInterface buildActuationInterface() {
+    ActuationInterface actuationInterface = new ActuationInterface();
+    actuationInterface.setLittera(TEST_LITTERA);
+    KeyValueDefinition definition =
+        ActuationInterfaceDataBuilder.builder()
+            .dataType(DataType.Integer)
+            .restriction(RestrictionType.Range, "1", "100").build();
+    actuationInterface.setPayloadKeyValueDefinition(definition);
+    return actuationInterface;
   }
 
   public static String objectToJson(Object object) {
