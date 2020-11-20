@@ -19,7 +19,7 @@ In order to include library as a dependency into pom.xml
 <dependency>
     <groupId>com.proptechos</groupId>
     <artifactId>proptechos-rest-api-java-client</artifactId>
-    <version>2.1.3-SNAPSHOT</version>
+    <version>3.0-SNAPSHOT</version>
 </dependency>
 ````
 ## Start using ProptechOsClient:
@@ -34,7 +34,7 @@ ProptechOsClient.applicationClientBuilder(""<BASE_API_URL>")
 
 Properties definitions:
 
-* `BASE_API_URL` - base ProptechOS api url "https://test.proptechos.com"
+* `BASE_API_URL` - base ProptechOS api url "https://test.proptechos.com/api"
 * `APP_CLIENT_ID` - your application id in ProptechOS (also the application ID registered in Azure Active Directory)
 * `APP_CLIENT_SECRET` - your application secret in ProptechOS (also the secret generated for your Azure Active Directory application)
 

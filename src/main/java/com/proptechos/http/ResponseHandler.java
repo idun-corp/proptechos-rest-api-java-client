@@ -13,12 +13,14 @@ import static com.proptechos.http.constants.HttpStatus.SERVICE_UNAVAILABLE;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.proptechos.exception.EntityNotFoundException;
 import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.exception.ServiceAccessDeniedException;
 import com.proptechos.exception.ServiceInvalidUsageException;
 import com.proptechos.exception.ServiceUnavailableException;
 import com.proptechos.exception.TypeConvertException;
+import com.proptechos.model.common.Paged;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -43,6 +45,19 @@ public class ResponseHandler {
             getStringEntity(httpResponse) : "{}";
     if (status == OK) {
       return parseSingleEntity(clazz, stringEntity);
+    }
+    handleNonSuccessResponse(status, stringEntity);
+    throw new ServiceUnavailableException("Service unavailable. Please try later.");
+  }
+
+  public <T> Paged<T> handlePagedResponse(Class<T> clazz, CloseableHttpResponse httpResponse)
+      throws ProptechOsServiceException {
+    int status = httpResponse.getStatusLine().getStatusCode();
+    String stringEntity =
+        Objects.nonNull(httpResponse.getFirstHeader("content-type")) ?
+            getStringEntity(httpResponse) : "{}";
+    if (status == OK) {
+      return parsePagedEntityResponse(clazz, stringEntity);
     }
     handleNonSuccessResponse(status, stringEntity);
     throw new ServiceUnavailableException("Service unavailable. Please try later.");
@@ -107,6 +122,18 @@ public class ResponseHandler {
       throws ProptechOsServiceException {
     try {
       return mapper.readValue(entity, clazz);
+    } catch (IOException e) {
+      throw new TypeConvertException(
+          "Failed to convert ProptechOS service response to datatype " + clazz.getName(), e);
+    }
+  }
+
+  private  <T> Paged<T> parsePagedEntityResponse(Class<T> clazz, String entity)
+      throws ProptechOsServiceException {
+    try {
+      JavaType javaType = TypeFactory.defaultInstance()
+          .constructParametricType(Paged.class, clazz);
+      return mapper.readValue(entity, javaType);
     } catch (IOException e) {
       throw new TypeConvertException(
           "Failed to convert ProptechOS service response to datatype " + clazz.getName(), e);

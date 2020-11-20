@@ -62,7 +62,7 @@
         "a646c322-533e-4549-b390-bb91bc400633",
         "449bb97f-0499-437b-ae1d-1294943903e3"
       ],
-      "isServedByDevice": null,
+      "servedBy": null,
       "servesDevice": null
     },
     {
@@ -97,7 +97,7 @@
       "hasSubDevices": [
         "2d79032f-67c6-4400-9977-e91a00594299"
       ],
-      "isServedByDevice": null,
+      "servedBy": null,
       "servesDevice": null
     },
     {
@@ -133,7 +133,7 @@
         "a6f7cb3b-031d-4045-a3f3-95c79909eb39",
         "96699436-dfdd-44b1-9946-f259999c7f4b"
       ],
-      "isServedByDevice": null,
+      "servedBy": null,
       "servesDevice": null
     },
     {
@@ -195,7 +195,7 @@
       "hasSubDevices": [
         "92b54690-09ce-4fad-97e0-1eb159926524"
       ],
-      "isServedByDevice": null,
+      "servedBy": null,
       "servesDevice": null
     },
     {
@@ -728,7 +728,7 @@
         "423b4e1b-4991-44cf-b76a-5f9a606cc9d0",
         "9996945e-6900-44ad-9392-a292259a52df"
       ],
-      "isServedByDevice": null,
+      "servedBy": null,
       "servesDevice": null
     },
     {
@@ -758,7 +758,7 @@
         "7d0a5def-3ace-4d97-9b97-ec440e3913cc",
         "590b7c1a-011c-4413-9b6b-bcbfcdb30fdd"
       ],
-      "isServedByDevice": null,
+      "servedBy": null,
       "servesDevice": null
     },
     {
@@ -904,7 +904,7 @@
       "hasSubDevices": [
         "6fd0c0c4-c1b7-4504-9214-5a11332c959f"
       ],
-      "isServedByDevice": null,
+      "servedBy": null,
       "servesDevice": null
     },
     {
@@ -941,7 +941,7 @@
         "79bc159d-7491-45a2-b6b4-90c45fe67c32",
         "19144999-970a-4b51-b2bb-da56d4606ae3"
       ],
-      "isServedByDevice": null,
+      "servedBy": null,
       "servesDevice": null
     },
     {
@@ -1172,7 +1172,7 @@
         "a79fcbcb-29de-4901-95c6-961ae1e24cc0",
         "29299975-32bf-49e6-9e31-0206a233c5aa"
       ],
-      "isServedByDevice": null,
+      "servedBy": null,
       "servesDevice": null
     },
     {
@@ -1252,7 +1252,7 @@
         "665f7917-974a-4aea-9294-22b2b71460c7",
         "62e2cf94-4604-417a-9fbc-6e66d42bd9ae"
       ],
-      "isServedByDevice": null,
+      "servedBy": null,
       "servesDevice": null
     },
     {
@@ -1367,7 +1367,7 @@
       "hasSubDevices": [
         "969d43f2-b053-4cea-bfaa-7a07127b506e"
       ],
-      "isServedByDevice": null,
+      "servedBy": null,
       "servesDevice": null
     },
     {
@@ -1403,7 +1403,7 @@
         "93ac23c0-cba2-431d-b119-3dc9619dd2d2",
         "019e003a-9512-455d-9cdb-e3262c329263"
       ],
-      "isServedByDevice": null,
+      "servedBy": null,
       "servesDevice": null
     },
     {
@@ -1469,7 +1469,7 @@
         "f57f0517-2b99-42cc-9dd3-579d424b6bbc",
         "25dad6e3-f605-422a-bdfe-2d2f97bf796d"
       ],
-      "isServedByDevice": null,
+      "servedBy": null,
       "servesDevice": null
     },
     {

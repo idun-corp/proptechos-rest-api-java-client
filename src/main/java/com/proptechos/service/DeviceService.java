@@ -9,19 +9,19 @@ import java.util.UUID;
 public class DeviceService extends PagedService<IDevice> {
 
   DeviceService(String baseAppUrl) {
-    super(baseAppUrl, DEVICE_JSON);
+    super(baseAppUrl, DEVICE_JSON, IDevice.class);
   }
 
   public IDevice getById(UUID id) throws ProptechOsServiceException {
-    return httpClient.getById(IDevice.class, DEVICE_JSON, id);
+    return httpClient.getById(typeClazz, DEVICE_JSON, id);
   }
 
   public IDevice createDevice(IDevice device) throws ProptechOsServiceException {
-    return httpClient.createObject(IDevice.class, DEVICE_JSON, device);
+    return httpClient.createObject(typeClazz, DEVICE_JSON, device);
   }
 
   public IDevice updateDevice(IDevice device) throws ProptechOsServiceException {
-    return httpClient.updateObject(IDevice.class, DEVICE_JSON, device);
+    return httpClient.updateObject(typeClazz, DEVICE_JSON, device);
   }
 
   public void deleteDevice(UUID id) throws ProptechOsServiceException {

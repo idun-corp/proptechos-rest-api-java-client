@@ -25,7 +25,7 @@ public class BaseServiceTest {
   static void setUpProptechOsClient() {
     loadConfig();
     ProptechOsClient client = ProptechOsClient
-        .applicationClientBuilder("http://localhost:8080/api").authConfig(
+        .applicationClientBuilder("http://localhost:9090/api").authConfig(
             AuthenticationConfig.builder()
                 .clientId(props.getProperty("test.client.app.id"))
                 .clientSecret(props.getProperty("test.client.app.secret"))

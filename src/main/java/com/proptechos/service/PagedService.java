@@ -5,16 +5,18 @@ import com.proptechos.http.JsonHttpClient;
 import com.proptechos.http.query.IQueryFilter;
 import com.proptechos.model.common.PageMetadata;
 import com.proptechos.model.common.Paged;
-import com.proptechos.service.filters.PageNumberFilter;
-import com.proptechos.service.filters.PageSizeFilter;
+import com.proptechos.service.filters.common.PageNumberFilter;
+import com.proptechos.service.filters.common.PageSizeFilter;
 
 class PagedService<T> {
 
   protected final JsonHttpClient httpClient;
+  protected final Class<T> typeClazz;
   private final String apiPath;
 
-  PagedService(String baseAppUrl, String apiPath) {
+  PagedService(String baseAppUrl, String apiPath, Class<T> typeClazz) {
     this.httpClient = JsonHttpClient.getInstance(baseAppUrl);
+    this.typeClazz = typeClazz;
     this.apiPath = apiPath;
   }
 
@@ -26,7 +28,8 @@ class PagedService<T> {
    */
   public Paged<T> getFirstPage(long pageSize) {
     validatePageMetadata(0, pageSize);
-    return httpClient.getPaged(apiPath, new PageSizeFilter(pageSize), new PageNumberFilter(0));
+    return httpClient.getPaged(
+        typeClazz, apiPath, new PageSizeFilter(pageSize), new PageNumberFilter(0));
   }
 
   /**
@@ -39,7 +42,7 @@ class PagedService<T> {
   public Paged<T> getPage(long pageNumber, long pageSize) {
     validatePageMetadata(pageNumber, pageSize);
     return httpClient.getPaged(
-        apiPath, new PageSizeFilter(pageSize), new PageNumberFilter(pageNumber));
+        typeClazz, apiPath, new PageSizeFilter(pageSize), new PageNumberFilter(pageNumber));
   }
 
   /**
@@ -58,7 +61,7 @@ class PagedService<T> {
     queryFilters[1] = new PageNumberFilter(pageNumber);
     System.arraycopy(
         filters, 0, queryFilters, 2, queryFilters.length - 2);
-    return httpClient.getPaged(apiPath, queryFilters);
+    return httpClient.getPaged(typeClazz, apiPath, queryFilters);
   }
 
   /**
@@ -68,7 +71,7 @@ class PagedService<T> {
   public Paged<T> getLastPage(long pageSize) {
     validatePageMetadata(0, pageSize);
     Paged<T> firstPage = getFirstPage(pageSize);
-    return httpClient.getPaged(apiPath,
+    return httpClient.getPaged(typeClazz, apiPath,
         new PageSizeFilter(firstPage.getPageMetadata().getSize()),
         new PageNumberFilter(firstPage.getPageMetadata().getTotalPages() - 1));
   }
@@ -81,7 +84,7 @@ class PagedService<T> {
    */
   public Paged<T> getNextPage(PageMetadata currentPageMetadata) {
     validatePageMetadata(currentPageMetadata);
-    return httpClient.getPaged(apiPath,
+    return httpClient.getPaged(typeClazz, apiPath,
         new PageSizeFilter(currentPageMetadata.getSize()),
         new PageNumberFilter(currentPageMetadata.getPage() + 1));
   }

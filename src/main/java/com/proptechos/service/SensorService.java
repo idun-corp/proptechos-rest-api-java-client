@@ -9,8 +9,8 @@ import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.LatestObservationsRequest;
 import com.proptechos.model.Observation;
 import com.proptechos.model.Sensor;
-import com.proptechos.service.filters.EndTimeFilter;
-import com.proptechos.service.filters.StartTimeFilter;
+import com.proptechos.service.filters.device.EndTimeFilter;
+import com.proptechos.service.filters.device.StartTimeFilter;
 import java.time.Instant;
 import java.util.List;
 import java.util.Map;
@@ -20,19 +20,19 @@ import java.util.stream.Collectors;
 public class SensorService extends PagedService<Sensor> {
   
   SensorService(String baseAppUrl) {
-    super(baseAppUrl, SENSOR_JSON);
+    super(baseAppUrl, SENSOR_JSON, Sensor.class);
   }
 
   public Sensor getById(UUID id) throws ProptechOsServiceException {
-    return httpClient.getById(Sensor.class, SENSOR_JSON, id);
+    return httpClient.getById(typeClazz, SENSOR_JSON, id);
   }
 
   public Sensor createSensor(Sensor sensor) throws ProptechOsServiceException {
-    return httpClient.createObject(Sensor.class, SENSOR_JSON, sensor);
+    return httpClient.createObject(typeClazz, SENSOR_JSON, sensor);
   }
 
   public Sensor updateSensor(Sensor sensor) throws ProptechOsServiceException {
-    return httpClient.updateObject(Sensor.class, SENSOR_JSON, sensor);
+    return httpClient.updateObject(typeClazz, SENSOR_JSON, sensor);
   }
 
   public void deleteSensor(UUID id) throws ProptechOsServiceException {

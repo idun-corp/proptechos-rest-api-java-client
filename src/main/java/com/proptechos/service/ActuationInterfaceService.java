@@ -9,10 +9,24 @@ import java.util.UUID;
 public class ActuationInterfaceService extends PagedService<ActuationInterface> {
 
   ActuationInterfaceService(String baseAppUrl) {
-    super(baseAppUrl, ACTUATION_INTERFACE_JSON);
+    super(baseAppUrl, ACTUATION_INTERFACE_JSON, ActuationInterface.class);
   }
 
   public ActuationInterface getById(UUID id) throws ProptechOsServiceException {
-    return httpClient.getById(ActuationInterface.class, ACTUATION_INTERFACE_JSON, id);
+    return httpClient.getById(typeClazz, ACTUATION_INTERFACE_JSON, id);
+  }
+
+  public ActuationInterface createActuationInterface(
+      ActuationInterface actuationInterface) throws ProptechOsServiceException {
+    return httpClient.createObject(typeClazz, ACTUATION_INTERFACE_JSON, actuationInterface);
+  }
+
+  public ActuationInterface updateActuationInterface(
+      ActuationInterface actuationInterface) throws ProptechOsServiceException {
+    return httpClient.updateObject(typeClazz, ACTUATION_INTERFACE_JSON, actuationInterface);
+  }
+
+  public void deleteActuationInterface(UUID id) throws ProptechOsServiceException {
+    httpClient.deleteObject(ACTUATION_INTERFACE_JSON, id);
   }
 }

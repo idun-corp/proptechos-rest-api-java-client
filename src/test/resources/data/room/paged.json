@@ -17,10 +17,9 @@
         "updatedByApp": "RecAPI"
       },
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSuperBuildingComponent": "6197502a-cb00-4b64-9325-06343e06dd77",
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
-      "isPartOfStorey": "6197502a-cb00-4b64-9325-06343e06dd77",
       "roomType": "https://w3id.org/rec/building/OfficeRoom"
     },
     {
@@ -39,10 +38,9 @@
         "updatedByApp": "RecAPI"
       },
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSuperBuildingComponent": "7deb7019-d9ab-4e75-99aa-3a62f779a7da",
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
-      "isPartOfStorey": "7deb7019-d9ab-4e75-99aa-3a62f779a7da",
       "roomType": "https://w3id.org/rec/building/Pentry"
     },
     {
@@ -61,10 +59,9 @@
         "updatedByApp": "RecAPI"
       },
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSuperBuildingComponent": "973ed762-a1ac-4a99-99de-694e92297074",
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
-      "isPartOfStorey": "973ed762-a1ac-4a99-99de-694e92297074",
       "roomType": "https://w3id.org/rec/building/OfficeRoom"
     },
     {
@@ -88,10 +85,9 @@
         "updatedByApp": "RecAPI"
       },
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSuperBuildingComponent": "6266fb3a-c114-49b5-b373-2c094191cb69",
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
-      "isPartOfStorey": "6266fb3a-c114-49b5-b373-2c094191cb69",
       "roomType": "https://w3id.org/rec/building/SmallStudyRoom"
     },
     {
@@ -108,10 +104,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSuperBuildingComponent": "6e9eb263-7a63-4f69-97ca-99225c3aef0d",
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
-      "isPartOfStorey": "6e9eb263-7a63-4f69-97ca-99225c3aef0d",
       "roomType": "https://w3id.org/rec/building/OfficeRoom"
     },
     {
@@ -132,10 +127,9 @@
         "updatedByApp": "RecAPI"
       },
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
-      "isPartOfStorey": "2411952e-dca4-4c26-bfa6-7ab2931f0610",
+      "hasSuperBuildingComponent": "2411952e-dca4-4c26-bfa6-7ab2931f0610",
       "roomType": "https://w3id.org/rec/building/DataServerRoom"
     },
     {
@@ -152,10 +146,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
-      "isPartOfStorey": "b29c32a3-60f7-479d-9947-17697b7af9d4",
+      "hasSuperBuildingComponent": "b29c32a3-60f7-479d-9947-17697b7af9d4",
       "roomType": "https://w3id.org/rec/building/OfficeRoom"
     },
     {
@@ -172,10 +165,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
-      "isPartOfStorey": "5afebc06-20c7-4fb7-bfa9-c20cf4bbf596",
+      "hasSuperBuildingComponent": "5afebc06-20c7-4fb7-bfa9-c20cf4bbf596",
       "roomType": "https://w3id.org/rec/building/DataServerRoom"
     },
     {
@@ -192,10 +184,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "34736694-d52e-4fc9-b906-90ea69c1569e",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.0;0.0;0",
-      "isPartOfStorey": "e375c920-fa1d-4ce4-ad9a-5f9a3d975e01",
+      "hasSuperBuildingComponent": "e375c920-fa1d-4ce4-ad9a-5f9a3d975e01",
       "roomType": "https://w3id.org/rec/building/DataServerRoom"
     },
     {
@@ -212,10 +203,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "bb21c959-4b73-4a73-93ca-ec2a94b09f94",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.0;0.0;0.0",
-      "isPartOfStorey": "9f249534-c69c-4a2c-bc3b-ea35f4ce3ead",
+      "hasSuperBuildingComponent": "9f249534-c69c-4a2c-bc3b-ea35f4ce3ead",
       "roomType": null
     },
     {
@@ -232,10 +222,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "bb21c959-4b73-4a73-93ca-ec2a94b09f94",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.0;0.0;0.0",
-      "isPartOfStorey": "9f249534-c69c-4a2c-bc3b-ea35f4ce3ead",
+      "hasSuperBuildingComponent": "9f249534-c69c-4a2c-bc3b-ea35f4ce3ead",
       "roomType": null
     },
     {
@@ -252,10 +241,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0;0;22.22",
-      "isPartOfStorey": "b29c32a3-60f7-479d-9947-17697b7af9d4",
+      "hasSuperBuildingComponent": "b29c32a3-60f7-479d-9947-17697b7af9d4",
       "roomType": null
     },
     {
@@ -272,10 +260,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0;0;22.22",
-      "isPartOfStorey": "b29c32a3-60f7-479d-9947-17697b7af9d4",
+      "hasSuperBuildingComponent": "b29c32a3-60f7-479d-9947-17697b7af9d4",
       "roomType": null
     },
     {
@@ -292,10 +279,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0;0;22.22",
-      "isPartOfStorey": "b29c32a3-60f7-479d-9947-17697b7af9d4",
+      "hasSuperBuildingComponent": "b29c32a3-60f7-479d-9947-17697b7af9d4",
       "roomType": null
     },
     {
@@ -314,10 +300,9 @@
         "updatedByApp": "RecAPI"
       },
       "isPartOfBuilding": "e6cc296b-f5c3-412a-9963-395d25f20de0",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.0;0.0;0",
-      "isPartOfStorey": "c4cb99a3-d569-4966-9571-1a4d9c255959",
+      "hasSuperBuildingComponent": "c4cb99a3-d569-4966-9571-1a4d9c255959",
       "roomType": "https://w3id.org/rec/building/OfficeRoom"
     },
     {
@@ -334,10 +319,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "e6cc296b-f5c3-412a-9963-395d25f20de0",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.0;0.0;0",
-      "isPartOfStorey": "c4cb99a3-d569-4966-9571-1a4d9c255959",
+      "hasSuperBuildingComponent": "c4cb99a3-d569-4966-9571-1a4d9c255959",
       "roomType": null
     },
     {
@@ -354,10 +338,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-27.02;52.97;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/UtilitiesRoom"
     },
     {
@@ -374,10 +357,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-26.69;43.90;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/UtilitiesRoom"
     },
     {
@@ -394,10 +376,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-26.19;49.69;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Stairwell"
     },
     {
@@ -414,10 +395,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-22.93;40.69;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/ElevatorRoom"
     },
     {
@@ -434,10 +414,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-22.73;39.76;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/ElevatorRoom"
     },
     {
@@ -454,10 +433,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "94.20;25.07;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Storage"
     },
     {
@@ -474,10 +452,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-21.11;6.99;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Storage"
     },
     {
@@ -494,10 +471,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-20.29;10.99;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Stairwell"
     },
     {
@@ -514,10 +490,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-20.09;31.97;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Toilet"
     },
     {
@@ -534,10 +509,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "91.03;29.27;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/RestingRoom"
     },
     {
@@ -554,10 +528,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-19.94;29.02;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Hallway"
     },
     {
@@ -574,10 +547,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-19.07;30.31;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/CleaningRoom"
     },
     {
@@ -594,10 +566,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-19.90;27.62;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Storage"
     },
     {
@@ -614,10 +585,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-16.77;25.75;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Storage"
     },
     {
@@ -634,10 +604,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "93.60;20.21;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Storage"
     },
     {
@@ -654,10 +623,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-19.69;39.76;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/ElectricityRoom"
     },
     {
@@ -674,10 +642,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-19.69;42.51;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/ElevatorShaft"
     },
     {
@@ -694,10 +661,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-19.22;31.60;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/CloakRoom"
     },
     {
@@ -714,10 +680,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-16.74;21.77;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Storage"
     },
     {
@@ -735,9 +700,9 @@
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-16.72;15.10;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/RetailRoom"
     },
     {
@@ -754,10 +719,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-16.27;41.54;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/ElevatorShaft"
     },
     {
@@ -774,10 +738,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-16.04;6.94;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Storage"
     },
     {
@@ -794,10 +757,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-15.54;19.00;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/TelecommunicationRoom"
     },
     {
@@ -814,10 +776,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-15.51;39.36;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Hallway"
     },
     {
@@ -834,10 +795,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-14.49;12.29;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Storage"
     },
     {
@@ -854,10 +814,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-14.49;39.03;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Storage"
     },
     {
@@ -874,10 +833,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-13.92;31.66;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/RetailRoom"
     },
     {
@@ -894,10 +852,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-13.61;42.74;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Stairwell"
     },
     {
@@ -914,10 +871,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-12.02;6.92;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Storage"
     },
     {
@@ -934,10 +890,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-11.97;56.49;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/ServiceShaft"
     },
     {
@@ -954,10 +909,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "19.17;56.97;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/ElectricityRoom"
     },
     {
@@ -974,10 +928,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-9.55;39.59;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Hallway"
     },
     {
@@ -994,10 +947,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-9.24;16.77;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Storage"
     },
     {
@@ -1014,10 +966,9 @@
         "createdByApp": "RecAPI"
       },
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
-      "hasSubBuildingComponent": null,
+      "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-9.57;41.97;0.00",
-      "isPartOfStorey": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
       "roomType": "https://w3id.org/rec/building/Storage"
     }
   ],

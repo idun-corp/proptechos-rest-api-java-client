@@ -12,9 +12,8 @@
     "createdByApp": "RecAPI"
   },
   "isPartOfBuilding": "cbe9abf1-23de-4eb2-a12e-06d69ff00e02",
-  "hasSuperBuildingComponent": null,
-  "hasSubBuildingComponent": null,
+  "hasSubBuildingComponent": [],
   "isLocatedAtLocalCoordinates": "0;0;32.71",
-  "isPartOfStorey": "e7c9ebfb-7909-42a0-ac25-59ed6ea94c74",
+  "hasSuperBuildingComponent": "e7c9ebfb-7909-42a0-ac25-59ed6ea94c74",
   "roomType": "https://w3id.org/rec/building/ServiceShaft"
 }
