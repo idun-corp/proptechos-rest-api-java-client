@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proptechos.model.Actuator;
 import com.proptechos.model.AliasNamespace;
+import com.proptechos.model.Asset;
 import com.proptechos.model.Building;
 import com.proptechos.model.Collection;
 import com.proptechos.model.Device;
@@ -69,6 +70,15 @@ public class TestDataHelper {
     storey.setLittera(TEST_LITTERA);
     storey.setIsPartOfBuilding(UUID.randomUUID());
     return storey;
+  }
+
+  public static Asset buildAsset() {
+    Asset asset = new Asset();
+    asset.setPopularName(TEST_NAME);
+    asset.setRecClass("Asset");
+    asset.setLittera(TEST_LITTERA);
+    asset.setLocatedIn(UUID.randomUUID());
+    return asset;
   }
 
   public static IDevice buildDevice() {

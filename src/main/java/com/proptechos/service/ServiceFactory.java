@@ -70,6 +70,16 @@ public class ServiceFactory {
   }
 
   /**
+   * @return AssetService instance
+   *
+   * @see com.proptechos.service.AssetService
+   */
+  public AssetService assetService() {
+    return (AssetService) this.services.computeIfAbsent(
+        AssetService.class.getSimpleName(), k -> new AssetService(baseAppUrl));
+  }
+
+  /**
    * @return DeviceService instance
    *
    * @see com.proptechos.service.DeviceService

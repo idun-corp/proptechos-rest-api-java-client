@@ -56,6 +56,15 @@ public class DataLoader {
     return loadData("data/room/single.json");
   }
 
+  public static String loadPagedAssets() {
+    return loadData("data/asset/paged.json");
+  }
+
+  public static String loadSingleAsset() {
+    return loadData("data/asset/single.json");
+  }
+
+
   public static String loadPagedDevices() {
     return loadData("data/device/paged.json");
   }
