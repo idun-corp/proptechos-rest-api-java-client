@@ -19,7 +19,7 @@ In order to include library as a dependency into pom.xml
 <dependency>
     <groupId>com.proptechos</groupId>
     <artifactId>proptechos-rest-api-java-client</artifactId>
-    <version>3.0-SNAPSHOT</version>
+    <version>3.2.2-SNAPSHOT</version>
 </dependency>
 ````
 ## Start using ProptechOsClient:

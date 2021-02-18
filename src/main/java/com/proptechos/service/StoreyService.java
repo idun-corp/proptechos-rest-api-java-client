@@ -3,7 +3,7 @@ package com.proptechos.service;
 import static com.proptechos.http.constants.ApiEndpoints.STOREY_JSON;
 
 import com.proptechos.exception.ProptechOsServiceException;
-import com.proptechos.model.Storey;
+import com.proptechos.model.buildingcomponent.Storey;
 import java.util.UUID;
 
 public class StoreyService extends PagedService<Storey> {

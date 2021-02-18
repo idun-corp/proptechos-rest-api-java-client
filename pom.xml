@@ -6,7 +6,7 @@
 
   <groupId>com.proptechos</groupId>
   <artifactId>proptechos-rest-api-java-client</artifactId>
-  <version>3.0-SNAPSHOT</version>
+  <version>3.2.2-SNAPSHOT</version>
   <description>
     ProptechOS Rest API client to be used for calling ProptechOS API main CRUD operations,
     obtaining sensor telemetry, initiating actuation and attaching to streaming API.
@@ -14,7 +14,7 @@
 
   <properties>
     <java.version>8</java.version>
-    <proptechos-rec-model.version>3.1.3-SNAPSHOT</proptechos-rec-model.version>
+    <proptechos-rec-model.version>3.2-SNAPSHOT</proptechos-rec-model.version>
     <microsoft-azure-msal4j.version>1.7.0</microsoft-azure-msal4j.version>
     <reactivex-rxjava.version>3.0.6</reactivex-rxjava.version>
     <apache-httpclient.version>4.5.12</apache-httpclient.version>

@@ -58,7 +58,7 @@
       "servesBuildingComponent": null,
       "servesBuilding": null,
       "hasSuperDevice": null,
-      "hasSubDevices": [
+      "hasSubDevice": [
         "a646c322-533e-4549-b390-bb91bc400633",
         "449bb97f-0499-437b-ae1d-1294943903e3"
       ],
@@ -94,7 +94,7 @@
       "servesBuildingComponent": null,
       "servesBuilding": null,
       "hasSuperDevice": null,
-      "hasSubDevices": [
+      "hasSubDevice": [
         "2d79032f-67c6-4400-9977-e91a00594299"
       ],
       "servedBy": null,
@@ -129,7 +129,7 @@
       "servesBuildingComponent": null,
       "servesBuilding": null,
       "hasSuperDevice": null,
-      "hasSubDevices": [
+      "hasSubDevice": [
         "a6f7cb3b-031d-4045-a3f3-95c79909eb39",
         "96699436-dfdd-44b1-9946-f259999c7f4b"
       ],
@@ -192,7 +192,7 @@
       "servesBuildingComponent": null,
       "servesBuilding": null,
       "hasSuperDevice": null,
-      "hasSubDevices": [
+      "hasSubDevice": [
         "92b54690-09ce-4fad-97e0-1eb159926524"
       ],
       "servedBy": null,
@@ -723,7 +723,7 @@
       "servesBuildingComponent": null,
       "servesBuilding": null,
       "hasSuperDevice": null,
-      "hasSubDevices": [
+      "hasSubDevice": [
         "2df3c14f-f31c-44e0-9505-c21627c51100",
         "423b4e1b-4991-44cf-b76a-5f9a606cc9d0",
         "9996945e-6900-44ad-9392-a292259a52df"
@@ -754,7 +754,7 @@
       "servesBuildingComponent": null,
       "servesBuilding": null,
       "hasSuperDevice": null,
-      "hasSubDevices": [
+      "hasSubDevice": [
         "7d0a5def-3ace-4d97-9b97-ec440e3913cc",
         "590b7c1a-011c-4413-9b6b-bcbfcdb30fdd"
       ],
@@ -901,7 +901,7 @@
       "servesBuildingComponent": null,
       "servesBuilding": null,
       "hasSuperDevice": null,
-      "hasSubDevices": [
+      "hasSubDevice": [
         "6fd0c0c4-c1b7-4504-9214-5a11332c959f"
       ],
       "servedBy": null,
@@ -936,7 +936,7 @@
       "servesBuildingComponent": null,
       "servesBuilding": null,
       "hasSuperDevice": null,
-      "hasSubDevices": [
+      "hasSubDevice": [
         "b7a7ef95-f9b3-49ed-bd01-36ea34f1a960",
         "79bc159d-7491-45a2-b6b4-90c45fe67c32",
         "19144999-970a-4b51-b2bb-da56d4606ae3"
@@ -1164,7 +1164,7 @@
       "servesBuildingComponent": null,
       "servesBuilding": null,
       "hasSuperDevice": null,
-      "hasSubDevices": [
+      "hasSubDevice": [
         "10c9e2e7-c349-450f-bafa-c4fcd7ec7ba9",
         "19b47ecd-9297-47e9-a7e6-41a96ac4e059",
         "6b5efce0-bfab-4aae-9a9b-6bf6ba621f53",
@@ -1244,7 +1244,7 @@
       "servesBuildingComponent": null,
       "servesBuilding": null,
       "hasSuperDevice": null,
-      "hasSubDevices": [
+      "hasSubDevice": [
         "64ad6a39-af69-49f0-ab53-94b52c1a6b50",
         "72ace51c-0094-4cbb-9aaa-e9f02fbc539f",
         "354c306d-9a73-44a1-95d0-e9d607fa4c0c",
@@ -1364,7 +1364,7 @@
       "servesBuildingComponent": null,
       "servesBuilding": null,
       "hasSuperDevice": null,
-      "hasSubDevices": [
+      "hasSubDevice": [
         "969d43f2-b053-4cea-bfaa-7a07127b506e"
       ],
       "servedBy": null,
@@ -1399,7 +1399,7 @@
       "servesBuildingComponent": null,
       "servesBuilding": null,
       "hasSuperDevice": null,
-      "hasSubDevices": [
+      "hasSubDevice": [
         "93ac23c0-cba2-431d-b119-3dc9619dd2d2",
         "019e003a-9512-455d-9cdb-e3262c329263"
       ],
@@ -1464,7 +1464,7 @@
       "servesBuildingComponent": null,
       "servesBuilding": null,
       "hasSuperDevice": null,
-      "hasSubDevices": [
+      "hasSubDevice": [
         "5bb12f35-7c01-4c30-be2e-612649c35e2f",
         "f57f0517-2b99-42cc-9dd3-579d424b6bbc",
         "25dad6e3-f605-422a-bdfe-2d2f97bf796d"
