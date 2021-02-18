@@ -21,7 +21,9 @@ import com.proptechos.exception.ServiceAccessDeniedException;
 import com.proptechos.exception.ServiceInvalidUsageException;
 import com.proptechos.exception.ServiceUnavailableException;
 import com.proptechos.exception.TypeConvertException;
+import com.proptechos.model.common.IBaseClass;
 import com.proptechos.model.common.Paged;
+import com.proptechos.utils.BaseClassMixin;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +39,7 @@ public class ResponseHandler {
   public ResponseHandler() {
     this.mapper = new ObjectMapper();
     this.mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    this.mapper.addMixIn(IBaseClass.class, BaseClassMixin.class);
   }
 
   public <T> T handleResponse(Class<T> clazz, CloseableHttpResponse httpResponse)

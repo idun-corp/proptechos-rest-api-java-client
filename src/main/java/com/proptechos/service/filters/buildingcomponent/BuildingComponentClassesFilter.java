@@ -5,7 +5,7 @@ import com.proptechos.http.query.QueryParam;
 import java.util.List;
 
 /**
- * ClassFilter class for filtering by real estate core classes
+ * BuildingComponentClassesFilter class for filtering by real estate core classes
  *
  * @apiNote Example: 'Room,Storey' - Applicable to BuildingComponentService, DeviceService
  *

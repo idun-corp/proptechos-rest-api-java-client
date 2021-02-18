@@ -70,6 +70,16 @@ public class ServiceFactory {
   }
 
   /**
+   * @return AssetService instance
+   *
+   * @see com.proptechos.service.AssetService
+   */
+  public AssetService assetService() {
+    return (AssetService) this.services.computeIfAbsent(
+        AssetService.class.getSimpleName(), k -> new AssetService(baseAppUrl));
+  }
+
+  /**
    * @return DeviceService instance
    *
    * @see com.proptechos.service.DeviceService
@@ -117,6 +127,16 @@ public class ServiceFactory {
   public AliasNamespaceService aliasNamespaceService() {
     return (AliasNamespaceService) this.services.computeIfAbsent(
         AliasNamespaceService.class.getSimpleName(), k -> new AliasNamespaceService(baseAppUrl));
+  }
+
+  /**
+   * @return CollectionService instance
+   *
+   * @see com.proptechos.service.CollectionService
+   */
+  public CollectionService collectionService() {
+    return (CollectionService) this.services.computeIfAbsent(
+        CollectionService.class.getSimpleName(), k -> new CollectionService(baseAppUrl));
   }
 
   /**

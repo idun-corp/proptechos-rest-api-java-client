@@ -4,7 +4,7 @@ import com.proptechos.http.query.IQueryFilter;
 import com.proptechos.http.query.QueryParam;
 
 /**
- * AliasFilter class for filtering by full littera or by littera part
+ * LitteraFilter class for filtering by full littera or by littera part
  *
  * @apiNote Example: '/AS01/GW21/Z211/R4x/FLK1','/GW21/Z211'
  *

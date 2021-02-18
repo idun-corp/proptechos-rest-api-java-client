@@ -7,6 +7,7 @@ public interface ApiEndpoints {
   String BUILDING_COMPONENT_JSON = "/json/buildingcomponent";
   String STOREY_JSON = "/json/storey";
   String ROOM_JSON = "/json/room";
+  String ASSET_JSON = "/json/asset";
   String DEVICE_JSON = "/json/device";
   String ACTUATOR_JSON = "/json/actuator";
   String ACTUATION_JSON = "/json/actuator/%s/actuation";
@@ -16,6 +17,7 @@ public interface ApiEndpoints {
   String LATEST_OBSERVATIONS_JSON = "/sensor/observations/latest";
   String ACTUATION_INTERFACE_JSON = "/json/actuationinterface";
   String ALIAS_NAMESPACE_JSON = "/json/aliasnamespace";
+  String COLLECTION_JSON = "/json/collection";
 
   String DEVICE_FUNCTION_JSON = "/json/devicefunction";
   String MEASUREMENT_UNIT_JSON = "/json/measurementunit";

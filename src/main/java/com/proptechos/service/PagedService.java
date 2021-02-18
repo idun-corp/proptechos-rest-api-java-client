@@ -89,7 +89,7 @@ class PagedService<T> {
         new PageNumberFilter(currentPageMetadata.getPage() + 1));
   }
 
-  private void validatePageMetadata(long pageNumber, long pageSize) {
+  protected void validatePageMetadata(long pageNumber, long pageSize) {
     if (pageNumber < 0) {
       throw new ServiceInvalidUsageException("Page number can't have negative value");
     }

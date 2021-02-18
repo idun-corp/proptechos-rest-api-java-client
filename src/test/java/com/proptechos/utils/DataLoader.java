@@ -56,6 +56,15 @@ public class DataLoader {
     return loadData("data/room/single.json");
   }
 
+  public static String loadPagedAssets() {
+    return loadData("data/asset/paged.json");
+  }
+
+  public static String loadSingleAsset() {
+    return loadData("data/asset/single.json");
+  }
+
+
   public static String loadPagedDevices() {
     return loadData("data/device/paged.json");
   }
@@ -94,6 +103,14 @@ public class DataLoader {
 
   public static String loadSingleAliasNamespace() {
     return loadData("data/aliasnamespace/single.json");
+  }
+
+  public static String loadPagedCollection() {
+    return loadData("data/collection/paged.json");
+  }
+
+  public static String loadSingleCollection() {
+    return loadData("data/collection/single.json");
   }
 
   public static String loadDeviceFunctions() {
