@@ -3,7 +3,7 @@ package com.proptechos.service;
 import static com.proptechos.http.constants.ApiEndpoints.ROOM_JSON;
 
 import com.proptechos.exception.ProptechOsServiceException;
-import com.proptechos.model.Room;
+import com.proptechos.model.buildingcomponent.Room;
 import java.util.UUID;
 
 public class RoomService extends PagedService<Room> {

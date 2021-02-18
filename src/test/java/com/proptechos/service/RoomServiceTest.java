@@ -11,7 +11,7 @@ import static com.proptechos.utils.ValidationUtils.verifyPutRequest;
 import static org.mockserver.model.HttpRequest.request;
 import static org.mockserver.model.HttpResponse.response;
 
-import com.proptechos.model.Room;
+import com.proptechos.model.buildingcomponent.Room;
 import com.proptechos.model.common.Paged;
 import com.proptechos.utils.DataLoader;
 import java.util.UUID;
