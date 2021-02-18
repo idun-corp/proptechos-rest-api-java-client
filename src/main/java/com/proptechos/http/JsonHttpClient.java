@@ -126,6 +126,15 @@ public class JsonHttpClient {
     }
   }
 
+  public <T> List<T> putList(Class<T> clazz, String endpoint, Object object) throws ProptechOsServiceException {
+    try {
+      CloseableHttpResponse response = client.execute(httpPut(endpoint, object));
+      return responseHandler.handleListResponse(clazz, response);
+    } catch (IOException e) {
+      throw new ServiceInvalidUsageException(e.getMessage(), e);
+    }
+  }
+
   private HttpGet httpGet(String url) {
     HeaderManager headerManager = HeaderManager.getInstance(
         new AcceptJsonHeader(), new OAuth2TokenHeader());

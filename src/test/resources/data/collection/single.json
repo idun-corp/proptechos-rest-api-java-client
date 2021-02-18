@@ -1,0 +1,20 @@
+{
+  "id": "1b5d06c9-9f43-46b0-93f4-e9e5d9e3c972",
+  "class": "Collection",
+  "createdTime": "2019-06-27T07:16:11.000Z",
+  "updatedTime": "2020-04-27T13:46:32.477Z",
+  "hasAlias": [
+    {
+      "id": "https://ns.proptechos.com/vk-rita/599",
+      "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+    },
+    {
+      "id": "https://ns.proptechos.com/vk-vitec/costplace/955",
+      "isMemberOfAliasNamespace": "ab47dc4c-a404-4b9c-9b92-4e6e9b4463cf"
+    }
+  ],
+  "comment": {},
+  "littera": "599-955",
+  "popularName": "Hammarby Gård 12 (Seaside)",
+  "source": {}
+}

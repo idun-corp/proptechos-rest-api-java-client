@@ -96,6 +96,14 @@ public class DataLoader {
     return loadData("data/aliasnamespace/single.json");
   }
 
+  public static String loadPagedCollection() {
+    return loadData("data/collection/paged.json");
+  }
+
+  public static String loadSingleCollection() {
+    return loadData("data/collection/single.json");
+  }
+
   public static String loadDeviceFunctions() {
     return loadData("data/recindividuals/devicefunctiontypes.json");
   }

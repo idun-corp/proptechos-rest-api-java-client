@@ -120,6 +120,16 @@ public class ServiceFactory {
   }
 
   /**
+   * @return CollectionService instance
+   *
+   * @see com.proptechos.service.CollectionService
+   */
+  public CollectionService collectionService() {
+    return (CollectionService) this.services.computeIfAbsent(
+        CollectionService.class.getSimpleName(), k -> new CollectionService(baseAppUrl));
+  }
+
+  /**
    * @return RecIndividualService instance
    *
    * @see com.proptechos.service.RecIndividualService

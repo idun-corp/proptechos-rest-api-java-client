@@ -16,6 +16,7 @@ public interface ApiEndpoints {
   String LATEST_OBSERVATIONS_JSON = "/sensor/observations/latest";
   String ACTUATION_INTERFACE_JSON = "/json/actuationinterface";
   String ALIAS_NAMESPACE_JSON = "/json/aliasnamespace";
+  String COLLECTION_JSON = "/json/collection";
 
   String DEVICE_FUNCTION_JSON = "/json/devicefunction";
   String MEASUREMENT_UNIT_JSON = "/json/measurementunit";
