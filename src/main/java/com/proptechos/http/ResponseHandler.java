@@ -10,6 +10,7 @@ import static com.proptechos.http.constants.HttpStatus.NOT_FOUND;
 import static com.proptechos.http.constants.HttpStatus.OK;
 import static com.proptechos.http.constants.HttpStatus.SERVICE_UNAVAILABLE;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -35,6 +36,7 @@ public class ResponseHandler {
 
   public ResponseHandler() {
     this.mapper = new ObjectMapper();
+    this.mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
   }
 
   public <T> T handleResponse(Class<T> clazz, CloseableHttpResponse httpResponse)
