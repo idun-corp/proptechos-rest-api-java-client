@@ -8,6 +8,7 @@ import com.proptechos.http.header.AcceptJsonHeader;
 import com.proptechos.http.header.ContentJsonHeader;
 import com.proptechos.http.header.HeaderManager;
 import com.proptechos.http.header.OAuth2TokenHeader;
+import com.proptechos.http.header.PropertyOwnerHeader;
 import com.proptechos.http.query.IQueryFilter;
 import com.proptechos.http.query.QueryBuilder;
 import com.proptechos.model.common.Paged;
@@ -137,7 +138,7 @@ public class JsonHttpClient {
 
   private HttpGet httpGet(String url) {
     HeaderManager headerManager = HeaderManager.getInstance(
-        new AcceptJsonHeader(), new OAuth2TokenHeader());
+        new AcceptJsonHeader(), new OAuth2TokenHeader(), new PropertyOwnerHeader());
     HttpGet httpGet = new HttpGet(baseApiUrl + url);
     headerManager.addHeaders(httpGet);
     return httpGet;
@@ -146,7 +147,7 @@ public class JsonHttpClient {
   private <T> HttpPost httpPost(String url, T body) throws ProptechOsServiceException {
     try {
       HeaderManager headerManager = HeaderManager.getInstance(
-          new AcceptJsonHeader(), new ContentJsonHeader(), new OAuth2TokenHeader());
+          new AcceptJsonHeader(), new ContentJsonHeader(), new OAuth2TokenHeader(), new PropertyOwnerHeader());
       HttpPost httpPost = new HttpPost(baseApiUrl + url);
       StringEntity modelData = new StringEntity(mapper.writeValueAsString(body));
       httpPost.setEntity(modelData);
@@ -160,7 +161,7 @@ public class JsonHttpClient {
   private <T> HttpPut httpPut(String url, T body) throws ProptechOsServiceException {
     try {
       HeaderManager headerManager = HeaderManager.getInstance(
-          new AcceptJsonHeader(), new ContentJsonHeader(), new OAuth2TokenHeader());
+          new AcceptJsonHeader(), new ContentJsonHeader(), new OAuth2TokenHeader(), new PropertyOwnerHeader());
       HttpPut httpPut = new HttpPut(baseApiUrl + url);
       StringEntity modelData = new StringEntity(mapper.writeValueAsString(body));
       httpPut.setEntity(modelData);
@@ -173,7 +174,7 @@ public class JsonHttpClient {
 
   private HttpDelete httpDelete(String url) {
     HeaderManager headerManager = HeaderManager.getInstance(
-        new AcceptJsonHeader(), new OAuth2TokenHeader());
+        new AcceptJsonHeader(), new OAuth2TokenHeader(), new PropertyOwnerHeader());
     HttpDelete httpDelete = new HttpDelete(baseApiUrl + url);
     headerManager.addHeaders(httpDelete);
     return httpDelete;

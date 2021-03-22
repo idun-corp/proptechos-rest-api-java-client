@@ -116,6 +116,11 @@ actuatorService.sendActuationRequest(
         UUID.fromString("<ACTUATOR_ID>"), "<PAYLOAD_VALUE>");
 ```
 
+#### Set preferable Property Owner Id
+``` java
+PropertyOwnerCache.getInstance().setPropertyOwner("<PROPERTY_OWNER_ID>")
+```
+
 ### Access to StreamingApiService:
 In order to obtain access to StreamingApiService, KafkaConfig data should be provided
 
