@@ -6,7 +6,7 @@
 
   <groupId>com.proptechos</groupId>
   <artifactId>proptechos-rest-api-java-client</artifactId>
-  <version>3.2.2-SNAPSHOT</version>
+  <version>3.2.2</version>
   <description>
     ProptechOS Rest API client to be used for calling ProptechOS API main CRUD operations,
     obtaining sensor telemetry, initiating actuation and attaching to streaming API.
