@@ -20,6 +20,16 @@ public class ServiceFactory {
   }
 
   /**
+   * @return PropertyOwnerService instance
+   *
+   * @see com.proptechos.service.PropertyOwnerService
+   */
+  public PropertyOwnerService propertyOwnerService() {
+    return (PropertyOwnerService) this.services.computeIfAbsent(
+        PropertyOwnerService.class.getSimpleName(), k -> new PropertyOwnerService(baseAppUrl));
+  }
+
+  /**
    * @return RealEstateService instance
    *
    * @see com.proptechos.service.RealEstateService

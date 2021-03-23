@@ -8,6 +8,7 @@ import com.proptechos.model.Asset;
 import com.proptechos.model.Building;
 import com.proptechos.model.Collection;
 import com.proptechos.model.Device;
+import com.proptechos.model.PropertyOwner;
 import com.proptechos.model.RealEstate;
 import com.proptechos.model.Sensor;
 import com.proptechos.model.actuation.ActuationInterface;
@@ -33,6 +34,7 @@ public class TestDataHelper {
     realEstate.setPopularName(TEST_NAME);
     realEstate.setRecClass("RealEstate");
     realEstate.setLittera(TEST_LITTERA);
+    realEstate.setOwnedBy(UUID.randomUUID());
     return realEstate;
   }
 

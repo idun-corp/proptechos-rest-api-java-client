@@ -8,6 +8,14 @@ import java.util.stream.Collectors;
 
 public class DataLoader {
 
+  public static String loadPagedPropertyOwners() {
+    return loadData("data/propertyowner/paged.json");
+  }
+
+  public static String loadSinglePropertyOwner() {
+    return loadData("data/propertyowner/single.json");
+  }
+
   public static String loadPagedRealEstates() {
     return loadData("data/realestate/paged.json");
   }
