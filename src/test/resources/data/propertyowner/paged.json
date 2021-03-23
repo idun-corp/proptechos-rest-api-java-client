@@ -1,0 +1,109 @@
+{
+  "content": [
+    {
+      "id": "7f4b24ac-a70b-4df7-bd0c-011ad3d671d7",
+      "class": "PropertyOwner",
+      "createdTime": "2021-03-03T09:15:23.709Z",
+      "updatedTime": null,
+      "comment": null,
+      "popularName": "Main First Property Owner"
+    },
+    {
+      "id": "3fa75f64-5717-4562-b3fc-2c963f661111",
+      "class": "PropertyOwner",
+      "createdTime": "2021-03-11T14:55:20.763Z",
+      "updatedTime": null,
+      "comment": null,
+      "popularName": "DELETE ME"
+    },
+    {
+      "id": "dccf27b0-2ec9-4dda-a476-7c752e3fa069",
+      "class": "PropertyOwner",
+      "createdTime": "2021-03-04T09:54:47.197Z",
+      "updatedTime": "2021-03-04T10:00:55.165Z",
+      "comment": null,
+      "popularName": "Test-779"
+    },
+    {
+      "id": "91e76f72-1d10-4373-a6ca-0d9465dfb25f",
+      "class": "PropertyOwner",
+      "createdTime": "2021-03-03T14:45:13.144Z",
+      "updatedTime": null,
+      "comment": null,
+      "popularName": "Test1"
+    },
+    {
+      "id": "06662196-1e0b-427b-7e67-60697f107bc6",
+      "class": "PropertyOwner",
+      "createdTime": "2021-03-03T17:21:06.400Z",
+      "updatedTime": null,
+      "comment": null,
+      "popularName": "Test2"
+    },
+    {
+      "id": "9f0d54a7-337c-4a99-b6e7-c70b72cf996b",
+      "class": "PropertyOwner",
+      "createdTime": "2021-03-04T09:57:52.212Z",
+      "updatedTime": null,
+      "comment": null,
+      "popularName": "Test-977"
+    },
+    {
+      "id": "e7b277ee-40ab-4f10-7f42-7c20273c6f94",
+      "class": "PropertyOwner",
+      "createdTime": "2021-03-12T09:10:44.443Z",
+      "updatedTime": null,
+      "comment": null,
+      "popularName": "testtest"
+    },
+    {
+      "id": "6b77af59-c7cd-402d-712c-70c5bc1f7a52",
+      "class": "PropertyOwner",
+      "createdTime": "2021-03-12T09:24:51.992Z",
+      "updatedTime": null,
+      "comment": null,
+      "popularName": "testdevice"
+    },
+    {
+      "id": "3fa75f64-5717-4562-b3fc-2c963f66afa6",
+      "class": "PropertyOwner",
+      "createdTime": "2021-03-12T09:12:27.721Z",
+      "updatedTime": "2021-03-12T09:14:11.631Z",
+      "comment": null,
+      "popularName": "string3232323"
+    },
+    {
+      "id": "6cbde427-5395-45f3-ad6a-ecd616b37dbb",
+      "class": "PropertyOwner",
+      "createdTime": "2021-03-17T07:43:31.167Z",
+      "updatedTime": null,
+      "comment": null,
+      "popularName": "Integration test stage PO"
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "sorted": false,
+      "unsorted": true,
+      "empty": true
+    },
+    "offset": 0,
+    "pageNumber": 0,
+    "pageSize": 10,
+    "unpaged": false,
+    "paged": true
+  },
+  "last": false,
+  "totalElements": 35,
+  "totalPages": 4,
+  "size": 10,
+  "number": 0,
+  "sort": {
+    "sorted": false,
+    "unsorted": true,
+    "empty": true
+  },
+  "first": true,
+  "numberOfElements": 10,
+  "empty": false
+}

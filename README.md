@@ -9,8 +9,8 @@ In order to include library as a dependency into pom.xml
 <repositories>
     <repository>
       <id>ProptechOS-SDK</id>
-      <name>sdk-release</name>
-      <url>https://idunrealestate.jfrog.io/artifactory/sdk-release</url>
+      <name>sdk-snapshot</name>
+      <url>https://idunrealestate.jfrog.io/artifactory/sdk-snapshot</url>
     </repository>
 </repositories>
 ````
@@ -19,7 +19,7 @@ In order to include library as a dependency into pom.xml
 <dependency>
     <groupId>com.proptechos</groupId>
     <artifactId>proptechos-rest-api-java-client</artifactId>
-    <version>3.2.2</version>
+    <version>3.3-SNAPSHOT</version>
 </dependency>
 ````
 ## Start using ProptechOsClient:
