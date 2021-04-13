@@ -2,6 +2,7 @@ package com.proptechos.http.constants;
 
 public interface ApiEndpoints {
 
+  String DEFAULT_PROPERTY_OWNER_JSON = "/json/propertyowner/default";
   String PROPERTY_OWNER_JSON = "/json/propertyowner";
   String REAL_ESTATE_JSON = "/json/realestate";
   String REAL_ESTATE_COMPONENT_JSON = "/json/realestatecomponent";
