@@ -1,6 +1,7 @@
 package com.proptechos.service;
 
 import static com.proptechos.http.constants.ApiEndpoints.PROPERTY_OWNER_JSON;
+import static com.proptechos.http.constants.ApiEndpoints.DEFAULT_PROPERTY_OWNER_JSON;
 
 import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.PropertyOwner;
@@ -15,4 +16,9 @@ public class PropertyOwnerService extends PagedService<PropertyOwner> {
   public PropertyOwner getById(UUID id) throws ProptechOsServiceException {
     return httpClient.getById(PropertyOwner.class, PROPERTY_OWNER_JSON, id);
   }
+
+  public PropertyOwner getDefaultPropertyOwner() throws ProptechOsServiceException {
+    return httpClient.getSingle(PropertyOwner.class, DEFAULT_PROPERTY_OWNER_JSON);
+  }
+
 }

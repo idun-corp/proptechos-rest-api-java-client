@@ -1,6 +1,7 @@
 package com.proptechos.service;
 
 import static com.proptechos.http.constants.ApiEndpoints.PROPERTY_OWNER_JSON;
+import static com.proptechos.http.constants.ApiEndpoints.DEFAULT_PROPERTY_OWNER_JSON;
 import static com.proptechos.utils.ValidationUtils.verifyGetRequest;
 import static org.mockserver.model.HttpRequest.request;
 
@@ -94,6 +95,14 @@ public class PropertyOwnerServiceTest extends BaseServiceTest {
     verifyGetRequest(client, PROPERTY_OWNER_JSON,
         Parameter.param("page", "1"),
         Parameter.param("size", "10"));
+  }
+
+  @Test
+  void testGetDefaultPropertyOwner() {
+    client.when(getRequest(DEFAULT_PROPERTY_OWNER_JSON))
+            .respond(okResponse(DataLoader.loadSinglePropertyOwner()));
+    propertyOwnerService.getDefaultPropertyOwner();
+    verifyGetRequest(client, DEFAULT_PROPERTY_OWNER_JSON);
   }
 
 }
