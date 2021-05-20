@@ -1,148 +1,172 @@
 package com.proptechos.service;
 
-import static com.proptechos.http.constants.ApiEndpoints.SENSOR_JSON;
-import static com.proptechos.http.constants.HttpStatus.OK;
-import static com.proptechos.utils.TestDataHelper.buildSensor;
-import static com.proptechos.utils.TestDataHelper.objectToJson;
-import static com.proptechos.utils.ValidationUtils.verifyDeleteRequest;
-import static com.proptechos.utils.ValidationUtils.verifyGetRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPostRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPutRequest;
-import static org.mockserver.model.HttpRequest.request;
-import static org.mockserver.model.HttpResponse.response;
-
 import com.proptechos.model.Sensor;
 import com.proptechos.model.common.Paged;
 import com.proptechos.utils.DataLoader;
-import java.util.UUID;
-import org.junit.jupiter.api.AfterEach;
+import com.proptechos.utils.WireMockExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockserver.client.MockServerClient;
-import org.mockserver.junit.jupiter.MockServerExtension;
-import org.mockserver.junit.jupiter.MockServerSettings;
-import org.mockserver.model.Parameter;
 
-@ExtendWith(MockServerExtension.class)
-@MockServerSettings(ports = {9090})
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+import static com.proptechos.http.constants.ApiEndpoints.SENSORS_JSON;
+import static com.proptechos.http.constants.ApiEndpoints.SENSOR_JSON;
+import static com.proptechos.utils.TestDataHelper.*;
+import static com.proptechos.utils.ValidationUtils.*;
+
+@ExtendWith(WireMockExtension.class)
 public class SensorServiceTest extends BaseServiceTest {
 
-  private static final String PAGED_DATA = DataLoader.loadPagedSensors();
-  private static final String TEST_SENSOR_ID = "14f883c7-eda5-40a1-8280-002ffb237400";
-  private static final Sensor TEST_SENSOR = buildSensor();
+    private static final String PAGED_DATA = DataLoader.loadPagedSensors();
+    private static final String TEST_SENSOR_ID = "14f883c7-eda5-40a1-8280-002ffb237400";
+    private static final Sensor TEST_SENSOR = buildSensor();
 
-  private static SensorService sensorService;
-  private final MockServerClient client;
+    private static SensorService sensorService;
 
-  SensorServiceTest(MockServerClient client) {
-    this.client = client;
-  }
+    @BeforeAll
+    static void setUp() {
+        sensorService = serviceFactory.sensorService();
+    }
 
-  @BeforeAll
-  static void setUp() {
-    sensorService = serviceFactory.sensorService();
-  }
+    @Test
+    void testGetFirstPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "0");
+        parameters.put("size", "50");
 
-  @AfterEach
-  void clearMockServer() {
-    client.clear(
-        request().withPath(APP_CONTEXT + SENSOR_JSON));
-    client.clear(
-        request().withPath(APP_CONTEXT + SENSOR_JSON + "/" + TEST_SENSOR_ID));
-  }
+        stubGetResponse(SENSOR_JSON, parameters, PAGED_DATA);
 
-  @Test
-  void testGetFirstPage() {
-    client.when(getRequest(SENSOR_JSON)).respond(okResponse(PAGED_DATA));
+        sensorService.getFirstPage(50);
 
-    sensorService.getFirstPage(50);
+        verifyGetRequest(SENSOR_JSON, parameters);
+    }
 
-    verifyGetRequest(client, SENSOR_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "50"));
-  }
+    @Test
+    void testGetLastPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "50");
 
-  @Test
-  void testGetLastPage() {
-    client.when(getRequest(SENSOR_JSON)).respond(okResponse(PAGED_DATA));
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "101");
+        parameters2.put("size", "50");
 
-    sensorService.getLastPage(50);
+        stubGetResponse(SENSOR_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(SENSOR_JSON, parameters2, PAGED_DATA);
 
-    verifyGetRequest(client, SENSOR_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "50"));
+        sensorService.getLastPage(50);
 
-    verifyGetRequest(client, SENSOR_JSON,
-        Parameter.param("page", "101"),
-        Parameter.param("size", "50"));
-  }
+        verifyGetRequest(SENSOR_JSON, parameters1);
+        verifyGetRequest(SENSOR_JSON, parameters2);
+    }
 
-  @Test
-  void testGetByPage() {
-    client.when(getRequest(SENSOR_JSON)).respond(okResponse(PAGED_DATA));
+    @Test
+    void testGetByPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "1");
+        parameters.put("size", "50");
 
-    sensorService.getPage(1, 50);
+        stubGetResponse(SENSOR_JSON, parameters, PAGED_DATA);
 
-    verifyGetRequest(client, SENSOR_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "50"));
-  }
+        sensorService.getPage(1, 50);
 
-  @Test
-  void testGetNextPage() {
-    client.when(getRequest(SENSOR_JSON)).respond(okResponse(PAGED_DATA));
+        verifyGetRequest(SENSOR_JSON, parameters);
+    }
 
-    Paged<Sensor> paged = sensorService.getFirstPage(50);
-    sensorService.getNextPage(paged.getPageMetadata());
+    @Test
+    void testGetNextPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "50");
 
-    verifyGetRequest(client, SENSOR_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "50"));
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "1");
+        parameters2.put("size", "50");
 
-    verifyGetRequest(client, SENSOR_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "50"));
-  }
+        stubGetResponse(SENSOR_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(SENSOR_JSON, parameters2, PAGED_DATA);
 
-  @Test
-  void testGetById() {
-    client.when(getRequest(SENSOR_JSON + "/" + TEST_SENSOR_ID))
-        .respond(okResponse(DataLoader.loadSingleSensor()));
+        Paged<Sensor> paged = sensorService.getFirstPage(50);
+        sensorService.getNextPage(paged.getPageMetadata());
 
-    sensorService.getById(UUID.fromString(TEST_SENSOR_ID));
+        verifyGetRequest(SENSOR_JSON, parameters1);
+        verifyGetRequest(SENSOR_JSON, parameters2);
+    }
 
-    verifyGetRequest(client, SENSOR_JSON + "/" + TEST_SENSOR_ID);
-  }
+    @Test
+    void testGetById() {
+        stubGetResponse(SENSOR_JSON + "/" + TEST_SENSOR_ID,
+            new HashMap<>(), DataLoader.loadSingleSensor());
 
-  @Test
-  void testCreate() {
-    client.when(postRequest(SENSOR_JSON))
-        .respond(okResponse(objectToJson(TEST_SENSOR)));
+        sensorService.getById(UUID.fromString(TEST_SENSOR_ID));
 
-    sensorService.createSensor(TEST_SENSOR);
+        verifyGetRequest(SENSOR_JSON + "/" + TEST_SENSOR_ID, new HashMap<>());
+    }
 
-    verifyPostRequest(client, SENSOR_JSON, objectToJson(TEST_SENSOR));
-  }
+    @Test
+    void testCreate() {
+        stubPostResponse(SENSOR_JSON, objectToJson(TEST_SENSOR));
 
-  @Test
-  void testUpdate() {
-    client.when(putRequest(SENSOR_JSON))
-        .respond(okResponse(objectToJson(TEST_SENSOR)));
+        sensorService.createSensor(TEST_SENSOR);
 
-    sensorService.updateSensor(TEST_SENSOR);
+        verifyPostRequest(SENSOR_JSON, objectToJson(TEST_SENSOR));
+    }
 
-    verifyPutRequest(client, SENSOR_JSON, objectToJson(TEST_SENSOR));
-  }
+    @Test
+    void testUpdate() {
+        stubPutResponse(SENSOR_JSON, objectToJson(TEST_SENSOR));
 
-  @Test
-  void testDelete() {
-    client.when(deleteRequest(SENSOR_JSON + "/" + TEST_SENSOR_ID))
-        .respond(response().withStatusCode(OK));
+        sensorService.updateSensor(TEST_SENSOR);
 
-    sensorService.deleteSensor(UUID.fromString(TEST_SENSOR_ID));
+        verifyPutRequest(SENSOR_JSON, objectToJson(TEST_SENSOR));
+    }
 
-    verifyDeleteRequest(client, SENSOR_JSON + "/" + TEST_SENSOR_ID);
-  }
+    @Test
+    void testDelete() {
+        stubDeleteResponse(SENSOR_JSON + "/" + TEST_SENSOR_ID);
 
+        sensorService.deleteSensor(UUID.fromString(TEST_SENSOR_ID));
+
+        verifyDeleteRequest(SENSOR_JSON + "/" + TEST_SENSOR_ID);
+    }
+
+    @Test
+    void testCreateBatch() {
+        stubPostResponse(SENSORS_JSON, objectToJson(successBatchResponse()));
+
+        sensorService.createSensors(Arrays.asList(TEST_SENSOR, TEST_SENSOR));
+
+        verifyPostRequest(SENSORS_JSON, objectToJson(Arrays.asList(TEST_SENSOR, TEST_SENSOR)));
+    }
+
+    @Test
+    void testUpdateBatch() {
+        stubPutResponse(SENSORS_JSON, objectToJson(successBatchResponse()));
+
+        sensorService.updateSensors(Arrays.asList(TEST_SENSOR, TEST_SENSOR));
+
+        verifyPutRequest(SENSORS_JSON, objectToJson(Arrays.asList(TEST_SENSOR, TEST_SENSOR)));
+    }
+
+    @Test
+    void testFailedCreateBatch() {
+        stubPostResponse(SENSORS_JSON, DataLoader.loadBatchFailedSensors());
+
+        sensorService.createSensors(Arrays.asList(TEST_SENSOR, TEST_SENSOR));
+
+        verifyPostRequest(SENSORS_JSON, objectToJson(Arrays.asList(TEST_SENSOR, TEST_SENSOR)));
+    }
+
+    @Test
+    void testFailedUpdateBatch() {
+        stubPutResponse(SENSORS_JSON, DataLoader.loadBatchFailedSensors());
+
+        sensorService.updateSensors(Arrays.asList(TEST_SENSOR, TEST_SENSOR));
+
+        verifyPutRequest(SENSORS_JSON, objectToJson(Arrays.asList(TEST_SENSOR, TEST_SENSOR)));
+    }
 }

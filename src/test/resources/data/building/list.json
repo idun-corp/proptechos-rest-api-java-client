@@ -13,10 +13,9 @@
     "comment": {},
     "littera": "593 001-Gamen 12 (Skrapan)",
     "popularName": "Byggnad 001",
-    "source": {
-      "updatedByAgent": "testuser1@idunrealestate.com",
-      "updatedByApp": "RecAPI"
-    },
+    "updatedByAgent": "testuser1@idunrealestate.com",
+    "createdByAgent": "testuser1@idunrealestate.com",
+    "source": {},
     "isPartOfRealEstate": "9fc5b695-dd19-40c6-9225-93ecf92ecd7f",
     "hasGeoReferenceOrigo": "0.0;0.0;0.0"
   },
@@ -34,10 +33,9 @@
     "comment": {},
     "littera": "14030 001-Uggleborg 12 (Klara C)",
     "popularName": "Byggnad 001",
-    "source": {
-      "updatedByAgent": "testuser1@idunrealestate.com",
-      "updatedByApp": "RecAPI"
-    },
+    "updatedByAgent": "testuser1@idunrealestate.com",
+    "createdByAgent": "testuser1@idunrealestate.com",
+    "source": {},
     "isPartOfRealEstate": "59abaa99-6304-4600-ab7f-251de3f6c602",
     "hasGeoReferenceOrigo": "0.0;0.0;0.0"
   },
@@ -55,10 +53,9 @@
     "comment": {},
     "littera": "14045-001",
     "popularName": "Byggnad 001",
-    "source": {
-      "updatedByAgent": "testuser1@idunrealestate.com",
-      "updatedByApp": "RecAPI"
-    },
+    "updatedByAgent": "testuser1@idunrealestate.com",
+    "createdByAgent": "testuser1@idunrealestate.com",
+    "source": {},
     "isPartOfRealEstate": "71a359dd-60f3-45aa-b5af-9d95dfa4a49f",
     "hasGeoReferenceOrigo": "0.0;0.0;10.0"
   },
@@ -76,10 +73,9 @@
     "comment": {},
     "littera": "595-001",
     "popularName": "Byggnad 001",
-    "source": {
-      "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
-      "updatedByApp": "RecAPI"
-    },
+    "updatedByAgent": "testuser1@idunrealestate.com",
+    "createdByAgent": "testuser1@idunrealestate.com",
+    "source": {},
     "isPartOfRealEstate": "ef21c32d-52e6-4c6d-b2c6-3b9ca34e325f",
     "hasGeoReferenceOrigo": "0.0;0.0;0.0"
   },
@@ -97,10 +93,9 @@
     "comment": {},
     "littera": "14232-001",
     "popularName": "Byggnad 001",
-    "source": {
-      "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
-      "updatedByApp": "RecAPI"
-    },
+    "updatedByAgent": "testuser1@idunrealestate.com",
+    "createdByAgent": "testuser1@idunrealestate.com",
+    "source": {},
     "isPartOfRealEstate": "e7219cd0-a7f1-4923-9e63-74d71da3e20b",
     "hasGeoReferenceOrigo": "0.0;0.0;0.0"
   },
@@ -113,10 +108,9 @@
     "comment": {},
     "littera": "14532-001",
     "popularName": "Byggnad 001",
-    "source": {
-      "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
-      "updatedByApp": "RecAPI"
-    },
+    "updatedByAgent": "testuser1@idunrealestate.com",
+    "createdByAgent": "testuser1@idunrealestate.com",
+    "source": {},
     "isPartOfRealEstate": "5637fc61-f6aa-4239-93a0-fa23faa969e6",
     "hasGeoReferenceOrigo": "0.0;0.0;0.0"
   },
@@ -134,10 +128,9 @@
     "comment": {},
     "littera": "14549-001",
     "popularName": "Byggnad 001",
-    "source": {
-      "updatedByAgent": "testuser1@idunrealestate.com",
-      "updatedByApp": "RecAPI"
-    },
+    "updatedByAgent": "testuser1@idunrealestate.com",
+    "createdByAgent": "testuser1@idunrealestate.com",
+    "source": {},
     "isPartOfRealEstate": "9717924d-4ac3-4b92-ae77-97e34ebfd1f7",
     "hasGeoReferenceOrigo": "0.0;0.0;0.0"
   }

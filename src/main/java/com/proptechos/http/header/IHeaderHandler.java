@@ -4,6 +4,6 @@ import org.apache.http.client.methods.HttpRequestBase;
 
 public interface IHeaderHandler {
 
-  void apply(HttpRequestBase requestBase);
+    void apply(HttpRequestBase requestBase);
 
 }

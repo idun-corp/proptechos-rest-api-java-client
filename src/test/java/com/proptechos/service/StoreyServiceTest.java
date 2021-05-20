@@ -1,147 +1,172 @@
 package com.proptechos.service;
 
-import static com.proptechos.http.constants.ApiEndpoints.STOREY_JSON;
-import static com.proptechos.http.constants.HttpStatus.OK;
-import static com.proptechos.utils.TestDataHelper.buildStorey;
-import static com.proptechos.utils.TestDataHelper.objectToJson;
-import static com.proptechos.utils.ValidationUtils.verifyDeleteRequest;
-import static com.proptechos.utils.ValidationUtils.verifyGetRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPostRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPutRequest;
-import static org.mockserver.model.HttpRequest.request;
-import static org.mockserver.model.HttpResponse.response;
-
 import com.proptechos.model.buildingcomponent.Storey;
 import com.proptechos.model.common.Paged;
 import com.proptechos.utils.DataLoader;
-import java.util.UUID;
-import org.junit.jupiter.api.AfterEach;
+import com.proptechos.utils.WireMockExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockserver.client.MockServerClient;
-import org.mockserver.junit.jupiter.MockServerExtension;
-import org.mockserver.junit.jupiter.MockServerSettings;
-import org.mockserver.model.Parameter;
 
-@ExtendWith(MockServerExtension.class)
-@MockServerSettings(ports = {9090})
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+import static com.proptechos.http.constants.ApiEndpoints.STOREYS_JSON;
+import static com.proptechos.http.constants.ApiEndpoints.STOREY_JSON;
+import static com.proptechos.utils.TestDataHelper.*;
+import static com.proptechos.utils.ValidationUtils.*;
+
+@ExtendWith(WireMockExtension.class)
 public class StoreyServiceTest extends BaseServiceTest {
 
-  private static final String PAGED_DATA = DataLoader.loadPagedStoreys();
-  private static final String TEST_STOREY_ID = "d92a2a9f-6a4c-4cf0-9ddc-43f5666ebe37";
-  private static final Storey TEST_STOREY = buildStorey();
+    private static final String PAGED_DATA = DataLoader.loadPagedStoreys();
+    private static final String TEST_STOREY_ID = "d92a2a9f-6a4c-4cf0-9ddc-43f5666ebe37";
+    private static final Storey TEST_STOREY = buildStorey();
 
-  private static StoreyService storeyService;
-  private final MockServerClient client;
-  
-  StoreyServiceTest(MockServerClient client) {
-    this.client = client;
-  }
+    private static StoreyService storeyService;
 
-  @BeforeAll
-  static void setUp() {
-    storeyService = serviceFactory.storeyService();
-  }
+    @BeforeAll
+    static void setUp() {
+        storeyService = serviceFactory.storeyService();
+    }
 
-  @AfterEach
-  void clearMockServer() {
-    client.clear(
-        request().withPath(APP_CONTEXT + STOREY_JSON));
-    client.clear(
-        request().withPath(APP_CONTEXT + STOREY_JSON + "/" + TEST_STOREY_ID));
-  }
+    @Test
+    void testGetFirstPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "0");
+        parameters.put("size", "15");
 
-  @Test
-  void testGetFirstPage() {
-    client.when(getRequest(STOREY_JSON)).respond(okResponse(PAGED_DATA));
+        stubGetResponse(STOREY_JSON, parameters, PAGED_DATA);
 
-    storeyService.getFirstPage(15);
+        storeyService.getFirstPage(15);
 
-    verifyGetRequest(client, STOREY_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "15"));
-  }
+        verifyGetRequest(STOREY_JSON, parameters);
+    }
 
-  @Test
-  void testGetLastPage() {
-    client.when(getRequest(STOREY_JSON)).respond(okResponse(PAGED_DATA));
+    @Test
+    void testGetLastPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "15");
 
-    storeyService.getLastPage(15);
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "4");
+        parameters2.put("size", "15");
 
-    verifyGetRequest(client, STOREY_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "15"));
+        stubGetResponse(STOREY_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(STOREY_JSON, parameters2, PAGED_DATA);
 
-    verifyGetRequest(client, STOREY_JSON,
-        Parameter.param("page", "4"),
-        Parameter.param("size", "15"));
-  }
+        storeyService.getLastPage(15);
 
-  @Test
-  void testGetByPage() {
-    client.when(getRequest(STOREY_JSON)).respond(okResponse(PAGED_DATA));
+        verifyGetRequest(STOREY_JSON, parameters1);
+        verifyGetRequest(STOREY_JSON, parameters2);
+    }
 
-    storeyService.getPage(1, 15);
+    @Test
+    void testGetByPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "1");
+        parameters.put("size", "15");
 
-    verifyGetRequest(client, STOREY_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "15"));
-  }
+        stubGetResponse(STOREY_JSON, parameters, PAGED_DATA);
 
-  @Test
-  void testGetNextPage() {
-    client.when(getRequest(STOREY_JSON)).respond(okResponse(PAGED_DATA));
+        storeyService.getPage(1, 15);
 
-    Paged<Storey> paged = storeyService.getFirstPage(15);
-    storeyService.getNextPage(paged.getPageMetadata());
+        verifyGetRequest(STOREY_JSON, parameters);
+    }
 
-    verifyGetRequest(client, STOREY_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "15"));
+    @Test
+    void testGetNextPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "15");
 
-    verifyGetRequest(client, STOREY_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "15"));
-  }
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "1");
+        parameters2.put("size", "15");
 
-  @Test
-  void testGetById() {
-    client.when(getRequest(STOREY_JSON + "/" + TEST_STOREY_ID))
-        .respond(okResponse(DataLoader.loadSingleStorey()));
+        stubGetResponse(STOREY_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(STOREY_JSON, parameters2, PAGED_DATA);
 
-    storeyService.getById(UUID.fromString(TEST_STOREY_ID));
+        Paged<Storey> paged = storeyService.getFirstPage(15);
+        storeyService.getNextPage(paged.getPageMetadata());
 
-    verifyGetRequest(client, STOREY_JSON + "/" + TEST_STOREY_ID);
-  }
+        verifyGetRequest(STOREY_JSON, parameters1);
+        verifyGetRequest(STOREY_JSON, parameters2);
+    }
 
-  @Test
-  void testCreate() {
-    client.when(postRequest(STOREY_JSON))
-        .respond(okResponse(objectToJson(TEST_STOREY)));
+    @Test
+    void testGetById() {
+        stubGetResponse(STOREY_JSON + "/" + TEST_STOREY_ID,
+            new HashMap<>(), DataLoader.loadSingleStorey());
 
-    storeyService.createStorey(TEST_STOREY);
+        storeyService.getById(UUID.fromString(TEST_STOREY_ID));
 
-    verifyPostRequest(client, STOREY_JSON, objectToJson(TEST_STOREY));
-  }
+        verifyGetRequest(STOREY_JSON + "/" + TEST_STOREY_ID, new HashMap<>());
+    }
 
-  @Test
-  void testUpdate() {
-    client.when(putRequest(STOREY_JSON))
-        .respond(okResponse(objectToJson(TEST_STOREY)));
+    @Test
+    void testCreate() {
+        stubPostResponse(STOREY_JSON, objectToJson(TEST_STOREY));
 
-    storeyService.updateStorey(TEST_STOREY);
+        storeyService.createStorey(TEST_STOREY);
 
-    verifyPutRequest(client, STOREY_JSON, objectToJson(TEST_STOREY));
-  }
+        verifyPostRequest(STOREY_JSON, objectToJson(TEST_STOREY));
+    }
 
-  @Test
-  void testDelete() {
-    client.when(deleteRequest(STOREY_JSON + "/" + TEST_STOREY_ID))
-        .respond(response().withStatusCode(OK));
+    @Test
+    void testUpdate() {
+        stubPutResponse(STOREY_JSON, objectToJson(TEST_STOREY));
 
-    storeyService.deleteStorey(UUID.fromString(TEST_STOREY_ID));
+        storeyService.updateStorey(TEST_STOREY);
 
-    verifyDeleteRequest(client, STOREY_JSON + "/" + TEST_STOREY_ID);
-  }
+        verifyPutRequest(STOREY_JSON, objectToJson(TEST_STOREY));
+    }
+
+    @Test
+    void testDelete() {
+        stubDeleteResponse(STOREY_JSON + "/" + TEST_STOREY_ID);
+
+        storeyService.deleteStorey(UUID.fromString(TEST_STOREY_ID));
+
+        verifyDeleteRequest(STOREY_JSON + "/" + TEST_STOREY_ID);
+    }
+
+    @Test
+    void testCreateBatch() {
+        stubPostResponse(STOREYS_JSON, objectToJson(successBatchResponse()));
+
+        storeyService.createStoreys(Arrays.asList(TEST_STOREY, TEST_STOREY));
+
+        verifyPostRequest(STOREYS_JSON, objectToJson(Arrays.asList(TEST_STOREY, TEST_STOREY)));
+    }
+
+    @Test
+    void testUpdateBatch() {
+        stubPutResponse(STOREYS_JSON, objectToJson(successBatchResponse()));
+
+        storeyService.updateStoreys(Arrays.asList(TEST_STOREY, TEST_STOREY));
+
+        verifyPutRequest(STOREYS_JSON, objectToJson(Arrays.asList(TEST_STOREY, TEST_STOREY)));
+    }
+
+    @Test
+    void testFailedCreateBatch() {
+        stubFailedPostResponse(STOREYS_JSON, DataLoader.loadBatchFailedStoreys());
+
+        storeyService.createStoreys(Arrays.asList(TEST_STOREY, TEST_STOREY));
+
+        verifyPostRequest(STOREYS_JSON, objectToJson(Arrays.asList(TEST_STOREY, TEST_STOREY)));
+    }
+
+    @Test
+    void testFailedUpdateBatch() {
+        stubFailedPutResponse(STOREYS_JSON, DataLoader.loadBatchFailedStoreys());
+
+        storeyService.updateStoreys(Arrays.asList(TEST_STOREY, TEST_STOREY));
+
+        verifyPutRequest(STOREYS_JSON, objectToJson(Arrays.asList(TEST_STOREY, TEST_STOREY)));
+    }
 }

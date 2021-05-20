@@ -9,12 +9,10 @@
       "comment": {},
       "littera": "Test-201",
       "popularName": "Test1",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {
-        "additionalInfo": "TestRoom",
-        "updatedByAgent": "testuser1@idunrealestate.com",
-        "createdByAgent": "testuser2@idunrealestate.com",
-        "createdByApp": "RecAPI",
-        "updatedByApp": "RecAPI"
+        "additionalInfo": "TestRoom"
       },
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
       "hasSuperBuildingComponent": "6197502a-cb00-4b64-9325-06343e06dd77",
@@ -31,12 +29,9 @@
       "comment": {},
       "littera": "Test-202",
       "popularName": "Test2",
-      "source": {
-        "updatedByAgent": "testuser1@idunrealestate.com",
-        "createdByAgent": "testuser2@idunrealestate.com",
-        "createdByApp": "RecAPI",
-        "updatedByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
       "hasSuperBuildingComponent": "7deb7019-d9ab-4e75-99aa-3a62f779a7da",
       "hasSubBuildingComponent": [],
@@ -52,12 +47,9 @@
       "comment": {},
       "littera": "Test-101",
       "popularName": null,
-      "source": {
-        "updatedByAgent": "testuser3@idunrealestate.com",
-        "createdByAgent": "testuser2@idunrealestate.com",
-        "createdByApp": "RecAPI",
-        "updatedByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
       "hasSuperBuildingComponent": "973ed762-a1ac-4a99-99de-694e92297074",
       "hasSubBuildingComponent": [],
@@ -78,12 +70,9 @@
       "comment": {},
       "littera": "Test-102",
       "popularName": null,
-      "source": {
-        "updatedByAgent": "testuser3@idunrealestate.com",
-        "createdByAgent": "testuser2@idunrealestate.com",
-        "createdByApp": "RecAPI",
-        "updatedByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
       "hasSuperBuildingComponent": "6266fb3a-c114-49b5-b373-2c094191cb69",
       "hasSubBuildingComponent": [],
@@ -99,10 +88,9 @@
       "comment": {},
       "littera": "Test Room",
       "popularName": null,
-      "source": {
-        "createdByAgent": "testuser2@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
       "hasSuperBuildingComponent": "6e9eb263-7a63-4f69-97ca-99225c3aef0d",
       "hasSubBuildingComponent": [],
@@ -120,12 +108,9 @@
       },
       "littera": "Test Room",
       "popularName": null,
-      "source": {
-        "updatedByAgent": "testuser1@idunrealestate.com",
-        "createdByAgent": "testuser2@idunrealestate.com",
-        "createdByApp": "RecAPI",
-        "updatedByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
@@ -141,10 +126,9 @@
       "comment": {},
       "littera": "Test Room",
       "popularName": null,
-      "source": {
-        "createdByAgent": "testuser2@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
@@ -160,10 +144,9 @@
       "comment": {},
       "littera": "Test Room",
       "popularName": null,
-      "source": {
-        "createdByAgent": "testuser2@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.00;0.00;0.00",
@@ -179,10 +162,9 @@
       "comment": {},
       "littera": "TestMSRoom",
       "popularName": "TestMSRoom",
-      "source": {
-        "createdByAgent": "testuser4@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "34736694-d52e-4fc9-b906-90ea69c1569e",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.0;0.0;0",
@@ -198,10 +180,9 @@
       "comment": {},
       "littera": "test",
       "popularName": null,
-      "source": {
-        "createdByAgent": "testuser1@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "bb21c959-4b73-4a73-93ca-ec2a94b09f94",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.0;0.0;0.0",
@@ -217,10 +198,9 @@
       "comment": {},
       "littera": "test",
       "popularName": null,
-      "source": {
-        "createdByAgent": "testuser1@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "bb21c959-4b73-4a73-93ca-ec2a94b09f94",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.0;0.0;0.0",
@@ -236,10 +216,9 @@
       "comment": {},
       "littera": "Test001",
       "popularName": "Tre Kronor",
-      "source": {
-        "createdByAgent": "testuser2@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0;0;22.22",
@@ -255,10 +234,9 @@
       "comment": {},
       "littera": "Test002",
       "popularName": "Trean",
-      "source": {
-        "createdByAgent": "testuser2@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0;0;22.22",
@@ -274,10 +252,9 @@
       "comment": {},
       "littera": "Test003",
       "popularName": "Trefasen",
-      "source": {
-        "createdByAgent": "testuser2@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "363d673d-1645-406e-9f15-5bf9274fd4d2",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0;0;22.22",
@@ -293,12 +270,9 @@
       "comment": {},
       "littera": "room1",
       "popularName": "room1",
-      "source": {
-        "updatedByAgent": "testuser3@idunrealestate.com",
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI",
-        "updatedByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "e6cc296b-f5c3-412a-9963-395d25f20de0",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.0;0.0;0",
@@ -314,10 +288,9 @@
       "comment": {},
       "littera": "room2",
       "popularName": "room2",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "e6cc296b-f5c3-412a-9963-395d25f20de0",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "0.0;0.0;0",
@@ -333,10 +306,9 @@
       "comment": {},
       "littera": "09.01:1101",
       "popularName": "SPRINKLERRUM",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-27.02;52.97;0.00",
@@ -352,10 +324,9 @@
       "comment": {},
       "littera": "09.01:1102",
       "popularName": "VVS-TEKNISK UTRUSTNING",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-26.69;43.90;0.00",
@@ -371,10 +342,9 @@
       "comment": {},
       "littera": "09.01:1199",
       "popularName": "TRAPPA C",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-26.19;49.69;0.00",
@@ -390,10 +360,9 @@
       "comment": {},
       "littera": "09.01:1103",
       "popularName": "HMR",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-22.93;40.69;0.00",
@@ -409,10 +378,9 @@
       "comment": {},
       "littera": "09.01:1412",
       "popularName": "HMR",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-22.73;39.76;0.00",
@@ -428,10 +396,9 @@
       "comment": {},
       "littera": "01.01:1302",
       "popularName": "BR LEKSAKER LAGER/PERSONALYTOR",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "94.20;25.07;0.00",
@@ -447,10 +414,9 @@
       "comment": {},
       "littera": "09.01:2105",
       "popularName": "FÖRRÅD VAKANT",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-21.11;6.99;0.00",
@@ -466,10 +432,9 @@
       "comment": {},
       "littera": "09.01:2199",
       "popularName": "TRAPPA D",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-20.29;10.99;0.00",
@@ -485,10 +450,9 @@
       "comment": {},
       "littera": "09.01:1409",
       "popularName": "WC",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-20.09;31.97;0.00",
@@ -504,10 +468,9 @@
       "comment": {},
       "littera": "01.01:1303",
       "popularName": "PAUSRUM D",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "91.03;29.27;0.00",
@@ -523,10 +486,9 @@
       "comment": {},
       "littera": "09.01:1413",
       "popularName": "KORRIDOR",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-19.94;29.02;0.00",
@@ -542,10 +504,9 @@
       "comment": {},
       "littera": "09.01:1407",
       "popularName": "STÄD",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-19.07;30.31;0.00",
@@ -561,10 +522,9 @@
       "comment": {},
       "littera": "09.01:1406",
       "popularName": "FÖRRÅD/LAGER",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-19.90;27.62;0.00",
@@ -580,10 +540,9 @@
       "comment": {},
       "littera": "09.01:1405",
       "popularName": "FÖRRÅD/LAGER",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-16.77;25.75;0.00",
@@ -599,10 +558,9 @@
       "comment": {},
       "littera": "01.01:2206",
       "popularName": "EL-GIGANTEN LAGER",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "93.60;20.21;0.00",
@@ -618,10 +576,9 @@
       "comment": {},
       "littera": "09.01:1411",
       "popularName": "STÄLLVERKS-RUM",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-19.69;39.76;0.00",
@@ -637,10 +594,9 @@
       "comment": {},
       "littera": "HISS NR 5",
       "popularName": "HISS",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-19.69;42.51;0.00",
@@ -656,10 +612,9 @@
       "comment": {},
       "littera": "09.01:1409",
       "popularName": "KPR",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-19.22;31.60;0.00",
@@ -675,10 +630,9 @@
       "comment": {},
       "littera": "09.01:1415",
       "popularName": "FÖRRÅD JENSENS",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-16.74;21.77;0.00",
@@ -694,12 +648,10 @@
       "comment": {},
       "littera": "09.01:2103",
       "popularName": "JENSENS",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
-      "hasSuperBuildingComponent": null,
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-16.72;15.10;0.00",
       "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
@@ -714,10 +666,9 @@
       "comment": {},
       "littera": "HISS NR 4",
       "popularName": "HISS",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-16.27;41.54;0.00",
@@ -733,10 +684,9 @@
       "comment": {},
       "littera": "09.01:2106",
       "popularName": "FÖRRÅD VAKANT",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-16.04;6.94;0.00",
@@ -752,10 +702,9 @@
       "comment": {},
       "littera": "09.01:2101",
       "popularName": "TELIA VÄXELSTATION",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-15.54;19.00;0.00",
@@ -771,10 +720,9 @@
       "comment": {},
       "littera": "09.01:1403",
       "popularName": "SLUSS",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-15.51;39.36;0.00",
@@ -790,10 +738,9 @@
       "comment": {},
       "littera": "09.01:2107",
       "popularName": "FÖRRÅD VAKANT",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-14.49;12.29;0.00",
@@ -809,10 +756,9 @@
       "comment": {},
       "littera": "09.01:1402",
       "popularName": "CUBUS LAGER",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-14.49;39.03;0.00",
@@ -828,10 +774,9 @@
       "comment": {},
       "littera": "09.01:1404",
       "popularName": "CUBUS",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-13.92;31.66;0.00",
@@ -847,10 +792,9 @@
       "comment": {},
       "littera": "09.01:1199",
       "popularName": "TRAPPA E",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-13.61;42.74;0.00",
@@ -866,10 +810,9 @@
       "comment": {},
       "littera": "09.01:2109",
       "popularName": "FÖRRÅD VAKANT",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-12.02;6.92;0.00",
@@ -885,10 +828,9 @@
       "comment": {},
       "littera": "09.01:1104",
       "popularName": "LASTGATA",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-11.97;56.49;0.00",
@@ -904,10 +846,9 @@
       "comment": {},
       "littera": "02.01:1105",
       "popularName": "GBG ENERGI HÖGSPÄNNING TRANSFORMATORRUM",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "19.17;56.97;0.00",
@@ -923,10 +864,9 @@
       "comment": {},
       "littera": "09.01:1401",
       "popularName": "PASSAGE",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-9.55;39.59;0.00",
@@ -942,10 +882,9 @@
       "comment": {},
       "littera": "09.01:2209",
       "popularName": "FÖRRÅD KPMG",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-9.24;16.77;0.00",
@@ -961,10 +900,9 @@
       "comment": {},
       "littera": "09.01:1106",
       "popularName": "VALV",
-      "source": {
-        "createdByAgent": "testuser3@idunrealestate.com",
-        "createdByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
       "hasSubBuildingComponent": [],
       "isLocatedAtLocalCoordinates": "-9.57;41.97;0.00",

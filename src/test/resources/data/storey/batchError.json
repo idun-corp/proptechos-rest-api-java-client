@@ -1,0 +1,49 @@
+{
+  "saved": [
+    "ea1b7473-40cb-4627-a589-176c6b3ef261",
+    "6e0091e9-f136-4e1b-a51a-cb4e0295af25"
+  ],
+  "failed": [
+    {
+      "id": "3f065d63-7d95-417d-9b24-19647294aa9c",
+      "class": "Storey",
+      "createdTime": "2020-06-02T13:25:30.493Z",
+      "updatedTime": "2020-06-02T13:25:30.493Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1",
+      "popularName": "1",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
+      "isPartOfBuilding": "974d32de-6957-45fe-bbf9-e10efddc1cba",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": null
+    },
+    {
+      "id": "1753352b-de03-4069-9dc5-4dd57d554457",
+      "class": "Storey",
+      "createdTime": "2020-06-02T13:25:30.493Z",
+      "updatedTime": "2020-06-02T13:25:30.493Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1",
+      "popularName": "1",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
+      "isPartOfBuilding": "0ab9afa9-aec1-442b-b027-e9a03c9dc065",
+      "hasSuperBuildingComponent": null,
+      "hasSubBuildingComponent": null,
+      "isLocatedAtLocalCoordinates": null
+    }
+  ],
+  "errors": {
+    "da7ed4f2-4376-46cb-ad30-ca3396993b9e": "Error msg 1",
+    "be0e3674-7d40-479e-952f-37d773dce9fb": "Error msg 2"
+  },
+  "totalSaved": 2,
+  "totalFailed": 2,
+  "totalProcessed": 4
+}

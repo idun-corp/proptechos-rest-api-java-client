@@ -5,14 +5,14 @@ import org.apache.http.client.methods.HttpRequestBase;
 
 public class OAuth2TokenHeader implements IHeaderHandler {
 
-  private final AccessTokenCache tokenCache;
+    private final AccessTokenCache tokenCache;
 
-  public OAuth2TokenHeader() {
-    this.tokenCache = AccessTokenCache.getInstance();
-  }
+    public OAuth2TokenHeader() {
+        this.tokenCache = AccessTokenCache.getInstance();
+    }
 
-  @Override
-  public void apply(HttpRequestBase requestBase) {
-    requestBase.setHeader("Authorization", "Bearer " + tokenCache.authResult().accessToken());
-  }
+    @Override
+    public void apply(HttpRequestBase requestBase) {
+        requestBase.setHeader("Authorization", "Bearer " + tokenCache.authResult().accessToken());
+    }
 }

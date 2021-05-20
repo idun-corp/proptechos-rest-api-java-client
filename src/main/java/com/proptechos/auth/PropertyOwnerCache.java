@@ -6,31 +6,31 @@ package com.proptechos.auth;
  */
 public class PropertyOwnerCache {
 
-  private static volatile PropertyOwnerCache INSTANCE;
-  private static final Object lock = new Object();
-  private String propertyOwnerId;
+    private static volatile PropertyOwnerCache INSTANCE;
+    private static final Object lock = new Object();
+    private String propertyOwnerId;
 
-  private PropertyOwnerCache() {
-  }
-
-  public static PropertyOwnerCache getInstance() {
-    if(INSTANCE == null) {
-      synchronized(lock) {
-        if(INSTANCE == null) {
-          INSTANCE = new PropertyOwnerCache();
-        }
-      }
+    private PropertyOwnerCache() {
     }
 
-    return INSTANCE;
-  }
+    public static PropertyOwnerCache getInstance() {
+        if (INSTANCE == null) {
+            synchronized (lock) {
+                if (INSTANCE == null) {
+                    INSTANCE = new PropertyOwnerCache();
+                }
+            }
+        }
 
-  public void setPropertyOwner(String propertyOwnerId) {
-    this.propertyOwnerId = propertyOwnerId;
-  }
-  
-  public String getPropertyOwner() {
-    return propertyOwnerId;
-  }
+        return INSTANCE;
+    }
+
+    public void setPropertyOwner(String propertyOwnerId) {
+        this.propertyOwnerId = propertyOwnerId;
+    }
+
+    public String getPropertyOwner() {
+        return propertyOwnerId;
+    }
 
 }

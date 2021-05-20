@@ -11,10 +11,10 @@
       },
       "littera": "A002",
       "popularName": "LillaEssingen",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {
-        "updatedByAgent": "testuser2@idunrealestate.com",
-        "REtestsource": "test RE source",
-        "updatedByApp": "RecAPI"
+        "REtestsource": "test RE source"
       }
     },
     {
@@ -35,10 +35,9 @@
       "comment": {},
       "littera": "14523-675",
       "popularName": "Svea Artilleri 14",
-      "source": {
-        "updatedByAgent": "testuser2@idunrealestate.com",
-        "updatedByApp": "RecAPI"
-      }
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {}
     },
     {
       "id": "09cee999-a941-4c95-9454-4c2231f5e409",
@@ -58,10 +57,9 @@
       "comment": {},
       "littera": "14549-692",
       "popularName": "Rosenborg 3",
-      "source": {
-        "updatedByAgent": "testuser2@idunrealestate.com",
-        "updatedByApp": "RecAPI"
-      }
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {}
     },
     {
       "id": "39514414-6aa6-4119-bb6e-655956610737",
@@ -81,6 +79,8 @@
       "comment": {},
       "littera": "14551-950",
       "popularName": "Hilton 7",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {}
     },
     {
@@ -101,10 +101,9 @@
       "comment": {},
       "littera": "14030-796_Uggleborg 12 (Klara C)",
       "popularName": "Uggleborg 12 (Klara C)",
-      "source": {
-        "updatedByAgent": "testuser1@idunrealestate.onmicrosoft.com",
-        "updatedByApp": "RecAPI"
-      }
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {}
     },
     {
       "id": "5637fc61-f6aa-4239-93a0-fa23faa969e6",
@@ -124,6 +123,8 @@
       "comment": {},
       "littera": "14532-679",
       "popularName": "Katla 1 (Kista Science Tower)",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {}
     },
     {
@@ -144,6 +145,8 @@
       "comment": {},
       "littera": "14045-626",
       "popularName": "Kungliga Trädgården 7 (Sverigehuset)",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {}
     },
     {
@@ -164,10 +167,9 @@
       "comment": {},
       "littera": "14547-690",
       "popularName": "Rosenborg 1",
-      "source": {
-        "updatedByAgent": "oksana@idunrealestate.com",
-        "updatedByApp": "RecAPI"
-      }
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {}
     },
     {
       "id": "c9112e5e-9f64-41d4-a692-d04cb7c12f5d",
@@ -187,6 +189,8 @@
       "comment": {},
       "littera": "629-939",
       "popularName": "Magasinet 1",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {}
     },
     {
@@ -207,10 +211,9 @@
       "comment": {},
       "littera": "14066-631_Argus 9",
       "popularName": "Argus 9",
-      "source": {
-        "updatedByAgent": "testuser1@idunrealestate.onmicrosoft.com",
-        "updatedByApp": "RecAPI"
-      }
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {}
     },
     {
       "id": "9717924d-4ac3-4b92-ae77-97e34ebfd1f7",
@@ -230,6 +233,8 @@
       "comment": {},
       "littera": "14549-691",
       "popularName": "Rosenborg 2",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {}
     },
     {
@@ -250,6 +255,8 @@
       "comment": {},
       "littera": "631-97_Skjutsgossen 9",
       "popularName": "Skjutsgossen 9",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {}
     },
     {
@@ -290,6 +297,8 @@
       "comment": {},
       "littera": "632-114_Bremen 1",
       "popularName": "Bremen 1",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {}
     },
     {
@@ -310,6 +319,8 @@
       "comment": {},
       "littera": "599-955",
       "popularName": "Hammarby Gård 12 (Seaside)",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {}
     }
   ],

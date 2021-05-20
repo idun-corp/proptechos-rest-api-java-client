@@ -1,166 +1,190 @@
 package com.proptechos.service;
 
-import static com.proptechos.http.constants.ApiEndpoints.REAL_ESTATE_COMPONENT_JSON;
-import static com.proptechos.http.constants.HttpStatus.OK;
-import static com.proptechos.utils.TestDataHelper.buildBuilding;
-import static com.proptechos.utils.TestDataHelper.objectToJson;
-import static com.proptechos.utils.ValidationUtils.verifyDeleteRequest;
-import static com.proptechos.utils.ValidationUtils.verifyGetRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPostRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPutRequest;
-import static org.mockserver.model.HttpRequest.request;
-import static org.mockserver.model.HttpResponse.response;
-
 import com.proptechos.model.Building;
 import com.proptechos.model.Point;
 import com.proptechos.model.common.Paged;
 import com.proptechos.utils.DataLoader;
-import java.util.UUID;
-import org.junit.jupiter.api.AfterEach;
+import com.proptechos.utils.WireMockExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockserver.client.MockServerClient;
-import org.mockserver.junit.jupiter.MockServerExtension;
-import org.mockserver.junit.jupiter.MockServerSettings;
-import org.mockserver.model.Parameter;
 
-@ExtendWith(MockServerExtension.class)
-@MockServerSettings(ports = {9090})
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+import static com.proptechos.http.constants.ApiEndpoints.REAL_ESTATE_COMPONENTS_JSON;
+import static com.proptechos.http.constants.ApiEndpoints.REAL_ESTATE_COMPONENT_JSON;
+import static com.proptechos.utils.TestDataHelper.*;
+import static com.proptechos.utils.ValidationUtils.*;
+
+@ExtendWith(WireMockExtension.class)
 public class RealEstateComponentServiceTest extends BaseServiceTest {
 
-  private static final String PAGED_DATA = DataLoader.loadPagedBuildings();
-  private static final String LIST_DATA = DataLoader.loadBuildingList();
-  private static final String TEST_BUILDING_ID = "79b213c9-57d9-4969-9963-70efd069c0d3";
-  private static final Building TEST_BUILDING = buildBuilding();
-  
-  private static RealEstateComponentService realEstateComponentService;
-  private final MockServerClient client;
-  
-  RealEstateComponentServiceTest(MockServerClient client) {
-    this.client = client;
-  }
+    private static final String PAGED_DATA = DataLoader.loadPagedBuildings();
+    private static final String LIST_DATA = DataLoader.loadBuildingList();
+    private static final String TEST_BUILDING_ID = "79b213c9-57d9-4969-9963-70efd069c0d3";
+    private static final Building TEST_BUILDING = buildBuilding();
 
-  @BeforeAll
-  static void setUp() {
-    realEstateComponentService = serviceFactory.realEstateComponentService();
-  }
+    private static RealEstateComponentService realEstateComponentService;
 
-  @AfterEach
-  void clearMockServer() {
-    client.clear(
-        request().withPath(APP_CONTEXT + REAL_ESTATE_COMPONENT_JSON));
-    client.clear(
-        request().withPath(APP_CONTEXT + REAL_ESTATE_COMPONENT_JSON + "/inrange"));
-    client.clear(
-        request().withPath(APP_CONTEXT + REAL_ESTATE_COMPONENT_JSON + "/" + TEST_BUILDING_ID));
-  }
+    @BeforeAll
+    static void setUp() {
+        realEstateComponentService = serviceFactory.realEstateComponentService();
+    }
 
-  @Test
-  void testGetFirstPage() {
-    client.when(getRequest(REAL_ESTATE_COMPONENT_JSON)).respond(okResponse(PAGED_DATA));
+    @Test
+    void testGetFirstPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "0");
+        parameters.put("size", "15");
 
-    realEstateComponentService.getFirstPage(15);
+        stubGetResponse(REAL_ESTATE_COMPONENT_JSON, parameters, PAGED_DATA);
 
-    verifyGetRequest(client, REAL_ESTATE_COMPONENT_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "15"));
-  }
+        realEstateComponentService.getFirstPage(15);
 
-  @Test
-  void testGetLastPage() {
-    client.when(getRequest(REAL_ESTATE_COMPONENT_JSON)).respond(okResponse(PAGED_DATA));
+        verifyGetRequest(REAL_ESTATE_COMPONENT_JSON, parameters);
+    }
 
-    realEstateComponentService.getLastPage(15);
+    @Test
+    void testGetLastPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "15");
 
-    verifyGetRequest(client, REAL_ESTATE_COMPONENT_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "15"));
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "3");
+        parameters2.put("size", "15");
 
-    verifyGetRequest(client, REAL_ESTATE_COMPONENT_JSON,
-        Parameter.param("page", "3"),
-        Parameter.param("size", "15"));
-  }
+        stubGetResponse(REAL_ESTATE_COMPONENT_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(REAL_ESTATE_COMPONENT_JSON, parameters2, PAGED_DATA);
 
-  @Test
-  void testGetByPage() {
-    client.when(getRequest(REAL_ESTATE_COMPONENT_JSON)).respond(okResponse(PAGED_DATA));
+        realEstateComponentService.getLastPage(15);
 
-    realEstateComponentService.getPage(1, 15);
+        verifyGetRequest(REAL_ESTATE_COMPONENT_JSON, parameters1);
+        verifyGetRequest(REAL_ESTATE_COMPONENT_JSON, parameters2);
+    }
 
-    verifyGetRequest(client, REAL_ESTATE_COMPONENT_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "15"));
-  }
+    @Test
+    void testGetByPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "1");
+        parameters.put("size", "15");
 
-  @Test
-  void testGetNextPage() {
-    client.when(getRequest(REAL_ESTATE_COMPONENT_JSON)).respond(okResponse(PAGED_DATA));
+        stubGetResponse(REAL_ESTATE_COMPONENT_JSON, parameters, PAGED_DATA);
 
-    Paged<Building> paged = realEstateComponentService.getFirstPage(15);
-    realEstateComponentService.getNextPage(paged.getPageMetadata());
+        realEstateComponentService.getPage(1, 15);
 
-    verifyGetRequest(client, REAL_ESTATE_COMPONENT_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "15"));
+        verifyGetRequest(REAL_ESTATE_COMPONENT_JSON, parameters);
+    }
 
-    verifyGetRequest(client, REAL_ESTATE_COMPONENT_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "15"));
-  }
+    @Test
+    void testGetNextPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "15");
 
-  @Test
-  void testGetInRange() {
-    client.when(
-        getRequest(REAL_ESTATE_COMPONENT_JSON + "/inrange")).respond(okResponse(LIST_DATA));
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "1");
+        parameters2.put("size", "15");
 
-    realEstateComponentService
-        .getBuildingsInRange(new Point(59, 18, 100));
+        stubGetResponse(REAL_ESTATE_COMPONENT_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(REAL_ESTATE_COMPONENT_JSON, parameters2, PAGED_DATA);
 
-    verifyGetRequest(client, REAL_ESTATE_COMPONENT_JSON + "/inrange",
-        Parameter.param("lat", "59.0"),
-        Parameter.param("lon", "18.0"),
-        Parameter.param("dist", "100.0"));
-  }
+        Paged<Building> paged = realEstateComponentService.getFirstPage(15);
+        realEstateComponentService.getNextPage(paged.getPageMetadata());
 
-  @Test
-  void testGetById() {
-    client.when(getRequest(REAL_ESTATE_COMPONENT_JSON + "/" + TEST_BUILDING_ID))
-        .respond(okResponse(DataLoader.loadSingleBuilding()));
+        verifyGetRequest(REAL_ESTATE_COMPONENT_JSON, parameters1);
+        verifyGetRequest(REAL_ESTATE_COMPONENT_JSON, parameters2);
+    }
 
-    realEstateComponentService.getById(UUID.fromString(TEST_BUILDING_ID));
+    @Test
+    void testGetInRange() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("lat", "59.0");
+        parameters.put("lon", "18.0");
+        parameters.put("dist", "100.0");
 
-    verifyGetRequest(client, REAL_ESTATE_COMPONENT_JSON + "/" + TEST_BUILDING_ID);
-  }
+        stubGetResponse(REAL_ESTATE_COMPONENT_JSON + "/inrange", parameters, LIST_DATA);
 
-  @Test
-  void testCreate() {
-    client.when(postRequest(REAL_ESTATE_COMPONENT_JSON))
-        .respond(okResponse(objectToJson(TEST_BUILDING)));
+        realEstateComponentService
+            .getBuildingsInRange(new Point(59, 18, 100));
 
-    realEstateComponentService.createBuilding(TEST_BUILDING);
+        verifyGetRequest(REAL_ESTATE_COMPONENT_JSON + "/inrange", parameters);
+    }
 
-    verifyPostRequest(client, REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_BUILDING));
-  }
+    @Test
+    void testGetById() {
+        stubGetResponse(REAL_ESTATE_COMPONENT_JSON + "/" + TEST_BUILDING_ID,
+            new HashMap<>(), DataLoader.loadSingleBuilding());
 
-  @Test
-  void testUpdate() {
-    client.when(putRequest(REAL_ESTATE_COMPONENT_JSON))
-        .respond(okResponse(objectToJson(TEST_BUILDING)));
+        realEstateComponentService.getById(UUID.fromString(TEST_BUILDING_ID));
 
-    realEstateComponentService.updateBuilding(TEST_BUILDING);
+        verifyGetRequest(REAL_ESTATE_COMPONENT_JSON + "/" + TEST_BUILDING_ID, new HashMap<>());
+    }
 
-    verifyPutRequest(client, REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_BUILDING));
-  }
+    @Test
+    void testCreate() {
+        stubPostResponse(REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_BUILDING));
 
-  @Test
-  void testDelete() {
-    client.when(deleteRequest(REAL_ESTATE_COMPONENT_JSON + "/" + TEST_BUILDING_ID))
-        .respond(response().withStatusCode(OK));
+        realEstateComponentService.createBuilding(TEST_BUILDING);
 
-    realEstateComponentService.deleteBuilding(UUID.fromString(TEST_BUILDING_ID));
+        verifyPostRequest(REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_BUILDING));
+    }
 
-    verifyDeleteRequest(client, REAL_ESTATE_COMPONENT_JSON + "/" + TEST_BUILDING_ID);
-  }
+    @Test
+    void testUpdate() {
+        stubPutResponse(REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_BUILDING));
+
+        realEstateComponentService.updateBuilding(TEST_BUILDING);
+
+        verifyPutRequest(REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_BUILDING));
+    }
+
+    @Test
+    void testDelete() {
+        stubDeleteResponse(REAL_ESTATE_COMPONENT_JSON + "/" + TEST_BUILDING_ID);
+
+        realEstateComponentService.deleteBuilding(UUID.fromString(TEST_BUILDING_ID));
+
+        verifyDeleteRequest(REAL_ESTATE_COMPONENT_JSON + "/" + TEST_BUILDING_ID);
+    }
+
+    @Test
+    void testCreateBatch() {
+        stubPostResponse(REAL_ESTATE_COMPONENTS_JSON, objectToJson(successBatchResponse()));
+
+        realEstateComponentService.createBuildings(Arrays.asList(TEST_BUILDING, TEST_BUILDING));
+
+        verifyPostRequest(REAL_ESTATE_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BUILDING, TEST_BUILDING)));
+    }
+
+    @Test
+    void testUpdateBatch() {
+        stubPutResponse(REAL_ESTATE_COMPONENTS_JSON, objectToJson(successBatchResponse()));
+
+        realEstateComponentService.updateBuildings(Arrays.asList(TEST_BUILDING, TEST_BUILDING));
+
+        verifyPutRequest(REAL_ESTATE_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BUILDING, TEST_BUILDING)));
+    }
+
+    @Test
+    void testFailedCreateBatch() {
+        stubFailedPostResponse(REAL_ESTATE_COMPONENTS_JSON, DataLoader.loadBatchFailedBuildings());
+
+        realEstateComponentService.createBuildings(Arrays.asList(TEST_BUILDING, TEST_BUILDING));
+
+        verifyPostRequest(REAL_ESTATE_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BUILDING, TEST_BUILDING)));
+    }
+
+    @Test
+    void testFailedUpdateBatch() {
+        stubFailedPutResponse(REAL_ESTATE_COMPONENTS_JSON, DataLoader.loadBatchFailedBuildings());
+
+        realEstateComponentService.updateBuildings(Arrays.asList(TEST_BUILDING, TEST_BUILDING));
+
+        verifyPutRequest(REAL_ESTATE_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BUILDING, TEST_BUILDING)));
+    }
 
 }

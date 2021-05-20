@@ -1,0 +1,50 @@
+{
+  "saved": [
+    "ea1b7473-40cb-4627-a589-176c6b3ef261",
+    "6e0091e9-f136-4e1b-a51a-cb4e0295af25"
+  ],
+  "failed": [
+    {
+      "id": "9149a429-461b-4aca-9c5e-f07a44badad3",
+      "class": "Building",
+      "createdTime": "2019-05-24T13:27:19.000Z",
+      "updatedTime": "2020-09-10T17:59:09.943Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "14532-001",
+      "popularName": "Byggnad 001",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
+      "isPartOfRealEstate": "5637fc61-f6aa-4239-93a0-fa23faa969e6",
+      "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+    },
+    {
+      "id": "dbc543c9-c0f3-49ac-9cd3-69f75dd6e1d1",
+      "class": "Building",
+      "createdTime": "2019-05-24T13:27:19.000Z",
+      "updatedTime": "2020-09-07T10:56:23.453Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/14549-001",
+          "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+        }
+      ],
+      "comment": {},
+      "littera": "14549-001",
+      "popularName": "Byggnad 001",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
+      "isPartOfRealEstate": "9717924d-4ac3-4b92-ae77-97e34ebfd1f7",
+      "hasGeoReferenceOrigo": "0.0;0.0;0.0"
+    }
+  ],
+  "errors": {
+    "da7ed4f2-4376-46cb-ad30-ca3396993b9e": "Error msg 1",
+    "be0e3674-7d40-479e-952f-37d773dce9fb": "Error msg 2"
+  },
+  "totalSaved": 2,
+  "totalFailed": 2,
+  "totalProcessed": 4
+}

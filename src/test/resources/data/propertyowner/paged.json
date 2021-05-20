@@ -5,6 +5,8 @@
       "class": "PropertyOwner",
       "createdTime": "2021-03-03T09:15:23.709Z",
       "updatedTime": null,
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "comment": null,
       "popularName": "Main First Property Owner"
     },
@@ -13,6 +15,8 @@
       "class": "PropertyOwner",
       "createdTime": "2021-03-11T14:55:20.763Z",
       "updatedTime": null,
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "comment": null,
       "popularName": "DELETE ME"
     },
@@ -21,6 +25,8 @@
       "class": "PropertyOwner",
       "createdTime": "2021-03-04T09:54:47.197Z",
       "updatedTime": "2021-03-04T10:00:55.165Z",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "comment": null,
       "popularName": "Test-779"
     },
@@ -29,6 +35,8 @@
       "class": "PropertyOwner",
       "createdTime": "2021-03-03T14:45:13.144Z",
       "updatedTime": null,
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "comment": null,
       "popularName": "Test1"
     },
@@ -37,6 +45,8 @@
       "class": "PropertyOwner",
       "createdTime": "2021-03-03T17:21:06.400Z",
       "updatedTime": null,
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "comment": null,
       "popularName": "Test2"
     },
@@ -45,6 +55,8 @@
       "class": "PropertyOwner",
       "createdTime": "2021-03-04T09:57:52.212Z",
       "updatedTime": null,
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "comment": null,
       "popularName": "Test-977"
     },
@@ -53,6 +65,8 @@
       "class": "PropertyOwner",
       "createdTime": "2021-03-12T09:10:44.443Z",
       "updatedTime": null,
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "comment": null,
       "popularName": "testtest"
     },
@@ -61,6 +75,8 @@
       "class": "PropertyOwner",
       "createdTime": "2021-03-12T09:24:51.992Z",
       "updatedTime": null,
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "comment": null,
       "popularName": "testdevice"
     },
@@ -69,6 +85,8 @@
       "class": "PropertyOwner",
       "createdTime": "2021-03-12T09:12:27.721Z",
       "updatedTime": "2021-03-12T09:14:11.631Z",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "comment": null,
       "popularName": "string3232323"
     },
@@ -77,6 +95,8 @@
       "class": "PropertyOwner",
       "createdTime": "2021-03-17T07:43:31.167Z",
       "updatedTime": null,
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "comment": null,
       "popularName": "Integration test stage PO"
     }

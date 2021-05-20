@@ -12,15 +12,13 @@
   "comment": {},
   "littera": "/2003_SRV12/!Cloud/LB04/Variabler/Write/LB04-GP12_B_CLOUD",
   "popularName": null,
+  "updatedByAgent": "testuser1@idunrealestate.com",
+  "createdByAgent": "testuser1@idunrealestate.com",
   "source": {
     "sendOnUpdate": "false",
-    "updatedByAgent": "testuser1@idunrealestate.com",
-    "createdByAgent": "testuser1@idunrealestate.com",
     "dataPointType": "Analog Value",
     "pointName": "LB04-GP12_B_CLOUD",
-    "updatedByApp": "RecAPI",
     "powerSource": "CommunicationBus",
-    "createdByApp": "RecAPI",
     "updateFrequency": "600"
   },
   "hasDeviceFunctionType": null,

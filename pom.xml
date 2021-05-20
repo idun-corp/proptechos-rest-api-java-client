@@ -6,7 +6,7 @@
 
   <groupId>com.proptechos</groupId>
   <artifactId>proptechos-rest-api-java-client</artifactId>
-  <version>3.3.1</version>
+  <version>3.3.3-SNAPSHOT</version>
   <description>
     ProptechOS Rest API client to be used for calling ProptechOS API main CRUD operations,
     obtaining sensor telemetry, initiating actuation and attaching to streaming API.
@@ -21,7 +21,6 @@
     <apache-kafkaclient.version>2.6.0</apache-kafkaclient.version>
     <sl4j.version>1.7.30</sl4j.version>
     <jupiter.version>5.7.0</jupiter.version>
-    <jupiter-mock-server.version>5.11.1</jupiter-mock-server.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
     <maven-install-plugin.version>3.0.0-M1</maven-install-plugin.version>
@@ -80,9 +79,9 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.mock-server</groupId>
-      <artifactId>mockserver-junit-jupiter</artifactId>
-      <version>${jupiter-mock-server.version}</version>
+      <groupId>com.github.tomakehurst</groupId>
+      <artifactId>wiremock-jre8</artifactId>
+      <version>2.28.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

@@ -1,148 +1,172 @@
 package com.proptechos.service;
 
-import static com.proptechos.http.constants.ApiEndpoints.DEVICE_JSON;
-import static com.proptechos.http.constants.HttpStatus.OK;
-import static com.proptechos.utils.TestDataHelper.buildDevice;
-import static com.proptechos.utils.TestDataHelper.objectToJson;
-import static com.proptechos.utils.ValidationUtils.verifyDeleteRequest;
-import static com.proptechos.utils.ValidationUtils.verifyGetRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPostRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPutRequest;
-import static org.mockserver.model.HttpRequest.request;
-import static org.mockserver.model.HttpResponse.response;
-
 import com.proptechos.model.common.IDevice;
 import com.proptechos.model.common.Paged;
 import com.proptechos.utils.DataLoader;
-import java.util.UUID;
-import org.junit.jupiter.api.AfterEach;
+import com.proptechos.utils.WireMockExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockserver.client.MockServerClient;
-import org.mockserver.junit.jupiter.MockServerExtension;
-import org.mockserver.junit.jupiter.MockServerSettings;
-import org.mockserver.model.Parameter;
 
-@ExtendWith(MockServerExtension.class)
-@MockServerSettings(ports = {9090})
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+import static com.proptechos.http.constants.ApiEndpoints.DEVICES_JSON;
+import static com.proptechos.http.constants.ApiEndpoints.DEVICE_JSON;
+import static com.proptechos.utils.TestDataHelper.*;
+import static com.proptechos.utils.ValidationUtils.*;
+
+@ExtendWith(WireMockExtension.class)
 public class DeviceServiceTest extends BaseServiceTest {
 
-  private static final String PAGED_DATA = DataLoader.loadPagedDevices();
-  private static final String TEST_DEVICE_ID = "5cd99e11-aa99-43b6-b5f5-01a0033aa940";
-  private static final IDevice TEST_DEVICE = buildDevice();
+    private static final String PAGED_DATA = DataLoader.loadPagedDevices();
+    private static final String TEST_DEVICE_ID = "5cd99e11-aa99-43b6-b5f5-01a0033aa940";
+    private static final IDevice TEST_DEVICE = buildDevice();
 
-  private static DeviceService deviceService;
-  private final MockServerClient client;
+    private static DeviceService deviceService;
 
-  DeviceServiceTest(MockServerClient client) {
-    this.client = client;
-  }
+    @BeforeAll
+    static void setUp() {
+        deviceService = serviceFactory.deviceService();
+    }
 
-  @BeforeAll
-  static void setUp() {
-    deviceService = serviceFactory.deviceService();
-  }
+    @Test
+    void testGetFirstPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "0");
+        parameters.put("size", "50");
 
-  @AfterEach
-  void clearMockServer() {
-    client.clear(
-        request().withPath(APP_CONTEXT + DEVICE_JSON));
-    client.clear(
-        request().withPath(APP_CONTEXT + DEVICE_JSON + "/" + TEST_DEVICE_ID));
-  }
+        stubGetResponse(DEVICE_JSON, parameters, PAGED_DATA);
 
-  @Test
-  void testGetFirstPage() {
-    client.when(getRequest(DEVICE_JSON)).respond(okResponse(PAGED_DATA));
+        deviceService.getFirstPage(50);
 
-    deviceService.getFirstPage(50);
+        verifyGetRequest(DEVICE_JSON, parameters);
+    }
 
-    verifyGetRequest(client, DEVICE_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "50"));
-  }
+    @Test
+    void testGetLastPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "50");
 
-  @Test
-  void testGetLastPage() {
-    client.when(getRequest(DEVICE_JSON)).respond(okResponse(PAGED_DATA));
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "136");
+        parameters2.put("size", "50");
 
-    deviceService.getLastPage(50);
+        stubGetResponse(DEVICE_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(DEVICE_JSON, parameters2, PAGED_DATA);
 
-    verifyGetRequest(client, DEVICE_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "50"));
+        deviceService.getLastPage(50);
 
-    verifyGetRequest(client, DEVICE_JSON,
-        Parameter.param("page", "136"),
-        Parameter.param("size", "50"));
-  }
+        verifyGetRequest(DEVICE_JSON, parameters1);
+        verifyGetRequest(DEVICE_JSON, parameters2);
+    }
 
-  @Test
-  void testGetByPage() {
-    client.when(getRequest(DEVICE_JSON)).respond(okResponse(PAGED_DATA));
+    @Test
+    void testGetByPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "32");
+        parameters.put("size", "50");
 
-    deviceService.getPage(32, 50);
+        stubGetResponse(DEVICE_JSON, parameters, PAGED_DATA);
 
-    verifyGetRequest(client, DEVICE_JSON,
-        Parameter.param("page", "32"),
-        Parameter.param("size", "50"));
-  }
+        deviceService.getPage(32, 50);
 
-  @Test
-  void testGetNextPage() {
-    client.when(getRequest(DEVICE_JSON)).respond(okResponse(PAGED_DATA));
+        verifyGetRequest(DEVICE_JSON, parameters);
+    }
 
-    Paged<IDevice> paged = deviceService.getFirstPage(50);
-    deviceService.getNextPage(paged.getPageMetadata());
+    @Test
+    void testGetNextPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "50");
 
-    verifyGetRequest(client, DEVICE_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "50"));
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "1");
+        parameters2.put("size", "50");
 
-    verifyGetRequest(client, DEVICE_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "50"));
-  }
+        stubGetResponse(DEVICE_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(DEVICE_JSON, parameters2, PAGED_DATA);
 
-  @Test
-  void testGetById() {
-    client.when(getRequest(DEVICE_JSON + "/" + TEST_DEVICE_ID))
-        .respond(okResponse(DataLoader.loadSingleDevice()));
+        Paged<IDevice> paged = deviceService.getFirstPage(50);
+        deviceService.getNextPage(paged.getPageMetadata());
 
-    deviceService.getById(UUID.fromString(TEST_DEVICE_ID));
+        verifyGetRequest(DEVICE_JSON, parameters1);
+        verifyGetRequest(DEVICE_JSON, parameters2);
+    }
 
-    verifyGetRequest(client, DEVICE_JSON + "/" + TEST_DEVICE_ID);
-  }
+    @Test
+    void testGetById() {
+        stubGetResponse(DEVICE_JSON + "/" + TEST_DEVICE_ID,
+            new HashMap<>(), DataLoader.loadSingleDevice());
 
-  @Test
-  void testCreate() {
-    client.when(postRequest(DEVICE_JSON))
-        .respond(okResponse(objectToJson(TEST_DEVICE)));
+        deviceService.getById(UUID.fromString(TEST_DEVICE_ID));
 
-    deviceService.createDevice(TEST_DEVICE);
+        verifyGetRequest(DEVICE_JSON + "/" + TEST_DEVICE_ID, new HashMap<>());
+    }
 
-    verifyPostRequest(client, DEVICE_JSON, objectToJson(TEST_DEVICE));
-  }
+    @Test
+    void testCreate() {
+        stubPostResponse(DEVICE_JSON, objectToJson(TEST_DEVICE));
 
-  @Test
-  void testUpdate() {
-    client.when(putRequest(DEVICE_JSON))
-        .respond(okResponse(objectToJson(TEST_DEVICE)));
+        deviceService.createDevice(TEST_DEVICE);
 
-    deviceService.updateDevice(TEST_DEVICE);
+        verifyPostRequest(DEVICE_JSON, objectToJson(TEST_DEVICE));
+    }
 
-    verifyPutRequest(client, DEVICE_JSON, objectToJson(TEST_DEVICE));
-  }
+    @Test
+    void testUpdate() {
+        stubPutResponse(DEVICE_JSON, objectToJson(TEST_DEVICE));
 
-  @Test
-  void testDelete() {
-    client.when(deleteRequest(DEVICE_JSON + "/" + TEST_DEVICE_ID))
-        .respond(response().withStatusCode(OK));
+        deviceService.updateDevice(TEST_DEVICE);
 
-    deviceService.deleteDevice(UUID.fromString(TEST_DEVICE_ID));
+        verifyPutRequest(DEVICE_JSON, objectToJson(TEST_DEVICE));
+    }
 
-    verifyDeleteRequest(client, DEVICE_JSON + "/" + TEST_DEVICE_ID);
-  }
+    @Test
+    void testDelete() {
+        stubDeleteResponse(DEVICE_JSON + "/" + TEST_DEVICE_ID);
 
+        deviceService.deleteDevice(UUID.fromString(TEST_DEVICE_ID));
+
+        verifyDeleteRequest(DEVICE_JSON + "/" + TEST_DEVICE_ID);
+    }
+
+    @Test
+    void testCreateBatch() {
+        stubPostResponse(DEVICES_JSON, objectToJson(successBatchResponse()));
+
+        deviceService.createDevices(Arrays.asList(TEST_DEVICE, TEST_DEVICE));
+
+        verifyPostRequest(DEVICES_JSON, objectToJson(Arrays.asList(TEST_DEVICE, TEST_DEVICE)));
+    }
+
+    @Test
+    void testUpdateBatch() {
+        stubPutResponse(DEVICES_JSON, objectToJson(successBatchResponse()));
+
+        deviceService.updateDevices(Arrays.asList(TEST_DEVICE, TEST_DEVICE));
+
+        verifyPutRequest(DEVICES_JSON, objectToJson(Arrays.asList(TEST_DEVICE, TEST_DEVICE)));
+    }
+
+    @Test
+    void testFailedCreateBatch() {
+        stubFailedPostResponse(DEVICES_JSON, DataLoader.loadBatchFailedDevices());
+
+        deviceService.createDevices(Arrays.asList(TEST_DEVICE, TEST_DEVICE));
+
+        verifyPostRequest(DEVICES_JSON, objectToJson(Arrays.asList(TEST_DEVICE, TEST_DEVICE)));
+    }
+
+    @Test
+    void testFailedUpdateBatch() {
+        stubFailedPutResponse(DEVICES_JSON, DataLoader.loadBatchFailedDevices());
+
+        deviceService.updateDevices(Arrays.asList(TEST_DEVICE, TEST_DEVICE));
+
+        verifyPutRequest(DEVICES_JSON, objectToJson(Arrays.asList(TEST_DEVICE, TEST_DEVICE)));
+    }
 }

@@ -11,10 +11,10 @@
       },
       "littera": "A002",
       "popularName": "LillaEssingen",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {
-        "updatedByAgent": "testuser2@idunrealestate.com",
-        "REtestsource": "test RE source",
-        "updatedByApp": "RecAPI"
+        "REtestsource": "test RE source"
       },
       "hasGeoReferenceOrigo": "19.009394;59.323099;10.0"
     },
@@ -36,10 +36,9 @@
       "comment": {},
       "littera": "14523-675",
       "popularName": "Svea Artilleri 14",
-      "source": {
-        "updatedByAgent": "testuser2@idunrealestate.com",
-        "updatedByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "hasGeoReferenceOrigo": "59.342995;19.094569;10.0"
     },
     {
@@ -60,10 +59,9 @@
       "comment": {},
       "littera": "14549-692",
       "popularName": "Rosenborg 3",
-      "source": {
-        "updatedByAgent": "testuser2@idunrealestate.com",
-        "updatedByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "hasGeoReferenceOrigo": "59.375365;19.014145;10.0"
     },
     {
@@ -84,6 +82,8 @@
       "comment": {},
       "littera": "14551-950",
       "popularName": "Hilton 7",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {},
       "hasGeoReferenceOrigo": null
     },
@@ -105,10 +105,9 @@
       "comment": {},
       "littera": "14030-796_Uggleborg 12 (Klara C)",
       "popularName": "Uggleborg 12 (Klara C)",
-      "source": {
-        "updatedByAgent": "testuser1@idunrealestate.onmicrosoft.com",
-        "updatedByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "hasGeoReferenceOrigo": "59.330169;19.06015;0.0"
     },
     {
@@ -129,6 +128,8 @@
       "comment": {},
       "littera": "14532-679",
       "popularName": "Katla 1 (Kista Science Tower)",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {},
       "hasGeoReferenceOrigo": "59.40054;17.947412;0.0"
     },
@@ -150,6 +151,8 @@
       "comment": {},
       "littera": "14045-626",
       "popularName": "Kungliga Trädgården 7 (Sverigehuset)",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {},
       "hasGeoReferenceOrigo": "59.332423;19.069763;0.0"
     },
@@ -171,10 +174,9 @@
       "comment": {},
       "littera": "14547-690",
       "popularName": "Rosenborg 1",
-      "source": {
-        "updatedByAgent": "oksana@idunrealestate.com",
-        "updatedByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "hasGeoReferenceOrigo": "59.375124;19.010593;0.0"
     },
     {
@@ -195,6 +197,8 @@
       "comment": {},
       "littera": "629-939",
       "popularName": "Magasinet 1",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {},
       "hasGeoReferenceOrigo": "59.360929;17.97327;0.0"
     },
@@ -216,10 +220,9 @@
       "comment": {},
       "littera": "14066-631_Argus 9",
       "popularName": "Argus 9",
-      "source": {
-        "updatedByAgent": "testuser1@idunrealestate.onmicrosoft.com",
-        "updatedByApp": "RecAPI"
-      },
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
       "hasGeoReferenceOrigo": "59.323075;19.074656;0.0"
     },
     {
@@ -240,6 +243,8 @@
       "comment": {},
       "littera": "14549-691",
       "popularName": "Rosenborg 2",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {},
       "hasGeoReferenceOrigo": "59.375026;19.014692;0.0"
     },
@@ -261,6 +266,8 @@
       "comment": {},
       "littera": "631-97_Skjutsgossen 9",
       "popularName": "Skjutsgossen 9",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {},
       "hasGeoReferenceOrigo": "59.317195;19.056459;0.0"
     },
@@ -282,6 +289,8 @@
       "comment": {},
       "littera": "14550-693_Rosenborg 3",
       "popularName": "Rosenborg 3",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {},
       "hasGeoReferenceOrigo": null
     },
@@ -303,6 +312,8 @@
       "comment": {},
       "littera": "632-114_Bremen 1",
       "popularName": "Bremen 1",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {},
       "hasGeoReferenceOrigo": "59.349252;19.101242;0.0"
     },
@@ -324,6 +335,8 @@
       "comment": {},
       "littera": "599-955",
       "popularName": "Hammarby Gård 12 (Seaside)",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
       "source": {},
       "hasGeoReferenceOrigo": "59.303353;19.093324;0.0"
     }

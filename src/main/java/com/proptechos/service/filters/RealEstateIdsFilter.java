@@ -2,6 +2,7 @@ package com.proptechos.service.filters;
 
 import com.proptechos.http.query.IQueryFilter;
 import com.proptechos.http.query.QueryParam;
+
 import java.util.List;
 
 /**
@@ -12,7 +13,6 @@ import java.util.List;
  * RealEstateService, RealEstateComponentService,
  * BuildingComponentService, RoomService, StoreyService,
  * DeviceService, ActuatorService, SensorService
- *
  * @see com.proptechos.service.RealEstateService
  * @see com.proptechos.service.RealEstateComponentService
  * @see com.proptechos.service.BuildingComponentService
@@ -24,14 +24,14 @@ import java.util.List;
  */
 public class RealEstateIdsFilter implements IQueryFilter {
 
-  private final String realEstateIds;
+    private final String realEstateIds;
 
-  public RealEstateIdsFilter(List<String> realEstateIds) {
-    this.realEstateIds = String.join(",", realEstateIds);
-  }
+    public RealEstateIdsFilter(List<String> realEstateIds) {
+        this.realEstateIds = String.join(",", realEstateIds);
+    }
 
-  @Override
-  public QueryParam queryParam() {
-    return new QueryParam("realestate_ids", realEstateIds);
-  }
+    @Override
+    public QueryParam queryParam() {
+        return new QueryParam("realestate_ids", realEstateIds);
+    }
 }
