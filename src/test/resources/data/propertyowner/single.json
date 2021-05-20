@@ -3,6 +3,8 @@
   "class": "PropertyOwner",
   "createdTime": "2021-03-12T09:10:44.443Z",
   "updatedTime": null,
+  "updatedByAgent": "testuser1@idunrealestate.com",
+  "createdByAgent": "testuser1@idunrealestate.com",
   "comment": null,
   "popularName": "testtest"
 }

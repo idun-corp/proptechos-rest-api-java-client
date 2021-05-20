@@ -7,10 +7,9 @@
   "comment": {},
   "littera": "-",
   "popularName": "SCHAKT",
-  "source": {
-    "createdByAgent": "testuser1@idunrealestate.com",
-    "createdByApp": "RecAPI"
-  },
+  "updatedByAgent": "testuser1@idunrealestate.com",
+  "createdByAgent": "testuser1@idunrealestate.com",
+  "source": {},
   "isPartOfBuilding": "cbe9abf1-23de-4eb2-a12e-06d69ff00e02",
   "hasSubBuildingComponent": [],
   "isLocatedAtLocalCoordinates": "0;0;32.71",

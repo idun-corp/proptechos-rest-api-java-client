@@ -1,95 +1,79 @@
 package com.proptechos.service;
 
-import static com.proptechos.http.constants.ApiEndpoints.BUILDING_COMPONENT_CLASS_JSON;
-import static com.proptechos.http.constants.ApiEndpoints.DEVICE_FUNCTION_JSON;
-import static com.proptechos.http.constants.ApiEndpoints.MEASUREMENT_UNIT_JSON;
-import static com.proptechos.http.constants.ApiEndpoints.PLACEMENT_CONTEXT_JSON;
-import static com.proptechos.http.constants.ApiEndpoints.QUANTITY_KIND_JSON;
-import static com.proptechos.http.constants.ApiEndpoints.ROOM_TYPE_JSON;
-import static com.proptechos.utils.ValidationUtils.verifyGetRequest;
-
 import com.proptechos.utils.DataLoader;
+import com.proptechos.utils.WireMockExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockserver.client.MockServerClient;
-import org.mockserver.junit.jupiter.MockServerExtension;
-import org.mockserver.junit.jupiter.MockServerSettings;
 
-@ExtendWith(MockServerExtension.class)
-@MockServerSettings(ports = {9090})
+import java.util.HashMap;
+
+import static com.proptechos.http.constants.ApiEndpoints.*;
+import static com.proptechos.utils.ValidationUtils.verifyGetRequest;
+
+@ExtendWith(WireMockExtension.class)
 public class RecIndividualServiceTest extends BaseServiceTest {
 
-  private static RecIndividualService recIndividualService;
-  private final MockServerClient client;
+    private static RecIndividualService recIndividualService;
 
-  RecIndividualServiceTest(MockServerClient client) {
-    this.client = client;
-  }
+    @BeforeAll
+    static void setUp() {
+        recIndividualService = serviceFactory.recIndividualService();
+    }
 
-  @BeforeAll
-  static void setUp() {
-    recIndividualService = serviceFactory.recIndividualService();
-  }
+    @Test
+    void testGetBuildingComponentClasses() {
+        stubGetResponse(BUILDING_COMPONENT_CLASS_JSON,
+            new HashMap<>(), DataLoader.loadBuildingComponentClasses());
 
-  @Test
-  void testGetBuildingComponentClasses() {
-    client.when(getRequest(BUILDING_COMPONENT_CLASS_JSON))
-        .respond(okResponse(DataLoader.loadBuildingComponentClasses()));
+        recIndividualService.getBuildingComponentClasses();
 
-    recIndividualService.getBuildingComponentClasses();
+        verifyGetRequest(BUILDING_COMPONENT_CLASS_JSON, new HashMap<>());
+    }
 
-    verifyGetRequest(client, BUILDING_COMPONENT_CLASS_JSON);
-  }
+    @Test
+    void testGetRoomTypes() {
+        stubGetResponse(ROOM_TYPE_JSON, new HashMap<>(), DataLoader.loadRoomTypes());
 
-  @Test
-  void testGetRoomTypes() {
-    client.when(getRequest(ROOM_TYPE_JSON))
-        .respond(okResponse(DataLoader.loadRoomTypes()));
+        recIndividualService.getRoomTypes();
 
-    recIndividualService.getRoomTypes();
+        verifyGetRequest(ROOM_TYPE_JSON, new HashMap<>());
+    }
 
-    verifyGetRequest(client, ROOM_TYPE_JSON);
-  }
+    @Test
+    void testGetDeviceFunctionTypes() {
+        stubGetResponse(DEVICE_FUNCTION_JSON, new HashMap<>(), DataLoader.loadDeviceFunctions());
 
-  @Test
-  void testGetDeviceFunctionTypes() {
-    client.when(getRequest(DEVICE_FUNCTION_JSON))
-        .respond(okResponse(DataLoader.loadDeviceFunctions()));
+        recIndividualService.getDeviceFunctionTypes();
 
-    recIndividualService.getDeviceFunctionTypes();
+        verifyGetRequest(DEVICE_FUNCTION_JSON, new HashMap<>());
+    }
 
-    verifyGetRequest(client, DEVICE_FUNCTION_JSON);
-  }
+    @Test
+    void testGetMeasurementUnits() {
+        stubGetResponse(MEASUREMENT_UNIT_JSON, new HashMap<>(), DataLoader.loadMeasurementUnits());
 
-  @Test
-  void testGetMeasurementUnits() {
-    client.when(getRequest(MEASUREMENT_UNIT_JSON))
-        .respond(okResponse(DataLoader.loadMeasurementUnits()));
+        recIndividualService.getMeasurementUnits();
 
-    recIndividualService.getMeasurementUnits();
+        verifyGetRequest(MEASUREMENT_UNIT_JSON, new HashMap<>());
+    }
 
-    verifyGetRequest(client, MEASUREMENT_UNIT_JSON);
-  }
+    @Test
+    void testGetPlacementContexts() {
+        stubGetResponse(PLACEMENT_CONTEXT_JSON, new HashMap<>(), DataLoader.loadPlacementContexts());
 
-  @Test
-  void testGetPlacementContexts() {
-    client.when(getRequest(PLACEMENT_CONTEXT_JSON))
-        .respond(okResponse(DataLoader.loadPlacementContexts()));
+        recIndividualService.getPlacementContexts();
 
-    recIndividualService.getPlacementContexts();
+        verifyGetRequest(PLACEMENT_CONTEXT_JSON, new HashMap<>());
+    }
 
-    verifyGetRequest(client, PLACEMENT_CONTEXT_JSON);
-  }
+    @Test
+    void testGetQuantityKinds() {
+        stubGetResponse(QUANTITY_KIND_JSON, new HashMap<>(), DataLoader.loadQuantityKinds());
 
-  @Test
-  void testGetQuantityKinds() {
-    client.when(getRequest(QUANTITY_KIND_JSON))
-        .respond(okResponse(DataLoader.loadQuantityKinds()));
+        recIndividualService.getQuantityKinds();
 
-    recIndividualService.getQuantityKinds();
-
-    verifyGetRequest(client, QUANTITY_KIND_JSON);
-  }
+        verifyGetRequest(QUANTITY_KIND_JSON, new HashMap<>());
+    }
 
 }

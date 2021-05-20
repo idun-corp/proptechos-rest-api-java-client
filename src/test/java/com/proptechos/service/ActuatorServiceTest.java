@@ -1,148 +1,171 @@
 package com.proptechos.service;
 
-import static com.proptechos.http.constants.ApiEndpoints.ACTUATOR_JSON;
-import static com.proptechos.http.constants.HttpStatus.OK;
-import static com.proptechos.utils.TestDataHelper.buildActuator;
-import static com.proptechos.utils.TestDataHelper.objectToJson;
-import static com.proptechos.utils.ValidationUtils.verifyDeleteRequest;
-import static com.proptechos.utils.ValidationUtils.verifyGetRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPostRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPutRequest;
-import static org.mockserver.model.HttpRequest.request;
-import static org.mockserver.model.HttpResponse.response;
-
 import com.proptechos.model.Actuator;
 import com.proptechos.model.common.Paged;
 import com.proptechos.utils.DataLoader;
-import java.util.UUID;
-import org.junit.jupiter.api.AfterEach;
+import com.proptechos.utils.WireMockExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockserver.client.MockServerClient;
-import org.mockserver.junit.jupiter.MockServerExtension;
-import org.mockserver.junit.jupiter.MockServerSettings;
-import org.mockserver.model.Parameter;
 
-@ExtendWith(MockServerExtension.class)
-@MockServerSettings(ports = {9090})
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+import static com.proptechos.http.constants.ApiEndpoints.ACTUATORS_JSON;
+import static com.proptechos.http.constants.ApiEndpoints.ACTUATOR_JSON;
+import static com.proptechos.utils.TestDataHelper.*;
+import static com.proptechos.utils.ValidationUtils.*;
+
+@ExtendWith(WireMockExtension.class)
 public class ActuatorServiceTest extends BaseServiceTest {
 
-  private static final String PAGED_DATA = DataLoader.loadPagedActuators();
-  private static final String TEST_ACTUATOR_ID = "846f0b95-5c26-4cda-a236-0b35f1d362e3";
-  private static final Actuator TEST_ACTUATOR = buildActuator();
+    private static final String PAGED_DATA = DataLoader.loadPagedActuators();
+    private static final String TEST_ACTUATOR_ID = "846f0b95-5c26-4cda-a236-0b35f1d362e3";
+    private static final Actuator TEST_ACTUATOR = buildActuator();
 
-  private static ActuatorService actuatorService;
-  private final MockServerClient client;
-  
-  ActuatorServiceTest(MockServerClient client) {
-    this.client = client;
-  }
+    private static ActuatorService actuatorService;
 
-  @BeforeAll
-  static void setUp() {
-    actuatorService = serviceFactory.actuatorService();
-  }
+    @BeforeAll
+    static void setUp() {
+        actuatorService = serviceFactory.actuatorService();
+    }
 
-  @AfterEach
-  void clearMockServer() {
-    client.clear(
-        request().withPath(APP_CONTEXT + ACTUATOR_JSON));
-    client.clear(
-        request().withPath(APP_CONTEXT + ACTUATOR_JSON + "/" + TEST_ACTUATOR_ID));
-  }
+    @Test
+    void testGetFirstPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "0");
+        parameters.put("size", "15");
 
-  @Test
-  void testGetFirstPage() {
-    client.when(getRequest(ACTUATOR_JSON)).respond(okResponse(PAGED_DATA));
+        stubGetResponse(ACTUATOR_JSON, parameters, PAGED_DATA);
 
-    actuatorService.getFirstPage(15);
+        actuatorService.getFirstPage(15);
 
-    verifyGetRequest(client, ACTUATOR_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "15"));
-  }
+        verifyGetRequest(ACTUATOR_JSON, parameters);
+    }
 
-  @Test
-  void testGetLastPage() {
-    client.when(getRequest(ACTUATOR_JSON)).respond(okResponse(PAGED_DATA));
+    @Test
+    void testGetLastPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "15");
 
-    actuatorService.getLastPage(15);
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "10");
+        parameters2.put("size", "15");
 
-    verifyGetRequest(client, ACTUATOR_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "15"));
+        stubGetResponse(ACTUATOR_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(ACTUATOR_JSON, parameters2, PAGED_DATA);
 
-    verifyGetRequest(client, ACTUATOR_JSON,
-        Parameter.param("page", "10"),
-        Parameter.param("size", "15"));
-  }
+        actuatorService.getLastPage(15);
 
-  @Test
-  void testGetByPage() {
-    client.when(getRequest(ACTUATOR_JSON)).respond(okResponse(PAGED_DATA));
+        verifyGetRequest(ACTUATOR_JSON, parameters1);
+        verifyGetRequest(ACTUATOR_JSON, parameters2);
+    }
 
-    actuatorService.getPage(1, 15);
+    @Test
+    void testGetByPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "1");
+        parameters.put("size", "15");
 
-    verifyGetRequest(client, ACTUATOR_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "15"));
-  }
+        actuatorService.getPage(1, 15);
 
-  @Test
-  void testGetNextPage() {
-    client.when(getRequest(ACTUATOR_JSON)).respond(okResponse(PAGED_DATA));
+        verifyGetRequest(ACTUATOR_JSON, parameters);
+    }
 
-    Paged<Actuator> paged = actuatorService.getFirstPage(15);
-    actuatorService.getNextPage(paged.getPageMetadata());
+    @Test
+    void testGetNextPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "15");
 
-    verifyGetRequest(client, ACTUATOR_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "15"));
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "1");
+        parameters2.put("size", "15");
 
-    verifyGetRequest(client, ACTUATOR_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "15"));
-  }
+        stubGetResponse(ACTUATOR_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(ACTUATOR_JSON, parameters2, PAGED_DATA);
 
-  @Test
-  void testGetById() {
-    client.when(getRequest(ACTUATOR_JSON + "/" + TEST_ACTUATOR_ID))
-        .respond(okResponse(DataLoader.loadSingleActuator()));
+        Paged<Actuator> paged = actuatorService.getFirstPage(15);
+        actuatorService.getNextPage(paged.getPageMetadata());
 
-    actuatorService.getById(UUID.fromString(TEST_ACTUATOR_ID));
+        verifyGetRequest(ACTUATOR_JSON, parameters1);
+        verifyGetRequest(ACTUATOR_JSON, parameters2);
+    }
 
-    verifyGetRequest(client, ACTUATOR_JSON + "/" + TEST_ACTUATOR_ID);
-  }
+    @Test
+    void testGetById() {
+        stubGetResponse(ACTUATOR_JSON + "/" + TEST_ACTUATOR_ID,
+            new HashMap<>(), DataLoader.loadSingleActuator());
 
-  @Test
-  void testCreate() {
-    client.when(postRequest(ACTUATOR_JSON))
-        .respond(okResponse(objectToJson(TEST_ACTUATOR)));
+        actuatorService.getById(UUID.fromString(TEST_ACTUATOR_ID));
 
-    actuatorService.createActuator(TEST_ACTUATOR);
+        verifyGetRequest(ACTUATOR_JSON, new HashMap<>());
+    }
 
-    verifyPostRequest(client, ACTUATOR_JSON, objectToJson(TEST_ACTUATOR));
-  }
+    @Test
+    void testCreate() {
+        stubPostResponse(ACTUATOR_JSON, objectToJson(TEST_ACTUATOR));
 
-  @Test
-  void testUpdate() {
-    client.when(putRequest(ACTUATOR_JSON))
-        .respond(okResponse(objectToJson(TEST_ACTUATOR)));
+        actuatorService.createActuator(TEST_ACTUATOR);
 
-    actuatorService.updateActuator(TEST_ACTUATOR);
+        verifyPostRequest(ACTUATOR_JSON, objectToJson(TEST_ACTUATOR));
+    }
 
-    verifyPutRequest(client, ACTUATOR_JSON, objectToJson(TEST_ACTUATOR));
-  }
+    @Test
+    void testUpdate() {
+        stubPutResponse(ACTUATOR_JSON, objectToJson(TEST_ACTUATOR));
 
-  @Test
-  void testDelete() {
-    client.when(deleteRequest(ACTUATOR_JSON + "/" + TEST_ACTUATOR_ID))
-        .respond(response().withStatusCode(OK));
+        actuatorService.updateActuator(TEST_ACTUATOR);
 
-    actuatorService.deleteActuator(UUID.fromString(TEST_ACTUATOR_ID));
+        verifyPutRequest(ACTUATOR_JSON, objectToJson(TEST_ACTUATOR));
+    }
 
-    verifyDeleteRequest(client, ACTUATOR_JSON + "/" + TEST_ACTUATOR_ID);
-  }
+    @Test
+    void testDelete() {
+        stubDeleteResponse(ACTUATOR_JSON + "/" + TEST_ACTUATOR_ID);
+
+        actuatorService.deleteActuator(UUID.fromString(TEST_ACTUATOR_ID));
+
+        verifyDeleteRequest(ACTUATOR_JSON + "/" + TEST_ACTUATOR_ID);
+    }
+
+    @Test
+    void testCreateBatch() {
+        stubPostResponse(ACTUATORS_JSON, objectToJson(successBatchResponse()));
+
+        actuatorService.createActuators(Arrays.asList(TEST_ACTUATOR, TEST_ACTUATOR));
+
+        verifyPostRequest(ACTUATORS_JSON, objectToJson(Arrays.asList(TEST_ACTUATOR, TEST_ACTUATOR)));
+    }
+
+    @Test
+    void testUpdateBatch() {
+        stubPutResponse(ACTUATORS_JSON, objectToJson(successBatchResponse()));
+
+        actuatorService.updateActuators(Arrays.asList(TEST_ACTUATOR, TEST_ACTUATOR));
+
+        verifyPutRequest(ACTUATORS_JSON, objectToJson(Arrays.asList(TEST_ACTUATOR, TEST_ACTUATOR)));
+    }
+
+    @Test
+    void testFailedCreateBatch() {
+        stubFailedPostResponse(ACTUATORS_JSON, DataLoader.loadBatchFailedActuators());
+
+        actuatorService.createActuators(Arrays.asList(TEST_ACTUATOR, TEST_ACTUATOR));
+
+        verifyPostRequest(ACTUATORS_JSON, objectToJson(Arrays.asList(TEST_ACTUATOR, TEST_ACTUATOR)));
+    }
+
+    @Test
+    void testFailedUpdateBatch() {
+        stubFailedPutResponse(ACTUATORS_JSON, DataLoader.loadBatchFailedActuators());
+
+        actuatorService.updateActuators(Arrays.asList(TEST_ACTUATOR, TEST_ACTUATOR));
+
+        verifyPutRequest(ACTUATORS_JSON, objectToJson(Arrays.asList(TEST_ACTUATOR, TEST_ACTUATOR)));
+    }
 
 }

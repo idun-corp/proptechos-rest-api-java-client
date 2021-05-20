@@ -1,0 +1,51 @@
+{
+  "saved": [
+    "ea1b7473-40cb-4627-a589-176c6b3ef261",
+    "6e0091e9-f136-4e1b-a51a-cb4e0295af25"
+  ],
+  "failed": [
+    {
+      "id": "4965cc25-7afb-4074-9dc1-ba2f20cd74a5",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:15.573Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:2209",
+      "popularName": "FÖRRÅD KPMG",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSubBuildingComponent": [],
+      "isLocatedAtLocalCoordinates": "-9.24;16.77;0.00",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    },
+    {
+      "id": "4ce03a33-01d5-4902-9b05-cd2adbffc954",
+      "class": "Room",
+      "createdTime": "2020-09-04T13:09:15.643Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "09.01:1106",
+      "popularName": "VALV",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
+      "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
+      "hasSubBuildingComponent": [],
+      "isLocatedAtLocalCoordinates": "-9.57;41.97;0.00",
+      "hasSuperBuildingComponent": "6c3aa662-bdc6-4af1-9ab3-f009c9ac3b9b",
+      "roomType": "https://w3id.org/rec/building/Storage"
+    }
+  ],
+  "errors": {
+    "da7ed4f2-4376-46cb-ad30-ca3396993b9e": "Error msg 1",
+    "be0e3674-7d40-479e-952f-37d773dce9fb": "Error msg 2"
+  },
+  "totalSaved": 2,
+  "totalFailed": 2,
+  "totalProcessed": 4
+}

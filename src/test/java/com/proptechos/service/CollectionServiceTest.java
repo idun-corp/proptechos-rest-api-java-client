@@ -1,196 +1,182 @@
 package com.proptechos.service;
 
-import static com.proptechos.http.constants.ApiEndpoints.COLLECTION_JSON;
-import static com.proptechos.http.constants.HttpStatus.OK;
-import static com.proptechos.utils.TestDataHelper.buildCollection;
-import static com.proptechos.utils.TestDataHelper.objectToJson;
-import static com.proptechos.utils.ValidationUtils.verifyDeleteRequest;
-import static com.proptechos.utils.ValidationUtils.verifyGetRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPostRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPutRequest;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockserver.model.HttpRequest.request;
-import static org.mockserver.model.HttpResponse.response;
-
 import com.proptechos.model.Collection;
 import com.proptechos.model.common.Paged;
 import com.proptechos.utils.DataLoader;
-import java.util.List;
-import java.util.UUID;
-import org.junit.jupiter.api.AfterEach;
+import com.proptechos.utils.WireMockExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockserver.client.MockServerClient;
-import org.mockserver.junit.jupiter.MockServerExtension;
-import org.mockserver.junit.jupiter.MockServerSettings;
-import org.mockserver.model.Parameter;
 
-@ExtendWith(MockServerExtension.class)
-@MockServerSettings(ports = {9090})
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import static com.proptechos.http.constants.ApiEndpoints.COLLECTION_JSON;
+import static com.proptechos.utils.TestDataHelper.buildCollection;
+import static com.proptechos.utils.TestDataHelper.objectToJson;
+import static com.proptechos.utils.ValidationUtils.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+@ExtendWith(WireMockExtension.class)
 public class CollectionServiceTest extends BaseServiceTest {
 
-  private static final String PAGED_DATA = DataLoader.loadPagedCollection();
-  private static final String TEST_COLLECTION_ID = "1b5d06c9-9f43-46b0-93f4-e9e5d9e3c972";
-  private static final Collection TEST_COLLECTION = buildCollection();
-  private static final UUID[] TEST_ID_LIST = new UUID[] {
-      UUID.randomUUID(), UUID.randomUUID(), UUID.randomUUID(), UUID.randomUUID(), UUID.randomUUID()
-  };
+    private static final String PAGED_DATA = DataLoader.loadPagedCollection();
+    private static final String TEST_COLLECTION_ID = "1b5d06c9-9f43-46b0-93f4-e9e5d9e3c972";
+    private static final Collection TEST_COLLECTION = buildCollection();
+    private static final UUID[] TEST_ID_LIST = new UUID[]{
+        UUID.randomUUID(), UUID.randomUUID(), UUID.randomUUID(), UUID.randomUUID(), UUID.randomUUID()
+    };
 
-  private static CollectionService collectionService;
-  private final MockServerClient client;
+    private static CollectionService collectionService;
 
-  CollectionServiceTest(MockServerClient client) {
-    this.client = client;
-  }
+    @BeforeAll
+    static void setUp() {
+        collectionService = serviceFactory.collectionService();
+    }
 
-  @BeforeAll
-  static void setUp() {
-    collectionService = serviceFactory.collectionService();
-  }
+    @Test
+    void testGetFirstPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "0");
+        parameters.put("size", "15");
 
-  @AfterEach
-  void clearMockServer() {
-    client.clear(
-        request().withPath(APP_CONTEXT + COLLECTION_JSON));
-    client.clear(
-        request().withPath(APP_CONTEXT + COLLECTION_JSON + "/" + TEST_COLLECTION_ID));
-    client.clear(
-        request().withPath(APP_CONTEXT + COLLECTION_JSON + "/" + TEST_COLLECTION_ID + "/.*"));
-  }
+        stubGetResponse(COLLECTION_JSON, parameters, PAGED_DATA);
 
-  @Test
-  void testGetFirstPage() {
-    client.when(getRequest(COLLECTION_JSON)).respond(okResponse(PAGED_DATA));
+        collectionService.getFirstPage(15);
 
-    collectionService.getFirstPage(15);
+        verifyGetRequest(COLLECTION_JSON, parameters);
+    }
 
-    verifyGetRequest(client, COLLECTION_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "15"));
-  }
+    @Test
+    void testGetLastPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "15");
 
-  @Test
-  void testGetLastPage() {
-    client.when(getRequest(COLLECTION_JSON)).respond(okResponse(PAGED_DATA));
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "2");
+        parameters2.put("size", "15");
 
-    collectionService.getLastPage(15);
+        stubGetResponse(COLLECTION_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(COLLECTION_JSON, parameters2, PAGED_DATA);
 
-    verifyGetRequest(client, COLLECTION_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "15"));
+        collectionService.getLastPage(15);
 
-    verifyGetRequest(client, COLLECTION_JSON,
-        Parameter.param("page", "2"),
-        Parameter.param("size", "15"));
-  }
+        verifyGetRequest(COLLECTION_JSON, parameters1);
+        verifyGetRequest(COLLECTION_JSON, parameters2);
+    }
 
-  @Test
-  void testGetByPage() {
-    client.when(getRequest(COLLECTION_JSON)).respond(okResponse(PAGED_DATA));
+    @Test
+    void testGetByPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "1");
+        parameters.put("size", "15");
 
-    collectionService.getPage(1, 15);
+        stubGetResponse(COLLECTION_JSON, parameters, PAGED_DATA);
 
-    verifyGetRequest(client, COLLECTION_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "15"));
-  }
+        collectionService.getPage(1, 15);
 
-  @Test
-  void testGetNextPage() {
-    client.when(getRequest(COLLECTION_JSON)).respond(okResponse(PAGED_DATA));
+        verifyGetRequest(COLLECTION_JSON, parameters);
+    }
 
-    Paged<Collection> paged = collectionService.getFirstPage(15);
-    collectionService.getNextPage(paged.getPageMetadata());
+    @Test
+    void testGetNextPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "15");
 
-    verifyGetRequest(client, COLLECTION_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "15"));
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "1");
+        parameters2.put("size", "15");
 
-    verifyGetRequest(client, COLLECTION_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "15"));
-  }
+        stubGetResponse(COLLECTION_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(COLLECTION_JSON, parameters2, PAGED_DATA);
 
-  @Test
-  void testGetById() {
-    client.when(getRequest(COLLECTION_JSON + "/" + TEST_COLLECTION_ID))
-        .respond(okResponse(DataLoader.loadSingleCollection()));
+        Paged<Collection> paged = collectionService.getFirstPage(15);
+        collectionService.getNextPage(paged.getPageMetadata());
 
-    collectionService.getById(UUID.fromString(TEST_COLLECTION_ID));
+        verifyGetRequest(COLLECTION_JSON, parameters1);
+        verifyGetRequest(COLLECTION_JSON, parameters2);
+    }
 
-    verifyGetRequest(client, COLLECTION_JSON + "/" + TEST_COLLECTION_ID);
-  }
+    @Test
+    void testGetById() {
+        stubGetResponse(COLLECTION_JSON + "/" + TEST_COLLECTION_ID,
+            new HashMap<>(), DataLoader.loadSingleCollection());
 
-  @Test
-  void testGetIncludedAxioms() {
-    String requestPath = COLLECTION_JSON + "/" + TEST_COLLECTION_ID + "/includes";
-    client.when(getRequest(requestPath))
-        .respond(okResponse(DataLoader.loadPagedDevices()));
+        collectionService.getById(UUID.fromString(TEST_COLLECTION_ID));
 
-    collectionService.getIncludedAxioms(
-        UUID.fromString(TEST_COLLECTION_ID), 0, 10);
+        verifyGetRequest(COLLECTION_JSON + "/" + TEST_COLLECTION_ID, new HashMap<>());
+    }
 
-    verifyGetRequest(client, requestPath,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "10"));
-  }
+    @Test
+    void testGetIncludedAxioms() {
+        String requestPath = COLLECTION_JSON + "/" + TEST_COLLECTION_ID + "/includes";
 
-  @Test
-  void testCreate() {
-    client.when(postRequest(COLLECTION_JSON))
-        .respond(okResponse(objectToJson(TEST_COLLECTION)));
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "0");
+        parameters.put("size", "10");
 
-    collectionService.createCollection(TEST_COLLECTION);
+        stubGetResponse(requestPath, parameters, DataLoader.loadPagedDevices());
 
-    verifyPostRequest(client, COLLECTION_JSON, objectToJson(TEST_COLLECTION));
-  }
+        collectionService.getIncludedAxioms(
+            UUID.fromString(TEST_COLLECTION_ID), 0, 10);
 
-  @Test
-  void testUpdate() {
-    client.when(putRequest(COLLECTION_JSON))
-        .respond(okResponse(objectToJson(TEST_COLLECTION)));
+        verifyGetRequest(requestPath, parameters);
+    }
 
-    collectionService.updateCollection(TEST_COLLECTION);
+    @Test
+    void testCreate() {
+        stubPostResponse(COLLECTION_JSON, objectToJson(TEST_COLLECTION));
 
-    verifyPutRequest(client, COLLECTION_JSON, objectToJson(TEST_COLLECTION));
-  }
+        collectionService.createCollection(TEST_COLLECTION);
 
-  @Test
-  void testIncludeAxioms() {
-    String requestPath = COLLECTION_JSON + "/" + TEST_COLLECTION_ID + "/include";
-    client.when(putRequest(requestPath))
-        .respond(okResponse(objectToJson(TEST_ID_LIST)));
+        verifyPostRequest(COLLECTION_JSON, objectToJson(TEST_COLLECTION));
+    }
 
-    List<UUID> included = collectionService.includeAxioms(UUID.fromString(TEST_COLLECTION_ID),
-        TEST_ID_LIST[0], TEST_ID_LIST[1], TEST_ID_LIST[2], TEST_ID_LIST[3], TEST_ID_LIST[4]);
+    @Test
+    void testUpdate() {
+        stubPutResponse(COLLECTION_JSON, objectToJson(TEST_COLLECTION));
 
-    assertEquals(5, included.size());
+        collectionService.updateCollection(TEST_COLLECTION);
 
-    verifyPutRequest(client, requestPath, objectToJson(TEST_ID_LIST));
-  }
+        verifyPutRequest(COLLECTION_JSON, objectToJson(TEST_COLLECTION));
+    }
 
-  @Test
-  void testExcludeAxioms() {
-    String requestPath = COLLECTION_JSON + "/" + TEST_COLLECTION_ID + "/exclude";
-    client.when(putRequest(requestPath))
-        .respond(okResponse(objectToJson(TEST_ID_LIST)));
+    @Test
+    void testIncludeAxioms() {
+        String requestPath = COLLECTION_JSON + "/" + TEST_COLLECTION_ID + "/include";
+        stubPutResponse(requestPath, objectToJson(TEST_ID_LIST));
 
-    List<UUID> included = collectionService.excludeAxioms(UUID.fromString(TEST_COLLECTION_ID),
-        TEST_ID_LIST[0], TEST_ID_LIST[1], TEST_ID_LIST[2], TEST_ID_LIST[3], TEST_ID_LIST[4]);
+        List<UUID> included = collectionService.includeAxioms(UUID.fromString(TEST_COLLECTION_ID),
+            TEST_ID_LIST[0], TEST_ID_LIST[1], TEST_ID_LIST[2], TEST_ID_LIST[3], TEST_ID_LIST[4]);
 
-    assertEquals(5, included.size());
+        assertEquals(5, included.size());
 
-    verifyPutRequest(client, requestPath, objectToJson(TEST_ID_LIST));
-  }
+        verifyPutRequest(requestPath, objectToJson(TEST_ID_LIST));
+    }
 
-  @Test
-  void testDelete() {
-    client.when(deleteRequest(COLLECTION_JSON + "/" + TEST_COLLECTION_ID))
-        .respond(response().withStatusCode(OK));
+    @Test
+    void testExcludeAxioms() {
+        String requestPath = COLLECTION_JSON + "/" + TEST_COLLECTION_ID + "/exclude";
+        stubPutResponse(requestPath, objectToJson(TEST_ID_LIST));
 
-    collectionService.deleteCollection(UUID.fromString(TEST_COLLECTION_ID));
+        List<UUID> included = collectionService.excludeAxioms(UUID.fromString(TEST_COLLECTION_ID),
+            TEST_ID_LIST[0], TEST_ID_LIST[1], TEST_ID_LIST[2], TEST_ID_LIST[3], TEST_ID_LIST[4]);
 
-    verifyDeleteRequest(client, COLLECTION_JSON + "/" + TEST_COLLECTION_ID);
-  }
+        assertEquals(5, included.size());
+
+        verifyPutRequest(requestPath, objectToJson(TEST_ID_LIST));
+    }
+
+    @Test
+    void testDelete() {
+        stubDeleteResponse(COLLECTION_JSON + "/" + TEST_COLLECTION_ID);
+
+        collectionService.deleteCollection(UUID.fromString(TEST_COLLECTION_ID));
+
+        verifyDeleteRequest(COLLECTION_JSON + "/" + TEST_COLLECTION_ID);
+    }
 }

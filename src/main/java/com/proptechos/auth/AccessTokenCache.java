@@ -8,47 +8,48 @@ import org.slf4j.LoggerFactory;
 
 public final class AccessTokenCache {
 
-  private static volatile AccessTokenCache INSTANCE;
-  private static final Object lock = new Object();
+    private static volatile AccessTokenCache INSTANCE;
+    private static final Object lock = new Object();
 
-  private volatile IAuthenticationResult authResult;
-  private Disposable authSubscription;
+    private volatile IAuthenticationResult authResult;
+    private Disposable authSubscription;
 
-  private final Logger log = LoggerFactory.getLogger(AccessTokenCache.class);
+    private final Logger log = LoggerFactory.getLogger(AccessTokenCache.class);
 
 
-  private AccessTokenCache() { }
-
-  public static AccessTokenCache getInstance() {
-    if(INSTANCE == null) {
-      synchronized(lock) {
-        if(INSTANCE == null) {
-          INSTANCE = new AccessTokenCache();
-        }
-      }
+    private AccessTokenCache() {
     }
 
-    return INSTANCE;
-  }
+    public static AccessTokenCache getInstance() {
+        if (INSTANCE == null) {
+            synchronized (lock) {
+                if (INSTANCE == null) {
+                    INSTANCE = new AccessTokenCache();
+                }
+            }
+        }
 
-  public void subscribeOnTokenRefresh(Observable<IAuthenticationResult> refreshObs) {
-    authSubscription = refreshObs.subscribe(
-        result -> {
-          log.debug("New auth result has been obtained.");
-          authResult = result;
-        },
-        throwable -> {
-          log.warn("Failed to re-/subscribe on token refresh: ", throwable);
-          throw new RuntimeException(throwable);
-        });
-  }
+        return INSTANCE;
+    }
 
-  public void unsubscribeFromTokenRefresh() {
-    authSubscription.dispose();
-  }
+    public void subscribeOnTokenRefresh(Observable<IAuthenticationResult> refreshObs) {
+        authSubscription = refreshObs.subscribe(
+            result -> {
+                log.debug("New auth result has been obtained.");
+                authResult = result;
+            },
+            throwable -> {
+                log.warn("Failed to re-/subscribe on token refresh: ", throwable);
+                throw new RuntimeException(throwable);
+            });
+    }
 
-  public IAuthenticationResult authResult() {
-    return authResult;
-  }
+    public void unsubscribeFromTokenRefresh() {
+        authSubscription.dispose();
+    }
+
+    public IAuthenticationResult authResult() {
+        return authResult;
+    }
 
 }

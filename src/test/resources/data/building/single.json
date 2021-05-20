@@ -12,10 +12,9 @@
   "comment": {},
   "littera": "629-001",
   "popularName": "Byggnad 001",
-  "source": {
-    "updatedByAgent": "testuser2@idunrealestate.onmicrosoft.com",
-    "updatedByApp": "RecAPI"
-  },
+  "updatedByAgent": "testuser1@idunrealestate.com",
+  "createdByAgent": "testuser1@idunrealestate.com",
+  "source": {},
   "isPartOfRealEstate": "c9112e5e-9f64-41d4-a692-d04cb7c12f5d",
   "hasGeoReferenceOrigo": "0.0;0.0;0.0"
 }

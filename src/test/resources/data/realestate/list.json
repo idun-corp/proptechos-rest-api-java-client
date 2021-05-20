@@ -10,10 +10,10 @@
     },
     "littera": "A002",
     "popularName": "LillaEssingen",
+    "updatedByAgent": "testuser1@idunrealestate.com",
+    "createdByAgent": "testuser1@idunrealestate.com",
     "source": {
-      "updatedByAgent": "testuser2@idunrealestate.com",
-      "REtestsource": "test RE source",
-      "updatedByApp": "RecAPI"
+      "REtestsource": "test RE source"
     },
     "hasGeoReferenceOrigo": "19.009394;59.323099;10.0"
   },
@@ -35,10 +35,9 @@
     "comment": {},
     "littera": "14523-675",
     "popularName": "Svea Artilleri 14",
-    "source": {
-      "updatedByAgent": "testuser2@idunrealestate.com",
-      "updatedByApp": "RecAPI"
-    },
+    "updatedByAgent": "testuser1@idunrealestate.com",
+    "createdByAgent": "testuser1@idunrealestate.com",
+    "source": {},
     "hasGeoReferenceOrigo": "59.342995;19.094569;10.0"
   },
   {
@@ -59,10 +58,9 @@
     "comment": {},
     "littera": "14549-692",
     "popularName": "Rosenborg 3",
-    "source": {
-      "updatedByAgent": "testuser2@idunrealestate.com",
-      "updatedByApp": "RecAPI"
-    },
+    "updatedByAgent": "testuser1@idunrealestate.com",
+    "createdByAgent": "testuser1@idunrealestate.com",
+    "source": {},
     "hasGeoReferenceOrigo": "59.375365;19.014145;10.0"
   },
   {
@@ -83,6 +81,8 @@
     "comment": {},
     "littera": "14551-950",
     "popularName": "Hilton 7",
+    "updatedByAgent": "testuser1@idunrealestate.com",
+    "createdByAgent": "testuser1@idunrealestate.com",
     "source": {},
     "hasGeoReferenceOrigo": null
   }

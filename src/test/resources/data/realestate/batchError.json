@@ -1,0 +1,57 @@
+{
+  "saved": [
+    "ea1b7473-40cb-4627-a589-176c6b3ef261",
+    "6e0091e9-f136-4e1b-a51a-cb4e0295af25"
+  ],
+  "failed": [
+    {
+      "id": "da7ed4f2-4376-46cb-ad30-ca3396993b9e",
+      "class": "RealEstate",
+      "createdTime": "2019-03-05T12:11:07.000Z",
+      "updatedTime": "2020-05-09T11:19:02.237Z",
+      "hasAlias": [],
+      "comment": {
+        "REtestcomment": "test RE comment"
+      },
+      "littera": "A002",
+      "popularName": "LillaEssingen",
+      "source": {
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "REtestsource": "test RE source",
+        "updatedByApp": "RecAPI"
+      },
+      "hasGeoReferenceOrigo": "19.009394;59.323099;10.0"
+    },
+    {
+      "id": "be0e3674-7d40-479e-952f-37d773dce9fb",
+      "class": "RealEstate",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-05-29T12:11:44.290Z",
+      "hasAlias": [
+        {
+          "id": "https://ns.proptechos.com/test-1/14523",
+          "isMemberOfAliasNamespace": "97937412-0add-4094-94cd-7573b95d500e"
+        },
+        {
+          "id": "https://ns.proptechos.com/test-2/costplace/675",
+          "isMemberOfAliasNamespace": "ab47dc4c-a404-4b9c-9b92-4e6e9b4463cf"
+        }
+      ],
+      "comment": {},
+      "littera": "14523-675",
+      "popularName": "Svea Artilleri 14",
+      "source": {
+        "updatedByAgent": "testuser2@idunrealestate.com",
+        "updatedByApp": "RecAPI"
+      },
+      "hasGeoReferenceOrigo": "59.342995;19.094569;10.0"
+    }
+  ],
+  "errors": {
+    "da7ed4f2-4376-46cb-ad30-ca3396993b9e": "Error msg 1",
+    "be0e3674-7d40-479e-952f-37d773dce9fb": "Error msg 2"
+  },
+  "totalSaved": 2,
+  "totalFailed": 2,
+  "totalProcessed": 4
+}

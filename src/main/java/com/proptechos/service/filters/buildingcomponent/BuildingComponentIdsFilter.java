@@ -2,6 +2,7 @@ package com.proptechos.service.filters.buildingcomponent;
 
 import com.proptechos.http.query.IQueryFilter;
 import com.proptechos.http.query.QueryParam;
+
 import java.util.List;
 
 /**
@@ -11,7 +12,6 @@ import java.util.List;
  * - Applicable to
  * BuildingComponentService,
  * DeviceService, ActuatorService, SensorService
- *
  * @see com.proptechos.service.BuildingComponentService
  * @see com.proptechos.service.DeviceService
  * @see com.proptechos.service.ActuatorService
@@ -19,15 +19,15 @@ import java.util.List;
  */
 public class BuildingComponentIdsFilter implements IQueryFilter {
 
-  private final String buildingComponentIds;
+    private final String buildingComponentIds;
 
-  public BuildingComponentIdsFilter(List<String> buildingComponentIds) {
-    this.buildingComponentIds = String.join(",", buildingComponentIds);
-  }
+    public BuildingComponentIdsFilter(List<String> buildingComponentIds) {
+        this.buildingComponentIds = String.join(",", buildingComponentIds);
+    }
 
-  @Override
-  public QueryParam queryParam() {
-    return new QueryParam("buildingcomponent_ids", buildingComponentIds);
-  }
+    @Override
+    public QueryParam queryParam() {
+        return new QueryParam("buildingcomponent_ids", buildingComponentIds);
+    }
 
 }

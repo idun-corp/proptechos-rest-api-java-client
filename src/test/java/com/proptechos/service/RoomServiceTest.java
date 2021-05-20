@@ -1,148 +1,173 @@
 package com.proptechos.service;
 
-import static com.proptechos.http.constants.ApiEndpoints.ROOM_JSON;
-import static com.proptechos.http.constants.HttpStatus.OK;
-import static com.proptechos.utils.TestDataHelper.buildRoom;
-import static com.proptechos.utils.TestDataHelper.objectToJson;
-import static com.proptechos.utils.ValidationUtils.verifyDeleteRequest;
-import static com.proptechos.utils.ValidationUtils.verifyGetRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPostRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPutRequest;
-import static org.mockserver.model.HttpRequest.request;
-import static org.mockserver.model.HttpResponse.response;
-
 import com.proptechos.model.buildingcomponent.Room;
 import com.proptechos.model.common.Paged;
 import com.proptechos.utils.DataLoader;
-import java.util.UUID;
-import org.junit.jupiter.api.AfterEach;
+import com.proptechos.utils.WireMockExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockserver.client.MockServerClient;
-import org.mockserver.junit.jupiter.MockServerExtension;
-import org.mockserver.junit.jupiter.MockServerSettings;
-import org.mockserver.model.Parameter;
 
-@ExtendWith(MockServerExtension.class)
-@MockServerSettings(ports = {9090})
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+import static com.proptechos.http.constants.ApiEndpoints.ROOMS_JSON;
+import static com.proptechos.http.constants.ApiEndpoints.ROOM_JSON;
+import static com.proptechos.utils.TestDataHelper.*;
+import static com.proptechos.utils.ValidationUtils.*;
+
+@ExtendWith(WireMockExtension.class)
 public class RoomServiceTest extends BaseServiceTest {
 
-  private static final String PAGED_DATA = DataLoader.loadPagedRooms();
-  private static final String TEST_ROOM_ID = "4297626f-af51-471d-9503-5576a0544440";
-  private static final Room TEST_ROOM = buildRoom();
-  
-  private static RoomService roomService;
-  private final MockServerClient client;
-  
-  RoomServiceTest(MockServerClient client) {
-    this.client = client;
-  }
+    private static final String PAGED_DATA = DataLoader.loadPagedRooms();
+    private static final String TEST_ROOM_ID = "4297626f-af51-471d-9503-5576a0544440";
+    private static final Room TEST_ROOM = buildRoom();
 
-  @BeforeAll
-  static void setUp() {
-    roomService = serviceFactory.roomService();
-  }
+    private static RoomService roomService;
 
-  @AfterEach
-  void clearMockServer() {
-    client.clear(
-        request().withPath(APP_CONTEXT + ROOM_JSON));
-    client.clear(
-        request().withPath(APP_CONTEXT + ROOM_JSON + "/" + TEST_ROOM_ID));
-  }
+    @BeforeAll
+    static void setUp() {
+        roomService = serviceFactory.roomService();
+    }
 
-  @Test
-  void testGetFirstPage() {
-    client.when(getRequest(ROOM_JSON)).respond(okResponse(PAGED_DATA));
+    @Test
+    void testGetFirstPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "0");
+        parameters.put("size", "50");
 
-    roomService.getFirstPage(50);
+        stubGetResponse(ROOM_JSON, parameters, PAGED_DATA);
 
-    verifyGetRequest(client, ROOM_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "50"));
-  }
+        roomService.getFirstPage(50);
 
-  @Test
-  void testGetLastPage() {
-    client.when(getRequest(ROOM_JSON)).respond(okResponse(PAGED_DATA));
+        verifyGetRequest(ROOM_JSON, parameters);
+    }
 
-    roomService.getLastPage(50);
+    @Test
+    void testGetLastPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "50");
 
-    verifyGetRequest(client, ROOM_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "50"));
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "48");
+        parameters2.put("size", "50");
 
-    verifyGetRequest(client, ROOM_JSON,
-        Parameter.param("page", "48"),
-        Parameter.param("size", "50"));
-  }
+        stubGetResponse(ROOM_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(ROOM_JSON, parameters2, PAGED_DATA);
 
-  @Test
-  void testGetByPage() {
-    client.when(getRequest(ROOM_JSON)).respond(okResponse(PAGED_DATA));
+        roomService.getLastPage(50);
 
-    roomService.getPage(1, 50);
+        verifyGetRequest(ROOM_JSON, parameters1);
+        verifyGetRequest(ROOM_JSON, parameters2);
+    }
 
-    verifyGetRequest(client, ROOM_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "50"));
-  }
+    @Test
+    void testGetByPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "1");
+        parameters.put("size", "50");
 
-  @Test
-  void testGetNextPage() {
-    client.when(getRequest(ROOM_JSON)).respond(okResponse(PAGED_DATA));
+        stubGetResponse(ROOM_JSON, parameters, PAGED_DATA);
 
-    Paged<Room> paged = roomService.getFirstPage(50);
-    roomService.getNextPage(paged.getPageMetadata());
+        roomService.getPage(1, 50);
 
-    verifyGetRequest(client, ROOM_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "50"));
+        verifyGetRequest(ROOM_JSON, parameters);
+    }
 
-    verifyGetRequest(client, ROOM_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "50"));
-  }
+    @Test
+    void testGetNextPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "50");
 
-  @Test
-  void testGetById() {
-    client.when(getRequest(ROOM_JSON + "/" + TEST_ROOM_ID))
-        .respond(okResponse(DataLoader.loadSingleRoom()));
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "1");
+        parameters2.put("size", "50");
 
-    roomService.getById(UUID.fromString(TEST_ROOM_ID));
+        stubGetResponse(ROOM_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(ROOM_JSON, parameters2, PAGED_DATA);
 
-    verifyGetRequest(client, ROOM_JSON + "/" + TEST_ROOM_ID);
-  }
+        Paged<Room> paged = roomService.getFirstPage(50);
+        roomService.getNextPage(paged.getPageMetadata());
 
-  @Test
-  void testCreate() {
-    client.when(postRequest(ROOM_JSON))
-        .respond(okResponse(objectToJson(TEST_ROOM)));
+        verifyGetRequest(ROOM_JSON, parameters1);
+        verifyGetRequest(ROOM_JSON, parameters2);
+    }
 
-    roomService.createRoom(TEST_ROOM);
+    @Test
+    void testGetById() {
+        stubGetResponse(ROOM_JSON + "/" + TEST_ROOM_ID,
+            new HashMap<>(), DataLoader.loadSingleRoom());
 
-    verifyPostRequest(client, ROOM_JSON, objectToJson(TEST_ROOM));
-  }
+        roomService.getById(UUID.fromString(TEST_ROOM_ID));
 
-  @Test
-  void testUpdate() {
-    client.when(putRequest(ROOM_JSON))
-        .respond(okResponse(objectToJson(TEST_ROOM)));
+        verifyGetRequest(ROOM_JSON + "/" + TEST_ROOM_ID, new HashMap<>());
+    }
 
-    roomService.updateRoom(TEST_ROOM);
+    @Test
+    void testCreate() {
+        stubPostResponse(ROOM_JSON, objectToJson(TEST_ROOM));
 
-    verifyPutRequest(client, ROOM_JSON, objectToJson(TEST_ROOM));
-  }
+        roomService.createRoom(TEST_ROOM);
 
-  @Test
-  void testDelete() {
-    client.when(deleteRequest(ROOM_JSON + "/" + TEST_ROOM_ID))
-        .respond(response().withStatusCode(OK));
+        verifyPostRequest(ROOM_JSON, objectToJson(TEST_ROOM));
+    }
 
-    roomService.deleteRoom(UUID.fromString(TEST_ROOM_ID));
+    @Test
+    void testUpdate() {
+        stubPutResponse(ROOM_JSON, objectToJson(TEST_ROOM));
 
-    verifyDeleteRequest(client, ROOM_JSON + "/" + TEST_ROOM_ID);
-  }
+        roomService.updateRoom(TEST_ROOM);
+
+        verifyPutRequest(ROOM_JSON, objectToJson(TEST_ROOM));
+    }
+
+    @Test
+    void testDelete() {
+        stubDeleteResponse(ROOM_JSON + "/" + TEST_ROOM_ID);
+
+        roomService.deleteRoom(UUID.fromString(TEST_ROOM_ID));
+
+        verifyDeleteRequest(ROOM_JSON + "/" + TEST_ROOM_ID);
+    }
+
+    @Test
+    void testCreateBatch() {
+        stubPostResponse(ROOMS_JSON, objectToJson(successBatchResponse()));
+
+        roomService.createRooms(Arrays.asList(TEST_ROOM, TEST_ROOM));
+
+        verifyPostRequest(ROOMS_JSON, objectToJson(Arrays.asList(TEST_ROOM, TEST_ROOM)));
+    }
+
+    @Test
+    void testUpdateBatch() {
+        stubPutResponse(ROOMS_JSON, objectToJson(successBatchResponse()));
+
+        roomService.updateRooms(Arrays.asList(TEST_ROOM, TEST_ROOM));
+
+        verifyPutRequest(ROOMS_JSON, objectToJson(Arrays.asList(TEST_ROOM, TEST_ROOM)));
+    }
+
+    @Test
+    void testFailedCreateBatch() {
+        stubFailedPostResponse(ROOMS_JSON, DataLoader.loadBatchFailedRooms());
+
+        roomService.createRooms(Arrays.asList(TEST_ROOM, TEST_ROOM));
+
+        verifyPostRequest(ROOMS_JSON, objectToJson(Arrays.asList(TEST_ROOM, TEST_ROOM)));
+    }
+
+    @Test
+    void testFailedUpdateBatch() {
+        stubFailedPutResponse(ROOMS_JSON, DataLoader.loadBatchFailedRooms());
+
+        roomService.updateRooms(Arrays.asList(TEST_ROOM, TEST_ROOM));
+
+        verifyPutRequest(ROOMS_JSON, objectToJson(Arrays.asList(TEST_ROOM, TEST_ROOM)));
+    }
 
 }

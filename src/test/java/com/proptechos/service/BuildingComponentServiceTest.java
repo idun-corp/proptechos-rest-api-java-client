@@ -1,148 +1,173 @@
 package com.proptechos.service;
 
-import static com.proptechos.http.constants.ApiEndpoints.BUILDING_COMPONENT_JSON;
-import static com.proptechos.http.constants.HttpStatus.OK;
-import static com.proptechos.utils.TestDataHelper.buildBuildingComponent;
-import static com.proptechos.utils.TestDataHelper.objectToJson;
-import static com.proptechos.utils.ValidationUtils.verifyDeleteRequest;
-import static com.proptechos.utils.ValidationUtils.verifyGetRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPostRequest;
-import static com.proptechos.utils.ValidationUtils.verifyPutRequest;
-import static org.mockserver.model.HttpRequest.request;
-import static org.mockserver.model.HttpResponse.response;
-
 import com.proptechos.model.common.IBuildingComponent;
 import com.proptechos.model.common.Paged;
 import com.proptechos.utils.DataLoader;
-import java.util.UUID;
-import org.junit.jupiter.api.AfterEach;
+import com.proptechos.utils.WireMockExtension;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockserver.client.MockServerClient;
-import org.mockserver.junit.jupiter.MockServerExtension;
-import org.mockserver.junit.jupiter.MockServerSettings;
-import org.mockserver.model.Parameter;
 
-@ExtendWith(MockServerExtension.class)
-@MockServerSettings(ports = {9090})
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+import static com.proptechos.http.constants.ApiEndpoints.BUILDING_COMPONENTS_JSON;
+import static com.proptechos.http.constants.ApiEndpoints.BUILDING_COMPONENT_JSON;
+import static com.proptechos.utils.TestDataHelper.*;
+import static com.proptechos.utils.ValidationUtils.*;
+
+@ExtendWith(WireMockExtension.class)
 public class BuildingComponentServiceTest extends BaseServiceTest {
 
-  private static final String PAGED_DATA = DataLoader.loadPagedBuildingComponents();
-  private static final String TEST_BC_ID = "397abf21-0e94-4bee-9bc9-0464a7ddd44a";
-  private static final IBuildingComponent TEST_BC = buildBuildingComponent();
-  
-  private static BuildingComponentService buildingComponentService;
-  private final MockServerClient client;
-  
-  BuildingComponentServiceTest(MockServerClient client) {
-    this.client = client;
-  }
+    private static final String PAGED_DATA = DataLoader.loadPagedBuildingComponents();
+    private static final String TEST_BC_ID = "397abf21-0e94-4bee-9bc9-0464a7ddd44a";
+    private static final IBuildingComponent TEST_BC = buildBuildingComponent();
 
-  @BeforeAll
-  static void setUp() {
-    buildingComponentService = serviceFactory.buildingComponentService();
-  }
+    private static BuildingComponentService buildingComponentService;
 
-  @AfterEach
-  void clearMockServer() {
-    client.clear(
-        request().withPath(APP_CONTEXT + BUILDING_COMPONENT_JSON));
-    client.clear(
-        request().withPath(APP_CONTEXT + BUILDING_COMPONENT_JSON + "/" + TEST_BC_ID));
-  }
+    @BeforeAll
+    static void setUp() {
+        buildingComponentService = serviceFactory.buildingComponentService();
+    }
 
-  @Test
-  void testGetFirstPage() {
-    client.when(getRequest(BUILDING_COMPONENT_JSON)).respond(okResponse(PAGED_DATA));
+    @Test
+    void testGetFirstPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "0");
+        parameters.put("size", "50");
 
-    buildingComponentService.getFirstPage(50);
+        stubGetResponse(BUILDING_COMPONENT_JSON, parameters, PAGED_DATA);
 
-    verifyGetRequest(client, BUILDING_COMPONENT_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "50"));
-  }
+        buildingComponentService.getFirstPage(50);
 
-  @Test
-  void testGetLastPage() {
-    client.when(getRequest(BUILDING_COMPONENT_JSON)).respond(okResponse(PAGED_DATA));
+        verifyGetRequest(BUILDING_COMPONENT_JSON, parameters);
+    }
 
-    buildingComponentService.getLastPage(50);
+    @Test
+    void testGetLastPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "50");
 
-    verifyGetRequest(client, BUILDING_COMPONENT_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "50"));
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "50");
+        parameters2.put("size", "50");
 
-    verifyGetRequest(client, BUILDING_COMPONENT_JSON,
-        Parameter.param("page", "50"),
-        Parameter.param("size", "50"));
-  }
+        stubGetResponse(BUILDING_COMPONENT_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(BUILDING_COMPONENT_JSON, parameters2, PAGED_DATA);
 
-  @Test
-  void testGetByPage() {
-    client.when(getRequest(BUILDING_COMPONENT_JSON)).respond(okResponse(PAGED_DATA));
+        buildingComponentService.getLastPage(50);
 
-    buildingComponentService.getPage(1, 50);
+        verifyGetRequest(BUILDING_COMPONENT_JSON, parameters1);
+        verifyGetRequest(BUILDING_COMPONENT_JSON, parameters2);
+    }
 
-    verifyGetRequest(client, BUILDING_COMPONENT_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "50"));
-  }
+    @Test
+    void testGetByPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "1");
+        parameters.put("size", "50");
 
-  @Test
-  void testGetNextPage() {
-    client.when(getRequest(BUILDING_COMPONENT_JSON)).respond(okResponse(PAGED_DATA));
+        stubGetResponse(BUILDING_COMPONENT_JSON, parameters, PAGED_DATA);
 
-    Paged<IBuildingComponent> paged = buildingComponentService.getFirstPage(50);
-    buildingComponentService.getNextPage(paged.getPageMetadata());
+        buildingComponentService.getPage(1, 50);
 
-    verifyGetRequest(client, BUILDING_COMPONENT_JSON,
-        Parameter.param("page", "0"),
-        Parameter.param("size", "50"));
+        verifyGetRequest(BUILDING_COMPONENT_JSON, parameters);
+    }
 
-    verifyGetRequest(client, BUILDING_COMPONENT_JSON,
-        Parameter.param("page", "1"),
-        Parameter.param("size", "50"));
-  }
+    @Test
+    void testGetNextPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "50");
 
-  @Test
-  void testGetById() {
-    client.when(getRequest(BUILDING_COMPONENT_JSON + "/" + TEST_BC_ID))
-        .respond(okResponse(DataLoader.loadSingleBuildingComponent()));
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "1");
+        parameters2.put("size", "50");
 
-    buildingComponentService.getById(UUID.fromString(TEST_BC_ID));
+        stubGetResponse(BUILDING_COMPONENT_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(BUILDING_COMPONENT_JSON, parameters2, PAGED_DATA);
 
-    verifyGetRequest(client, BUILDING_COMPONENT_JSON + "/" + TEST_BC_ID);
-  }
+        Paged<IBuildingComponent> paged = buildingComponentService.getFirstPage(50);
+        buildingComponentService.getNextPage(paged.getPageMetadata());
 
-  @Test
-  void testCreate() {
-    client.when(postRequest(BUILDING_COMPONENT_JSON))
-        .respond(okResponse(objectToJson(TEST_BC)));
+        verifyGetRequest(BUILDING_COMPONENT_JSON, parameters1);
+        verifyGetRequest(BUILDING_COMPONENT_JSON, parameters2);
+    }
 
-    buildingComponentService.createBuildingComponent(TEST_BC);
+    @Test
+    void testGetById() {
+        stubGetResponse(BUILDING_COMPONENT_JSON + "/" + TEST_BC_ID,
+            new HashMap<>(), DataLoader.loadSingleBuildingComponent());
 
-    verifyPostRequest(client, BUILDING_COMPONENT_JSON, objectToJson(TEST_BC));
-  }
+        buildingComponentService.getById(UUID.fromString(TEST_BC_ID));
 
-  @Test
-  void testUpdate() {
-    client.when(putRequest(BUILDING_COMPONENT_JSON))
-        .respond(okResponse(objectToJson(TEST_BC)));
+        verifyGetRequest(BUILDING_COMPONENT_JSON + "/" + TEST_BC_ID, new HashMap<>());
+    }
 
-    buildingComponentService.updateBuildingComponent(TEST_BC);
+    @Test
+    void testCreate() {
+        stubPostResponse(BUILDING_COMPONENT_JSON, objectToJson(TEST_BC));
 
-    verifyPutRequest(client, BUILDING_COMPONENT_JSON, objectToJson(TEST_BC));
-  }
+        buildingComponentService.createBuildingComponent(TEST_BC);
 
-  @Test
-  void testDelete() {
-    client.when(deleteRequest(BUILDING_COMPONENT_JSON + "/" + TEST_BC_ID))
-        .respond(response().withStatusCode(OK));
+        verifyPostRequest(BUILDING_COMPONENT_JSON, objectToJson(TEST_BC));
+    }
 
-    buildingComponentService.deleteBuildingComponent(UUID.fromString(TEST_BC_ID));
+    @Test
+    void testUpdate() {
+        stubPutResponse(BUILDING_COMPONENT_JSON, objectToJson(TEST_BC));
 
-    verifyDeleteRequest(client, BUILDING_COMPONENT_JSON + "/" + TEST_BC_ID);
-  }
+        buildingComponentService.updateBuildingComponent(TEST_BC);
+
+        verifyPutRequest(BUILDING_COMPONENT_JSON, objectToJson(TEST_BC));
+    }
+
+    @Test
+    void testDelete() {
+        stubDeleteResponse(BUILDING_COMPONENT_JSON + "/" + TEST_BC_ID);
+
+        buildingComponentService.deleteBuildingComponent(UUID.fromString(TEST_BC_ID));
+
+        verifyDeleteRequest(BUILDING_COMPONENT_JSON + "/" + TEST_BC_ID);
+    }
+
+    @Test
+    void testCreateBatch() {
+        stubPostResponse(BUILDING_COMPONENTS_JSON, objectToJson(successBatchResponse()));
+
+        buildingComponentService.createBuildingComponents(Arrays.asList(TEST_BC, TEST_BC));
+
+        verifyPostRequest(BUILDING_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BC, TEST_BC)));
+    }
+
+    @Test
+    void testUpdateBatch() {
+        stubPutResponse(BUILDING_COMPONENTS_JSON, objectToJson(successBatchResponse()));
+
+        buildingComponentService.updateBuildingComponents(Arrays.asList(TEST_BC, TEST_BC));
+
+        verifyPutRequest(BUILDING_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BC, TEST_BC)));
+    }
+
+    @Test
+    void testFailedCreateBatch() {
+        stubFailedPostResponse(BUILDING_COMPONENTS_JSON, DataLoader.loadBatchFailedBuildingComponents());
+
+        buildingComponentService.createBuildingComponents(Arrays.asList(TEST_BC, TEST_BC));
+
+        verifyPostRequest(BUILDING_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BC, TEST_BC)));
+    }
+
+    @Test
+    void testFailedUpdateBatch() {
+        stubFailedPutResponse(BUILDING_COMPONENTS_JSON, DataLoader.loadBatchFailedBuildingComponents());
+
+        buildingComponentService.updateBuildingComponents(Arrays.asList(TEST_BC, TEST_BC));
+
+        verifyPutRequest(BUILDING_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BC, TEST_BC)));
+    }
 
 }

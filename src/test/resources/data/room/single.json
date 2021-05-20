@@ -7,10 +7,9 @@
   "comment": {},
   "littera": "02.01:1105",
   "popularName": "GBG ENERGI HÖGSPÄNNING TRANSFORMATORRUM",
-  "source": {
-    "createdByAgent": "testuser3@idunrealestate.com",
-    "createdByApp": "RecAPI"
-  },
+  "updatedByAgent": "testuser1@idunrealestate.com",
+  "createdByAgent": "testuser1@idunrealestate.com",
+  "source": {},
   "isPartOfBuilding": "57a37a4b-2909-4539-9d7d-c021f1167b6c",
   "hasSubBuildingComponent": [],
   "isLocatedAtLocalCoordinates": "19.17;56.97;0.00",

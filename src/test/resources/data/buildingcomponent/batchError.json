@@ -1,0 +1,51 @@
+{
+  "saved": [
+    "ea1b7473-40cb-4627-a589-176c6b3ef261",
+    "6e0091e9-f136-4e1b-a51a-cb4e0295af25"
+  ],
+  "failed": [
+    {
+      "id": "d9de9bba-b1ca-4b92-bfbc-04ac4f09390c",
+      "class": "Room",
+      "createdTime": "2020-09-03T14:31:59.977Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1649",
+      "popularName": null,
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
+      "isPartOfBuilding": "70f35ab6-63bb-4e97-9091-349909124437",
+      "hasSubBuildingComponent": [],
+      "isLocatedAtLocalCoordinates": "191.22;-4.43;36.30",
+      "hasSuperBuildingComponent": "9472bc9f-6763-4c22-9ac6-b96a9d99b7dc",
+      "roomType": "https://w3id.org/rec/building/OfficeRoom"
+    },
+    {
+      "id": "795bef66-c31a-4ef1-bc9e-04e91f02fb79",
+      "class": "Room",
+      "createdTime": "2020-10-01T10:20:11.577Z",
+      "updatedTime": null,
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1:6",
+      "popularName": "VENT",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "source": {},
+      "isPartOfBuilding": "cbe9abf1-23de-4eb2-a12e-06d69ff00e02",
+      "hasSubBuildingComponent": [],
+      "isLocatedAtLocalCoordinates": "0;0;32.71",
+      "hasSuperBuildingComponent": "e7c9ebfb-7909-42a0-ac25-59ed6ea94c74",
+      "roomType": "https://w3id.org/rec/building/UtilitiesRoom"
+    }
+  ],
+  "errors": {
+    "da7ed4f2-4376-46cb-ad30-ca3396993b9e": "Error msg 1",
+    "be0e3674-7d40-479e-952f-37d773dce9fb": "Error msg 2"
+  },
+  "totalSaved": 2,
+  "totalFailed": 2,
+  "totalProcessed": 4
+}

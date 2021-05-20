@@ -1,53 +1,40 @@
 package com.proptechos.utils;
 
-import static org.mockserver.model.HttpRequest.request;
-
+import com.github.tomakehurst.wiremock.matching.RequestPatternBuilder;
 import com.proptechos.service.BaseServiceTest;
-import com.proptechos.service.BaseServiceTest.HttpMethod;
-import org.mockserver.client.MockServerClient;
-import org.mockserver.model.JsonBody;
-import org.mockserver.model.MediaType;
-import org.mockserver.model.Parameter;
-import org.mockserver.verify.VerificationTimes;
+
+import java.util.Map;
+
+import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
 public class ValidationUtils {
 
-  public static void verifyGetRequest(MockServerClient client, String path, Parameter...parameters) {
-    client.verify(request()
-            .withMethod(HttpMethod.GET.name())
-            .withHeader("Authorization")
-            .withHeader("Accept", "application/json")
-            .withPath(BaseServiceTest.APP_CONTEXT + path)
-            .withQueryStringParameters(parameters),
-        VerificationTimes.once());
-  }
+    public static void verifyGetRequest(String path, Map<String, String> parameters) {
+        RequestPatternBuilder builder =
+            getRequestedFor(urlPathMatching(BaseServiceTest.APP_CONTEXT + path))
+                .withHeader("Accept", equalTo("application/json"));
+        parameters.forEach((key, value) -> builder.withQueryParam(key, equalTo(value)));
+        verify(builder);
+    }
 
-  public static void verifyPostRequest(MockServerClient client, String path, String jsonBody) {
-    client.verify(request()
-            .withMethod(HttpMethod.POST.name())
-            .withPath(BaseServiceTest.APP_CONTEXT + path)
-            .withHeader("Authorization")
-            .withContentType(MediaType.APPLICATION_JSON)
-            .withBody(new JsonBody(jsonBody)),
-        VerificationTimes.once());
-  }
+    public static void verifyPostRequest(String path, String jsonBody) {
+        RequestPatternBuilder builder =
+            postRequestedFor(urlPathMatching(BaseServiceTest.APP_CONTEXT + path))
+                .withHeader("Accept", equalTo("application/json"))
+                .withRequestBody(equalToJson(jsonBody));
+        verify(builder);
+    }
 
-  public static void verifyPutRequest(MockServerClient client, String path, String jsonBody) {
-    client.verify(request()
-            .withMethod(HttpMethod.PUT.name())
-            .withPath(BaseServiceTest.APP_CONTEXT + path)
-            .withHeader("Authorization")
-            .withContentType(MediaType.APPLICATION_JSON)
-            .withBody(new JsonBody(jsonBody)),
-        VerificationTimes.once());
-  }
+    public static void verifyPutRequest(String path, String jsonBody) {
+        RequestPatternBuilder builder =
+            putRequestedFor(urlPathMatching(BaseServiceTest.APP_CONTEXT + path))
+                .withHeader("Accept", equalTo("application/json"))
+                .withRequestBody(equalToJson(jsonBody));
+        verify(builder);
+    }
 
-  public static void verifyDeleteRequest(MockServerClient client, String path) {
-    client.verify(request()
-            .withMethod(HttpMethod.DELETE.name())
-            .withHeader("Authorization")
-            .withPath(BaseServiceTest.APP_CONTEXT + path),
-        VerificationTimes.once());
-  }
+    public static void verifyDeleteRequest(String path) {
+        verify(deleteRequestedFor(urlPathMatching(BaseServiceTest.APP_CONTEXT + path)));
+    }
 
 }

@@ -2,7 +2,9 @@ package com.proptechos.service;
 
 import com.proptechos.model.Observation;
 import com.proptechos.model.auth.KafkaConfig;
+
 import java.util.function.Consumer;
+
 import org.apache.kafka.streams.KafkaStreams;
 import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.kstream.KStream;
@@ -14,20 +16,20 @@ import org.apache.kafka.streams.kstream.KStream;
  */
 public class StreamingApiService {
 
-  private final KafkaConfig kafkaConfig;
-  private final StreamsBuilder builder;
+    private final KafkaConfig kafkaConfig;
+    private final StreamsBuilder builder;
 
-  StreamingApiService(KafkaConfig kafkaConfig) {
-    this.kafkaConfig = kafkaConfig;
-    this.builder = new StreamsBuilder();
-  }
+    StreamingApiService(KafkaConfig kafkaConfig) {
+        this.kafkaConfig = kafkaConfig;
+        this.builder = new StreamsBuilder();
+    }
 
-  public KafkaStreams subscribe(Consumer<Observation> onNext) {
-    KStream<String, Observation> telemetry = builder.stream(kafkaConfig.getTopic());
-    telemetry.foreach((key, observation) -> onNext.accept(observation));
-    KafkaStreams streams = new KafkaStreams(builder.build(), kafkaConfig.getConfigMap());
-    streams.start();
-    return streams;
-  }
+    public KafkaStreams subscribe(Consumer<Observation> onNext) {
+        KStream<String, Observation> telemetry = builder.stream(kafkaConfig.getTopic());
+        telemetry.foreach((key, observation) -> onNext.accept(observation));
+        KafkaStreams streams = new KafkaStreams(builder.build(), kafkaConfig.getConfigMap());
+        streams.start();
+        return streams;
+    }
 
 }
