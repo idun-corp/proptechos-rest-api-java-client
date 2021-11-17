@@ -23,6 +23,7 @@ public class ActuatorServiceTest extends BaseServiceTest {
 
     private static final String PAGED_DATA = DataLoader.loadPagedActuators();
     private static final String TEST_ACTUATOR_ID = "846f0b95-5c26-4cda-a236-0b35f1d362e3";
+    private static final String TEST_ACTUATION_ID = "0a9146af-e660-4983-b62a-e6a1596e6e8d";
     private static final Actuator TEST_ACTUATOR = buildActuator();
 
     private static ActuatorService actuatorService;
@@ -148,6 +149,16 @@ public class ActuatorServiceTest extends BaseServiceTest {
         actuatorService.updateActuators(Arrays.asList(TEST_ACTUATOR, TEST_ACTUATOR));
 
         verifyPutRequest(ACTUATORS_JSON, objectToJson(Arrays.asList(TEST_ACTUATOR, TEST_ACTUATOR)));
+    }
+
+    @Test
+    void testGetActuationResponse() {
+        stubGetResponse(ACTUATOR_JSON + "/" + TEST_ACTUATOR_ID + "/actuation/" + TEST_ACTUATION_ID,
+            new HashMap<>(), DataLoader.loadActuationResponse());
+
+        actuatorService.getActuationResult(UUID.fromString(TEST_ACTUATOR_ID), UUID.fromString(TEST_ACTUATION_ID));
+
+        verifyGetRequest(ACTUATOR_JSON + "/" + TEST_ACTUATOR_ID + "/actuation/" + TEST_ACTUATION_ID, new HashMap<>());
     }
 
     @Test

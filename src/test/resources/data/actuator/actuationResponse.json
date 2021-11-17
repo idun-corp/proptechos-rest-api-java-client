@@ -1,0 +1,21 @@
+{
+  "actuationId": "0a9146af-e660-4983-b62a-e6a1596e6e8d",
+  "actuationObservedBy": "fa8fbe5e-19f4-4ef2-b853-d6327f481954",
+  "actuationRequest": {
+    "agent": "61936aba-b0a3-4159-a935-2a9639af5b30",
+    "targetActuator": "6f7f74df-18d7-4790-bf71-52be4dbf125e",
+    "targetInterface": "e3598a4e-c808-41c5-a234-7449a14a904d",
+    "payload": "25",
+    "requestTime": "2021-10-22T11:00:21.385275Z"
+  },
+  "actuationRequestResponse": {
+    "accepted": true
+  },
+  "actuationCommand": {
+    "actuatorId": "6f7f74df-18d7-4790-bf71-52be4dbf125e",
+    "value": "25"
+  },
+  "actuationCommandResponse": {
+    "responseCode": 200
+  }
+}

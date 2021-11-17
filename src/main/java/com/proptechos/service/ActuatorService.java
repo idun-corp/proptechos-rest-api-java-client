@@ -5,6 +5,7 @@ import com.proptechos.model.Actuator;
 import com.proptechos.model.BatchResponse;
 import com.proptechos.model.actuation.ActuationRequest;
 import com.proptechos.model.actuation.ActuationRequestResponse;
+import com.proptechos.model.actuation.result.ActuationResult;
 
 import java.util.List;
 import java.util.UUID;
@@ -46,6 +47,11 @@ public class ActuatorService extends PagedService<Actuator> {
 
     public ActuationRequestResponse sendActuationRequest(UUID actuatorId, String payload) {
         return sendActuationRequest(actuatorId, null, payload);
+    }
+
+    public ActuationResult getActuationResult(UUID actuatorId, UUID actuationCommandId) {
+        String getActuationUri = String.format(ACTUATION_JSON, actuatorId) + "/" + actuationCommandId;
+        return httpClient.getSingle(ActuationResult.class, getActuationUri);
     }
 
     public ActuationRequestResponse sendActuationRequest(
