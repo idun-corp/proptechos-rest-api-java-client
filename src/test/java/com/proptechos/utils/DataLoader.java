@@ -116,6 +116,10 @@ public class DataLoader {
         return loadData("data/actuator/single.json");
     }
 
+    public static String loadActuationResponse() {
+        return loadData("data/actuator/actuationResponse.json");
+    }
+
     public static String loadBatchFailedActuators() {
         return loadData("data/actuator/batchError.json");
     }
