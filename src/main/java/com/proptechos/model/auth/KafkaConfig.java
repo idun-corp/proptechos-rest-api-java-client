@@ -4,6 +4,7 @@ import com.proptechos.utils.ObservationSerde;
 
 import java.util.Objects;
 import java.util.Properties;
+import java.util.UUID;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.config.SaslConfigs;
@@ -16,7 +17,6 @@ import org.apache.kafka.streams.StreamsConfig;
 public class KafkaConfig {
 
     private final ConfigBuilder builder;
-    private String clientId;
 
     private KafkaConfig(ConfigBuilder builder) {
         this.builder = builder;
@@ -28,7 +28,7 @@ public class KafkaConfig {
 
     public Properties getConfigMap() {
         Properties props = new Properties();
-        props.setProperty(StreamsConfig.APPLICATION_ID_CONFIG, clientId);
+        props.setProperty(StreamsConfig.APPLICATION_ID_CONFIG, UUID.randomUUID().toString());
         props.setProperty(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, builder.bootstrapServer);
         props.setProperty(ConsumerConfig.GROUP_ID_CONFIG, builder.groupId);
         props.setProperty(StreamsConfig.REQUEST_TIMEOUT_MS_CONFIG, String.valueOf(builder.requestTimeout));
@@ -38,10 +38,6 @@ public class KafkaConfig {
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, ObservationSerde.class);
         return props;
-    }
-
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
     }
 
     /**

@@ -154,9 +154,6 @@ public class ServiceFactory {
      */
     public StreamingApiService streamingApiService(KafkaConfig kafkaConfig) {
         return (StreamingApiService) this.services.computeIfAbsent(
-            StreamingApiService.class.getSimpleName(), k -> {
-                kafkaConfig.setClientId(clientId);
-                return new StreamingApiService(kafkaConfig);
-            });
+            StreamingApiService.class.getSimpleName(), k -> new StreamingApiService(kafkaConfig));
     }
 }
