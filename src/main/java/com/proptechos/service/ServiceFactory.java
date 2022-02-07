@@ -138,6 +138,15 @@ public class ServiceFactory {
     }
 
     /**
+     * @return SystemService instance
+     * @see com.proptechos.service.SystemService
+     */
+    public SystemService systemService() {
+        return (SystemService) this.services.computeIfAbsent(
+                SystemService.class.getSimpleName(), k -> new SystemService(baseAppUrl));
+    }
+
+    /**
      * @return RecIndividualService instance
      * @see com.proptechos.service.RecIndividualService
      */

@@ -3,6 +3,7 @@ package com.proptechos.utils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.proptechos.model.*;
+import com.proptechos.model.System;
 import com.proptechos.model.actuation.ActuationInterface;
 import com.proptechos.model.actuation.DataType;
 import com.proptechos.model.actuation.KeyValueDefinition;
@@ -136,6 +137,14 @@ public class TestDataHelper {
         collection.setLittera(TEST_LITTERA);
         collection.setRecClass("Collection");
         return collection;
+    }
+
+    public static System buildSystem() {
+        System system = new System();
+        system.setPopularName(TEST_NAME);
+        system.setLittera(TEST_LITTERA);
+        system.setRecClass("System");
+        return system;
     }
 
     public static BatchResponse<IBaseClass> successBatchResponse() {

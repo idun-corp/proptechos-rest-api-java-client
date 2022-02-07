@@ -160,8 +160,16 @@ public class DataLoader {
         return loadData("data/collection/paged.json");
     }
 
+    public static String loadPagedSystem() {
+        return loadData("data/system/paged.json");
+    }
+
     public static String loadSingleCollection() {
         return loadData("data/collection/single.json");
+    }
+
+    public static String loadSingleSystem() {
+        return loadData("data/system/single.json");
     }
 
     public static String loadDeviceFunctions() {

@@ -3,10 +3,14 @@ package com.proptechos.service;
 import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.Actuator;
 import com.proptechos.model.BatchResponse;
+import com.proptechos.model.Observation;
 import com.proptechos.model.actuation.ActuationRequest;
 import com.proptechos.model.actuation.ActuationRequestResponse;
 import com.proptechos.model.actuation.result.ActuationResult;
+import com.proptechos.service.filters.device.EndTimeFilter;
+import com.proptechos.service.filters.device.StartTimeFilter;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 
@@ -52,6 +56,18 @@ public class ActuatorService extends PagedService<Actuator> {
     public ActuationResult getActuationResult(UUID actuatorId, UUID actuationCommandId) {
         String getActuationUri = String.format(ACTUATION_JSON, actuatorId) + "/" + actuationCommandId;
         return httpClient.getSingle(ActuationResult.class, getActuationUri);
+    }
+
+    public Observation getActuationLastValue(UUID actuatorId) {
+        String getActuationUri = String.format(ACTUATOR_LAST_VALUE_JSON, actuatorId);
+        return httpClient.getSingle(Observation.class, getActuationUri);
+    }
+
+    public List<Observation> getObservationsBySensorIdForPeriod(
+            UUID actuatorId, Instant startTime, Instant endTime) {
+        return httpClient.getList(Observation.class, String.format(ACTUATOR_OBSERVATIONS_JSON, actuatorId),
+                new StartTimeFilter(startTime),
+                new EndTimeFilter(endTime));
     }
 
     public ActuationRequestResponse sendActuationRequest(
