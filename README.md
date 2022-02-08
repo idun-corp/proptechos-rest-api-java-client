@@ -30,7 +30,7 @@ ProptechOsClient.applicationClientBuilder("<BASE_API_URL>")
     .authConfig(AuthenticationConfig.builder()
             .clientId("<APP_CLIENT_ID>")
             .clientSecret("<APP_CLIENT_SECRET>")
-            .scope("APP_SCOPE").build()).build();
+            .scope("PROPTECHOS_APP_SCOPE ").build()).build();
 ```
 
 Properties definitions:
@@ -38,7 +38,7 @@ Properties definitions:
 * `BASE_API_URL` - base ProptechOS api url "https://test.proptechos.com/api"
 * `APP_CLIENT_ID` - your application id in ProptechOS (also the application ID registered in Azure Active Directory)
 * `APP_CLIENT_SECRET` - your application secret in ProptechOS (also the secret generated for your Azure Active Directory application)
-* `APP_SCOPE` - your application scope
+* `PROPTECHOS_APP_SCOPE ` - ProptechOS API scope
 
 
 ## Working with ProptechOS Services
