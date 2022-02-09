@@ -53,21 +53,21 @@ public class ProptechOsClient {
         this.serviceFactory = new ServiceFactory(
             applicationClientBuilder.baseAppUrl,
             applicationClientBuilder.config.getClientId());
-        initCloudLogin(applicationClientBuilder.baseAppUrl, applicationClientBuilder);
+        initCloudLogin(applicationClientBuilder);
     }
 
-    private void initCloudLogin(String baseAppUrl, ApplicationClientBuilder applicationClientBuilder) {
+    private void initCloudLogin(ApplicationClientBuilder applicationClientBuilder) {
         try {
             AuthenticationConfig config = applicationClientBuilder.config;
             ConfidentialClientApplication app = ConfidentialClientApplication
                 .builder(
                     config.getClientId(),
                     ClientCredentialFactory.createFromSecret(config.getClientSecret()))
-                .authority("https://login.microsoftonline.com/d4218456-670f-42ad-9f6a-885ae15b6645/")
+                .authority("https://login.microsoftonline.com/proptechos.onmicrosoft.com/")
                 .build();
 
             Set<String> scopes = new HashSet<>(
-                Collections.singletonList(baseAppUrl + "/.default"));
+                Collections.singletonList(config.getScope()));
             ClientCredentialParameters params =
                 ClientCredentialParameters.builder(scopes).build();
 

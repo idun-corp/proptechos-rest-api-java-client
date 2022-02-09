@@ -1,0 +1,311 @@
+{
+  "content": [
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "4e919e71-61c0-4d44-b240-5308adfd332f",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1101",
+      "popularName": "Test system 1",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": true,
+      "locatedInBuildings": [
+        "dccff924-8e9f-4623-954e-f3cfb8d2434e"
+      ]
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "9e548997-7424-4df8-b04c-21bebdb9e3a6",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1102",
+      "popularName": "Test system 2",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": true,
+      "locatedInBuildings": [
+        "2fdb47d7-422d-4a17-8fcc-ac15fe71c51c"
+      ]
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "864e9855-fd3e-43bd-994f-2bba0e93475f",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1103",
+      "popularName": "Test system 3",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": true,
+      "locatedInBuildings": [
+        "9aaf1f89-b76b-4050-a535-61459579bd36",
+        "ebf452ca-e6e0-4ff8-8943-3f4afa28bb33"
+      ]
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "7c54dfb2-dd7b-48f0-9984-22938c7d6c03",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1104",
+      "popularName": "Test system 4",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": true,
+      "locatedInBuildings": [
+        "f2c48046-dda7-4026-b61b-ca22047985a1"
+      ]
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "0c1de4cf-1358-4c9c-bed5-287ae537e9cf",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1105",
+      "popularName": "Test system 5",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": true,
+      "locatedInBuildings": [
+        "43cd3ba3-91ab-45d3-9d41-3694693bf210"
+      ]
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "d3527900-ec41-44c5-aa6b-4aa48f47590b",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1106",
+      "popularName": "Test system 6",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": true,
+      "locatedInBuildings": [
+        "2f18edcb-449c-400d-a77c-e18c52995f48"
+      ]
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "95c00e40-aeb8-48ec-a275-83d903b7333b",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1107",
+      "popularName": "Test system 7",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": true,
+      "locatedInBuildings": [
+        "59ed8102-8df7-4200-820f-8bcff972613b"
+      ]
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "79868680-7228-46eb-a82c-69f96088a0be",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1108",
+      "popularName": "Test system 8",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": true,
+      "locatedInBuildings": [
+        "52f7ce3a-862d-4622-9811-61feb9adbf9f"
+      ]
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "e87a9248-e5b4-4bb5-9b4d-444083a1fffd",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1109",
+      "popularName": "Test system 9",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": true,
+      "locatedInBuildings": [
+        "46d81c2f-36ba-4ed1-aa49-2c317ed1c09d"
+      ]
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "5740c0f1-c528-4f23-be5d-d0abd4709015",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1110",
+      "popularName": "Test system 10",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": true,
+      "locatedInBuildings": [
+        "c1189486-4c5c-4166-be9e-2858e2a7cb24"
+      ]
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "914fbb45-4c43-4051-a60e-0503f06b5f82",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1111",
+      "popularName": "Test system 11",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": true,
+      "locatedInBuildings": [
+        "e48cd576-9c36-4521-bbd2-631c471e0b2d"
+      ]
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "4e919e71-61c0-4d44-b240-5308adfd332f",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1112",
+      "popularName": "Test system 12",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": false,
+      "locatedInBuildings": []
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "4cd8ddf9-1844-4f1d-9ff5-7f2cba0e18d6",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1113",
+      "popularName": "Test system 13",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": true,
+      "locatedInBuildings": [
+        "84ee0c8e-2faf-41a4-b7e1-230ac5ea3755"
+      ]
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "63de6172-af68-4db9-a4d9-660ac3a712b9",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1114",
+      "popularName": "Test system 14",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": false,
+      "locatedInBuildings": []
+    },
+    {
+      "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+      "id": "f9c4a605-0747-469b-9e5f-99b3e7d32f3f",
+      "class": "System",
+      "createdTime": "2019-06-27T07:16:11.000Z",
+      "updatedTime": "2020-04-27T13:46:32.477Z",
+      "hasAlias": [],
+      "comment": {},
+      "littera": "1115",
+      "popularName": "Test system 15",
+      "createdByAgent": "testuser1@idunrealestate.com",
+      "updatedByAgent": "testuser1@idunrealestate.com",
+      "source": null,
+      "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+      "isLocal": true,
+      "locatedInBuildings": [
+        "3fd068f7-0df7-4f1b-9e98-e07621f39c22"
+      ]
+    }
+  ],
+  "pageable": {
+    "sort": {
+      "unsorted": true,
+      "sorted": false,
+      "empty": true
+    },
+    "pageNumber": 0,
+    "pageSize": 15,
+    "offset": 0,
+    "paged": true,
+    "unpaged": false
+  },
+  "totalElements": 41,
+  "totalPages": 3,
+  "last": false,
+  "first": true,
+  "numberOfElements": 1,
+  "sort": {
+    "unsorted": true,
+    "sorted": false,
+    "empty": true
+  },
+  "size": 15,
+  "number": 0,
+  "empty": false
+}

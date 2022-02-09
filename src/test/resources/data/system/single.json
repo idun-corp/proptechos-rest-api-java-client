@@ -1,0 +1,19 @@
+{
+  "propertyOwner": "28854049-242e-4f24-b8d2-269bda6df945",
+  "id": "4e919e71-61c0-4d44-b240-5308adfd332f",
+  "class": "System",
+  "createdTime": "2019-06-27T07:16:11.000Z",
+  "updatedTime": "2020-04-27T13:46:32.477Z",
+  "hasAlias": [],
+  "comment": {},
+  "littera": "1101",
+  "popularName": "Test system 1",
+  "createdByAgent": "testuser1@idunrealestate.com",
+  "updatedByAgent": "testuser1@idunrealestate.com",
+  "source": null,
+  "aliasNamespace": "778bc9a1-6f12-4aba-809e-ce9016acadab",
+  "isLocal": true,
+  "locatedInBuildings": [
+    "dccff924-8e9f-4623-954e-f3cfb8d2434e"
+  ]
+}

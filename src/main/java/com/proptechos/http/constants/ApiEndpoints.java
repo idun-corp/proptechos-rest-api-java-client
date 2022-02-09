@@ -21,6 +21,8 @@ public interface ApiEndpoints {
     String ACTUATOR_JSON = "/json/actuator";
     String ACTUATORS_JSON = "/json/actuators";
     String ACTUATION_JSON = "/json/actuator/%s/actuation";
+    String ACTUATOR_LAST_VALUE_JSON = "/json/actuator/%s/lastvalue";
+    String ACTUATOR_OBSERVATIONS_JSON = "/json/actuator/%s/observations";
     String SENSOR_JSON = "/json/sensor";
     String SENSORS_JSON = "/json/sensors";
     String OBSERVATION_JSON = "/sensor/%s/observation";
@@ -30,6 +32,7 @@ public interface ApiEndpoints {
     String ALIAS_NAMESPACE_JSON = "/json/aliasnamespace";
     String ALIAS_NAMESPACES_JSON = "/json/aliasnamespaces";
     String COLLECTION_JSON = "/json/collection";
+    String SYSTEM_JSON = "/json/system";
 
     String DEVICE_FUNCTION_JSON = "/json/devicefunction";
     String MEASUREMENT_UNIT_JSON = "/json/measurementunit";

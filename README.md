@@ -19,17 +19,18 @@ In order to include library as a dependency into pom.xml
 <dependency>
     <groupId>com.proptechos</groupId>
     <artifactId>proptechos-rest-api-java-client</artifactId>
-    <version>3.3.12-SNAPSHOT</version>
+    <version>4.1-SNAPSHOT</version>
 </dependency>
 ````
 ## Start using ProptechOsClient:
 To start using SDK library instance of _**ProptechOsClient**_ should be initialized:
 
 ``` java
-ProptechOsClient.applicationClientBuilder(""<BASE_API_URL>")
+ProptechOsClient.applicationClientBuilder("<BASE_API_URL>")
     .authConfig(AuthenticationConfig.builder()
             .clientId("<APP_CLIENT_ID>")
-            .clientSecret("<APP_CLIENT_SECRET>").build()).build();
+            .clientSecret("<APP_CLIENT_SECRET>")
+            .scope("PROPTECHOS_APP_SCOPE ").build()).build();
 ```
 
 Properties definitions:
@@ -37,6 +38,7 @@ Properties definitions:
 * `BASE_API_URL` - base ProptechOS api url "https://test.proptechos.com/api"
 * `APP_CLIENT_ID` - your application id in ProptechOS (also the application ID registered in Azure Active Directory)
 * `APP_CLIENT_SECRET` - your application secret in ProptechOS (also the secret generated for your Azure Active Directory application)
+* `PROPTECHOS_APP_SCOPE ` - ProptechOS API scope
 
 
 ## Working with ProptechOS Services

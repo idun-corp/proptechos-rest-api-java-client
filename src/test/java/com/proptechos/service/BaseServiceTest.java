@@ -23,11 +23,12 @@ public class BaseServiceTest {
     static void setUpEnvironment() {
         loadConfig();
         ProptechOsClient client = ProptechOsClient
-            .applicationClientBuilder("http://localhost:9090/api").authConfig(
-                AuthenticationConfig.builder()
-                    .clientId(props.getProperty("test.client.app.id"))
-                    .clientSecret(props.getProperty("test.client.app.secret"))
-                    .build()).build();
+                .applicationClientBuilder("http://localhost:9090/api").authConfig(
+                        AuthenticationConfig.builder()
+                                .clientId(props.getProperty("test.client.app.id"))
+                                .clientSecret(props.getProperty("test.client.app.secret"))
+                                .scope(props.getProperty("test.app.scope"))
+                                .build()).build();
         serviceFactory = client.serviceFactory();
     }
 
@@ -59,30 +60,30 @@ public class BaseServiceTest {
 
     static void stubDeleteResponse(String path) {
         MappingBuilder builder = delete(urlPathMatching(APP_CONTEXT + path)).withPort(9090)
-            .willReturn(aResponse().withStatus(200));
+                .willReturn(aResponse().withStatus(200));
         stubFor(builder);
     }
 
     private static MappingBuilder stubResponse(MappingBuilder builder, String response) {
         return builder.withPort(9090)
-            .willReturn(aResponse()
-                .withStatus(200)
-                .withHeader("Content-Type", "application/json")
-                .withBody(response));
+                .willReturn(aResponse()
+                        .withStatus(200)
+                        .withHeader("Content-Type", "application/json")
+                        .withBody(response));
     }
 
     private static MappingBuilder stubBadRequestResponse(MappingBuilder builder, String response) {
         return builder.withPort(9090)
-            .willReturn(aResponse()
-                .withStatus(400)
-                .withHeader("Content-Type", "application/json")
-                .withBody(response));
+                .willReturn(aResponse()
+                        .withStatus(400)
+                        .withHeader("Content-Type", "application/json")
+                        .withBody(response));
     }
 
     static void loadConfig() {
         String configFile = "test.properties";
         try (InputStream resourceAsStream =
-                 BaseServiceTest.class.getClassLoader().getResourceAsStream(configFile)) {
+                     BaseServiceTest.class.getClassLoader().getResourceAsStream(configFile)) {
             if (resourceAsStream != null) {
                 props.load(resourceAsStream);
             } else {

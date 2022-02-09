@@ -1,5 +1,7 @@
 package com.proptechos.model.auth;
 
+import java.util.Objects;
+
 /**
  * AuthenticationConfig represents configuration data used to authorize in Azure Active Directory
  *
@@ -12,9 +14,12 @@ public class AuthenticationConfig {
 
     private final String clientSecret;
 
+    private final String scope;
+
     private AuthenticationConfig(ConfigBuilder builder) {
         this.clientId = builder.clientId;
         this.clientSecret = builder.clientSecret;
+        this.scope = builder.scope;
     }
 
     /**
@@ -32,6 +37,13 @@ public class AuthenticationConfig {
     }
 
     /**
+     * @return Application scope
+     */
+    public String getScope() {
+        return scope;
+    }
+
+    /**
      * @return AuthenticationConfig builder
      */
     public static ConfigBuilder builder() {
@@ -40,9 +52,13 @@ public class AuthenticationConfig {
 
     public static class ConfigBuilder {
 
+        private static final String DEFAULT_SCOPE = "https://proptechos.onmicrosoft.com/multi/api/.default";
+
         private String clientId;
 
         private String clientSecret;
+
+        private String scope;
 
         private ConfigBuilder() {
         }
@@ -66,9 +82,21 @@ public class AuthenticationConfig {
         }
 
         /**
+         * @param scope Application scope
+         * @return builder
+         */
+        public ConfigBuilder scope(String scope) {
+            this.scope = scope;
+            return this;
+        }
+
+        /**
          * @return AuthenticationConfig instance
          */
         public AuthenticationConfig build() {
+            if (Objects.isNull(scope)) {
+                scope = DEFAULT_SCOPE;
+            }
             return new AuthenticationConfig(this);
         }
 
