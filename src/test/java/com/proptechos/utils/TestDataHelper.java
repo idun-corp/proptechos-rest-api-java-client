@@ -44,6 +44,15 @@ public class TestDataHelper {
         return building;
     }
 
+    public static Land buildLand() {
+        Land land = new Land();
+        land.setPopularName(TEST_NAME);
+        land.setRecClass("Land");
+        land.setLittera(TEST_LITTERA);
+        land.setIsPartOfRealEstate(UUID.randomUUID());
+        return land;
+    }
+
     public static IBuildingComponent buildBuildingComponent() {
         VirtualBuildingComponent buildingComponent = new VirtualBuildingComponent();
         buildingComponent.setPopularName(TEST_NAME);

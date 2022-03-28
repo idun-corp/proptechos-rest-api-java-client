@@ -1,7 +1,9 @@
 package com.proptechos.service;
 
 import com.proptechos.model.Building;
+import com.proptechos.model.Land;
 import com.proptechos.model.Point;
+import com.proptechos.model.common.IRealEstateComponent;
 import com.proptechos.model.common.Paged;
 import com.proptechos.utils.DataLoader;
 import com.proptechos.utils.WireMockExtension;
@@ -26,6 +28,7 @@ public class RealEstateComponentServiceTest extends BaseServiceTest {
     private static final String LIST_DATA = DataLoader.loadBuildingList();
     private static final String TEST_BUILDING_ID = "79b213c9-57d9-4969-9963-70efd069c0d3";
     private static final Building TEST_BUILDING = buildBuilding();
+    private static final Land TEST_LAND = buildLand();
 
     private static RealEstateComponentService realEstateComponentService;
 
@@ -92,7 +95,7 @@ public class RealEstateComponentServiceTest extends BaseServiceTest {
         stubGetResponse(REAL_ESTATE_COMPONENT_JSON, parameters1, PAGED_DATA);
         stubGetResponse(REAL_ESTATE_COMPONENT_JSON, parameters2, PAGED_DATA);
 
-        Paged<Building> paged = realEstateComponentService.getFirstPage(15);
+        Paged<IRealEstateComponent> paged = realEstateComponentService.getFirstPage(15);
         realEstateComponentService.getNextPage(paged.getPageMetadata());
 
         verifyGetRequest(REAL_ESTATE_COMPONENT_JSON, parameters1);
@@ -109,7 +112,7 @@ public class RealEstateComponentServiceTest extends BaseServiceTest {
         stubGetResponse(REAL_ESTATE_COMPONENT_JSON + "/inrange", parameters, LIST_DATA);
 
         realEstateComponentService
-            .getBuildingsInRange(new Point(59, 18, 100));
+            .getRealEstateComponentsInRange(new Point(59, 18, 100));
 
         verifyGetRequest(REAL_ESTATE_COMPONENT_JSON + "/inrange", parameters);
     }
@@ -125,28 +128,46 @@ public class RealEstateComponentServiceTest extends BaseServiceTest {
     }
 
     @Test
-    void testCreate() {
+    void testCreateBuilding() {
         stubPostResponse(REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_BUILDING));
 
-        realEstateComponentService.createBuilding(TEST_BUILDING);
+        realEstateComponentService.createRealEstateComponent(TEST_BUILDING);
 
         verifyPostRequest(REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_BUILDING));
     }
 
     @Test
-    void testUpdate() {
+    void testUpdateBuilding() {
         stubPutResponse(REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_BUILDING));
 
-        realEstateComponentService.updateBuilding(TEST_BUILDING);
+        realEstateComponentService.updateRealEstateComponent(TEST_BUILDING);
 
         verifyPutRequest(REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_BUILDING));
+    }
+
+    @Test
+    void testCreateLand() {
+        stubPostResponse(REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_LAND));
+
+        realEstateComponentService.createRealEstateComponent(TEST_LAND);
+
+        verifyPostRequest(REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_LAND));
+    }
+
+    @Test
+    void testUpdateLand() {
+        stubPutResponse(REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_LAND));
+
+        realEstateComponentService.updateRealEstateComponent(TEST_LAND);
+
+        verifyPutRequest(REAL_ESTATE_COMPONENT_JSON, objectToJson(TEST_LAND));
     }
 
     @Test
     void testDelete() {
         stubDeleteResponse(REAL_ESTATE_COMPONENT_JSON + "/" + TEST_BUILDING_ID);
 
-        realEstateComponentService.deleteBuilding(UUID.fromString(TEST_BUILDING_ID));
+        realEstateComponentService.deleteRealEstateComponent(UUID.fromString(TEST_BUILDING_ID));
 
         verifyDeleteRequest(REAL_ESTATE_COMPONENT_JSON + "/" + TEST_BUILDING_ID);
     }
@@ -155,7 +176,7 @@ public class RealEstateComponentServiceTest extends BaseServiceTest {
     void testCreateBatch() {
         stubPostResponse(REAL_ESTATE_COMPONENTS_JSON, objectToJson(successBatchResponse()));
 
-        realEstateComponentService.createBuildings(Arrays.asList(TEST_BUILDING, TEST_BUILDING));
+        realEstateComponentService.createRealEstateComponents(Arrays.asList(TEST_BUILDING, TEST_BUILDING));
 
         verifyPostRequest(REAL_ESTATE_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BUILDING, TEST_BUILDING)));
     }
@@ -164,16 +185,16 @@ public class RealEstateComponentServiceTest extends BaseServiceTest {
     void testUpdateBatch() {
         stubPutResponse(REAL_ESTATE_COMPONENTS_JSON, objectToJson(successBatchResponse()));
 
-        realEstateComponentService.updateBuildings(Arrays.asList(TEST_BUILDING, TEST_BUILDING));
+        realEstateComponentService.updateRealEstateComponents(Arrays.asList(TEST_BUILDING, TEST_BUILDING, TEST_LAND));
 
-        verifyPutRequest(REAL_ESTATE_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BUILDING, TEST_BUILDING)));
+        verifyPutRequest(REAL_ESTATE_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BUILDING, TEST_BUILDING, TEST_LAND)));
     }
 
     @Test
     void testFailedCreateBatch() {
         stubFailedPostResponse(REAL_ESTATE_COMPONENTS_JSON, DataLoader.loadBatchFailedBuildings());
 
-        realEstateComponentService.createBuildings(Arrays.asList(TEST_BUILDING, TEST_BUILDING));
+        realEstateComponentService.createRealEstateComponents(Arrays.asList(TEST_BUILDING, TEST_BUILDING));
 
         verifyPostRequest(REAL_ESTATE_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BUILDING, TEST_BUILDING)));
     }
@@ -182,7 +203,7 @@ public class RealEstateComponentServiceTest extends BaseServiceTest {
     void testFailedUpdateBatch() {
         stubFailedPutResponse(REAL_ESTATE_COMPONENTS_JSON, DataLoader.loadBatchFailedBuildings());
 
-        realEstateComponentService.updateBuildings(Arrays.asList(TEST_BUILDING, TEST_BUILDING));
+        realEstateComponentService.updateRealEstateComponents(Arrays.asList(TEST_BUILDING, TEST_BUILDING));
 
         verifyPutRequest(REAL_ESTATE_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BUILDING, TEST_BUILDING)));
     }
