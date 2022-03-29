@@ -2,6 +2,7 @@ package com.proptechos.service;
 
 import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.*;
+import com.proptechos.model.history.AxiomSnapshot;
 import com.proptechos.service.filters.device.EndTimeFilter;
 import com.proptechos.service.filters.device.StartTimeFilter;
 
@@ -12,6 +13,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 import static com.proptechos.http.constants.ApiEndpoints.*;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 
 public class SensorService extends PagedService<Sensor> {
 
@@ -50,8 +52,8 @@ public class SensorService extends PagedService<Sensor> {
     public List<Observation> getObservationsBySensorIdForPeriod(
         UUID sensorId, Instant startTime, Instant endTime) {
         return httpClient.getList(Observation.class, String.format(OBSERVATION_JSON, sensorId),
-            new StartTimeFilter(startTime),
-            new EndTimeFilter(endTime));
+            StartTimeFilter.getInstance(startTime),
+            EndTimeFilter.getInstance(endTime));
     }
 
     public Map<UUID, Observation> getLatestObservationsBySensorIds(List<UUID> sensorIds) {
@@ -59,6 +61,12 @@ public class SensorService extends PagedService<Sensor> {
         request.setSensorIds(sensorIds.stream().map(UUID::toString).collect(Collectors.toList()));
         return httpClient.postRequestObject(
             UUID.class, Observation.class, LATEST_OBSERVATIONS_JSON, request);
+    }
+
+    public List<AxiomSnapshot> getHistory(UUID id, Instant startTime, Instant endTime) {
+        return httpClient.getList(AxiomSnapshot.class, getHistoryEndpoint(SENSOR_JSON, id),
+            StartTimeFilter.getInstance(startTime),
+            EndTimeFilter.getInstance(endTime));
     }
 
 }

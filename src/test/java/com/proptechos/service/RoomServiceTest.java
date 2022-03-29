@@ -15,6 +15,7 @@ import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.ROOMS_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.ROOM_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 import static com.proptechos.utils.TestDataHelper.*;
 import static com.proptechos.utils.ValidationUtils.*;
 
@@ -168,6 +169,16 @@ public class RoomServiceTest extends BaseServiceTest {
         roomService.updateRooms(Arrays.asList(TEST_ROOM, TEST_ROOM));
 
         verifyPutRequest(ROOMS_JSON, objectToJson(Arrays.asList(TEST_ROOM, TEST_ROOM)));
+    }
+
+    @Test
+    void testGetHistory() {
+        stubGetResponse(getHistoryEndpoint(ROOM_JSON, UUID.fromString(TEST_ROOM_ID)),
+            new HashMap<>(), objectToJson(buildTwinHistory(TEST_ROOM)));
+
+        roomService.getHistory(UUID.fromString(TEST_ROOM_ID), null, null);
+
+        verifyGetRequest(getHistoryEndpoint(ROOM_JSON, UUID.fromString(TEST_ROOM_ID)), new HashMap<>());
     }
 
 }

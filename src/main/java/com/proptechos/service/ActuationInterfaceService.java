@@ -1,10 +1,16 @@
 package com.proptechos.service;
 
 import static com.proptechos.http.constants.ApiEndpoints.ACTUATION_INTERFACE_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 
 import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.actuation.ActuationInterface;
+import com.proptechos.model.history.AxiomSnapshot;
+import com.proptechos.service.filters.device.EndTimeFilter;
+import com.proptechos.service.filters.device.StartTimeFilter;
 
+import java.time.Instant;
+import java.util.List;
 import java.util.UUID;
 
 public class ActuationInterfaceService extends PagedService<ActuationInterface> {
@@ -29,5 +35,11 @@ public class ActuationInterfaceService extends PagedService<ActuationInterface> 
 
     public void deleteActuationInterface(UUID id) throws ProptechOsServiceException {
         httpClient.deleteObject(ACTUATION_INTERFACE_JSON, id);
+    }
+
+    public List<AxiomSnapshot> getHistory(UUID id, Instant startTime, Instant endTime) {
+        return httpClient.getList(AxiomSnapshot.class, getHistoryEndpoint(ACTUATION_INTERFACE_JSON, id),
+            StartTimeFilter.getInstance(startTime),
+            EndTimeFilter.getInstance(endTime));
     }
 }

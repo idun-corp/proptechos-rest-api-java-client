@@ -5,16 +5,21 @@ import com.proptechos.model.BatchResponse;
 import com.proptechos.model.Building;
 import com.proptechos.model.Point;
 import com.proptechos.model.common.IRealEstateComponent;
+import com.proptechos.model.history.AxiomSnapshot;
+import com.proptechos.service.filters.device.EndTimeFilter;
+import com.proptechos.service.filters.device.StartTimeFilter;
 import com.proptechos.service.filters.location.DistanceFilter;
 import com.proptechos.service.filters.location.LatitudeFilter;
 import com.proptechos.service.filters.location.LongitudeFilter;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
 import static com.proptechos.http.constants.ApiEndpoints.REAL_ESTATE_COMPONENTS_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.REAL_ESTATE_COMPONENT_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 
 public class RealEstateComponentService extends PagedService<IRealEstateComponent> {
 
@@ -22,8 +27,8 @@ public class RealEstateComponentService extends PagedService<IRealEstateComponen
         super(baseAppUrl, REAL_ESTATE_COMPONENT_JSON, IRealEstateComponent.class);
     }
 
-    public Building getById(UUID id) throws ProptechOsServiceException {
-        return httpClient.getById(Building.class, REAL_ESTATE_COMPONENT_JSON, id);
+    public IRealEstateComponent getById(UUID id) throws ProptechOsServiceException {
+        return httpClient.getById(typeClazz, REAL_ESTATE_COMPONENT_JSON, id);
     }
 
     public List<IRealEstateComponent> getRealEstateComponentsInRange(Point point) {
@@ -54,12 +59,15 @@ public class RealEstateComponentService extends PagedService<IRealEstateComponen
     }
 
     @Deprecated
-    public List<IRealEstateComponent> getBuildingsInRange(Point point) {
+    public List<Building> getBuildingsInRange(Point point) {
         return httpClient.getList(typeClazz, REAL_ESTATE_COMPONENT_JSON + "/inrange",
             new LatitudeFilter(point.getLatitude()),
             new LongitudeFilter(point.getLongitude()),
             new DistanceFilter(point.getDistance()))
-            .stream().filter(rc -> rc instanceof Building).collect(Collectors.toList());
+            .stream()
+            .filter(rc -> rc instanceof Building)
+            .map(rc -> (Building) rc)
+            .collect(Collectors.toList());
     }
 
     @Deprecated
@@ -85,6 +93,12 @@ public class RealEstateComponentService extends PagedService<IRealEstateComponen
     @Deprecated
     public BatchResponse<Building> updateBuildings(List<Building> buildings) throws ProptechOsServiceException {
         return httpClient.updateBatch(Building.class, REAL_ESTATE_COMPONENTS_JSON, buildings);
+    }
+
+    public List<AxiomSnapshot> getHistory(UUID id, Instant startTime, Instant endTime) {
+        return httpClient.getList(AxiomSnapshot.class, getHistoryEndpoint(REAL_ESTATE_COMPONENT_JSON, id),
+            StartTimeFilter.getInstance(startTime),
+            EndTimeFilter.getInstance(endTime));
     }
 
 }

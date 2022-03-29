@@ -16,7 +16,11 @@ public class StartTimeFilter implements IQueryFilter {
 
     private final String startTimeString;
 
-    public StartTimeFilter(Instant startTime) {
+    public static StartTimeFilter getInstance(Instant startTime) {
+        return startTime != null ? new StartTimeFilter(startTime) : null;
+    }
+
+    private StartTimeFilter(Instant startTime) {
         this.startTimeString = DateTimeFormatter.ISO_INSTANT.format(startTime);
     }
 

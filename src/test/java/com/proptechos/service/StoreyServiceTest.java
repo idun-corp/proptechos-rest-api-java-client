@@ -15,6 +15,7 @@ import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.STOREYS_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.STOREY_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 import static com.proptechos.utils.TestDataHelper.*;
 import static com.proptechos.utils.ValidationUtils.*;
 
@@ -168,5 +169,15 @@ public class StoreyServiceTest extends BaseServiceTest {
         storeyService.updateStoreys(Arrays.asList(TEST_STOREY, TEST_STOREY));
 
         verifyPutRequest(STOREYS_JSON, objectToJson(Arrays.asList(TEST_STOREY, TEST_STOREY)));
+    }
+
+    @Test
+    void testGetHistory() {
+        stubGetResponse(getHistoryEndpoint(STOREY_JSON, UUID.fromString(TEST_STOREY_ID)),
+            new HashMap<>(), objectToJson(buildTwinHistory(TEST_STOREY)));
+
+        storeyService.getHistory(UUID.fromString(TEST_STOREY_ID), null, null);
+
+        verifyGetRequest(getHistoryEndpoint(STOREY_JSON, UUID.fromString(TEST_STOREY_ID)), new HashMap<>());
     }
 }

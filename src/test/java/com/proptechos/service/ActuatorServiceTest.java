@@ -15,6 +15,7 @@ import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.ACTUATORS_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.ACTUATOR_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 import static com.proptechos.utils.TestDataHelper.*;
 import static com.proptechos.utils.ValidationUtils.*;
 
@@ -177,6 +178,16 @@ public class ActuatorServiceTest extends BaseServiceTest {
         actuatorService.updateActuators(Arrays.asList(TEST_ACTUATOR, TEST_ACTUATOR));
 
         verifyPutRequest(ACTUATORS_JSON, objectToJson(Arrays.asList(TEST_ACTUATOR, TEST_ACTUATOR)));
+    }
+
+    @Test
+    void testGetHistory() {
+        stubGetResponse(getHistoryEndpoint(ACTUATOR_JSON, UUID.fromString(TEST_ACTUATOR_ID)),
+            new HashMap<>(), objectToJson(buildTwinHistory(TEST_ACTUATOR)));
+
+        actuatorService.getHistory(UUID.fromString(TEST_ACTUATOR_ID), null, null);
+
+        verifyGetRequest(getHistoryEndpoint(ACTUATOR_JSON, UUID.fromString(TEST_ACTUATOR_ID)), new HashMap<>());
     }
 
 }

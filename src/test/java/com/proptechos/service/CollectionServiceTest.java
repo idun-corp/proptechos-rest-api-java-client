@@ -14,8 +14,8 @@ import java.util.Map;
 import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.COLLECTION_JSON;
-import static com.proptechos.utils.TestDataHelper.buildCollection;
-import static com.proptechos.utils.TestDataHelper.objectToJson;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
+import static com.proptechos.utils.TestDataHelper.*;
 import static com.proptechos.utils.ValidationUtils.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -178,5 +178,15 @@ public class CollectionServiceTest extends BaseServiceTest {
         collectionService.deleteCollection(UUID.fromString(TEST_COLLECTION_ID));
 
         verifyDeleteRequest(COLLECTION_JSON + "/" + TEST_COLLECTION_ID);
+    }
+
+    @Test
+    void testGetHistory() {
+        stubGetResponse(getHistoryEndpoint(COLLECTION_JSON, UUID.fromString(TEST_COLLECTION_ID)),
+            new HashMap<>(), objectToJson(buildTwinHistory(TEST_COLLECTION)));
+
+        collectionService.getHistory(UUID.fromString(TEST_COLLECTION_ID), null, null);
+
+        verifyGetRequest(getHistoryEndpoint(COLLECTION_JSON, UUID.fromString(TEST_COLLECTION_ID)), new HashMap<>());
     }
 }

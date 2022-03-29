@@ -18,6 +18,7 @@ import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.REAL_ESTATE_COMPONENTS_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.REAL_ESTATE_COMPONENT_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 import static com.proptechos.utils.TestDataHelper.*;
 import static com.proptechos.utils.ValidationUtils.*;
 
@@ -206,6 +207,16 @@ public class RealEstateComponentServiceTest extends BaseServiceTest {
         realEstateComponentService.updateRealEstateComponents(Arrays.asList(TEST_BUILDING, TEST_BUILDING));
 
         verifyPutRequest(REAL_ESTATE_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BUILDING, TEST_BUILDING)));
+    }
+
+    @Test
+    void testGetHistory() {
+        stubGetResponse(getHistoryEndpoint(REAL_ESTATE_COMPONENT_JSON, UUID.fromString(TEST_BUILDING_ID)),
+            new HashMap<>(), objectToJson(buildTwinHistory(TEST_BUILDING)));
+
+        realEstateComponentService.getHistory(UUID.fromString(TEST_BUILDING_ID), null, null);
+
+        verifyGetRequest(getHistoryEndpoint(REAL_ESTATE_COMPONENT_JSON, UUID.fromString(TEST_BUILDING_ID)), new HashMap<>());
     }
 
 }

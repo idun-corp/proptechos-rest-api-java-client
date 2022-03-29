@@ -16,7 +16,11 @@ public class EndTimeFilter implements IQueryFilter {
 
     private final String endTimeString;
 
-    public EndTimeFilter(Instant endTime) {
+    public static EndTimeFilter getInstance(Instant endTime) {
+        return endTime != null ? new EndTimeFilter(endTime) : null;
+    }
+
+    private EndTimeFilter(Instant endTime) {
         this.endTimeString = DateTimeFormatter.ISO_INSTANT.format(endTime);
     }
 

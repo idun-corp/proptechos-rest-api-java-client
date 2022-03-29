@@ -15,6 +15,7 @@ import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.ASSETS_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.ASSET_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 import static com.proptechos.utils.TestDataHelper.*;
 import static com.proptechos.utils.ValidationUtils.*;
 
@@ -168,5 +169,15 @@ public class AssetServiceTest extends BaseServiceTest {
         assetService.updateAssets(Arrays.asList(TEST_ASSET, TEST_ASSET));
 
         verifyPutRequest(ASSETS_JSON, objectToJson(Arrays.asList(TEST_ASSET, TEST_ASSET)));
+    }
+
+    @Test
+    void testGetHistory() {
+        stubGetResponse(getHistoryEndpoint(ASSET_JSON, UUID.fromString(TEST_ASSET_ID)),
+            new HashMap<>(), objectToJson(buildTwinHistory(TEST_ASSET)));
+
+        assetService.getHistory(UUID.fromString(TEST_ASSET_ID), null, null);
+
+        verifyGetRequest(getHistoryEndpoint(ASSET_JSON, UUID.fromString(TEST_ASSET_ID)), new HashMap<>());
     }
 }

@@ -14,8 +14,8 @@ import java.util.Map;
 import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.SYSTEM_JSON;
-import static com.proptechos.utils.TestDataHelper.buildSystem;
-import static com.proptechos.utils.TestDataHelper.objectToJson;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
+import static com.proptechos.utils.TestDataHelper.*;
 import static com.proptechos.utils.ValidationUtils.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -179,6 +179,16 @@ public class SystemServiceTest extends BaseServiceTest {
         systemService.deleteSystem(UUID.fromString(TEST_SYSTEM_ID));
 
         verifyDeleteRequest(SYSTEM_JSON + "/" + TEST_SYSTEM_ID);
+    }
+
+    @Test
+    void testGetHistory() {
+        stubGetResponse(getHistoryEndpoint(SYSTEM_JSON, UUID.fromString(TEST_SYSTEM_ID)),
+            new HashMap<>(), objectToJson(buildTwinHistory(TEST_SYSTEM)));
+
+        systemService.getHistory(UUID.fromString(TEST_SYSTEM_ID), null, null);
+
+        verifyGetRequest(getHistoryEndpoint(SYSTEM_JSON, UUID.fromString(TEST_SYSTEM_ID)), new HashMap<>());
     }
 
 }

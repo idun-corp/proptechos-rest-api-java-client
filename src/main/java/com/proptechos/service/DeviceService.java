@@ -3,11 +3,16 @@ package com.proptechos.service;
 import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.BatchResponse;
 import com.proptechos.model.common.IDevice;
+import com.proptechos.model.history.AxiomSnapshot;
+import com.proptechos.service.filters.device.EndTimeFilter;
+import com.proptechos.service.filters.device.StartTimeFilter;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.*;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 
 public class DeviceService extends PagedService<IDevice> {
 
@@ -37,6 +42,12 @@ public class DeviceService extends PagedService<IDevice> {
 
     public BatchResponse<IDevice> updateDevices(List<IDevice> devices) throws ProptechOsServiceException {
         return httpClient.updateBatch(typeClazz, DEVICES_JSON, devices);
+    }
+
+    public List<AxiomSnapshot> getHistory(UUID id, Instant startTime, Instant endTime) {
+        return httpClient.getList(AxiomSnapshot.class, getHistoryEndpoint(DEVICE_JSON, id),
+            StartTimeFilter.getInstance(startTime),
+            EndTimeFilter.getInstance(endTime));
     }
 
 }

@@ -1,18 +1,23 @@
 package com.proptechos.service;
 
-import static com.proptechos.http.constants.ApiEndpoints.COLLECTION_JSON;
-
 import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.Collection;
 import com.proptechos.model.common.IBaseClass;
 import com.proptechos.model.common.Paged;
+import com.proptechos.model.history.AxiomSnapshot;
 import com.proptechos.service.filters.common.PageNumberFilter;
 import com.proptechos.service.filters.common.PageSizeFilter;
+import com.proptechos.service.filters.device.EndTimeFilter;
+import com.proptechos.service.filters.device.StartTimeFilter;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+
+import static com.proptechos.http.constants.ApiEndpoints.COLLECTION_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 
 public class CollectionService extends PagedService<Collection> {
 
@@ -57,6 +62,12 @@ public class CollectionService extends PagedService<Collection> {
 
     public void deleteCollection(UUID id) throws ProptechOsServiceException {
         httpClient.deleteObject(COLLECTION_JSON, id);
+    }
+
+    public List<AxiomSnapshot> getHistory(UUID id, Instant startTime, Instant endTime) {
+        return httpClient.getList(AxiomSnapshot.class, getHistoryEndpoint(COLLECTION_JSON, id),
+            StartTimeFilter.getInstance(startTime),
+            EndTimeFilter.getInstance(endTime));
     }
 
 }

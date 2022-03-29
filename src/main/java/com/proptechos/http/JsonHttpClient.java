@@ -202,7 +202,9 @@ public class JsonHttpClient {
     private String buildQueryParams(IQueryFilter... queryFilters) {
         QueryBuilder builder = QueryBuilder.builder();
         for (IQueryFilter filter : queryFilters) {
-            builder.append(filter.queryParam());
+            if (filter != null) {
+                builder.append(filter.queryParam());
+            }
         }
         return builder.build();
     }

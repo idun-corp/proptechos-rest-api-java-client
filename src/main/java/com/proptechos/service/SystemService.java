@@ -4,15 +4,20 @@ import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.System;
 import com.proptechos.model.common.IBaseClass;
 import com.proptechos.model.common.Paged;
+import com.proptechos.model.history.AxiomSnapshot;
 import com.proptechos.service.filters.common.PageNumberFilter;
 import com.proptechos.service.filters.common.PageSizeFilter;
+import com.proptechos.service.filters.device.EndTimeFilter;
+import com.proptechos.service.filters.device.StartTimeFilter;
 
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.SYSTEM_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 
 public class SystemService extends PagedService<System> {
 
@@ -57,6 +62,12 @@ public class SystemService extends PagedService<System> {
 
     public void deleteSystem(UUID id) throws ProptechOsServiceException {
         httpClient.deleteObject(SYSTEM_JSON, id);
+    }
+
+    public List<AxiomSnapshot> getHistory(UUID id, Instant startTime, Instant endTime) {
+        return httpClient.getList(AxiomSnapshot.class, getHistoryEndpoint(SYSTEM_JSON, id),
+            StartTimeFilter.getInstance(startTime),
+            EndTimeFilter.getInstance(endTime));
     }
 
 }
