@@ -1,5 +1,7 @@
 package com.proptechos.service;
 
+import com.proptechos.model.common.IBaseClass;
+import com.proptechos.model.common.Paged;
 import com.proptechos.utils.DataLoader;
 import com.proptechos.utils.WireMockExtension;
 import org.junit.jupiter.api.BeforeAll;
@@ -58,6 +60,39 @@ public class TwinServiceTest extends BaseServiceTest {
     }
 
     @Test
+    void testGetByPage() {
+        Map<String, String> parameters = new HashMap<>();
+        parameters.put("page", "1");
+        parameters.put("size", "50");
+
+        stubGetResponse(TWIN_JSON, parameters, PAGED_DATA);
+
+        twinService.getPage(1, 50);
+
+        verifyGetRequest(TWIN_JSON, parameters);
+    }
+
+    @Test
+    void testGetNextPage() {
+        Map<String, String> parameters1 = new HashMap<>();
+        parameters1.put("page", "0");
+        parameters1.put("size", "50");
+
+        Map<String, String> parameters2 = new HashMap<>();
+        parameters2.put("page", "1");
+        parameters2.put("size", "50");
+
+        stubGetResponse(TWIN_JSON, parameters1, PAGED_DATA);
+        stubGetResponse(TWIN_JSON, parameters2, PAGED_DATA);
+
+        Paged<IBaseClass> paged = twinService.getFirstPage(50);
+        twinService.getNextPage(paged.getPageMetadata());
+
+        verifyGetRequest(TWIN_JSON, parameters1);
+        verifyGetRequest(TWIN_JSON, parameters2);
+    }
+
+    @Test
     void testGetById() {
         stubGetResponse(TWIN_JSON + "/" + TEST_BC_ID,
                 new HashMap<>(), DataLoader.loadSingleBuildingComponent());
@@ -66,5 +101,6 @@ public class TwinServiceTest extends BaseServiceTest {
 
         verifyGetRequest(TWIN_JSON + "/" + TEST_BC_ID, new HashMap<>());
     }
+
 
 }
