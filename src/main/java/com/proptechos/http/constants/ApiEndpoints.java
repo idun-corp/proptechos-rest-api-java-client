@@ -33,6 +33,7 @@ public interface ApiEndpoints {
     String ALIAS_NAMESPACES_JSON = "/json/aliasnamespaces";
     String COLLECTION_JSON = "/json/collection";
     String SYSTEM_JSON = "/json/system";
+    String TWIN_JSON = "/json/twin";
 
     String DEVICE_FUNCTION_JSON = "/json/devicefunction";
     String MEASUREMENT_UNIT_JSON = "/json/measurementunit";

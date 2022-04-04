@@ -57,6 +57,15 @@ public class ServiceFactory {
     }
 
     /**
+     * @return TwinService instance
+     * @see com.proptechos.service.TwinService
+     */
+    public TwinService twinService() {
+        return (TwinService) this.services.computeIfAbsent(
+                TwinService.class.getSimpleName(), k -> new TwinService(baseAppUrl));
+    }
+
+    /**
      * @return RoomService instance
      * @see com.proptechos.service.RoomService
      */
