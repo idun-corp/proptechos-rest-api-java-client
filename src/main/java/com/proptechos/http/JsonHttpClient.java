@@ -56,13 +56,14 @@ public class JsonHttpClient {
         return INSTANCE;
     }
 
-    public <T> T getById(Class<T> clazz, String endpoint, UUID uuid) throws ProptechOsServiceException {
-        return getSingle(clazz, endpoint + "/" + uuid);
+    public <T> T getById(Class<T> clazz, String endpoint, UUID uuid, IQueryFilter... queryFilters) throws ProptechOsServiceException {
+        return getSingle(clazz, endpoint + "/" + uuid, queryFilters);
     }
 
-    public <T> T getSingle(Class<T> clazz, String endpoint) throws ProptechOsServiceException {
+    public <T> T getSingle(Class<T> clazz, String endpoint, IQueryFilter... queryFilters) throws ProptechOsServiceException {
         try (CloseableHttpClient client = HttpClientBuilder.create().build()) {
-            CloseableHttpResponse response = client.execute(httpGet(endpoint));
+            CloseableHttpResponse response = client.execute(
+                httpGet(endpoint + buildQueryParams(queryFilters)));
             return responseHandler.handleResponse(clazz, response);
         } catch (IOException e) {
             throw new ServiceInvalidUsageException(e.getMessage(), e);
