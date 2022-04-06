@@ -15,6 +15,7 @@ import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.BUILDING_COMPONENTS_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.BUILDING_COMPONENT_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 import static com.proptechos.utils.TestDataHelper.*;
 import static com.proptechos.utils.ValidationUtils.*;
 
@@ -168,6 +169,16 @@ public class BuildingComponentServiceTest extends BaseServiceTest {
         buildingComponentService.updateBuildingComponents(Arrays.asList(TEST_BC, TEST_BC));
 
         verifyPutRequest(BUILDING_COMPONENTS_JSON, objectToJson(Arrays.asList(TEST_BC, TEST_BC)));
+    }
+
+    @Test
+    void testGetHistory() {
+        stubGetResponse(getHistoryEndpoint(BUILDING_COMPONENT_JSON, UUID.fromString(TEST_BC_ID)),
+            new HashMap<>(), objectToJson(buildTwinHistory(TEST_BC)));
+
+        buildingComponentService.getHistory(UUID.fromString(TEST_BC_ID), null, null);
+
+        verifyGetRequest(getHistoryEndpoint(BUILDING_COMPONENT_JSON, UUID.fromString(TEST_BC_ID)), new HashMap<>());
     }
 
 }

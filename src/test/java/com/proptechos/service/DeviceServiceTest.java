@@ -15,6 +15,7 @@ import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.DEVICES_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.DEVICE_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 import static com.proptechos.utils.TestDataHelper.*;
 import static com.proptechos.utils.ValidationUtils.*;
 
@@ -168,5 +169,15 @@ public class DeviceServiceTest extends BaseServiceTest {
         deviceService.updateDevices(Arrays.asList(TEST_DEVICE, TEST_DEVICE));
 
         verifyPutRequest(DEVICES_JSON, objectToJson(Arrays.asList(TEST_DEVICE, TEST_DEVICE)));
+    }
+
+    @Test
+    void testGetHistory() {
+        stubGetResponse(getHistoryEndpoint(DEVICE_JSON, UUID.fromString(TEST_DEVICE_ID)),
+            new HashMap<>(), objectToJson(buildTwinHistory(TEST_DEVICE)));
+
+        deviceService.getHistory(UUID.fromString(TEST_DEVICE_ID), null, null);
+
+        verifyGetRequest(getHistoryEndpoint(DEVICE_JSON, UUID.fromString(TEST_DEVICE_ID)), new HashMap<>());
     }
 }

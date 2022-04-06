@@ -3,12 +3,17 @@ package com.proptechos.service;
 import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.BatchResponse;
 import com.proptechos.model.buildingcomponent.Storey;
+import com.proptechos.model.history.AxiomSnapshot;
+import com.proptechos.service.filters.device.EndTimeFilter;
+import com.proptechos.service.filters.device.StartTimeFilter;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.STOREYS_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.STOREY_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 
 public class StoreyService extends PagedService<Storey> {
 
@@ -38,6 +43,12 @@ public class StoreyService extends PagedService<Storey> {
 
     public BatchResponse<Storey> updateStoreys(List<Storey> storeys) throws ProptechOsServiceException {
         return httpClient.updateBatch(typeClazz, STOREYS_JSON, storeys);
+    }
+
+    public List<AxiomSnapshot> getHistory(UUID id, Instant startTime, Instant endTime) {
+        return httpClient.getList(AxiomSnapshot.class, getHistoryEndpoint(STOREY_JSON, id),
+            StartTimeFilter.getInstance(startTime),
+            EndTimeFilter.getInstance(endTime));
     }
 
 }

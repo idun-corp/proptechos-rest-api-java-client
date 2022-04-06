@@ -13,8 +13,8 @@ import java.util.Map;
 import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.ACTUATION_INTERFACE_JSON;
-import static com.proptechos.utils.TestDataHelper.buildActuationInterface;
-import static com.proptechos.utils.TestDataHelper.objectToJson;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
+import static com.proptechos.utils.TestDataHelper.*;
 import static com.proptechos.utils.ValidationUtils.*;
 
 @ExtendWith(WireMockExtension.class)
@@ -134,5 +134,15 @@ public class ActuationInterfaceServiceTest extends BaseServiceTest {
             .deleteActuationInterface(UUID.fromString(TEST_AI_ID));
 
         verifyDeleteRequest(ACTUATION_INTERFACE_JSON + "/" + TEST_AI_ID);
+    }
+
+    @Test
+    void testGetHistory() {
+        stubGetResponse(getHistoryEndpoint(ACTUATION_INTERFACE_JSON, UUID.fromString(TEST_AI_ID)),
+            new HashMap<>(), objectToJson(buildTwinHistory(TEST_ACTUATION_INTERFACE)));
+
+        actuationInterfaceService.getHistory(UUID.fromString(TEST_AI_ID), null, null);
+
+        verifyGetRequest(getHistoryEndpoint(ACTUATION_INTERFACE_JSON, UUID.fromString(TEST_AI_ID)), new HashMap<>());
     }
 }

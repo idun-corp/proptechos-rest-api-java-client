@@ -7,6 +7,7 @@ import com.proptechos.model.Observation;
 import com.proptechos.model.actuation.ActuationRequest;
 import com.proptechos.model.actuation.ActuationRequestResponse;
 import com.proptechos.model.actuation.result.ActuationResult;
+import com.proptechos.model.history.AxiomSnapshot;
 import com.proptechos.service.filters.device.EndTimeFilter;
 import com.proptechos.service.filters.device.StartTimeFilter;
 
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.*;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 
 public class ActuatorService extends PagedService<Actuator> {
 
@@ -66,8 +68,8 @@ public class ActuatorService extends PagedService<Actuator> {
     public List<Observation> getObservationsBySensorIdForPeriod(
             UUID actuatorId, Instant startTime, Instant endTime) {
         return httpClient.getList(Observation.class, String.format(ACTUATOR_OBSERVATIONS_JSON, actuatorId),
-                new StartTimeFilter(startTime),
-                new EndTimeFilter(endTime));
+                StartTimeFilter.getInstance(startTime),
+                EndTimeFilter.getInstance(endTime));
     }
 
     public ActuationRequestResponse sendActuationRequest(
@@ -78,6 +80,12 @@ public class ActuatorService extends PagedService<Actuator> {
         request.setTargetInterface(targetInterfaceId);
         return httpClient.updateObject(
             ActuationRequestResponse.class, String.format(ACTUATION_JSON, actuatorId), request);
+    }
+
+    public List<AxiomSnapshot> getHistory(UUID id, Instant startTime, Instant endTime) {
+        return httpClient.getList(AxiomSnapshot.class, getHistoryEndpoint(ACTUATOR_JSON, id),
+            StartTimeFilter.getInstance(startTime),
+            EndTimeFilter.getInstance(endTime));
     }
 
 }

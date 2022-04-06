@@ -15,6 +15,7 @@ import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.SENSORS_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.SENSOR_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 import static com.proptechos.utils.TestDataHelper.*;
 import static com.proptechos.utils.ValidationUtils.*;
 
@@ -168,5 +169,15 @@ public class SensorServiceTest extends BaseServiceTest {
         sensorService.updateSensors(Arrays.asList(TEST_SENSOR, TEST_SENSOR));
 
         verifyPutRequest(SENSORS_JSON, objectToJson(Arrays.asList(TEST_SENSOR, TEST_SENSOR)));
+    }
+
+    @Test
+    void testGetHistory() {
+        stubGetResponse(getHistoryEndpoint(SENSOR_JSON, UUID.fromString(TEST_SENSOR_ID)),
+            new HashMap<>(), objectToJson(buildTwinHistory(TEST_SENSOR)));
+
+        sensorService.getHistory(UUID.fromString(TEST_SENSOR_ID), null, null);
+
+        verifyGetRequest(getHistoryEndpoint(SENSOR_JSON, UUID.fromString(TEST_SENSOR_ID)), new HashMap<>());
     }
 }

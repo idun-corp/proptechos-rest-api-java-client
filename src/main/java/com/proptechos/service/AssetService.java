@@ -3,11 +3,17 @@ package com.proptechos.service;
 import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.Asset;
 import com.proptechos.model.BatchResponse;
+import com.proptechos.model.history.AxiomSnapshot;
+import com.proptechos.service.filters.device.EndTimeFilter;
+import com.proptechos.service.filters.device.StartTimeFilter;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 
-import static com.proptechos.http.constants.ApiEndpoints.*;
+import static com.proptechos.http.constants.ApiEndpoints.ASSETS_JSON;
+import static com.proptechos.http.constants.ApiEndpoints.ASSET_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 
 public class AssetService extends PagedService<Asset> {
 
@@ -37,6 +43,12 @@ public class AssetService extends PagedService<Asset> {
 
     public BatchResponse<Asset> updateAssets(List<Asset> assets) throws ProptechOsServiceException {
         return httpClient.updateBatch(typeClazz, ASSETS_JSON, assets);
+    }
+
+    public List<AxiomSnapshot> getHistory(UUID id, Instant startTime, Instant endTime) {
+        return httpClient.getList(AxiomSnapshot.class, getHistoryEndpoint(ASSET_JSON, id),
+            StartTimeFilter.getInstance(startTime),
+            EndTimeFilter.getInstance(endTime));
     }
 
 }

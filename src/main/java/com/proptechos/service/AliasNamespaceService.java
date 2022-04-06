@@ -3,11 +3,17 @@ package com.proptechos.service;
 import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.AliasNamespace;
 import com.proptechos.model.BatchResponse;
+import com.proptechos.model.history.AxiomSnapshot;
+import com.proptechos.service.filters.device.EndTimeFilter;
+import com.proptechos.service.filters.device.StartTimeFilter;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 
-import static com.proptechos.http.constants.ApiEndpoints.*;
+import static com.proptechos.http.constants.ApiEndpoints.ALIAS_NAMESPACES_JSON;
+import static com.proptechos.http.constants.ApiEndpoints.ALIAS_NAMESPACE_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 
 public class AliasNamespaceService extends PagedService<AliasNamespace> {
 
@@ -37,5 +43,11 @@ public class AliasNamespaceService extends PagedService<AliasNamespace> {
 
     public BatchResponse<AliasNamespace> updateAliasNamespaces(List<AliasNamespace> aliasNamespaces) throws ProptechOsServiceException {
         return httpClient.updateBatch(typeClazz, ALIAS_NAMESPACES_JSON, aliasNamespaces);
+    }
+
+    public List<AxiomSnapshot> getHistory(UUID id, Instant startTime, Instant endTime) {
+        return httpClient.getList(AxiomSnapshot.class, getHistoryEndpoint(ALIAS_NAMESPACE_JSON, id),
+            StartTimeFilter.getInstance(startTime),
+            EndTimeFilter.getInstance(endTime));
     }
 }

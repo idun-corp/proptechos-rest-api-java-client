@@ -4,14 +4,20 @@ import com.proptechos.exception.ProptechOsServiceException;
 import com.proptechos.model.BatchResponse;
 import com.proptechos.model.Point;
 import com.proptechos.model.RealEstate;
+import com.proptechos.model.history.AxiomSnapshot;
+import com.proptechos.service.filters.device.EndTimeFilter;
+import com.proptechos.service.filters.device.StartTimeFilter;
 import com.proptechos.service.filters.location.DistanceFilter;
 import com.proptechos.service.filters.location.LatitudeFilter;
 import com.proptechos.service.filters.location.LongitudeFilter;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 
-import static com.proptechos.http.constants.ApiEndpoints.*;
+import static com.proptechos.http.constants.ApiEndpoints.REAL_ESTATES_JSON;
+import static com.proptechos.http.constants.ApiEndpoints.REAL_ESTATE_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 
 public class RealEstateService extends PagedService<RealEstate> {
 
@@ -48,6 +54,12 @@ public class RealEstateService extends PagedService<RealEstate> {
 
     public BatchResponse<RealEstate> updateRealEstates(List<RealEstate> realEstates) throws ProptechOsServiceException {
         return httpClient.updateBatch(typeClazz, REAL_ESTATES_JSON, realEstates);
+    }
+
+    public List<AxiomSnapshot> getHistory(UUID id, Instant startTime, Instant endTime) {
+        return httpClient.getList(AxiomSnapshot.class, getHistoryEndpoint(REAL_ESTATE_JSON, id),
+            StartTimeFilter.getInstance(startTime),
+            EndTimeFilter.getInstance(endTime));
     }
 
 }

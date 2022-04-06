@@ -15,6 +15,7 @@ import java.util.UUID;
 
 import static com.proptechos.http.constants.ApiEndpoints.ALIAS_NAMESPACES_JSON;
 import static com.proptechos.http.constants.ApiEndpoints.ALIAS_NAMESPACE_JSON;
+import static com.proptechos.utils.ClientUtils.getHistoryEndpoint;
 import static com.proptechos.utils.TestDataHelper.*;
 import static com.proptechos.utils.ValidationUtils.*;
 
@@ -168,5 +169,15 @@ public class AliasNamespaceServiceTest extends BaseServiceTest {
         aliasNamespaceService.updateAliasNamespaces(Arrays.asList(TEST_AN, TEST_AN));
 
         verifyPutRequest(ALIAS_NAMESPACES_JSON, objectToJson(Arrays.asList(TEST_AN, TEST_AN)));
+    }
+
+    @Test
+    void testGetHistory() {
+        stubGetResponse(getHistoryEndpoint(ALIAS_NAMESPACE_JSON, UUID.fromString(TEST_AN_ID)),
+            new HashMap<>(), objectToJson(buildTwinHistory(TEST_AN)));
+
+        aliasNamespaceService.getHistory(UUID.fromString(TEST_AN_ID), null, null);
+
+        verifyGetRequest(getHistoryEndpoint(ALIAS_NAMESPACE_JSON, UUID.fromString(TEST_AN_ID)), new HashMap<>());
     }
 }

@@ -14,8 +14,12 @@ import com.proptechos.model.buildingcomponent.VirtualBuildingComponent;
 import com.proptechos.model.common.IBaseClass;
 import com.proptechos.model.common.IBuildingComponent;
 import com.proptechos.model.common.IDevice;
+import com.proptechos.model.history.AxiomSnapshot;
+import com.proptechos.model.history.Operation;
 
+import java.time.Instant;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
@@ -42,6 +46,15 @@ public class TestDataHelper {
         building.setLittera(TEST_LITTERA);
         building.setIsPartOfRealEstate(UUID.randomUUID());
         return building;
+    }
+
+    public static Land buildLand() {
+        Land land = new Land();
+        land.setPopularName(TEST_NAME);
+        land.setRecClass("Land");
+        land.setLittera(TEST_LITTERA);
+        land.setIsPartOfRealEstate(UUID.randomUUID());
+        return land;
     }
 
     public static IBuildingComponent buildBuildingComponent() {
@@ -158,12 +171,27 @@ public class TestDataHelper {
         return response;
     }
 
+    public static List<AxiomSnapshot> buildTwinHistory(IBaseClass twin) {
+        AxiomSnapshot create = createSnapshot(Operation.CREATE, twin);
+        AxiomSnapshot update = createSnapshot(Operation.UPDATE, twin);
+        AxiomSnapshot delete = createSnapshot(Operation.DELETE, Collections.EMPTY_MAP);
+        return Arrays.asList(create, update, delete);
+    }
+
     public static String objectToJson(Object object) {
         try {
             return mapper.writeValueAsString(object);
         } catch (JsonProcessingException e) {
             return "{}";
         }
+    }
+
+    private static AxiomSnapshot createSnapshot(Operation operation, Object twin) {
+        AxiomSnapshot snapshot = new AxiomSnapshot();
+        snapshot.setSnapshotTime(Instant.now());
+        snapshot.setOperation(operation);
+        snapshot.setSnapshot(twin);
+        return snapshot;
     }
 
 }
