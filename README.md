@@ -8,9 +8,14 @@ In order to include library as a dependency into pom.xml
 ````xml
 <repositories>
     <repository>
-      <id>ProptechOS-SDK</id>
-      <name>sdk-snapshot</name>
-      <url>https://idunrealestate.jfrog.io/artifactory/sdk-snapshot</url>
+        <id>p8s-sdk</id>
+        <url>https://pkgs.dev.azure.com/idun-corp/957eb9f4-fe48-42f6-901e-60ebc7add052/_packaging/p8s-sdk/maven/v1</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
     </repository>
 </repositories>
 ````
